@@ -3,6 +3,8 @@
 ## TL;DR
 The project is a template for creating React projects in Google App Script.
 
+The template is a relatively simple web application which allows the user to update a cell in a Google Spreadsheet.
+
 ## Setup
 
 ### Log into Clasp

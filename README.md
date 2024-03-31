@@ -59,4 +59,65 @@ The `Property` value for your new Script Property should be `MAIN_SHEET_ID`. The
 
 Once both fields are filled in, click the `Save script properties` button.
 
+## Deploy Project
+Since we have already created the clasp project and set up the script properties, all we need to do is deploy the application code to the newly created project.
+
+To deploy the current code in your repository run in your project's terminal `bun run deploy-test`.
+
+![bun_run_deploy_test.png](./docs/media/bun_run_deploy_test.png)
+
+You have now successfully compiled and uploaded the src files over to your newly created clasp project. You can now view them by running `bun run clasp open`
+
+Even though we have uploaded the code to the project, we still have not gotten a URL to run our newly created web application. To do so, we will need to configure the deployment within the Google App Script UI.
+
+If you have not already done so, navigate to the project dashboard by running `bun run clasp open`
+
+You should now be able to view your project's deployed code. This was also the location of where we updated the script properties. 
+
+In the top right corner of the dashboard you should see the `Deploy` button. Click this button and select `New Deployment` in the dropdown.
+
+![deploy_project_new_deployment.png](./docs/media/deploy_project_new_deployment.png)
+
+Within the modal that pops up, click the top left gear icon and select the `Web app` option in the dropdown.
+
+![deploy_project_select_webapp](./docs/media/deploy_project_select_webapp.png)
+
+Within the new deployment configuration form, enter the necessary details for your web application.
+
+![deploy_project_fill_details.png](./docs/media/deploy_project_fill_details.png)
+
+For the time being, ensure the `Execute as` and the `Who has access` is selected to your gmail account associated with this project and `Only myself` is selected for access. You can always come back and change these later to grant access to the larger public audience.
+
+Now click the `Deploy` button.
+
+If you are deploying for the first time, you will now recieve a set of prompts requesting access to allow Google App Script to execute the code you have uploaded. You should only have to do this once, unless later down the road you decided to connect to additional Google Services.
+
+![deploy_project_authorize_start.png](./docs/media/deploy_project_authorize_start.png)
+
+Click `Authorize access` to begin granting access to your new Web App deployment.
+
+![deploy_project_back_to_safety.png](./docs/media/deploy_project_back_to_safety.png)
+
+Within this propmt, click the `Advanced` click on the bottom left.
+
+![deploy_project_continue_to_app.png](./docs/media/deploy_project_continue_to_app.png)
+
+Now select the `Go to ...` link at the bottom to proceed with reviewing the permissions needed for the web app deployment.
+
+![bun_run_deploy_allow_access.png](./docs/media/bun_run_deploy_allow_access.png)
+
+Review the list of permissions needed by the app and select `Allow` button at the bottom.
+
+You should now see the finished deployment screen with a URL you can used to access your newly created web app!
+
+![deploy_project_authorize_finish.png](./docs/media/deploy_project_authorize_finish.png)
+
+Lastly, in order to deploy your code to this URL each time, since a new deployment will create a different URL, you can save the deployment I.D. on the screen to an `.env` file at the root level of your project directory. 
+
+![update_deployment_id.png](./docs/media/update_deployment_id.png)
+
+Running `bun run deploy-prod` will use your saved deployment I.D. to update the already created URL. No need to generate a new URL for each change in your code base!
+
+Like-wise, running deploy-test will update your test environment which you can access under the `Deploy` dropdown in the App Script Dashboard under `Test Deployments`.
+
 

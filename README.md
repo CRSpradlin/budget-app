@@ -19,7 +19,7 @@ After running the command, the terminal should direct you to a web view to log y
 Continue with the web view prompts, including reviewing of access needed for clasp to manage your new web application.
 ![run_bun_login_web_view_cli_permissions.png](./docs/media/run_bun_login_web_view_cli_permissions.png)
 
-Once you have completed the entire login and permission review process, you should be re-directed to a confirmation view.
+Once you have completed the entire login and permission review process, you should be redirected to a confirmation view.
 ![run_bun_login_web_view_logged_in.png](./docs/media/run_bun_login_web_view_logged_in.png)
 
 ## Create Google App Script Project
@@ -27,17 +27,17 @@ Once you have completed the entire login and permission review process, you shou
 Now you have logged into your Google Account via Clasp, you can now use Clasp to create a new project form which your react code will be deployed to. To do this, run `bun run clasp create <project name>`.
 ![bun_run_clasp_create.png](./docs/media/bun_run_clasp_create.png)
 
-Select `webapp` when prompted type of script to create.
+Select `webapp` when prompted for type of script to create.
 
 Once the project is successfully created, you should see the following output.
 ![bun_run_clasp_create_done.png](./docs/media/bun_run_clasp_create_done.png)
 
 ## Add Script Properties
-Now create a new Google Spreadsheet to allow the web application to send and recieve updates to. See the screenshot below to retrieve the I.D. of the new Spreadsheet. The I.D. will be needed within a Script Property in order to connect the web application to the spreadsheet. The Spreadsheet I.D. will be the series of leters, numbers and characters between the `/d/` and `/edit/` portions of the url.
+Now create a new Google Spreadsheet to allow the web application to send and receive updates to. See the screenshot below to retrieve the I.D. of the new Spreadsheet. The I.D. will be needed within a Script Property in order to connect the web application to the spreadsheet. The Spreadsheet I.D. will be the series of letters, numbers and characters between the `/d/` and `/edit/` portions of the url.
 ![spreadsheet_id_from_url.png](./docs/media/spreadsheet_id_from_url.png)
-In the above example, the I.D. for the document is `1x1pyWBBdLSpaXFXoR7LhG5UsQ6qMm122dh81OMWSeYc`. Your I.D. should look similar. Save this value somewhere to be used in the following steps.
+In the above example, the I.D. of the document is `1x1pyWBBdLSpaXFXoR7LhG5UsQ6qMm122dh81OMWSeYc`. Your I.D. should look similar. Save this value somewhere to be used in the following steps.
 
-Nagivate back to your termial where you entered the `bun install` and `bun run clasp login` commands. Once there, run the `bun run clasp open` command.
+Navigate back to your terminal where you entered the `bun install` and `bun run clasp login` commands. Once there, run the `bun run clasp open` command.
 
 ![bun_run_open_command.png](./docs/media/bun_run_open_command.png)
 
@@ -90,7 +90,7 @@ For the time being, ensure the `Execute as` and the `Who has access` is selected
 
 Now click the `Deploy` button.
 
-If you are deploying for the first time, you will now recieve a set of prompts requesting access to allow Google App Script to execute the code you have uploaded. You should only have to do this once, unless later down the road you decided to connect to additional Google Services.
+If you are deploying for the first time, you will now receive a set of prompts requesting access to allow Google App Script to execute the code you have uploaded. You should only have to do this once, unless later down the road you decided to connect to additional Google Services.
 
 ![deploy_project_authorize_start.png](./docs/media/deploy_project_authorize_start.png)
 
@@ -98,7 +98,7 @@ Click `Authorize access` to begin granting access to your new Web App deployment
 
 ![deploy_project_back_to_safety.png](./docs/media/deploy_project_back_to_safety.png)
 
-Within this propmt, click the `Advanced` click on the bottom left.
+Within this prompt, click the `Advanced` click on the bottom left.
 
 ![deploy_project_continue_to_app.png](./docs/media/deploy_project_continue_to_app.png)
 
@@ -106,9 +106,9 @@ Now select the `Go to ...` link at the bottom to proceed with reviewing the perm
 
 ![bun_run_deploy_allow_access.png](./docs/media/bun_run_deploy_allow_access.png)
 
-Review the list of permissions needed by the app and select `Allow` button at the bottom.
+Review the list of permissions needed by the app and select the `Allow` button at the bottom.
 
-You should now see the finished deployment screen with a URL you can used to access your newly created web app!
+You should now see the finished deployment screen with a URL you can use to access your newly created web app!
 
 ![deploy_project_authorize_finish.png](./docs/media/deploy_project_authorize_finish.png)
 
@@ -118,6 +118,6 @@ Lastly, in order to deploy your code to this URL each time, since a new deployme
 
 Running `bun run deploy-prod` will use your saved deployment I.D. to update the already created URL. No need to generate a new URL for each change in your code base!
 
-Like-wise, running deploy-test will update your test environment which you can access under the `Deploy` dropdown in the App Script Dashboard under `Test Deployments`.
+Likewise, running deploy-test will update your test environment which you can access under the `Deploy` dropdown in the App Script Dashboard under `Test Deployments`.
 
 

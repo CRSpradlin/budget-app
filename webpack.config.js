@@ -1,28 +1,19 @@
 const path = require("path");
-const CopyWebpackPlugin = require("copy-webpack-plugin");
-const CleanWebpackPlugin = require("clean-webpack-plugin");
 const GasPlugin = require("gas-webpack-plugin");
 const TSLintPlugin = require("tslint-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const HtmlWebpackInlineSourcePlugin = require("@effortlessmotion/html-webpack-inline-source-plugin");
 
-
-// Config
 const destination = "dist";
 const isDev = process.env.NODE_ENV !== "production";
 
-// Bundle main Template HTML
 const htmlPlugin = new HtmlWebpackPlugin({
 	template: "./src/client/template.html",
 	filename: "index.html",
-	inlineSource: ".(js|css)$", // embed all javascript and css inline
+	inlineSource: ".(js|css)$",
 	inject: "body"
 });
-
-
-/*      Shared Config
-================================== */
 
 const sharedConfigSettings = {
 	optimization: {
@@ -31,8 +22,8 @@ const sharedConfigSettings = {
 				test: /\.js(\?.*)?$/i,
 				parallel: true,
 				terserOptions: {
-					ie8: true,     // Necessary for GAS compatibility
-					mangle: false, // Necessary for GAS compatibility
+					ie8: true,
+					mangle: false, 
 					ecma: undefined,
 					module: false,
 					toplevel: false,
@@ -53,26 +44,6 @@ const sharedConfigSettings = {
 	},
 	module: {}
 };
-
-
-/*    Google Apps Script Config
-================================== */
-
-const appsscriptConfig = {
-	name: "COPY APPSSCRIPT.JSON",
-	entry: "./appsscript.json",
-	plugins: [
-		new CopyWebpackPlugin(({
-            patterns: [
-              { from: "./appsscript.json" },
-            ],
-          }))
-	]
-};
-
-
-/*          Client Config
-================================== */
 
 const clientConfig = Object.assign({}, sharedConfigSettings, {
 	name: "CLIENT",
@@ -125,10 +96,6 @@ const clientConfig = Object.assign({}, sharedConfigSettings, {
 	]
 });
 
-
-/*      	Server Config
-================================== */
-
 const serverConfig = Object.assign({}, sharedConfigSettings, {
 	name: "SERVER",
 	entry: "./src/server/code.ts",
@@ -162,12 +129,7 @@ const serverConfig = Object.assign({}, sharedConfigSettings, {
 	]
 });
 
-
-/*      Module Exports
-================================== */
-
 module.exports = [
-	//appsscriptConfig,
 	clientConfig,
 	serverConfig
 ];

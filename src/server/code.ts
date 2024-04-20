@@ -13,12 +13,3 @@ global.FormSubmit = (formData) => {
     
     sheet.getRange(1, 1).setValue(formData.newValue);
 }
-
-// @ts-ignore
-global.setScriptProp = () => {
-    const scriptProps = PropertiesService.getScriptProperties();
-
-    scriptProps.setProperty('MAIN_SHEET_ID', '<prod_deployment_id>');
-
-    return true;
-}

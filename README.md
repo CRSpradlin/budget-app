@@ -1,14 +1,17 @@
 # GCPTemplate
 Create Google App Script Web Apps with Google Service Backends. Template comes pre-built with a simple web app containing a single input form which updates the A1 cell of a linked Google SpreadSheet. See below an animated GIF of switching from an empty spreadsheet, navigating to the web app, submitting a new value, then verifying the value submitted is shown within the A1 cell of the original spreadsheet.
 
-
 ![GCPReactTemplateUsageExample.gif](./docs/media/GCPReactTemplateUsageExample.gif)
 
-
 ## TL;DR
-While Google App Script is usually used for automating business processes across multiple Google Services, it can also be a platform for hosting web applications. Unfortunately, the App Script Web-based IDE is not very user friendly when it comes to building performant SPAs. Luckily webpack allows transpilation of modern JavaScript syntax and functionality to more native and widely supported versions of the JavaScript language. By combining the power of webpack, react and Google App Script (via the Clasp CLI), we can create modern-looking web apps with your already familiar Google Services.
 
+Starting a web project always seems so difficult. Hundreds of questions seems to inject themselves into my mind. What language and technologies should I use? Where will I deploy the result? (Basically all the questions that have nothing to do with the project itself).
 
+After running through this cycle a number of times, I decided to create a template to allow me to focus on project implementation rather than project infrastructure. 
+
+At its initial state the template gives you a baseline javascript web app that runs a React frontend hosted by a Google App Script (GAS) backend. While Google App Script is usually used for automating business processes across multiple Google Services, it can also be a platform for hosting web applications. Unfortunately, the App Script Web-based IDE is not very user friendly when it comes to building performant SPAs. Luckily webpack allows transpilation of modern JavaScript syntax and functionality to more native and widely supported versions of the JavaScript language. By combining the power of webpack, react and Google App Script (via the Clasp CLI), we can create modern-looking web apps with your already familiar Google Services. This template comes pre-built with an example call to the GAS backend which updates a single cell within a Google Spreadsheet but gives you the bare framework to add as many Google Service integrations you want.
+
+Essentially, think of this as a React SPA with a Google Sheets database. And while it does sound a little in-formal and definitely less cool than setting up a Kubernetes cluster of five different images spread over twenty containers, this GCP React Template is honestly all you need to build efficiency in your small business or even your daily life without any major technical hurdles.
 All code for the "frontend" is stored under `src/client` and all code for the "backend" is stored under `src/server`. To make calls between the client and server directories, a global function must be declared within the `code.ts` file of the server directory, and the client calls this function via a `google.script.run` function call as shown below:
 
 ```javascript

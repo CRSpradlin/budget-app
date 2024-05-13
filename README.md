@@ -1,7 +1,18 @@
 # GCPTemplate
+
 Create Google App Script Web Apps with Google Service Backends. Template comes pre-built with a simple web app containing a single input form which updates the A1 cell of a linked Google SpreadSheet. See below an animated GIF of switching from an empty spreadsheet, navigating to the web app, submitting a new value, then verifying the value submitted is shown within the A1 cell of the original spreadsheet.
 
 ![GCPReactTemplateUsageExample.gif](./docs/media/GCPReactTemplateUsageExample.gif)
+
+## Contents
+
+1. [TL;DR](#tldr)
+2. [Setup](#setup)
+    - [Log into Clasp](#log-into-clasp)
+    - [Create Google App Script Project](#create-google-app-script-project)
+    - [Add Script Properties](#add-script-properties) 
+    - [Deploy Project](#deploy-project)
+3. [Related Projects](#related-projects)
 
 ## TL;DR
 
@@ -63,7 +74,7 @@ Continue with the web view prompts, including reviewing of access needed for cla
 Once you have completed the entire login and permission review process, you should be redirected to a confirmation view.
 ![run_bun_login_web_view_logged_in.png](./docs/media/run_bun_login_web_view_logged_in.png)
 
-## Create Google App Script Project
+### Create Google App Script Project
 
 Now you have logged into your Google Account via Clasp, you can now use Clasp to create a new project form which your react code will be deployed to. To do this, run `bun run create <project name>`.
 ![bun_run_clasp_create.png](./docs/media/bun_run_clasp_create.png)
@@ -73,7 +84,7 @@ Select `webapp` when prompted for type of script to create.
 Once the project is successfully created, you should see the following output.
 ![bun_run_clasp_create_done.png](./docs/media/bun_run_clasp_create_done.png)
 
-## Add Script Properties
+### Add Script Properties
 Now create a new Google Spreadsheet to allow the web application to send and receive updates to. See the screenshot below to retrieve the I.D. of the new Spreadsheet. The I.D. will be needed within a Script Property in order to connect the web application to the spreadsheet. The Spreadsheet I.D. will be the series of letters, numbers and characters between the `/d/` and `/edit/` portions of the url.
 ![spreadsheet_id_from_url.png](./docs/media/spreadsheet_id_from_url.png)
 In the above example, the I.D. of the document is `1x1pyWBBdLSpaXFXoR7LhG5UsQ6qMm122dh81OMWSeYc`. Your I.D. should look similar. Save this value somewhere to be used in the following steps.
@@ -100,7 +111,7 @@ The `Property` value for your new Script Property should be `MAIN_SHEET_ID`. The
 
 Once both fields are filled in, click the `Save script properties` button.
 
-## Deploy Project
+### Deploy Project
 Since we have already created the clasp project and set up the script properties, all we need to do is deploy the application code to the newly created project.
 
 To deploy the current code in your repository run in your project's terminal `bun run deploy-test`.
@@ -165,4 +176,13 @@ With this environment configuration, running `bun run deploy-prod` will use your
 
 Likewise, running deploy-test will update your test environment which you can access under the `Deploy` dropdown in the App Script Dashboard under `Test Deployments`.
 
+## Related Projects
 
+[React-Google-Apps-Script](https://github.com/enuchi/React-Google-Apps-Script/blob/main/webpack.config.js)
+ - Really helped kickstart this project and aided with my own perils of how webpack works.
+
+[budget-app](https://github.com/CRSpradlin/budget-app)
+ - An example use case of this template created by me to help aid recording and budgeting my monthly expenses. This is something I use nearly every day.
+
+ [dirtyspokes-series-app](https://github.com/CRSpradlin/dirtyspokes-series-app)
+ - A more niche use case of this tmeplate created by me to help a local trail running company keep track of series points for semi-annual awards to top runners in the district.

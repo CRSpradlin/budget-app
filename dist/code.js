@@ -2,8 +2,6 @@ function doGet(e) {}
 
 function FormSubmit(formData) {}
 
-function setScriptProp() {}
-
  /******/ (() => {
     // webpackBootstrap
     /******/ "use strict";
@@ -29,9 +27,6 @@ function setScriptProp() {}
     }, __webpack_require__.g.FormSubmit = function(formData) {
         var scriptProps = PropertiesService.getScriptProperties(), sheetId = String(scriptProps.getProperty("MAIN_SHEET_ID"));
         SpreadsheetApp.openById(sheetId).getSheets()[0].getRange(1, 1).setValue(formData.newValue);
-    }, __webpack_require__.g.setScriptProp = function() {
-        return PropertiesService.getScriptProperties().setProperty("MAIN_SHEET_ID", "<prod_deployment_id>"), 
-        !0;
     };
     for (var i in __webpack_exports__) this[i] = __webpack_exports__[i];
     __webpack_exports__.__esModule && Object.defineProperty(this, "__esModule", {

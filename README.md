@@ -178,11 +178,8 @@ Likewise, running deploy-test will update your test environment which you can ac
 
 ## Related Projects
 
-[React-Google-Apps-Script](https://github.com/enuchi/React-Google-Apps-Script/blob/main/webpack.config.js)
- - Really helped kickstart this project and aided with my own perils of how webpack works.
+[React-Google-Apps-Script](https://github.com/enuchi/React-Google-Apps-Script/blob/main/webpack.config.js): Really helped kickstart this project and aided with my own perils of how webpack works.
 
-[budget-app](https://github.com/CRSpradlin/budget-app)
- - An example use case of this template created by me to help aid recording and budgeting my monthly expenses. This is something I use nearly every day.
+[budget-app](https://github.com/CRSpradlin/budget-app): An example use case of this template; created by me to help aid recording and budgeting my monthly expenses. I use this nearly every day.
 
- [dirtyspokes-series-app](https://github.com/CRSpradlin/dirtyspokes-series-app)
- - A more niche use case of this tmeplate created by me to help a local trail running company keep track of series points for semi-annual awards to top runners in the district.
+ [dirtyspokes-series-app](https://github.com/CRSpradlin/dirtyspokes-series-app): A more niche use case of this template; created by me to help a local trail running company keep track of series points for semi-annual awards to top runners in the district.

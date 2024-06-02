@@ -1,185 +1,131 @@
-# GCPTemplate
-
-Create Google App Script Web Apps with Google Service Backends. Template comes pre-built with a simple web app containing a single input form which updates the A1 cell of a linked Google SpreadSheet. See below an animated GIF of switching from an empty spreadsheet, navigating to the web app, submitting a new value, then verifying the value submitted is shown within the A1 cell of the original spreadsheet.
-
-![GCPReactTemplateUsageExample.gif](./docs/media/GCPReactTemplateUsageExample.gif)
-
-## Contents
-
-1. [TL;DR](#tldr)
-2. [Setup](#setup)
-    - [Log into Clasp](#log-into-clasp)
-    - [Create Google App Script Project](#create-google-app-script-project)
-    - [Add Script Properties](#add-script-properties) 
-    - [Deploy Project](#deploy-project)
-3. [Related Projects](#related-projects)
+# GCPBudgetApp
 
 ## TL;DR
-
-Starting a web project always seems so difficult. Hundreds of questions seems to inject themselves into my mind. What language and technologies should I use? Where will I deploy the result? (Basically all the questions that have nothing to do with the project itself).
-
-After running through this cycle a number of times, I decided to create a template to allow me to focus on project implementation rather than project infrastructure. 
-
-At its initial state the template gives you a baseline javascript web app that runs a React frontend hosted by a Google App Script (GAS) backend. While Google App Script is usually used for automating business processes across multiple Google Services, it can also be a platform for hosting web applications. Unfortunately, the App Script Web-based IDE is not very user friendly when it comes to building performant SPAs. Luckily webpack allows transpilation of modern JavaScript syntax and functionality to more native and widely supported versions of the JavaScript language. By combining the power of webpack, react and Google App Script (via the Clasp CLI), we can create modern-looking web apps with your already familiar Google Services. This template comes pre-built with an example call to the GAS backend which updates a single cell within a Google Spreadsheet but gives you the bare framework to add as many Google Service integrations you want.
-
-Essentially, think of this as a React SPA with a Google Sheets database. And while it does sound a little in-formal and definitely less cool than setting up a Kubernetes cluster of five different images spread over twenty containers, this GCP React Template is honestly all you need to build efficiency in your small business or even your daily life without any major technical hurdles.
-All code for the "frontend" is stored under `src/client` and all code for the "backend" is stored under `src/server`. To make calls between the client and server directories, a global function must be declared within the `code.ts` file of the server directory, and the client calls this function via a `google.script.run` function call as shown below:
-
-```javascript
-// src/server/code.ts
-
-// @ts-ignore
-global.FormSubmit = (formData) => {
-    const scriptProps = PropertiesService.getScriptProperties();
-
-    const sheetId = String(scriptProps.getProperty('MAIN_SHEET_ID'));
-    const sheet = SpreadsheetApp.openById(sheetId).getSheets()[0];
-    
-    sheet.getRange(1, 1).setValue(formData.newValue);
-}
-```
-
-```javascript
-// src/client/root.tsx
-
-public handleSubmit = (e) => {
-...
-    // @ts-ignore
-    google.script.run
-    .withSuccessHandler(this.handleFormSuccess)
-    .withFailureHandler(this.handleFailure)
-    .FormSubmit(document.getElementById('form'));
-...
-}
-```
-
-The `withSuccessHandler` and `withFailureHandler` functions allow you to set callbacks for both a successful and unsuccessful response from your backend `FormSubmit` call. As you can see the last function to be called is the function you defined within the server side `code.ts` file. For more information about the client side API for `run` please reference [Google's Documentation](https://developers.google.com/apps-script/guides/html/reference/run).
-
-With some of the basics out of the way, you should be able to hit the ground running by setting up your very own Google App Script Web App. Keep in mind this is just a template so feel free to add more complex UI dependencies or more Google Service integrations into your very own implementation! Hopefully this template helps you worry less about the backend and gets you more time implementing your awesome ideas! 
+Gives users and developers the ability to host their own budget web application through Google Cloud's App Script Service. Typically App Script Applications are little one-off scripts that give users the ability to connect mulitple Google Services together or give the ability for developers to add additionally functionality to their SpreadSheets or Documents. In the case of the GCPBudgetApp, AppScript is leveraged to host a small web application which graphically displays any recent purchases performed by the user. Recent purchases are gathered via Gmail labels, one label denotes a new email with a new purchase, the other label denotes a purchase has already been read.
 
 ## Setup
 
-### Log into Clasp
-Within your terminal, run the `bun install` command.
-![run_bun_install.png](./docs/media/run_bun_install.png)
+### Create Google Cloud Project
+Clone down the repository and run an `bun install`.
+![bun_install_repo.png](./docs/media/bun_install_repo.png)
 
-Next, run `bun run login` (If you haven't logged in recently). This command will log you into your google account to allow the project to create and update google cloud projects.
+Run `bun run clasp login`.
+![type_clasp_login.png](./docs/media/type_clasp_login.png)
+The `clasp login` command will open a browser window to have you sign-in to your Google/Gmail account. Ensure you use the account you want to have the budget app recieve and manage your bank transaction emails. Click `Allow`.
+![run_clasp_login_allow_page.png](./docs/media/run_clasp_login_allow_page.png)
 
-After running the command, the terminal should direct you to a web view to log you into your google account.
-![run_bun_login_web_view.png](./docs/media/run_bun_login_web_view.png)
+Allow Google App Script API. If you have not done so, navigate to [https://script.google.com/home/usersettings](https://script.google.com/home/usersettings) and ensure the App Script API is enabled as shown below. 
+![usersettings_appscript_api.png](./docs/media/usersettings_appscript_api.png)
 
-Continue with the web view prompts, including reviewing of access needed for clasp to manage your new web application.
-![run_bun_login_web_view_cli_permissions.png](./docs/media/run_bun_login_web_view_cli_permissions.png)
+Enable the App Script API
+![usersettings_appscript_api_on.png](./docs/media/usersettings_appscript_api_on.png)
 
-Once you have completed the entire login and permission review process, you should be redirected to a confirmation view.
-![run_bun_login_web_view_logged_in.png](./docs/media/run_bun_login_web_view_logged_in.png)
+Next, run `bun run clasp create <project name>` in the cloned down repository. 
+![type_clasp_create.png](./docs/media/type_clasp_create.png)
+Select `webapp` for the project type when prompted.
+![run_clasp_create.png](./docs/media/run_clasp_create.png)
+![done_bun_clasp_create.png](./docs/media/done_bun_clasp_create.png)
 
-### Create Google App Script Project
+Next, you need to configure your bank email notifications and add two new Gmail labels, one to mark the emails as new unread transactions and the other for the web-app to leverage marking transactions as read.
 
-Now you have logged into your Google Account via Clasp, you can now use Clasp to create a new project form which your react code will be deployed to. To do this, run `bun run create <project name>`.
-![bun_run_clasp_create.png](./docs/media/bun_run_clasp_create.png)
+### Enable Bank/Card Transaction Notifications
+Most banks and credit card providers have the ability to send you notifications on any transactions made over a certain amount. By setting the transaction amount to a small amount like `$0.01` or similar, email notifications can be sent for almost all transactions. These emails will then be picked up by the bugeting app along with their transaction amounts so you can keep track of your purchases. 
 
-Select `webapp` when prompted for type of script to create.
+### Add New Labels to Gmail
+Create a new label for all the unread transactions you will recieve from your bank. If you already 
 
-Once the project is successfully created, you should see the following output.
-![bun_run_clasp_create_done.png](./docs/media/bun_run_clasp_create_done.png)
+1. Navigate to your Gmail account and click the `create new label` plus button.
+![create_new_label.png](./docs/media/create_new_label.png)
 
-### Add Script Properties
-Now create a new Google Spreadsheet to allow the web application to send and receive updates to. See the screenshot below to retrieve the I.D. of the new Spreadsheet. The I.D. will be needed within a Script Property in order to connect the web application to the spreadsheet. The Spreadsheet I.D. will be the series of letters, numbers and characters between the `/d/` and `/edit/` portions of the url.
-![spreadsheet_id_from_url.png](./docs/media/spreadsheet_id_from_url.png)
-In the above example, the I.D. of the document is `1x1pyWBBdLSpaXFXoR7LhG5UsQ6qMm122dh81OMWSeYc`. Your I.D. should look similar. Save this value somewhere to be used in the following steps.
+2. Fill in the new name for your unread transactions label. In this case, the label name is `BudgetAppUnread` but it can realisitically be anything. Just remember which label you want to act as the unread transactions and which label will act as the read transactions.
+![name_new_lable.png](./docs/media/name_new_label.png)
 
-Navigate back to your terminal where you entered the `bun install` and `bun run login` commands. Once there, run the `bun run open` command.
+3. Create the second label for your read transactions. In this case, the label name is `BudgetAppRead` but it can also be anything you want.
+![create_second_label.png](./docs/media/create_second_label.png)
 
-![bun_run_open_command.png](./docs/media/bun_run_open_command.png)
+### Apply Filter Parameters for Unread Label
+Once you've created your two labels or already have labels that you can re-purpose in your Gmail account, the next step would be to apply a filter to automatically place inbox items to your unread label.
 
-The command should open a web view of your clasp (Google App Script) project.
+1. Click on the `show search options` button to the right of the search box.
+![click_show_search_options.png](./docs/media/click_show_search_options.png)
 
-![bun_run_open_web_view.png](./docs/media/bun_run_open_web_view.png)
+2. Fill in the search options to target emails from your bank. 
+![fill_search_options.png](./docs/media/fill_search_options.png)
+Replace `<enter filter parameters here>` with a filter which targets the subject and bank email address. As an example, lets say the bank send their notification email from the email address: `example@bank.com`, and lets say the subject of those notification emails contain the words `You made a credit card purchase of` followed by the transaction amount. With this information, we can create a filter that looks for that particular subject from the bank's email address: `(from:(example@bank.com) AND {subject:"You made a credit card purchase of "})`. Place this newly created filter parameter under the `Has the words` field. Once you have set your filter parameters, click the `Create Filter` button.
 
-Navigate to the gear icon on the left side panel. It should expand to say `Project Settings` when it is hovered over with your cursor. Click `Project Settings` to open its page.
+3. On the next page for creating a filter, select the `Apply the label` option and select the **UNREAD** label. By selecting this option, any new messages to your email with the subject you specified and from the specified bank email address will now have the unread label assigned to it.
+![select_filter_options.png](./docs/media/select_filter_options.png)
+You may also want to select the `Skip the Inbox (Archive it)` option if you do not want your inbox to be riddled with transaction emails. I personally don't have this option selected since I like recieving notifications about any new transactions but if that gets or sounds anoying this option can be selected. Selecting the `Skip the Inbox` option does not affect the functionality of the budget application.
+Once finished you can click the `Create Filter` button.
 
-![bun_run_open_web_view_project_settings.png](./docs/media/bun_run_open_web_view_project_settings.png)
+### Create Budget Spreadsheet
+A spreadsheet is needed by the budget app in order to store and retrieve. Navigate to your Google Drive and create a new Spreadsheet. ![click_create_google_spreadsheet.png](./docs/media/click_create_google_spreadsheet.png) After creating a new Google SpreadSheet and giving it a name of your choice, select and copy the entire sheet URL as shown below. ![select_spreadsheet_url.png](./docs/media/select_spreadsheet_url.png) The URL should look something like `https://docs.google.com/spreadsheets/d/XXXX/edit#gid=0` where the `XXXX` in the example is a long string of numbers and characters. This value is the SpreadSheet ID. Save this value somewhere since we will be needing it for the following step.
 
-Once on the `Project Settings` page, scroll to the very bottom section which reads `Script Properties`. Click on the `Edit script properties` button.
+### Configure Properties in Budget App (Labels and Sheet ID)
+Now that the labels have been created, we can now configure them in the budget app so that they can be used to identify and mark incomming transactions.
 
-![bun_run_open_web_view_add_project_setting.png](./docs/media/bun_run_open_web_view_add_project_setting.png)
+1. Navigate back to the repository that you have cloned down and ran the previous `clasp` commands to create a new Google Cloud Project.
 
-The `Property` value for your new Script Property should be `MAIN_SHEET_ID`. The `Value` should be set to the Google Spreadsheet I.D. we retrieved in the previous steps.
+2. Run `bun run clasp open`. ![type_clasp_open.png](./docs/media/type_clasp_open.png) After running the `clasp open` command, your browser should be opened at the project you've created earlier. Be sure the browser is logged into the same account you've used within the `clasp login` command you performed earlier. ![done_clasp_open.png](./docs/media/done_clasp_open.png)
 
-![bun_run_open_web_view_fill_project_setting.png](./docs/media/bun_run_open_web_view_fill_project_setting.png)
+3. Click on the settings icon in the left pane of the App Script Web IDE. ![click_settings_icon.png](./docs/media/click_settings_icon.png) Scroll to the bottom of the page or until you see the `Script Properties` section. 
 
-Once both fields are filled in, click the `Save script properties` button.
+4. Click on the `Add script property` button until three new fields are showing. ![add_three_script_props.png](./docs/media/add_three_script_props.png)
 
-### Deploy Project
-Since we have already created the clasp project and set up the script properties, all we need to do is deploy the application code to the newly created project.
+5. Fill in the script properties as shown below.
 
-To deploy the current code in your repository run in your project's terminal `bun run deploy-test`.
+    |Property|Value|
+    |---|---|
+    |EMAIL_READ_LABEL|budgetappread|
+    |EMAIL_UNREAD_LABEL|budgetappunread|
+    |MAIN_SHEET_ID|XXXX|
 
-![bun_run_deploy_test.png](./docs/media/bun_run_deploy_test.png)
+    `EMAIL_READ_LABEL`: The value for this property should be the name of the **read** label you created in the [Add New Labels to Gmail](#add-new-labels-to-gmail) section.
 
-You have now successfully compiled and uploaded the src files over to your newly created clasp project. You can now view them by running `bun run open`
+    `EMAIL_UNREAD_LABEL`: The value for this property should be the name of the **unread** label you created in the [Add New Labels to Gmail](#add-new-labels-to-gmail) section.
 
-Even though we have uploaded the code to the project, we still have not gotten a URL to run our newly created web application. To do so, we will need to configure the deployment within the Google App Script UI.
+    `MAIN_SHEET_ID`: The value for this property should be the I.D. of the SpreadSheet you created and saved from the [Create Budget Spreadsheet](#create-budget-spreadsheet) section.
 
-If you have not already done so, navigate to the project dashboard by running `bun run open`
+### Deploy Your Budget App
+Now that the project has been created and the properties have been applied, you can now move forward with creating your first prod deployment and test deployment.
 
-You should now be able to view your project's deployed code. This was also the location of where we updated the script properties. 
+1. Navigate back to your locally cloned version of the code base where you intitially ran the `clasp` commands. Run `bun run deploy-test` command.
+![type_bun_deploy_test.png](./docs/media/type_bun_deploy_test.png)
+![done_bun_deploy_test.png](./docs/media/done_bun_deploy_test.png)
 
-In the top right corner of the dashboard you should see the `Deploy` button. Click this button and select `New Deployment` in the dropdown.
+2. Open or navigate back to the project within Google App Script. You can either open the project back up using the [script.google.com](https://script.google.com) or run the `bun run open` command.
+![done_clasp_open.png](./docs/media/done_clasp_open.png)
 
-![deploy_project_new_deployment.png](./docs/media/deploy_project_new_deployment.png)
+3. Click on the `Deploy` dropdown and click `New deployment`. At which point the new deployment modal will show. Ensure you have selected a Web App deployment type by click the gear icon next to `Select Type`. Enter the following information for the new Web App Deployment.
+![deploy_prod_configuration_modal_form.png](./docs/media/deploy_prod_configuration_modal_form.png)
+For the `Description` field you can put whatever you'd like. In this case I elected to just put `Prod Deployment`.
+The `Execute as` field determines who the application should execute its code as. Since we are planning to be the only party accessing the application, you can have the app Execute as `Me` (yourself in this case).
+The `Who has access` field, as mentioned above, should only be yourself (until you are a litte more experienced).
 
-Within the modal that pops up, click the top left gear icon and select the `Web app` option in the dropdown.
+4. Click the `Deploy` button and go through the steps to authorize the app's access to your Gmail, and Google SpreadSheets.
+![deploy_prod_configuration_modal_authorization.png](./docs/media/deploy_prod_configuration_modal_authorization.png)
+![deploy_prod_configuration_modal_authorization_unverified.png](./docs/media/deploy_prod_configuration_modal_authorization_unverified.png)
+![deploy_prod_configuration_modal_authorization_unsafe.png](./docs/media/deploy_prod_configuration_modal_authorization_unsafe.png)
+![deploy_prod_configuration_modal_authorization_unsafe_permissions.png](./docs/media/deploy_prod_configuration_modal_authorization_unsafe_permissions.png)
+![deploy_prod_configuration_modal_authorization_unsafe_permissions_result.png](./docs/media/deploy_prod_configuration_modal_authorization_unsafe_permissions_result.png)
 
-![deploy_project_select_webapp](./docs/media/deploy_project_select_webapp.png)
+5. Congrats! You have successfully deployed your eBudget application! What is even better is since you have deployed your first Prod deployment, you can now deploy any additional code changes you make from your terminal instead of the App Script Web UI. All you need to do is copy the deployment I.D. and paste it into a new file named `.env` at the root level with the key of `PROD_DEPLOY_ID`.
+![deploy_prod_configuration_modal_authorization_unsafe_permissions_result_copy.png](./docs/media/deploy_prod_configuration_modal_authorization_unsafe_permissions_result_copy.png)
 
-Within the new deployment configuration form, enter the necessary details for your web application.
+6. Copy the deployment ID and place it into a new `.env` file at the root directory level of the code your initially cloned down and created the project with.
+![create_dotenv.png](./docs/media/create_dotenv.png)
+![fill_dotenv.png](./docs/media/fill_dotenv.png)
 
-![deploy_project_fill_details.png](./docs/media/deploy_project_fill_details.png)
+7. Now you should be able to deploy using the `bun run deploy-prod` command to deploy straight to that deployment ID. `bun run deploy-test` can be used to just update the code without deploying to your Prod environment.
+![run_deploy_prod_command.png](./docs/media/run_deploy_prod_command.png)
 
-For the time being, ensure the `Execute as` and the `Who has access` is selected to your gmail account associated with this project and `Only myself` is selected for access. You can always come back and change these later to grant access to the larger public audience.
+## Optional Configurations
 
-Now click the `Deploy` button.
+### Targeted Email Descriptions
+For some banks, all transaction notifications may have the same email subject. This would cause all of your purchase descriptions to be the same. In the event of this, you can set an optional Script Property within the App Script GUI to target your transaction description value to be something from the body of the email message.
 
-If you are deploying for the first time, you will now receive a set of prompts requesting access to allow Google App Script to execute the code you have uploaded. You should only have to do this once, unless later down the road you decided to connect to additional Google Services.
-
-![deploy_project_authorize_start.png](./docs/media/deploy_project_authorize_start.png)
-
-Click `Authorize access` to begin granting access to your new Web App deployment.
-
-![deploy_project_back_to_safety.png](./docs/media/deploy_project_back_to_safety.png)
-
-Within this prompt, click the `Advanced` click on the bottom left.
-
-![deploy_project_continue_to_app.png](./docs/media/deploy_project_continue_to_app.png)
-
-Now select the `Go to ...` link at the bottom to proceed with reviewing the permissions needed for the web app deployment.
-
-![bun_run_deploy_allow_access.png](./docs/media/bun_run_deploy_allow_access.png)
-
-Review the list of permissions needed by the app and select the `Allow` button at the bottom.
-
-You should now see the finished deployment screen with a URL you can use to access your newly created web app!
-
-![deploy_project_authorize_finish.png](./docs/media/deploy_project_authorize_finish.png)
-
-Lastly, after you have performed your initial deployment, move back to your terminal within your project and run the `bun run update` command to pull down the manifest file created during your initial prod deployment.
-
-Lastly, in order to deploy your code to this URL each time, since a new deployment will create a different URL, you can save the deployment I.D. on the screen to an `.env` file at the root level of your project directory.
-
-If you choose to go this route, just ensure your deployment I.D. is under the key `PROD_DEPLOY_ID` as shown below.
-
-![update_deployment_id.png](./docs/media/update_deployment_id.png)
-
-With this environment configuration, running `bun run deploy-prod` will use your saved deployment I.D. to update the already created URL. No need to generate a new URL for each change in your code base!
-
-Likewise, running deploy-test will update your test environment which you can access under the `Deploy` dropdown in the App Script Dashboard under `Test Deployments`.
-
-## Related Projects
-
-[React-Google-Apps-Script](https://github.com/enuchi/React-Google-Apps-Script/blob/main/webpack.config.js): Really helped kickstart this project and aided with my own perils of how webpack works.
-
-[budget-app](https://github.com/CRSpradlin/budget-app): An example use case of this template; created by me to help aid recording and budgeting my monthly expenses. I use this nearly every day.
-
- [dirtyspokes-series-app](https://github.com/CRSpradlin/dirtyspokes-series-app): A more niche use case of this template; created by me to help a local trail running company keep track of series points for semi-annual awards to top runners in the district.
+1. Navigate to your GAS project by running the `bun run clasp open` command in your project directory. ![type_clasp_open.png](./docs/media/type_clasp_open.png) ![done_clasp_open.png](./docs/media/done_clasp_open.png)
+2. Click on the `Project Settings (Gear Icon)` section within the left side pane. ![click_project_settings.png](./docs/media/click_project_settings.png)
+3. Scroll down on the Project Settings page until you see the `Script Properties` section. Click on the `Edit script properties` button. ![click_script_properties_button.png](./docs/media/click_script_properties_button.png)
+4. Click the `Add script property` button. ![click_add_script_property_button.png](./docs/media/click_add_script_property_button.png)
+5. Fill in the new script property. The `Property` text box should be `DESCRIPTION_REGEX`. The `Value` text box should be a RegEx string that matches a location within the email body that you want your transaction description value to be. ![add_new_script_property.png](./docs/media/add_new_script_property.png) As an example, let's say you have a bank that you have configured to send transaction notifications to your email and right before what you wanted your transaction descriptions to be the words `Merchant Details:`. The RegEx value for the `DESCRIPTION_REGEX` property could be somthing like `Merchant Details: (.+)\n` where `(.+)` is what you want your transaction descriptions to be. If you have multiple bank providers with different transaction notifications you can provide multiple RexEx expressions separated by a `|` like: `Merchant 1 Details: (.+)\n|Merchant 2 Details: (.+)\n`.

@@ -2,7 +2,7 @@
 /******/ (() => {
     // webpackBootstrap
     /******/ "use strict";
-    /******/    var __webpack_modules__ = {
+    /******/    var leafPrototypes, getProto, __webpack_modules__ = {
         /***/ 182: 
         /***/ (module, __webpack_exports__, __webpack_require__) => {
             /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -11,7 +11,7 @@
             /* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(81), _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default =  __webpack_require__.n(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__), _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(645), ___CSS_LOADER_EXPORT___ =  __webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__)()(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default());
             /* harmony import */            
             // Module
-            ___CSS_LOADER_EXPORT___.push([ module.id, '/*\n! tailwindcss v3.3.3 | MIT License | https://tailwindcss.com\n*//*\n1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)\n2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)\n*/\n\n*,\n::before,\n::after {\n  box-sizing: border-box; /* 1 */\n  border-width: 0; /* 2 */\n  border-style: solid; /* 2 */\n  border-color: #e5e7eb; /* 2 */\n}\n\n::before,\n::after {\n  --tw-content: \'\';\n}\n\n/*\n1. Use a consistent sensible line-height in all browsers.\n2. Prevent adjustments of font size after orientation changes in iOS.\n3. Use a more readable tab size.\n4. Use the user\'s configured `sans` font-family by default.\n5. Use the user\'s configured `sans` font-feature-settings by default.\n6. Use the user\'s configured `sans` font-variation-settings by default.\n*/\n\nhtml {\n  line-height: 1.5; /* 1 */\n  -webkit-text-size-adjust: 100%; /* 2 */\n  -moz-tab-size: 4; /* 3 */\n  -o-tab-size: 4;\n     tab-size: 4; /* 3 */\n  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; /* 4 */\n  font-feature-settings: normal; /* 5 */\n  font-variation-settings: normal; /* 6 */\n}\n\n/*\n1. Remove the margin in all browsers.\n2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.\n*/\n\nbody {\n  margin: 0; /* 1 */\n  line-height: inherit; /* 2 */\n}\n\n/*\n1. Add the correct height in Firefox.\n2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)\n3. Ensure horizontal rules are visible by default.\n*/\n\nhr {\n  height: 0; /* 1 */\n  color: inherit; /* 2 */\n  border-top-width: 1px; /* 3 */\n}\n\n/*\nAdd the correct text decoration in Chrome, Edge, and Safari.\n*/\n\nabbr:where([title]) {\n  text-decoration: underline;\n  -webkit-text-decoration: underline dotted;\n          text-decoration: underline dotted;\n}\n\n/*\nRemove the default font size and weight for headings.\n*/\n\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  font-size: inherit;\n  font-weight: inherit;\n}\n\n/*\nReset links to optimize for opt-in styling instead of opt-out.\n*/\n\na {\n  color: inherit;\n  text-decoration: inherit;\n}\n\n/*\nAdd the correct font weight in Edge and Safari.\n*/\n\nb,\nstrong {\n  font-weight: bolder;\n}\n\n/*\n1. Use the user\'s configured `mono` font family by default.\n2. Correct the odd `em` font sizing in all browsers.\n*/\n\ncode,\nkbd,\nsamp,\npre {\n  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; /* 1 */\n  font-size: 1em; /* 2 */\n}\n\n/*\nAdd the correct font size in all browsers.\n*/\n\nsmall {\n  font-size: 80%;\n}\n\n/*\nPrevent `sub` and `sup` elements from affecting the line height in all browsers.\n*/\n\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline;\n}\n\nsub {\n  bottom: -0.25em;\n}\n\nsup {\n  top: -0.5em;\n}\n\n/*\n1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)\n2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)\n3. Remove gaps between table borders by default.\n*/\n\ntable {\n  text-indent: 0; /* 1 */\n  border-color: inherit; /* 2 */\n  border-collapse: collapse; /* 3 */\n}\n\n/*\n1. Change the font styles in all browsers.\n2. Remove the margin in Firefox and Safari.\n3. Remove default padding in all browsers.\n*/\n\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  font-family: inherit; /* 1 */\n  font-feature-settings: inherit; /* 1 */\n  font-variation-settings: inherit; /* 1 */\n  font-size: 100%; /* 1 */\n  font-weight: inherit; /* 1 */\n  line-height: inherit; /* 1 */\n  color: inherit; /* 1 */\n  margin: 0; /* 2 */\n  padding: 0; /* 3 */\n}\n\n/*\nRemove the inheritance of text transform in Edge and Firefox.\n*/\n\nbutton,\nselect {\n  text-transform: none;\n}\n\n/*\n1. Correct the inability to style clickable types in iOS and Safari.\n2. Remove default button styles.\n*/\n\nbutton,\n[type=\'button\'],\n[type=\'reset\'],\n[type=\'submit\'] {\n  -webkit-appearance: button; /* 1 */\n  background-color: transparent; /* 2 */\n  background-image: none; /* 2 */\n}\n\n/*\nUse the modern Firefox focus style for all focusable elements.\n*/\n\n:-moz-focusring {\n  outline: auto;\n}\n\n/*\nRemove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)\n*/\n\n:-moz-ui-invalid {\n  box-shadow: none;\n}\n\n/*\nAdd the correct vertical alignment in Chrome and Firefox.\n*/\n\nprogress {\n  vertical-align: baseline;\n}\n\n/*\nCorrect the cursor style of increment and decrement buttons in Safari.\n*/\n\n::-webkit-inner-spin-button,\n::-webkit-outer-spin-button {\n  height: auto;\n}\n\n/*\n1. Correct the odd appearance in Chrome and Safari.\n2. Correct the outline style in Safari.\n*/\n\n[type=\'search\'] {\n  -webkit-appearance: textfield; /* 1 */\n  outline-offset: -2px; /* 2 */\n}\n\n/*\nRemove the inner padding in Chrome and Safari on macOS.\n*/\n\n::-webkit-search-decoration {\n  -webkit-appearance: none;\n}\n\n/*\n1. Correct the inability to style clickable types in iOS and Safari.\n2. Change font properties to `inherit` in Safari.\n*/\n\n::-webkit-file-upload-button {\n  -webkit-appearance: button; /* 1 */\n  font: inherit; /* 2 */\n}\n\n/*\nAdd the correct display in Chrome and Safari.\n*/\n\nsummary {\n  display: list-item;\n}\n\n/*\nRemoves the default spacing and border for appropriate elements.\n*/\n\nblockquote,\ndl,\ndd,\nh1,\nh2,\nh3,\nh4,\nh5,\nh6,\nhr,\nfigure,\np,\npre {\n  margin: 0;\n}\n\nfieldset {\n  margin: 0;\n  padding: 0;\n}\n\nlegend {\n  padding: 0;\n}\n\nol,\nul,\nmenu {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n\n/*\nReset default styling for dialogs.\n*/\ndialog {\n  padding: 0;\n}\n\n/*\nPrevent resizing textareas horizontally by default.\n*/\n\ntextarea {\n  resize: vertical;\n}\n\n/*\n1. Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)\n2. Set the default placeholder color to the user\'s configured gray 400 color.\n*/\n\ninput::-moz-placeholder, textarea::-moz-placeholder {\n  opacity: 1; /* 1 */\n  color: #9ca3af; /* 2 */\n}\n\ninput::placeholder,\ntextarea::placeholder {\n  opacity: 1; /* 1 */\n  color: #9ca3af; /* 2 */\n}\n\n/*\nSet the default cursor for buttons.\n*/\n\nbutton,\n[role="button"] {\n  cursor: pointer;\n}\n\n/*\nMake sure disabled buttons don\'t get the pointer cursor.\n*/\n:disabled {\n  cursor: default;\n}\n\n/*\n1. Make replaced elements `display: block` by default. (https://github.com/mozdevs/cssremedy/issues/14)\n2. Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)\n   This can trigger a poorly considered lint error in some tools but is included by design.\n*/\n\nimg,\nsvg,\nvideo,\ncanvas,\naudio,\niframe,\nembed,\nobject {\n  display: block; /* 1 */\n  vertical-align: middle; /* 2 */\n}\n\n/*\nConstrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)\n*/\n\nimg,\nvideo {\n  max-width: 100%;\n  height: auto;\n}\n\n/* Make elements with the HTML hidden attribute stay hidden by default */\n[hidden] {\n  display: none;\n}\n\n*, ::before, ::after {\n  --tw-border-spacing-x: 0;\n  --tw-border-spacing-y: 0;\n  --tw-translate-x: 0;\n  --tw-translate-y: 0;\n  --tw-rotate: 0;\n  --tw-skew-x: 0;\n  --tw-skew-y: 0;\n  --tw-scale-x: 1;\n  --tw-scale-y: 1;\n  --tw-pan-x:  ;\n  --tw-pan-y:  ;\n  --tw-pinch-zoom:  ;\n  --tw-scroll-snap-strictness: proximity;\n  --tw-gradient-from-position:  ;\n  --tw-gradient-via-position:  ;\n  --tw-gradient-to-position:  ;\n  --tw-ordinal:  ;\n  --tw-slashed-zero:  ;\n  --tw-numeric-figure:  ;\n  --tw-numeric-spacing:  ;\n  --tw-numeric-fraction:  ;\n  --tw-ring-inset:  ;\n  --tw-ring-offset-width: 0px;\n  --tw-ring-offset-color: #fff;\n  --tw-ring-color: rgba(59, 130, 246, 0.5);\n  --tw-ring-offset-shadow: 0 0 rgba(0,0,0,0);\n  --tw-ring-shadow: 0 0 rgba(0,0,0,0);\n  --tw-shadow: 0 0 rgba(0,0,0,0);\n  --tw-shadow-colored: 0 0 rgba(0,0,0,0);\n  --tw-blur:  ;\n  --tw-brightness:  ;\n  --tw-contrast:  ;\n  --tw-grayscale:  ;\n  --tw-hue-rotate:  ;\n  --tw-invert:  ;\n  --tw-saturate:  ;\n  --tw-sepia:  ;\n  --tw-drop-shadow:  ;\n  --tw-backdrop-blur:  ;\n  --tw-backdrop-brightness:  ;\n  --tw-backdrop-contrast:  ;\n  --tw-backdrop-grayscale:  ;\n  --tw-backdrop-hue-rotate:  ;\n  --tw-backdrop-invert:  ;\n  --tw-backdrop-opacity:  ;\n  --tw-backdrop-saturate:  ;\n  --tw-backdrop-sepia:  ;\n}\n\n::backdrop {\n  --tw-border-spacing-x: 0;\n  --tw-border-spacing-y: 0;\n  --tw-translate-x: 0;\n  --tw-translate-y: 0;\n  --tw-rotate: 0;\n  --tw-skew-x: 0;\n  --tw-skew-y: 0;\n  --tw-scale-x: 1;\n  --tw-scale-y: 1;\n  --tw-pan-x:  ;\n  --tw-pan-y:  ;\n  --tw-pinch-zoom:  ;\n  --tw-scroll-snap-strictness: proximity;\n  --tw-gradient-from-position:  ;\n  --tw-gradient-via-position:  ;\n  --tw-gradient-to-position:  ;\n  --tw-ordinal:  ;\n  --tw-slashed-zero:  ;\n  --tw-numeric-figure:  ;\n  --tw-numeric-spacing:  ;\n  --tw-numeric-fraction:  ;\n  --tw-ring-inset:  ;\n  --tw-ring-offset-width: 0px;\n  --tw-ring-offset-color: #fff;\n  --tw-ring-color: rgba(59, 130, 246, 0.5);\n  --tw-ring-offset-shadow: 0 0 rgba(0,0,0,0);\n  --tw-ring-shadow: 0 0 rgba(0,0,0,0);\n  --tw-shadow: 0 0 rgba(0,0,0,0);\n  --tw-shadow-colored: 0 0 rgba(0,0,0,0);\n  --tw-blur:  ;\n  --tw-brightness:  ;\n  --tw-contrast:  ;\n  --tw-grayscale:  ;\n  --tw-hue-rotate:  ;\n  --tw-invert:  ;\n  --tw-saturate:  ;\n  --tw-sepia:  ;\n  --tw-drop-shadow:  ;\n  --tw-backdrop-blur:  ;\n  --tw-backdrop-brightness:  ;\n  --tw-backdrop-contrast:  ;\n  --tw-backdrop-grayscale:  ;\n  --tw-backdrop-hue-rotate:  ;\n  --tw-backdrop-invert:  ;\n  --tw-backdrop-opacity:  ;\n  --tw-backdrop-saturate:  ;\n  --tw-backdrop-sepia:  ;\n}\n.m-auto {\n  margin: auto;\n}\n.mt-10 {\n  margin-top: 2.5rem;\n}\n.mt-5 {\n  margin-top: 1.25rem;\n}\n.flex {\n  display: flex;\n}\n.h-full {\n  height: 100%;\n}\n.w-\\[10rem\\] {\n  width: 10rem;\n}\n.flex-row {\n  flex-direction: row;\n}\n.flex-col {\n  flex-direction: column;\n}\n.content-center {\n  align-content: center;\n}\n.items-center {\n  align-items: center;\n}\n.rounded-full {\n  border-radius: 9999px;\n}\n.bg-indigo-500 {\n  --tw-bg-opacity: 1;\n  background-color: rgba(99, 102, 241, 1);\n  background-color: rgba(99, 102, 241, var(--tw-bg-opacity));\n}\n.bg-indigo-800 {\n  --tw-bg-opacity: 1;\n  background-color: rgba(55, 48, 163, 1);\n  background-color: rgba(55, 48, 163, var(--tw-bg-opacity));\n}\n.px-5 {\n  padding-left: 1.25rem;\n  padding-right: 1.25rem;\n}\n.py-2 {\n  padding-top: 0.5rem;\n  padding-bottom: 0.5rem;\n}\n.pb-40 {\n  padding-bottom: 10rem;\n}\n.text-sm {\n  font-size: 0.875rem;\n  line-height: 1.25rem;\n}\n.text-xl {\n  font-size: 1.25rem;\n  line-height: 1.75rem;\n}\n.font-semibold {\n  font-weight: 600;\n}\n.text-white {\n  --tw-text-opacity: 1;\n  color: rgba(255, 255, 255, 1);\n  color: rgba(255, 255, 255, var(--tw-text-opacity));\n}\n\nhtml, body, .default-bg, #root {\n    background-color: rgb(238, 242, 255);\n    height: 100%;\n    width: 100%;\n}\n\n.hover\\:bg-indigo-500:hover {\n  --tw-bg-opacity: 1;\n  background-color: rgba(99, 102, 241, 1);\n  background-color: rgba(99, 102, 241, var(--tw-bg-opacity));\n}\n\n', "" ]);
+            ___CSS_LOADER_EXPORT___.push([ module.id, '/*\n! tailwindcss v3.3.3 | MIT License | https://tailwindcss.com\n*//*\n1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)\n2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)\n*/\n\n*,\n::before,\n::after {\n  box-sizing: border-box; /* 1 */\n  border-width: 0; /* 2 */\n  border-style: solid; /* 2 */\n  border-color: #e5e7eb; /* 2 */\n}\n\n::before,\n::after {\n  --tw-content: \'\';\n}\n\n/*\n1. Use a consistent sensible line-height in all browsers.\n2. Prevent adjustments of font size after orientation changes in iOS.\n3. Use a more readable tab size.\n4. Use the user\'s configured `sans` font-family by default.\n5. Use the user\'s configured `sans` font-feature-settings by default.\n6. Use the user\'s configured `sans` font-variation-settings by default.\n*/\n\nhtml {\n  line-height: 1.5; /* 1 */\n  -webkit-text-size-adjust: 100%; /* 2 */\n  -moz-tab-size: 4; /* 3 */\n  -o-tab-size: 4;\n     tab-size: 4; /* 3 */\n  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; /* 4 */\n  font-feature-settings: normal; /* 5 */\n  font-variation-settings: normal; /* 6 */\n}\n\n/*\n1. Remove the margin in all browsers.\n2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.\n*/\n\nbody {\n  margin: 0; /* 1 */\n  line-height: inherit; /* 2 */\n}\n\n/*\n1. Add the correct height in Firefox.\n2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)\n3. Ensure horizontal rules are visible by default.\n*/\n\nhr {\n  height: 0; /* 1 */\n  color: inherit; /* 2 */\n  border-top-width: 1px; /* 3 */\n}\n\n/*\nAdd the correct text decoration in Chrome, Edge, and Safari.\n*/\n\nabbr:where([title]) {\n  text-decoration: underline;\n  -webkit-text-decoration: underline dotted;\n          text-decoration: underline dotted;\n}\n\n/*\nRemove the default font size and weight for headings.\n*/\n\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  font-size: inherit;\n  font-weight: inherit;\n}\n\n/*\nReset links to optimize for opt-in styling instead of opt-out.\n*/\n\na {\n  color: inherit;\n  text-decoration: inherit;\n}\n\n/*\nAdd the correct font weight in Edge and Safari.\n*/\n\nb,\nstrong {\n  font-weight: bolder;\n}\n\n/*\n1. Use the user\'s configured `mono` font family by default.\n2. Correct the odd `em` font sizing in all browsers.\n*/\n\ncode,\nkbd,\nsamp,\npre {\n  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; /* 1 */\n  font-size: 1em; /* 2 */\n}\n\n/*\nAdd the correct font size in all browsers.\n*/\n\nsmall {\n  font-size: 80%;\n}\n\n/*\nPrevent `sub` and `sup` elements from affecting the line height in all browsers.\n*/\n\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline;\n}\n\nsub {\n  bottom: -0.25em;\n}\n\nsup {\n  top: -0.5em;\n}\n\n/*\n1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)\n2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)\n3. Remove gaps between table borders by default.\n*/\n\ntable {\n  text-indent: 0; /* 1 */\n  border-color: inherit; /* 2 */\n  border-collapse: collapse; /* 3 */\n}\n\n/*\n1. Change the font styles in all browsers.\n2. Remove the margin in Firefox and Safari.\n3. Remove default padding in all browsers.\n*/\n\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  font-family: inherit; /* 1 */\n  font-feature-settings: inherit; /* 1 */\n  font-variation-settings: inherit; /* 1 */\n  font-size: 100%; /* 1 */\n  font-weight: inherit; /* 1 */\n  line-height: inherit; /* 1 */\n  color: inherit; /* 1 */\n  margin: 0; /* 2 */\n  padding: 0; /* 3 */\n}\n\n/*\nRemove the inheritance of text transform in Edge and Firefox.\n*/\n\nbutton,\nselect {\n  text-transform: none;\n}\n\n/*\n1. Correct the inability to style clickable types in iOS and Safari.\n2. Remove default button styles.\n*/\n\nbutton,\n[type=\'button\'],\n[type=\'reset\'],\n[type=\'submit\'] {\n  -webkit-appearance: button; /* 1 */\n  background-color: transparent; /* 2 */\n  background-image: none; /* 2 */\n}\n\n/*\nUse the modern Firefox focus style for all focusable elements.\n*/\n\n:-moz-focusring {\n  outline: auto;\n}\n\n/*\nRemove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)\n*/\n\n:-moz-ui-invalid {\n  box-shadow: none;\n}\n\n/*\nAdd the correct vertical alignment in Chrome and Firefox.\n*/\n\nprogress {\n  vertical-align: baseline;\n}\n\n/*\nCorrect the cursor style of increment and decrement buttons in Safari.\n*/\n\n::-webkit-inner-spin-button,\n::-webkit-outer-spin-button {\n  height: auto;\n}\n\n/*\n1. Correct the odd appearance in Chrome and Safari.\n2. Correct the outline style in Safari.\n*/\n\n[type=\'search\'] {\n  -webkit-appearance: textfield; /* 1 */\n  outline-offset: -2px; /* 2 */\n}\n\n/*\nRemove the inner padding in Chrome and Safari on macOS.\n*/\n\n::-webkit-search-decoration {\n  -webkit-appearance: none;\n}\n\n/*\n1. Correct the inability to style clickable types in iOS and Safari.\n2. Change font properties to `inherit` in Safari.\n*/\n\n::-webkit-file-upload-button {\n  -webkit-appearance: button; /* 1 */\n  font: inherit; /* 2 */\n}\n\n/*\nAdd the correct display in Chrome and Safari.\n*/\n\nsummary {\n  display: list-item;\n}\n\n/*\nRemoves the default spacing and border for appropriate elements.\n*/\n\nblockquote,\ndl,\ndd,\nh1,\nh2,\nh3,\nh4,\nh5,\nh6,\nhr,\nfigure,\np,\npre {\n  margin: 0;\n}\n\nfieldset {\n  margin: 0;\n  padding: 0;\n}\n\nlegend {\n  padding: 0;\n}\n\nol,\nul,\nmenu {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n\n/*\nReset default styling for dialogs.\n*/\ndialog {\n  padding: 0;\n}\n\n/*\nPrevent resizing textareas horizontally by default.\n*/\n\ntextarea {\n  resize: vertical;\n}\n\n/*\n1. Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)\n2. Set the default placeholder color to the user\'s configured gray 400 color.\n*/\n\ninput::-moz-placeholder, textarea::-moz-placeholder {\n  opacity: 1; /* 1 */\n  color: #9ca3af; /* 2 */\n}\n\ninput::placeholder,\ntextarea::placeholder {\n  opacity: 1; /* 1 */\n  color: #9ca3af; /* 2 */\n}\n\n/*\nSet the default cursor for buttons.\n*/\n\nbutton,\n[role="button"] {\n  cursor: pointer;\n}\n\n/*\nMake sure disabled buttons don\'t get the pointer cursor.\n*/\n:disabled {\n  cursor: default;\n}\n\n/*\n1. Make replaced elements `display: block` by default. (https://github.com/mozdevs/cssremedy/issues/14)\n2. Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)\n   This can trigger a poorly considered lint error in some tools but is included by design.\n*/\n\nimg,\nsvg,\nvideo,\ncanvas,\naudio,\niframe,\nembed,\nobject {\n  display: block; /* 1 */\n  vertical-align: middle; /* 2 */\n}\n\n/*\nConstrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)\n*/\n\nimg,\nvideo {\n  max-width: 100%;\n  height: auto;\n}\n\n/* Make elements with the HTML hidden attribute stay hidden by default */\n[hidden] {\n  display: none;\n}\n\n*, ::before, ::after {\n  --tw-border-spacing-x: 0;\n  --tw-border-spacing-y: 0;\n  --tw-translate-x: 0;\n  --tw-translate-y: 0;\n  --tw-rotate: 0;\n  --tw-skew-x: 0;\n  --tw-skew-y: 0;\n  --tw-scale-x: 1;\n  --tw-scale-y: 1;\n  --tw-pan-x:  ;\n  --tw-pan-y:  ;\n  --tw-pinch-zoom:  ;\n  --tw-scroll-snap-strictness: proximity;\n  --tw-gradient-from-position:  ;\n  --tw-gradient-via-position:  ;\n  --tw-gradient-to-position:  ;\n  --tw-ordinal:  ;\n  --tw-slashed-zero:  ;\n  --tw-numeric-figure:  ;\n  --tw-numeric-spacing:  ;\n  --tw-numeric-fraction:  ;\n  --tw-ring-inset:  ;\n  --tw-ring-offset-width: 0px;\n  --tw-ring-offset-color: #fff;\n  --tw-ring-color: rgba(59, 130, 246, 0.5);\n  --tw-ring-offset-shadow: 0 0 rgba(0,0,0,0);\n  --tw-ring-shadow: 0 0 rgba(0,0,0,0);\n  --tw-shadow: 0 0 rgba(0,0,0,0);\n  --tw-shadow-colored: 0 0 rgba(0,0,0,0);\n  --tw-blur:  ;\n  --tw-brightness:  ;\n  --tw-contrast:  ;\n  --tw-grayscale:  ;\n  --tw-hue-rotate:  ;\n  --tw-invert:  ;\n  --tw-saturate:  ;\n  --tw-sepia:  ;\n  --tw-drop-shadow:  ;\n  --tw-backdrop-blur:  ;\n  --tw-backdrop-brightness:  ;\n  --tw-backdrop-contrast:  ;\n  --tw-backdrop-grayscale:  ;\n  --tw-backdrop-hue-rotate:  ;\n  --tw-backdrop-invert:  ;\n  --tw-backdrop-opacity:  ;\n  --tw-backdrop-saturate:  ;\n  --tw-backdrop-sepia:  ;\n}\n\n::backdrop {\n  --tw-border-spacing-x: 0;\n  --tw-border-spacing-y: 0;\n  --tw-translate-x: 0;\n  --tw-translate-y: 0;\n  --tw-rotate: 0;\n  --tw-skew-x: 0;\n  --tw-skew-y: 0;\n  --tw-scale-x: 1;\n  --tw-scale-y: 1;\n  --tw-pan-x:  ;\n  --tw-pan-y:  ;\n  --tw-pinch-zoom:  ;\n  --tw-scroll-snap-strictness: proximity;\n  --tw-gradient-from-position:  ;\n  --tw-gradient-via-position:  ;\n  --tw-gradient-to-position:  ;\n  --tw-ordinal:  ;\n  --tw-slashed-zero:  ;\n  --tw-numeric-figure:  ;\n  --tw-numeric-spacing:  ;\n  --tw-numeric-fraction:  ;\n  --tw-ring-inset:  ;\n  --tw-ring-offset-width: 0px;\n  --tw-ring-offset-color: #fff;\n  --tw-ring-color: rgba(59, 130, 246, 0.5);\n  --tw-ring-offset-shadow: 0 0 rgba(0,0,0,0);\n  --tw-ring-shadow: 0 0 rgba(0,0,0,0);\n  --tw-shadow: 0 0 rgba(0,0,0,0);\n  --tw-shadow-colored: 0 0 rgba(0,0,0,0);\n  --tw-blur:  ;\n  --tw-brightness:  ;\n  --tw-contrast:  ;\n  --tw-grayscale:  ;\n  --tw-hue-rotate:  ;\n  --tw-invert:  ;\n  --tw-saturate:  ;\n  --tw-sepia:  ;\n  --tw-drop-shadow:  ;\n  --tw-backdrop-blur:  ;\n  --tw-backdrop-brightness:  ;\n  --tw-backdrop-contrast:  ;\n  --tw-backdrop-grayscale:  ;\n  --tw-backdrop-hue-rotate:  ;\n  --tw-backdrop-invert:  ;\n  --tw-backdrop-opacity:  ;\n  --tw-backdrop-saturate:  ;\n  --tw-backdrop-sepia:  ;\n}\n.fixed {\n  position: fixed;\n}\n.relative {\n  position: relative;\n}\n.inset-0 {\n  top: 0px;\n  right: 0px;\n  bottom: 0px;\n  left: 0px;\n}\n.z-50 {\n  z-index: 50;\n}\n.m-10 {\n  margin: 2.5rem;\n}\n.m-2 {\n  margin: 0.5rem;\n}\n.m-5 {\n  margin: 1.25rem;\n}\n.mx-auto {\n  margin-left: auto;\n  margin-right: auto;\n}\n.my-6 {\n  margin-top: 1.5rem;\n  margin-bottom: 1.5rem;\n}\n.-mb-px {\n  margin-bottom: -1px;\n}\n.mr-1 {\n  margin-right: 0.25rem;\n}\n.mr-3 {\n  margin-right: 0.75rem;\n}\n.mt-3 {\n  margin-top: 0.75rem;\n}\n.inline-block {\n  display: inline-block;\n}\n.flex {\n  display: flex;\n}\n.table {\n  display: table;\n}\n.hidden {\n  display: none;\n}\n.h-20 {\n  height: 5rem;\n}\n.h-full {\n  height: 100%;\n}\n.w-1\\/2 {\n  width: 50%;\n}\n.w-5\\/6 {\n  width: 83.333333%;\n}\n.w-\\[10rem\\] {\n  width: 10rem;\n}\n.w-\\[6rem\\] {\n  width: 6rem;\n}\n.w-auto {\n  width: auto;\n}\n.w-full {\n  width: 100%;\n}\n.max-w-3xl {\n  max-width: 48rem;\n}\n.table-fixed {\n  table-layout: fixed;\n}\n.flex-row {\n  flex-direction: row;\n}\n.flex-row-reverse {\n  flex-direction: row-reverse;\n}\n.flex-col {\n  flex-direction: column;\n}\n.content-center {\n  align-content: center;\n}\n.items-start {\n  align-items: flex-start;\n}\n.items-center {\n  align-items: center;\n}\n.justify-center {\n  justify-content: center;\n}\n.justify-between {\n  justify-content: space-between;\n}\n.overflow-x-auto {\n  overflow-x: auto;\n}\n.overflow-y-auto {\n  overflow-y: auto;\n}\n.rounded-full {\n  border-radius: 9999px;\n}\n.rounded-lg {\n  border-radius: 0.5rem;\n}\n.rounded-xl {\n  border-radius: 0.75rem;\n}\n.rounded-t {\n  border-top-left-radius: 0.25rem;\n  border-top-right-radius: 0.25rem;\n}\n.border-0 {\n  border-width: 0px;\n}\n.border-b {\n  border-bottom-width: 1px;\n}\n.border-l {\n  border-left-width: 1px;\n}\n.border-r {\n  border-right-width: 1px;\n}\n.border-t {\n  border-top-width: 1px;\n}\n.border-t-2 {\n  border-top-width: 2px;\n}\n.border-solid {\n  border-style: solid;\n}\n.border-gray-300 {\n  --tw-border-opacity: 1;\n  border-color: rgba(209, 213, 219, 1);\n  border-color: rgba(209, 213, 219, var(--tw-border-opacity));\n}\n.border-indigo-900 {\n  --tw-border-opacity: 1;\n  border-color: rgba(49, 46, 129, 1);\n  border-color: rgba(49, 46, 129, var(--tw-border-opacity));\n}\n.bg-budget {\n  --tw-bg-opacity: 1;\n  background-color: rgba(129, 140, 248, 1);\n  background-color: rgba(129, 140, 248, var(--tw-bg-opacity));\n}\n.bg-budget-dark {\n  --tw-bg-opacity: 1;\n  background-color: rgba(49, 46, 129, 1);\n  background-color: rgba(49, 46, 129, var(--tw-bg-opacity));\n}\n.bg-gray-800 {\n  --tw-bg-opacity: 1;\n  background-color: rgba(31, 41, 55, 1);\n  background-color: rgba(31, 41, 55, var(--tw-bg-opacity));\n}\n.bg-white {\n  --tw-bg-opacity: 1;\n  background-color: rgba(255, 255, 255, 1);\n  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));\n}\n.bg-opacity-50 {\n  --tw-bg-opacity: 0.5;\n}\n.p-10 {\n  padding: 2.5rem;\n}\n.p-5 {\n  padding: 1.25rem;\n}\n.p-6 {\n  padding: 1.5rem;\n}\n.px-4 {\n  padding-left: 1rem;\n  padding-right: 1rem;\n}\n.px-5 {\n  padding-left: 1.25rem;\n  padding-right: 1.25rem;\n}\n.py-2 {\n  padding-top: 0.5rem;\n  padding-bottom: 0.5rem;\n}\n.text-left {\n  text-align: left;\n}\n.text-center {\n  text-align: center;\n}\n.text-2xl {\n  font-size: 1.5rem;\n  line-height: 2rem;\n}\n.text-4xl {\n  font-size: 2.25rem;\n  line-height: 2.5rem;\n}\n.text-lg {\n  font-size: 1.125rem;\n  line-height: 1.75rem;\n}\n.text-sm {\n  font-size: 0.875rem;\n  line-height: 1.25rem;\n}\n.text-xl {\n  font-size: 1.25rem;\n  line-height: 1.75rem;\n}\n.font-bold {\n  font-weight: 700;\n}\n.font-semibold {\n  font-weight: 600;\n}\n.text-budget-dark {\n  --tw-text-opacity: 1;\n  color: rgba(49, 46, 129, 1);\n  color: rgba(49, 46, 129, var(--tw-text-opacity));\n}\n.text-budget-light {\n  --tw-text-opacity: 1;\n  color: rgba(199, 210, 254, 1);\n  color: rgba(199, 210, 254, var(--tw-text-opacity));\n}\n.text-gray-400 {\n  --tw-text-opacity: 1;\n  color: rgba(156, 163, 175, 1);\n  color: rgba(156, 163, 175, var(--tw-text-opacity));\n}\n.text-white {\n  --tw-text-opacity: 1;\n  color: rgba(255, 255, 255, 1);\n  color: rgba(255, 255, 255, var(--tw-text-opacity));\n}\n.no-underline {\n  text-decoration-line: none;\n}\n.opacity-0 {\n  opacity: 0;\n}\n.opacity-100 {\n  opacity: 1;\n}\n.shadow-lg {\n  --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);\n  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);\n  box-shadow: 0 0 rgba(0,0,0,0), 0 0 rgba(0,0,0,0), 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);\n  box-shadow: var(--tw-ring-offset-shadow, 0 0 rgba(0,0,0,0)), var(--tw-ring-shadow, 0 0 rgba(0,0,0,0)), var(--tw-shadow);\n}\n.outline-none {\n  outline: 2px solid transparent;\n  outline-offset: 2px;\n}\n.transition-all {\n  transition-property: all;\n  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n  transition-duration: 150ms;\n}\n.transition-opacity {\n  transition-property: opacity;\n  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n  transition-duration: 150ms;\n}\n.duration-300 {\n  transition-duration: 300ms;\n}\n\nhtml, body, .budget-bg {\n    background-color: rgb(238, 242, 255);\n}\n\n.hover\\:bg-budget:hover {\n  --tw-bg-opacity: 1;\n  background-color: rgba(129, 140, 248, 1);\n  background-color: rgba(129, 140, 248, var(--tw-bg-opacity));\n}\n\n.hover\\:text-budget-light:hover {\n  --tw-text-opacity: 1;\n  color: rgba(199, 210, 254, 1);\n  color: rgba(199, 210, 254, var(--tw-text-opacity));\n}\n\n.focus\\:outline-none:focus {\n  outline: 2px solid transparent;\n  outline-offset: 2px;\n}\n\n@media (min-width: 768px) {\n\n  .md\\:flex-row {\n    flex-direction: row;\n  }\n}\n\n@media (min-width: 1024px) {\n\n  .lg\\:m-28 {\n    margin: 7rem;\n  }\n}\n\n', "" ]);
             // Exports
             /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ___CSS_LOADER_EXPORT___;
             /***/        },
@@ -6738,6 +6738,34 @@
             a: getter
         }), getter;
         /******/    }, 
+    /******/
+    /******/ /* webpack/runtime/create fake namespace object */
+    /******/ getProto = Object.getPrototypeOf ? obj => Object.getPrototypeOf(obj) : obj => obj.__proto__
+    /******/ , 
+    /******/ // create a fake namespace object
+    /******/ // mode & 1: value is a module id, require it
+    /******/ // mode & 2: merge all properties of value into the ns
+    /******/ // mode & 4: return value when already ns object
+    /******/ // mode & 16: return value when it's Promise-like
+    /******/ // mode & 8|1: behave like require
+    /******/ __webpack_require__.t = function(value, mode) {
+        /******/ if (
+        /******/ 1 & mode && (value = this(value)), 8 & mode) return value;
+        /******/        if ("object" == typeof value && value) {
+            /******/ if (4 & mode && value.__esModule) return value;
+            /******/            if (16 & mode && "function" == typeof value.then) return value;
+            /******/        }
+        /******/        var ns = Object.create(null);
+        /******/        __webpack_require__.r(ns);
+        /******/ var def = {};
+        /******/        leafPrototypes = leafPrototypes || [ null, getProto({}), getProto([]), getProto(getProto) ];
+        /******/ for (var current = 2 & mode && value; "object" == typeof current && !~leafPrototypes.indexOf(current); current = getProto(current)) 
+        /******/ Object.getOwnPropertyNames(current).forEach((key => def[key] = () => value[key]));
+        /******/
+        /******/        
+        /******/ return def["default"] = () => value
+        /******/ , __webpack_require__.d(ns, def), ns;
+        /******/    }, 
     /******/ // define getter functions for harmony exports
     /******/ __webpack_require__.d = (exports, definition) => {
         /******/ for (var key in definition) 
@@ -6750,18 +6778,602 @@
         /******/    }, 
     /******/ __webpack_require__.o = (obj, prop) => Object.prototype.hasOwnProperty.call(obj, prop)
     /******/ , 
+    /******/ // define __esModule on exports
+    /******/ __webpack_require__.r = exports => {
+        /******/ "undefined" != typeof Symbol && Symbol.toStringTag && 
+        /******/ Object.defineProperty(exports, Symbol.toStringTag, {
+            value: "Module"
+        })
+        /******/ , Object.defineProperty(exports, "__esModule", {
+            value: !0
+        });
+    }
+    /******/ , 
     /******/ __webpack_require__.nc = undefined, 
     // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
     (() => {
         // EXTERNAL MODULE: ./node_modules/react/index.js
-        var react = __webpack_require__(294), react_dom = __webpack_require__(935), injectStylesIntoStyleTag = __webpack_require__(379), injectStylesIntoStyleTag_default =  __webpack_require__.n(injectStylesIntoStyleTag), styleDomAPI = __webpack_require__(795), styleDomAPI_default =  __webpack_require__.n(styleDomAPI), insertBySelector = __webpack_require__(569), insertBySelector_default =  __webpack_require__.n(insertBySelector), setAttributesWithoutAttributes = __webpack_require__(565), setAttributesWithoutAttributes_default =  __webpack_require__.n(setAttributesWithoutAttributes), insertStyleElement = __webpack_require__(216), insertStyleElement_default =  __webpack_require__.n(insertStyleElement), styleTagTransform = __webpack_require__(589), styleTagTransform_default =  __webpack_require__.n(styleTagTransform), styles = __webpack_require__(182), options = {};
-        // EXTERNAL MODULE: ./node_modules/react-dom/index.js
-                options.styleTagTransform = styleTagTransform_default(), options.setAttributes = setAttributesWithoutAttributes_default(), 
+        var react = __webpack_require__(294), react_namespaceObject =  __webpack_require__.t(react, 2), react_dom = __webpack_require__(935), injectStylesIntoStyleTag = __webpack_require__(379), injectStylesIntoStyleTag_default =  __webpack_require__.n(injectStylesIntoStyleTag), styleDomAPI = __webpack_require__(795), styleDomAPI_default =  __webpack_require__.n(styleDomAPI), insertBySelector = __webpack_require__(569), insertBySelector_default =  __webpack_require__.n(insertBySelector), setAttributesWithoutAttributes = __webpack_require__(565), setAttributesWithoutAttributes_default =  __webpack_require__.n(setAttributesWithoutAttributes), insertStyleElement = __webpack_require__(216), insertStyleElement_default =  __webpack_require__.n(insertStyleElement), styleTagTransform = __webpack_require__(589), styleTagTransform_default =  __webpack_require__.n(styleTagTransform), styles = __webpack_require__(182), options = {};
+        options.styleTagTransform = styleTagTransform_default(), options.setAttributes = setAttributesWithoutAttributes_default(), 
         options.insert = insertBySelector_default().bind(null, "head"), options.domAPI = styleDomAPI_default(), 
         options.insertStyleElement = insertStyleElement_default();
         injectStylesIntoStyleTag_default()(styles /* default */ .Z, options);
         /* harmony default export */        styles /* default */ .Z && styles /* default */ .Z.locals ? styles /* default */ .Z.locals : undefined;
-        // CONCATENATED MODULE: ./src/client/root.tsx
+        // CONCATENATED MODULE: ./node_modules/@headlessui/react/dist/utils/class-names.js
+        function class_names_t(...r) {
+            return Array.from(new Set(r.flatMap((n => "string" == typeof n ? n.split(" ") : [])))).filter(Boolean).join(" ");
+        }
+        // CONCATENATED MODULE: ./node_modules/@headlessui/react/dist/utils/match.js
+        function match_u(r, n, ...a) {
+            if (r in n) {
+                let e = n[r];
+                return "function" == typeof e ? e(...a) : e;
+            }
+            let t = new Error(`Tried to handle "${r}" but there is no handler defined. Only defined handlers are: ${Object.keys(n).map((e => `"${e}"`)).join(", ")}.`);
+            throw Error.captureStackTrace && Error.captureStackTrace(t, match_u), t;
+        }
+        // CONCATENATED MODULE: ./node_modules/@headlessui/react/dist/utils/render.js
+        var e, a, S = ((a = S || {})[a.None = 0] = "None", a[a.RenderStrategy = 1] = "RenderStrategy", 
+        a[a.Static = 2] = "Static", a), render_j = ((e = render_j || {})[e.Unmount = 0] = "Unmount", 
+        e[e.Hidden = 1] = "Hidden", e);
+        function X({ourProps: r, theirProps: t, slot: e, defaultTag: a, features: s, visible: n = !0, name: f}) {
+            let o = N(t, r);
+            if (n) return c(o, e, a, f);
+            let u = null != s ? s : 0;
+            if (2 & u) {
+                let {"static": l = !1, ...p} = o;
+                if (l) return c(p, e, a, f);
+            }
+            if (1 & u) {
+                let {unmount: l = !0, ...p} = o;
+                return match_u(l ? 0 : 1, {
+                    0: () => null,
+                    1: () => c({
+                        ...p,
+                        hidden: !0,
+                        style: {
+                            display: "none"
+                        }
+                    }, e, a, f)
+                });
+            }
+            return c(o, e, a, f);
+        }
+        function c(r, t = {}, e, a) {
+            let {as: s = e, children: n, refName: f = "ref", ...o} = g(r, [ "unmount", "static" ]), u = void 0 !== r.ref ? {
+                [f]: r.ref
+            } : {}, l = "function" == typeof n ? n(t) : n;
+            "className" in o && o.className && "function" == typeof o.className && (o.className = o.className(t));
+            let p = {};
+            if (t) {
+                let i = !1, m = [];
+                for (let [y, d] of Object.entries(t)) "boolean" == typeof d && (i = !0), !0 === d && m.push(y);
+                i && (p["data-headlessui-state"] = m.join(" "));
+            }
+            if (s === react.Fragment && Object.keys(R(o)).length > 0) {
+                if (!(0, react.isValidElement)(l) || Array.isArray(l) && l.length > 1) throw new Error([ 'Passing props on "Fragment"!', "", `The current component <${a} /> is rendering a "Fragment".`, "However we need to passthrough the following props:", Object.keys(o).map((d => `  - ${d}`)).join("\n"), "", "You can apply a few solutions:", [ 'Add an `as="..."` prop, to ensure that we render an actual element instead of a "Fragment".', "Render a single element as the child so that we can forward the props onto that element." ].map((d => `  - ${d}`)).join("\n") ].join("\n"));
+                let i = l.props, m = "function" == typeof (null == i ? void 0 : i.className) ? (...d) => class_names_t(null == i ? void 0 : i.className(...d), o.className) : class_names_t(null == i ? void 0 : i.className, o.className), y = m ? {
+                    className: m
+                } : {};
+                return (0, react.cloneElement)(l, Object.assign({}, N(l.props, R(g(o, [ "ref" ]))), p, u, function w(...r) {
+                    return {
+                        ref: r.every((t => null == t)) ? void 0 : t => {
+                            for (let e of r) null != e && ("function" == typeof e ? e(t) : e.current = t);
+                        }
+                    };
+                }(l.ref, u.ref), y));
+            }
+            return (0, react.createElement)(s, Object.assign({}, g(o, [ "ref" ]), s !== react.Fragment && u, s !== react.Fragment && p), l);
+        }
+        function N(...r) {
+            if (0 === r.length) return {};
+            if (1 === r.length) return r[0];
+            let t = {}, e = {};
+            for (let s of r) for (let n in s) n.startsWith("on") && "function" == typeof s[n] ? (null != e[n] || (e[n] = []), 
+            e[n].push(s[n])) : t[n] = s[n];
+            if (t.disabled || t["aria-disabled"]) return Object.assign(t, Object.fromEntries(Object.keys(e).map((s => [ s, void 0 ]))));
+            for (let s in e) Object.assign(t, {
+                [s](n, ...f) {
+                    let o = e[s];
+                    for (let u of o) {
+                        if ((n instanceof Event || (null == n ? void 0 : n.nativeEvent) instanceof Event) && n.defaultPrevented) return;
+                        u(n, ...f);
+                    }
+                }
+            });
+            return t;
+        }
+        function D(r) {
+            var t;
+            return Object.assign((0, react.forwardRef)(r), {
+                displayName: null != (t = r.displayName) ? t : r.name
+            });
+        }
+        function R(r) {
+            let t = Object.assign({}, r);
+            for (let e in t) void 0 === t[e] && delete t[e];
+            return t;
+        }
+        function g(r, t = []) {
+            let e = Object.assign({}, r);
+            for (let a of t) a in e && delete e[a];
+            return e;
+        }
+        // CONCATENATED MODULE: ./node_modules/@headlessui/react/dist/internal/open-closed.js
+        let n = (0, react.createContext)(null);
+        n.displayName = "OpenClosedContext";
+        var open_closed_d = (e => (e[e.Open = 1] = "Open", e[e.Closed = 2] = "Closed", e[e.Closing = 4] = "Closing", 
+        e[e.Opening = 8] = "Opening", e))(open_closed_d || {});
+        function C() {
+            return (0, react.useContext)(n);
+        }
+        function open_closed_c({value: o, children: r}) {
+            return react.createElement(n.Provider, {
+                value: o
+            }, r);
+        }
+        // CONCATENATED MODULE: ./node_modules/@headlessui/react/dist/utils/env.js
+        var i = Object.defineProperty, r = (t, e, n) => (((t, e, n) => {
+            e in t ? i(t, e, {
+                enumerable: !0,
+                configurable: !0,
+                writable: !0,
+                value: n
+            }) : t[e] = n;
+        })(t, "symbol" != typeof e ? e + "" : e, n), n);
+        let s = new class o {
+            constructor() {
+                r(this, "current", this.detect()), r(this, "handoffState", "pending"), r(this, "currentId", 0);
+            }
+            set(e) {
+                this.current !== e && (this.handoffState = "pending", this.currentId = 0, this.current = e);
+            }
+            reset() {
+                this.set(this.detect());
+            }
+            nextId() {
+                return ++this.currentId;
+            }
+            get isServer() {
+                return "server" === this.current;
+            }
+            get isClient() {
+                return "client" === this.current;
+            }
+            detect() {
+                return "undefined" == typeof window || "undefined" == typeof document ? "server" : "client";
+            }
+            handoff() {
+                "pending" === this.handoffState && (this.handoffState = "complete");
+            }
+            get isHandoffComplete() {
+                return "complete" === this.handoffState;
+            }
+        }, use_iso_morphic_effect_l = (e, f) => {
+            s.isServer ? (0, react.useEffect)(e, f) : (0, react.useLayoutEffect)(e, f);
+        };
+        // CONCATENATED MODULE: ./node_modules/@headlessui/react/dist/hooks/use-is-mounted.js
+        function f() {
+            let e = (0, react.useRef)(!1);
+            return use_iso_morphic_effect_l((() => (e.current = !0, () => {
+                e.current = !1;
+            })), []), e;
+        }
+        // CONCATENATED MODULE: ./node_modules/@headlessui/react/dist/hooks/use-latest-value.js
+        function use_latest_value_s(e) {
+            let r = (0, react.useRef)(e);
+            return use_iso_morphic_effect_l((() => {
+                r.current = e;
+            }), [ e ]), r;
+        }
+        function use_server_handoff_complete_l() {
+            let r = // CONCATENATED MODULE: ./node_modules/@headlessui/react/dist/hooks/use-server-handoff-complete.js
+            function use_server_handoff_complete_s() {
+                let r = "undefined" == typeof document;
+                return (o => o.useSyncExternalStore)(react_namespaceObject)((() => () => {}), (() => !1), (() => !r));
+            }(), [e, n] = react.useState(s.isHandoffComplete);
+            return e && !1 === s.isHandoffComplete && n(!1), react.useEffect((() => {
+                !0 !== e && n(!0);
+            }), [ e ]), react.useEffect((() => s.handoff()), []), !r && e;
+        }
+        // CONCATENATED MODULE: ./node_modules/@headlessui/react/dist/hooks/use-event.js
+        let use_event_o = function(t) {
+            let e = use_latest_value_s(t);
+            return react.useCallback(((...r) => e.current(...r)), [ e ]);
+        }, u = Symbol();
+        function use_sync_refs_y(...t) {
+            let n = (0, react.useRef)(t);
+            (0, react.useEffect)((() => {
+                n.current = t;
+            }), [ t ]);
+            let c = use_event_o((e => {
+                for (let o of n.current) null != o && ("function" == typeof o ? o(e) : o.current = e);
+            }));
+            return t.every((e => null == e || (null == e ? void 0 : e[u]))) ? void 0 : c;
+        }
+        // CONCATENATED MODULE: ./node_modules/@headlessui/react/dist/utils/disposables.js
+        function disposables_o() {
+            let n = [], r = {
+                addEventListener: (e, t, s, a) => (e.addEventListener(t, s, a), r.add((() => e.removeEventListener(t, s, a)))),
+                requestAnimationFrame(...e) {
+                    let t = requestAnimationFrame(...e);
+                    return r.add((() => cancelAnimationFrame(t)));
+                },
+                nextFrame: (...e) => r.requestAnimationFrame((() => r.requestAnimationFrame(...e))),
+                setTimeout(...e) {
+                    let t = setTimeout(...e);
+                    return r.add((() => clearTimeout(t)));
+                },
+                microTask(...e) {
+                    let t = {
+                        current: !0
+                    };
+                    // CONCATENATED MODULE: ./node_modules/@headlessui/react/dist/utils/micro-task.js
+                    return function micro_task_t(e) {
+                        "function" == typeof queueMicrotask ? queueMicrotask(e) : Promise.resolve().then(e)["catch"]((o => setTimeout((() => {
+                            throw o;
+                        }))));
+                    }((() => {
+                        t.current && e[0]();
+                    })), r.add((() => {
+                        t.current = !1;
+                    }));
+                },
+                style(e, t, s) {
+                    let a = e.style.getPropertyValue(t);
+                    return Object.assign(e.style, {
+                        [t]: s
+                    }), this.add((() => {
+                        Object.assign(e.style, {
+                            [t]: a
+                        });
+                    }));
+                },
+                group(e) {
+                    let t = disposables_o();
+                    return e(t), this.add((() => t.dispose()));
+                },
+                add: e => (n.push(e), () => {
+                    let t = n.indexOf(e);
+                    if (t >= 0) for (let s of n.splice(t, 1)) s();
+                }),
+                dispose() {
+                    for (let e of n.splice(0)) e();
+                }
+            };
+            return r;
+        }
+        // CONCATENATED MODULE: ./node_modules/@headlessui/react/dist/components/transitions/utils/transition.js
+        function transition_g(t, ...e) {
+            t && e.length > 0 && t.classList.add(...e);
+        }
+        function v(t, ...e) {
+            t && e.length > 0 && t.classList.remove(...e);
+        }
+        function M(t, e, n, m) {
+            let a = n ? "enter" : "leave", u = disposables_o(), p = void 0 !== m ? // CONCATENATED MODULE: ./node_modules/@headlessui/react/dist/utils/once.js
+            function once_l(r) {
+                let e = {
+                    called: !1
+                };
+                return (...t) => {
+                    if (!e.called) return e.called = !0, r(...t);
+                };
+            }(m) : () => {};
+            "enter" === a && (t.removeAttribute("hidden"), t.style.display = "");
+            let o = match_u(a, {
+                enter: () => e.enter,
+                leave: () => e.leave
+            }), l = match_u(a, {
+                enter: () => e.enterTo,
+                leave: () => e.leaveTo
+            }), r = match_u(a, {
+                enter: () => e.enterFrom,
+                leave: () => e.leaveFrom
+            });
+            return v(t, ...e.base, ...e.enter, ...e.enterTo, ...e.enterFrom, ...e.leave, ...e.leaveFrom, ...e.leaveTo, ...e.entered), 
+            transition_g(t, ...e.base, ...o, ...r), u.nextFrame((() => {
+                v(t, ...e.base, ...o, ...r), transition_g(t, ...e.base, ...o, ...l), function b(t, e) {
+                    let n = disposables_o();
+                    if (!t) return n.dispose;
+                    let {transitionDuration: m, transitionDelay: a} = getComputedStyle(t), [u, p] = [ m, a ].map((l => {
+                        let [r = 0] = l.split(",").filter(Boolean).map((i => i.includes("ms") ? parseFloat(i) : 1e3 * parseFloat(i))).sort(((i, T) => T - i));
+                        return r;
+                    })), o = u + p;
+                    if (0 !== o) {
+                        n.group((r => {
+                            r.setTimeout((() => {
+                                e(), r.dispose();
+                            }), o), r.addEventListener(t, "transitionrun", (i => {
+                                i.target === i.currentTarget && r.dispose();
+                            }));
+                        }));
+                        let l = n.addEventListener(t, "transitionend", (r => {
+                            r.target === r.currentTarget && (e(), l());
+                        }));
+                    } else e();
+                    return n.add((() => e())), n.dispose;
+                }(t, (() => (v(t, ...e.base, ...o), transition_g(t, ...e.base, ...e.entered), p())));
+            })), u.dispose;
+        }
+        // CONCATENATED MODULE: ./node_modules/@headlessui/react/dist/hooks/use-disposables.js
+        function use_disposables_p() {
+            let [e] = (0, react.useState)(disposables_o);
+            return (0, react.useEffect)((() => () => e.dispose()), [ e ]), e;
+        }
+        // CONCATENATED MODULE: ./node_modules/@headlessui/react/dist/hooks/use-transition.js
+        function E({immediate: t, container: s, direction: n, classes: u, onStart: a, onStop: c}) {
+            let l = f(), d = use_disposables_p(), e = use_latest_value_s(n);
+            use_iso_morphic_effect_l((() => {
+                t && (e.current = "enter");
+            }), [ t ]), use_iso_morphic_effect_l((() => {
+                let r = disposables_o();
+                d.add(r.dispose);
+                let i = s.current;
+                if (i && "idle" !== e.current && l.current) return r.dispose(), a.current(e.current), 
+                r.add(M(i, u.current, "enter" === e.current, (() => {
+                    r.dispose(), c.current(e.current);
+                }))), r.dispose;
+            }), [ n ]);
+        }
+        // CONCATENATED MODULE: ./node_modules/@headlessui/react/dist/hooks/use-flags.js
+        function use_flags_c(a = 0) {
+            let [l, r] = (0, react.useState)(a), t = f(), o = (0, react.useCallback)((e => {
+                t.current && r((u => u | e));
+            }), [ l, t ]), m = (0, react.useCallback)((e => Boolean(l & e)), [ l ]), s = (0, 
+            react.useCallback)((e => {
+                t.current && r((u => u & ~e));
+            }), [ r, t ]), g = (0, react.useCallback)((e => {
+                t.current && r((u => u ^ e));
+            }), [ r ]);
+            return {
+                flags: l,
+                addFlag: o,
+                hasFlag: m,
+                removeFlag: s,
+                toggleFlag: g
+            };
+        }
+        // CONCATENATED MODULE: ./node_modules/@headlessui/react/dist/components/transitions/transition.js
+        function transition_S(t = "") {
+            return t.split(" ").filter((n => n.trim().length > 1));
+        }
+        let _ = (0, react.createContext)(null);
+        _.displayName = "TransitionContext";
+        var be = (r => (r.Visible = "visible", r.Hidden = "hidden", r))(be || {});
+        let transition_M = (0, react.createContext)(null);
+        function U(t) {
+            return "children" in t ? U(t.children) : t.current.filter((({el: n}) => null !== n.current)).filter((({state: n}) => "visible" === n)).length > 0;
+        }
+        function oe(t, n) {
+            let r = use_latest_value_s(t), s = (0, react.useRef)([]), y = f(), D = use_disposables_p(), c = use_event_o(((i, e = render_j.Hidden) => {
+                let a = s.current.findIndex((({el: o}) => o === i));
+                -1 !== a && (match_u(e, {
+                    [render_j.Unmount]() {
+                        s.current.splice(a, 1);
+                    },
+                    [render_j.Hidden]() {
+                        s.current[a].state = "hidden";
+                    }
+                }), D.microTask((() => {
+                    var o;
+                    !U(s) && y.current && (null == (o = r.current) || o.call(r));
+                })));
+            })), x = use_event_o((i => {
+                let e = s.current.find((({el: a}) => a === i));
+                return e ? "visible" !== e.state && (e.state = "visible") : s.current.push({
+                    el: i,
+                    state: "visible"
+                }), () => c(i, render_j.Unmount);
+            })), p = (0, react.useRef)([]), h = (0, react.useRef)(Promise.resolve()), u = (0, 
+            react.useRef)({
+                enter: [],
+                leave: [],
+                idle: []
+            }), v = use_event_o(((i, e, a) => {
+                p.current.splice(0), n && (n.chains.current[e] = n.chains.current[e].filter((([o]) => o !== i))), 
+                null == n || n.chains.current[e].push([ i, new Promise((o => {
+                    p.current.push(o);
+                })) ]), null == n || n.chains.current[e].push([ i, new Promise((o => {
+                    Promise.all(u.current[e].map((([f, P]) => P))).then((() => o()));
+                })) ]), "enter" === e ? h.current = h.current.then((() => null == n ? void 0 : n.wait.current)).then((() => a(e))) : a(e);
+            })), d = use_event_o(((i, e, a) => {
+                Promise.all(u.current[e].splice(0).map((([o, f]) => f))).then((() => {
+                    var o;
+                    null == (o = p.current.shift()) || o();
+                })).then((() => a(e)));
+            }));
+            return (0, react.useMemo)((() => ({
+                children: s,
+                register: x,
+                unregister: c,
+                onStart: v,
+                onStop: d,
+                wait: h,
+                chains: u
+            })), [ x, c, s, v, d, u, h ]);
+        }
+        function xe() {}
+        transition_M.displayName = "NestingContext";
+        let Pe = [ "beforeEnter", "afterEnter", "beforeLeave", "afterLeave" ];
+        function se(t) {
+            var r;
+            let n = {};
+            for (let s of Pe) n[s] = null != (r = t[s]) ? r : xe;
+            return n;
+        }
+        let ae = S.RenderStrategy;
+        let W = D((function He(t, n) {
+            let {show: r, appear: s = !1, unmount: y = !0, ...D} = t, c = (0, react.useRef)(null), x = use_sync_refs_y(c, n);
+            use_server_handoff_complete_l();
+            let p = C();
+            if (void 0 === r && null !== p && (r = (p & open_closed_d.Open) === open_closed_d.Open), 
+            ![ !0, !1 ].includes(r)) throw new Error("A <Transition /> is used but it is missing a `show={true | false}` prop.");
+            let [h, u] = (0, react.useState)(r ? "visible" : "hidden"), v = oe((() => {
+                u("hidden");
+            })), [d, i] = (0, react.useState)(!0), e = (0, react.useRef)([ r ]);
+            use_iso_morphic_effect_l((() => {
+                !1 !== d && e.current[e.current.length - 1] !== r && (e.current.push(r), i(!1));
+            }), [ e, r ]);
+            let a = (0, react.useMemo)((() => ({
+                show: r,
+                appear: s,
+                initial: d
+            })), [ r, s, d ]);
+            (0, react.useEffect)((() => {
+                if (r) u("visible"); else if (U(v)) {
+                    let T = c.current;
+                    if (!T) return;
+                    let l = T.getBoundingClientRect();
+                    0 === l.x && 0 === l.y && 0 === l.width && 0 === l.height && u("hidden");
+                } else u("hidden");
+            }), [ r, v ]);
+            let o = {
+                unmount: y
+            }, f = use_event_o((() => {
+                var T;
+                d && i(!1), null == (T = t.beforeEnter) || T.call(t);
+            })), P = use_event_o((() => {
+                var T;
+                d && i(!1), null == (T = t.beforeLeave) || T.call(t);
+            }));
+            return react.createElement(transition_M.Provider, {
+                value: v
+            }, react.createElement(_.Provider, {
+                value: a
+            }, X({
+                ourProps: {
+                    ...o,
+                    as: react.Fragment,
+                    children: react.createElement(le, {
+                        ref: x,
+                        ...o,
+                        ...D,
+                        beforeEnter: f,
+                        beforeLeave: P
+                    })
+                },
+                theirProps: {},
+                defaultTag: react.Fragment,
+                features: ae,
+                visible: "visible" === h,
+                name: "Transition"
+            })));
+        })), le = D((function De(t, n) {
+            var K, Q;
+            let {beforeEnter: r, afterEnter: s, beforeLeave: y, afterLeave: D, enter: c, enterFrom: x, enterTo: p, entered: h, leave: u, leaveFrom: v, leaveTo: d, ...i} = t, e = (0, 
+            react.useRef)(null), a = use_sync_refs_y(e, n), o = null == (K = i.unmount) || K ? render_j.Unmount : render_j.Hidden, {show: f, appear: P, initial: T} = function Se() {
+                let t = (0, react.useContext)(_);
+                if (null === t) throw new Error("A <Transition.Child /> is used but it is missing a parent <Transition /> or <Transition.Root />.");
+                return t;
+            }(), [l, j] = (0, react.useState)(f ? "visible" : "hidden"), q = function Ne() {
+                let t = (0, react.useContext)(transition_M);
+                if (null === t) throw new Error("A <Transition.Child /> is used but it is missing a parent <Transition /> or <Transition.Root />.");
+                return t;
+            }(), {register: O, unregister: V} = q;
+            (0, react.useEffect)((() => O(e)), [ O, e ]), (0, react.useEffect)((() => {
+                if (o === render_j.Hidden && e.current) return f && "visible" !== l ? void j("visible") : match_u(l, {
+                    hidden: () => V(e),
+                    visible: () => O(e)
+                });
+            }), [ l, e, O, V, f, o ]);
+            let k = use_latest_value_s({
+                base: transition_S(i.className),
+                enter: transition_S(c),
+                enterFrom: transition_S(x),
+                enterTo: transition_S(p),
+                entered: transition_S(h),
+                leave: transition_S(u),
+                leaveFrom: transition_S(v),
+                leaveTo: transition_S(d)
+            }), w = function Re(t) {
+                let n = (0, react.useRef)(se(t));
+                return (0, react.useEffect)((() => {
+                    n.current = se(t);
+                }), [ t ]), n;
+            }({
+                beforeEnter: r,
+                afterEnter: s,
+                beforeLeave: y,
+                afterLeave: D
+            }), G = use_server_handoff_complete_l();
+            (0, react.useEffect)((() => {
+                if (G && "visible" === l && null === e.current) throw new Error("Did you forget to passthrough the `ref` to the actual DOM node?");
+            }), [ e, l, G ]);
+            let z = P && f && T, Te = !G || T && !P ? "idle" : f ? "enter" : "leave", H = use_flags_c(0), de = use_event_o((g => match_u(g, {
+                enter: () => {
+                    H.addFlag(open_closed_d.Opening), w.current.beforeEnter();
+                },
+                leave: () => {
+                    H.addFlag(open_closed_d.Closing), w.current.beforeLeave();
+                },
+                idle: () => {}
+            }))), fe = use_event_o((g => match_u(g, {
+                enter: () => {
+                    H.removeFlag(open_closed_d.Opening), w.current.afterEnter();
+                },
+                leave: () => {
+                    H.removeFlag(open_closed_d.Closing), w.current.afterLeave();
+                },
+                idle: () => {}
+            }))), A = oe((() => {
+                j("hidden"), V(e);
+            }), q);
+            E({
+                immediate: z,
+                container: e,
+                classes: k,
+                direction: Te,
+                onStart: use_latest_value_s((g => {
+                    A.onStart(e, g, de);
+                })),
+                onStop: use_latest_value_s((g => {
+                    A.onStop(e, g, fe), "leave" === g && !U(A) && (j("hidden"), V(e));
+                }))
+            });
+            let R = i, me = {
+                ref: a
+            };
+            return z ? R = {
+                ...R,
+                className: class_names_t(i.className, ...k.current.enter, ...k.current.enterFrom)
+            } : (R.className = class_names_t(i.className, null == (Q = e.current) ? void 0 : Q.className), 
+            "" === R.className && delete R.className), react.createElement(transition_M.Provider, {
+                value: A
+            }, react.createElement(open_closed_c, {
+                value: match_u(l, {
+                    visible: open_closed_d.Open,
+                    hidden: open_closed_d.Closed
+                }) | H.flags
+            }, X({
+                ourProps: me,
+                theirProps: R,
+                defaultTag: "div",
+                features: ae,
+                visible: "visible" === l,
+                name: "Transition.Child"
+            })));
+        })), Le = D((function Fe(t, n) {
+            let r = null !== (0, react.useContext)(_), s = null !== C();
+            return react.createElement(react.Fragment, null, !r && s ? react.createElement(W, {
+                ref: n,
+                ...t
+            }) : react.createElement(le, {
+                ref: n,
+                ...t
+            }));
+        })), tt = Object.assign(W, {
+            Child: Le,
+            Root: W
+        });
+        // CONCATENATED MODULE: ./src/shared/types.ts
+        var PurchaseCategory;
+        !function(PurchaseCategory) {
+            PurchaseCategory.Rent = "Rent", PurchaseCategory.Utilities = "Utilities", PurchaseCategory.Grocery = "Grocery", 
+            PurchaseCategory.Dining = "Dining", PurchaseCategory.Dog = "Dog", PurchaseCategory.Car = "Car", 
+            PurchaseCategory.Shopping = "Shopping", PurchaseCategory.Uncategorized = "Uncategorized";
+        }(PurchaseCategory || (PurchaseCategory = {}));
+        // CONCATENATED MODULE: ./src/client/components/gmailConfirmModal.tsx
         var extendStatics, __extends = undefined && undefined.__extends || (extendStatics = function(d, b) {
             return extendStatics = Object.setPrototypeOf || {
                 __proto__: []
@@ -6777,62 +7389,471 @@
             }
             extendStatics(d, b), d.prototype = null === b ? Object.create(b) : (__.prototype = b.prototype, 
             new __);
-        }), Root = function(_super) {
-            function Root(props) {
+        }), GmailConfirmModal = function(_super) {
+            function GmailConfirmModal(props) {
                 var _this = _super.call(this, props) || this;
                 return _this.state = {
-                    newA1CellValue: "",
-                    loading: !1
-                }, _this.resetForm = function() {
-                    _this.setState({
-                        newA1CellValue: ""
+                    tipAmount: "0",
+                    originalAmount: "null",
+                    originalDescription: "null"
+                }, _this.submitModal = function(e) {
+                    e.preventDefault(), _this.props.setVisability(!1, !0), _this.setState({
+                        tipAmount: "0",
+                        originalAmount: "null",
+                        originalDescription: "null"
                     });
-                }, _this.handleFormSuccess = function() {
+                }, _this.cancelModal = function() {
                     _this.setState({
-                        loading: !1
-                    }), alert("Successfully Updated Cell Value");
-                }, _this.handleFailure = function() {
+                        tipAmount: "0",
+                        originalAmount: "null",
+                        originalDescription: "null"
+                    }), _this.props.setVisability(!1, !1);
+                }, _this.updateTipAmount = function(tipStr) {
+                    var originalAmount = _this.state.originalAmount, originalDescription = _this.state.originalDescription;
+                    "null" == originalAmount && (originalAmount = _this.props.currentAmount.toString(), 
                     _this.setState({
-                        loading: !1
-                    }), alert("Failed to Update Cell Value");
-                }, _this.handleSubmit = function(e) {
-                    e.preventDefault(), _this.setState({
-                        loading: !0
-                    }), google.script.run.withSuccessHandler(_this.handleFormSuccess).withFailureHandler(_this.handleFailure).FormSubmit(document.getElementById("form")), 
-                    _this.resetForm();
+                        originalAmount: _this.props.currentAmount.toString()
+                    })), "null" == _this.state.originalDescription && (originalDescription = _this.props.currentDescription.toString(), 
+                    _this.setState({
+                        originalDescription: _this.props.currentDescription.toString()
+                    })), _this.setState({
+                        tipAmount: tipStr
+                    });
+                    var newTotal = parseFloat(tipStr) + parseFloat(originalAmount);
+                    _this.props.setDescription(originalDescription + " (Add. Tip: $" + tipStr + ")"), 
+                    _this.props.setAmount(newTotal.toFixed(2).toString());
+                }, _this.increaseTipButton = function() {
+                    var tip = parseFloat(_this.state.tipAmount);
+                    isNaN(tip) && (tip = 0), _this.updateTipAmount((tip + 1).toString());
+                }, _this.decreaseTipButton = function() {
+                    var tip = parseFloat(_this.state.tipAmount);
+                    isNaN(tip) && (tip = 0), _this.updateTipAmount((tip - 1).toString());
                 }, _this;
             }
-            return __extends(Root, _super), Root.prototype.render = function() {
+            return __extends(GmailConfirmModal, _super), GmailConfirmModal.prototype.render = function() {
+                var _this = this;
+                return react.createElement(react.Fragment, null, react.createElement(tt, {
+                    show: this.props.visability,
+                    enter: "transition-opacity duration-300",
+                    enterFrom: "opacity-0",
+                    enterTo: "opacity-100",
+                    leave: "transition-opacity duration-300",
+                    leaveFrom: "opacity-100",
+                    leaveTo: "opacity-0"
+                }, react.createElement("div", {
+                    className: "flex justify-center transition-all w-full h-full text-budget-dark bg-gray-800 bg-opacity-50 items-center overflow-x-auto overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
+                }, react.createElement("div", {
+                    className: "relative w-auto my-6 mx-auto max-w-3xl"
+                }, react.createElement("div", {
+                    className: "border-0 rounded-xl shadow-lg relative flex flex-col w-full budget-bg outline-none focus:outline-none"
+                }, react.createElement("div", {
+                    className: "flex flex-col items-center justify-between p-5 border-b border-solid border-gray-300 rounded-t "
+                }, react.createElement("h3", {
+                    className: "text-2xl font=semibold"
+                }, "Confirm Category and Additional Tip"), react.createElement("form", {
+                    onSubmit: this.submitModal
+                }, react.createElement("div", {
+                    className: "flex flex-col"
+                }, react.createElement("div", {
+                    className: "m-5"
+                }, react.createElement("label", null, "Category: "), react.createElement("select", {
+                    name: "category",
+                    value: this.props.currentCategory,
+                    onChange: function(e) {
+                        return _this.props.setCategory(PurchaseCategory[e.target.value]);
+                    },
+                    required: !0
+                }, Object.keys(PurchaseCategory).map((function(option, index) {
+                    return react.createElement("option", {
+                        key: index,
+                        value: option
+                    }, option);
+                })))), react.createElement("div", null, react.createElement("label", null, "Additional Tip: "), react.createElement("input", {
+                    type: "text",
+                    pattern: "^\\d*(\\.\\d{0,2})?$",
+                    value: this.state.tipAmount,
+                    onChange: function(e) {
+                        return _this.updateTipAmount(e.target.value);
+                    }
+                }), react.createElement("div", {
+                    className: "flex flex-row  mt-3 items-center justify-center"
+                }, react.createElement("button", {
+                    type: "button",
+                    onClick: this.increaseTipButton,
+                    className: "rounded-lg mr-3 px-4 py-2 text-white bg-budget-dark hover:bg-budget"
+                }, "+"), react.createElement("button", {
+                    type: "button",
+                    onClick: this.decreaseTipButton,
+                    className: "rounded-lg px-4 py-2 text-white bg-budget-dark hover:bg-budget"
+                }, "-")))), react.createElement("div", {
+                    className: "flex flex-row"
+                }, react.createElement("button", {
+                    type: "submit",
+                    className: "w-[10rem] m-5 bg-budget-dark hover:bg-budget px-5 py-2 text-sm rounded-full font-semibold text-white"
+                }, "Submit"), react.createElement("button", {
+                    type: "button",
+                    onClick: this.cancelModal,
+                    className: "w-[10rem] m-5 bg-budget-dark hover:bg-budget px-5 py-2 text-sm rounded-full font-semibold text-white"
+                }, "Cancel")))))))));
+            }, GmailConfirmModal;
+        }(react.Component);
+        /* harmony default export */ const gmailConfirmModal = GmailConfirmModal;
+        // CONCATENATED MODULE: ./src/client/components/pendingTransactionsTab.tsx
+        var pendingTransactionsTab_extends = undefined && undefined.__extends || function() {
+            var extendStatics = function(d, b) {
+                return extendStatics = Object.setPrototypeOf || {
+                    __proto__: []
+                } instanceof Array && function(d, b) {
+                    d.__proto__ = b;
+                } || function(d, b) {
+                    for (var p in b) Object.prototype.hasOwnProperty.call(b, p) && (d[p] = b[p]);
+                }, extendStatics(d, b);
+            };
+            return function(d, b) {
+                if ("function" != typeof b && null !== b) throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+                function __() {
+                    this.constructor = d;
+                }
+                extendStatics(d, b), d.prototype = null === b ? Object.create(b) : (__.prototype = b.prototype, 
+                new __);
+            };
+        }(), PendingTransactionsTab = function(_super) {
+            function PendingTransactionsTab(props) {
+                var _this = _super.call(this, props) || this;
+                return _this.state = {
+                    modalVisability: !1,
+                    unreadPurchases: [],
+                    formAmount: "",
+                    formCategory: PurchaseCategory.Uncategorized,
+                    formDescription: "",
+                    formThreadId: "",
+                    formISODate: (new Date).toLocaleString(),
+                    formPurchaseIndex: -1
+                }, _this.resetForm = function() {
+                    _this.setState({
+                        formAmount: "",
+                        formDescription: "",
+                        formThreadId: "",
+                        formISODate: (new Date).toLocaleString(),
+                        formPurchaseIndex: -1
+                    });
+                }, _this.setCategory = function(category) {
+                    _this.setState({
+                        formCategory: category
+                    });
+                }, _this.setAmount = function(amount) {
+                    _this.setState({
+                        formAmount: amount
+                    });
+                }, _this.setDescription = function(description) {
+                    _this.setState({
+                        formDescription: description
+                    });
+                }, _this.setModalVis = function(newVis, runSubmit) {
+                    _this.setState({
+                        modalVisability: newVis
+                    }), runSubmit && (_this.props.setLoading(!0), google.script.run.withSuccessHandler(_this.handleFormSuccess).withFailureHandler(_this.handleFailure).SubmitNewPurchase(document.getElementById("newPurchaseForm"))), 
+                    0 == newVis && _this.resetForm();
+                }, _this.componentDidMount = function() {
+                    _this.props.setLoading(!0), google.script.run.withSuccessHandler(_this.setUnreadPurchases).withFailureHandler(_this.handleFailure).GetLatestUnreadPurchases();
+                }, _this.setUnreadPurchases = function(unreadPurchases) {
+                    _this.props.setLoading(!1), _this.setState({
+                        unreadPurchases
+                    });
+                }, _this.handleFormSuccess = function(purchase) {
+                    if (_this.props.setLoading(!1), purchase.purchaseIndex != undefined && -1 != purchase.purchaseIndex) {
+                        var unreadPurchases = _this.state.unreadPurchases;
+                        unreadPurchases.splice(purchase.purchaseIndex, 1), _this.setState({
+                            unreadPurchases
+                        });
+                    }
+                }, _this.handleFailure = function(error) {
+                    _this.props.setLoading(!1), alert("Error Occured: " + error.message);
+                }, _this.setFormInputsWithPurchase = function(purchase, index) {
+                    _this.setState({
+                        formAmount: purchase.amount,
+                        formCategory: purchase.category || PurchaseCategory.Uncategorized,
+                        formDescription: purchase.description,
+                        formThreadId: purchase.threadId,
+                        formISODate: purchase.isoDate,
+                        formPurchaseIndex: index
+                    }), _this.handleSubmit(null);
+                }, _this.deletePurchase = function(purchase, index) {
+                    _this.props.setLoading(!0), purchase.purchaseIndex = index, google.script.run.withSuccessHandler(_this.handleFormSuccess).withFailureHandler(_this.handleFailure).MarkPurchaseAsRead(purchase);
+                }, _this.handleSubmit = function(e) {
+                    e ? (e.preventDefault(), _this.props.setLoading(!0), google.script.run.withSuccessHandler(_this.handleFormSuccess).withFailureHandler(_this.handleFailure).SubmitNewPurchase(document.getElementById("newPurchaseForm")), 
+                    _this.resetForm()) : _this.setModalVis(!0, !1);
+                }, _this;
+            }
+            return pendingTransactionsTab_extends(PendingTransactionsTab, _super), PendingTransactionsTab.prototype.render = function() {
                 var _this = this;
                 return react.createElement("div", {
-                    className: "h-full flex flex-row content-center"
-                }, react.createElement("form", {
-                    className: "flex flex-col m-auto pb-40 items-center",
-                    id: "form",
+                    className: "content-center"
+                }, react.createElement("div", {
+                    className: "text-budget-dark text-xl font-bold p-6"
+                }, "Submit New Transaction"), react.createElement("form", {
+                    id: "newPurchaseForm",
                     onSubmit: this.handleSubmit
-                }, react.createElement("div", null, react.createElement("h1", {
-                    className: "text-xl"
-                }, "Modify Cell A1")), react.createElement("div", {
-                    className: "mt-10"
-                }, react.createElement("label", null, "New Cell Value: "), react.createElement("input", {
-                    name: "newValue",
-                    value: this.state.newA1CellValue,
+                }, react.createElement("div", {
+                    className: "m-5"
+                }, react.createElement("label", null, "Transaction Amount: "), react.createElement("input", {
+                    value: this.state.formAmount,
                     onChange: function(e) {
-                        return _this.setState({
-                            newA1CellValue: e.target.value
-                        });
+                        return _this.setAmount(e.target.value);
                     },
                     type: "text",
+                    pattern: "^\\d*(\\.\\d{0,2})?$",
+                    name: "amount",
                     required: !0
                 })), react.createElement("div", {
-                    className: "mt-5"
+                    className: "m-5"
+                }, react.createElement("label", null, "Category: "), react.createElement("select", {
+                    name: "category",
+                    value: this.state.formCategory,
+                    onChange: function(e) {
+                        return _this.setCategory(PurchaseCategory[e.target.value]);
+                    },
+                    required: !0,
+                    className: "bg-white"
+                }, Object.keys(PurchaseCategory).map((function(option, index) {
+                    return react.createElement("option", {
+                        key: index,
+                        value: option
+                    }, option);
+                })))), react.createElement("div", {
+                    className: "m-5"
+                }, react.createElement("label", null, "Description: "), react.createElement("input", {
+                    value: this.state.formDescription,
+                    onChange: function(e) {
+                        return _this.setDescription(e.target.value);
+                    },
+                    type: "text",
+                    name: "description",
+                    required: !0
+                })), react.createElement("input", {
+                    value: this.state.formThreadId,
+                    type: "text",
+                    className: "hidden",
+                    id: "threadId",
+                    name: "threadId"
+                }), react.createElement("input", {
+                    value: this.state.formISODate,
+                    type: "text",
+                    className: "hidden",
+                    id: "isoDate",
+                    name: "isoDate"
+                }), react.createElement("input", {
+                    type: "number",
+                    value: this.state.formPurchaseIndex,
+                    className: "hidden",
+                    id: "purchaseIndex",
+                    name: "purchaseIndex"
+                }), react.createElement("div", {
+                    className: "m-10"
                 }, react.createElement("input", {
                     id: "submit",
                     type: "submit",
-                    value: this.state.loading ? "Submitting..." : "Submit",
-                    disabled: this.state.loading,
-                    className: "w-[10rem] ".concat(this.state.loading ? "bg-indigo-500" : " bg-indigo-800 hover:bg-indigo-500", " px-5 py-2 text-sm rounded-full font-semibold text-white")
+                    value: this.props.loading ? "Submitting..." : "Submit",
+                    disabled: this.props.loading,
+                    className: "w-[10rem] ".concat(this.props.loading ? "bg-budget" : " bg-budget-dark hover:bg-budget", " px-5 py-2 text-sm rounded-full font-semibold text-white")
+                }))), react.createElement("div", {
+                    className: "m-2 lg:m-28 border-t"
+                }, react.createElement("div", {
+                    className: "text-budget-dark text-xl font-bold p-6"
+                }, "Approve Pending Transactions"), react.createElement("div", {
+                    className: "flex flex-col"
+                }, 0 == this.state.unreadPurchases.length ? "No Current Pending Transactions" : this.state.unreadPurchases.map((function(purchase, index) {
+                    return react.createElement("div", {
+                        className: "flex flex-row items-center border-t-2 border-indigo-900"
+                    }, react.createElement("div", {
+                        className: "flex flex-col w-5/6 items-start text-left"
+                    }, react.createElement("span", {
+                        className: "text-lg font-bold"
+                    }, "Amount: $", purchase.amount), react.createElement("span", null, "Description: ", purchase.description), react.createElement("span", null, "Date: ", purchase.isoDate)), react.createElement("div", {
+                        className: "flex flex-col md:flex-row"
+                    }, react.createElement("button", {
+                        onClick: function() {
+                            return _this.setFormInputsWithPurchase(purchase, index);
+                        },
+                        disabled: _this.props.loading,
+                        className: "w-[6rem] m-2 ".concat(_this.props.loading ? "bg-budget" : " bg-budget-dark hover:bg-budget", " px-5 py-2 text-sm rounded-full font-semibold text-white")
+                    }, "Add"), react.createElement("button", {
+                        onClick: function() {
+                            return _this.deletePurchase(purchase, index);
+                        },
+                        disabled: _this.props.loading,
+                        className: "w-[6rem] m-2 ".concat(_this.props.loading ? "bg-budget" : " bg-budget-dark hover:bg-budget", " px-5 py-2 text-sm rounded-full font-semibold text-white")
+                    }, "Delete")));
+                })))), react.createElement(gmailConfirmModal, {
+                    visability: this.state.modalVisability,
+                    setVisability: this.setModalVis,
+                    setDescription: this.setDescription,
+                    currentDescription: this.state.formDescription,
+                    setAmount: this.setAmount,
+                    currentAmount: this.state.formAmount,
+                    setCategory: this.setCategory,
+                    currentCategory: this.state.formCategory
+                }));
+            }, PendingTransactionsTab;
+        }(react.Component);
+        /* harmony default export */ const pendingTransactionsTab = PendingTransactionsTab;
+        // CONCATENATED MODULE: ./src/client/components/monthlySummaryTab.tsx
+        var monthlySummaryTab_extends = undefined && undefined.__extends || function() {
+            var extendStatics = function(d, b) {
+                return extendStatics = Object.setPrototypeOf || {
+                    __proto__: []
+                } instanceof Array && function(d, b) {
+                    d.__proto__ = b;
+                } || function(d, b) {
+                    for (var p in b) Object.prototype.hasOwnProperty.call(b, p) && (d[p] = b[p]);
+                }, extendStatics(d, b);
+            };
+            return function(d, b) {
+                if ("function" != typeof b && null !== b) throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+                function __() {
+                    this.constructor = d;
+                }
+                extendStatics(d, b), d.prototype = null === b ? Object.create(b) : (__.prototype = b.prototype, 
+                new __);
+            };
+        }();
+        /* harmony default export */ const monthlySummaryTab = function(_super) {
+            function MonthlySummaryTab(props) {
+                var _this = _super.call(this, props) || this;
+                return _this.state = {
+                    purchases: [],
+                    categories: {},
+                    prevMonthTotal: -1
+                }, _this.setCategoriesAndPurchases = function(resultStr) {
+                    var result = JSON.parse(resultStr);
+                    _this.setState({
+                        purchases: result.purchases,
+                        categories: result.categories,
+                        prevMonthTotal: result.prevMonthTotal
+                    }), _this.props.setLoading(!1);
+                }, _this.handleFailure = function(error) {
+                    _this.props.setLoading(!1), alert("Error Occured: " + error.message);
+                }, _this.componentDidMount = function() {
+                    _this.props.setLoading(!0), google.script.run.withSuccessHandler(_this.setCategoriesAndPurchases).withFailureHandler(_this.handleFailure).GetCurrentMonthPurchases();
+                }, _this;
+            }
+            return monthlySummaryTab_extends(MonthlySummaryTab, _super), MonthlySummaryTab.prototype.render = function() {
+                var _this = this;
+                return react.createElement("div", {
+                    className: "content-center"
+                }, react.createElement("div", {
+                    className: "flex flex-col items-center"
+                }, react.createElement("span", {
+                    className: "text-budget-dark font-bold text-xl p-6"
+                }, "This Month's Category Totals"), react.createElement("table", {
+                    className: "table-fixed text-budget-dark"
+                }, react.createElement("tr", null, react.createElement("th", null, "Category"), react.createElement("th", null, "Dollar Total")), Object.keys(PurchaseCategory).map((function(category, index) {
+                    return react.createElement("tr", null, react.createElement("td", null, category), react.createElement("td", null, _this.props.loading ? "Loading..." : "$" + (_this.state.categories[category] == undefined ? 0 : parseFloat(_this.state.categories[category]).toFixed(2))));
+                })), react.createElement("tr", null, react.createElement("td", null, "Month Grand Total:"), react.createElement("td", null, Object.keys(this.state.categories).length > 0 ? "$" + Object.keys(this.state.categories).reduce((function(prev, curr) {
+                    return (parseFloat(prev) + parseFloat(_this.state.categories[curr])).toFixed(2);
+                }), "0") : "Loading...")), react.createElement("tr", null, react.createElement("td", null, "Total Last Month (at this time):"), react.createElement("td", null, this.state.prevMonthTotal < 0 ? "Loading..." : "$" + this.state.prevMonthTotal.toFixed(2))))), react.createElement("div", {
+                    className: "m-2 lg:m-28 border-t"
+                }, react.createElement("div", {
+                    className: "text-budget-dark text-xl font-bold p-6"
+                }, "This Month's Purchases"), 0 == this.state.purchases.length ? "No Submitted Transactions Yet" : this.state.purchases.map((function(purchase, index) {
+                    return react.createElement("div", {
+                        className: "flex flex-row items-center justify-center border-t-2 border-indigo-900"
+                    }, react.createElement("div", {
+                        className: "flex flex-col text-budget-dark text-center w-5/6 items-center"
+                    }, react.createElement("span", {
+                        className: "text-lg font-bold"
+                    }, purchase.category ? purchase.category + ": " : "", "$", purchase.amount), react.createElement("span", {
+                        className: "text-lg"
+                    }, purchase.description), react.createElement("span", {
+                        className: "text-sm"
+                    }, purchase.isoDate)));
                 }))));
+            }, MonthlySummaryTab;
+        }(react.Component);
+        // CONCATENATED MODULE: ./src/client/components/root.tsx
+        var root_extends = undefined && undefined.__extends || function() {
+            var extendStatics = function(d, b) {
+                return extendStatics = Object.setPrototypeOf || {
+                    __proto__: []
+                } instanceof Array && function(d, b) {
+                    d.__proto__ = b;
+                } || function(d, b) {
+                    for (var p in b) Object.prototype.hasOwnProperty.call(b, p) && (d[p] = b[p]);
+                }, extendStatics(d, b);
+            };
+            return function(d, b) {
+                if ("function" != typeof b && null !== b) throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+                function __() {
+                    this.constructor = d;
+                }
+                extendStatics(d, b), d.prototype = null === b ? Object.create(b) : (__.prototype = b.prototype, 
+                new __);
+            };
+        }(), Root = function(_super) {
+            function Root(props) {
+                var _this = _super.call(this, props) || this;
+                return _this.state = {
+                    activeTabName: "pendingTransactionsTab",
+                    loading: !1
+                }, _this.componentDidMount = function() {
+                    _this.setLoading = _this.setLoading.bind(_this);
+                }, _this.setLoading = function(value) {
+                    _this.setState({
+                        loading: value
+                    });
+                }, _this;
+            }
+            return root_extends(Root, _super), Root.prototype.setActiveTab = function(tabName) {
+                this.setState({
+                    activeTabName: tabName
+                });
+            }, Root.prototype.render = function() {
+                var _this = this;
+                return react.createElement("div", {
+                    className: "h-full"
+                }, react.createElement("div", {
+                    className: "flex flex-row items-center p-10"
+                }, react.createElement("div", {
+                    className: "flex flex-row items-start w-1/2"
+                }, react.createElement("span", {
+                    className: "text-budget-dark text-4xl"
+                }, "eBudget")), react.createElement("div", {
+                    className: "flex flex-row-reverse w-1/2"
+                }, react.createElement("span", {
+                    className: "text-budget-light text-lg"
+                }, react.createElement("a", {
+                    className: "no-underline",
+                    href: "https://crspradlin.dev",
+                    target: "_new"
+                }, "crspradlin")))), react.createElement("div", {
+                    className: "h-20 flex flex-row text-center justify-center"
+                }, react.createElement("ul", {
+                    className: "flex border-b"
+                }, react.createElement("li", {
+                    className: "-mb-px mr-1"
+                }, react.createElement("button", {
+                    className: "text-xl inline-block py-2 px-4 font-semibold ".concat("pendingTransactionsTab" === this.state.activeTabName ? "border-l border-t border-r rounded-t text-budget-dark" : "text-gray-400 hover:text-budget-light"),
+                    disabled: this.state.loading,
+                    onClick: function() {
+                        return _this.setActiveTab("pendingTransactionsTab");
+                    }
+                }, "Pending Transactions")), react.createElement("li", {
+                    className: "mr-1"
+                }, react.createElement("button", {
+                    className: "text-xl inline-block py-2 px-4 font-semibold ".concat("monthlySummaryTab" === this.state.activeTabName ? "border-l border-t border-r rounded-t text-budget-dark" : "text-gray-400 hover:text-budget-light"),
+                    disabled: this.state.loading,
+                    onClick: function() {
+                        return _this.setActiveTab("monthlySummaryTab");
+                    }
+                }, "Monthly Summary")))), react.createElement("div", {
+                    className: "h-full flex flex-col text-center"
+                }, "pendingTransactionsTab" === this.state.activeTabName ? react.createElement(pendingTransactionsTab, {
+                    loading: this.state.loading,
+                    setLoading: this.setLoading
+                }) : null, "monthlySummaryTab" === this.state.activeTabName ? react.createElement(monthlySummaryTab, {
+                    loading: this.state.loading,
+                    setLoading: this.setLoading
+                }) : null));
             }, Root;
         }(react.Component);
         // CONCATENATED MODULE: ./src/client/index.tsx

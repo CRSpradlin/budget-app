@@ -2,6 +2,7 @@
   "scripts": {
     "create": "clasp create",
     "open": "clasp open",
+    "login": "clasp login --creds creds.json",
     "update": "clasp pull",
     "build": "webpack --mode production",
     "deploy-test": "bun run build; clasp push",

@@ -9,8 +9,8 @@ Gives users and developers the ability to host their own budget web application 
 Clone down the repository and run an `bun install`.
 ![bun_install_repo.png](./docs/media/bun_install_repo.png)
 
-Run `bun run clasp login`.
-![type_clasp_login.png](./docs/media/type_clasp_login.png)
+Run `bun run login`.
+![type_clasp_login.png](./docs/media/type_bun_run_login.png)
 The `clasp login` command will open a browser window to have you sign-in to your Google/Gmail account. Ensure you use the account you want to have the budget app recieve and manage your bank transaction emails. Click `Allow`.
 ![run_clasp_login_allow_page.png](./docs/media/run_clasp_login_allow_page.png)
 

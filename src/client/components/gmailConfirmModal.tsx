@@ -1,6 +1,7 @@
 import React from "react";
 import { Transition } from '@headlessui/react'
 import { PurchaseCategory } from "../../shared/types";
+import AmortizedFormInput from "./amortizedFormInput";
 
 type GmailConfirmModalType = {
     visability: boolean,
@@ -10,7 +11,11 @@ type GmailConfirmModalType = {
     setAmount: (amount: string) => void,
     currentAmount: string,
     setDescription: (description: string) => void,
-    currentDescription: string
+    currentDescription: string,
+    amortized: boolean,
+    setAmortized: (amortized: boolean) => void,
+    amortizedLength: string,
+    setAmortizedLength: (amortizedLength: string) => void
 }
 
 export default class GmailConfirmModal extends React.Component<GmailConfirmModalType> {
@@ -116,14 +121,17 @@ export default class GmailConfirmModal extends React.Component<GmailConfirmModal
                                                 <label>Additional Tip: </label>
                                                 <input type="text" pattern="^\d*(\.\d{0,2})?$" value={this.state.tipAmount} onChange={(e) => this.updateTipAmount(e.target.value)}/>
                                                 <div className="flex flex-row  mt-3 items-center justify-center">
-                                                    <button type="button" onClick={this.increaseTipButton} className="rounded-lg mr-3 px-4 py-2 text-white bg-budget-dark hover:bg-budget">+</button>
-                                                    <button type="button" onClick={this.decreaseTipButton} className="rounded-lg px-4 py-2 text-white bg-budget-dark hover:bg-budget">-</button>
+                                                    <button type="button" onClick={this.decreaseTipButton} className="rounded-lg mr-3 px-4 py-2 text-white bg-budget-dark hover:bg-budget">-</button>
+                                                    <button type="button" onClick={this.increaseTipButton} className="rounded-lg px-4 py-2 text-white bg-budget-dark hover:bg-budget">+</button>
                                                 </div>
                                             </div>
+                                            <div className="flex flex-col m-5 items-center place-items-center">
+                                                <AmortizedFormInput amortizedLength={this.props.amortizedLength} setAmortizedLength={this.props.setAmortizedLength} amortized={this.props.amortized} setAmortized={this.props.setAmortized} />
+                                            </div>
                                         </div>
-                                        <div className="flex flex-row">
-                                            <button type="submit" className={'w-[10rem] m-5 bg-budget-dark hover:bg-budget px-5 py-2 text-sm rounded-full font-semibold text-white'}>Submit</button>
-                                            <button type="button" onClick={this.cancelModal} className={'w-[10rem] m-5 bg-budget-dark hover:bg-budget px-5 py-2 text-sm rounded-full font-semibold text-white'}>Cancel</button>
+                                        <div className="flex flex-row items-center place-items-center">
+                                            <button type="button" onClick={this.cancelModal} className={'w-[10rem] mr-3 ml-auto bg-budget-dark hover:bg-budget px-5 p-2 text-sm rounded-full font-semibold text-white'}>Cancel</button>
+                                            <button type="submit" className={'w-[10rem] m-auto bg-budget-dark hover:bg-budget px-5 p-2 text-sm rounded-full font-semibold text-white'}>Submit</button>
                                         </div>
                                     </form>
                                 </div>

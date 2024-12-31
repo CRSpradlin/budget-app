@@ -24,7 +24,7 @@ const FormObjToAmortizedPurchase = (formObject: { [key: string]: string }): Amor
         amount: parseFloat(formObject.amount),
         category: formObject.category ? PurchaseCategory[formObject.category] : undefined,
         isoDate: formObject.isoDate,
-        description: formObject.description,
+        description: `[Amortized ${new Date(formObject.isoDate).toLocaleString('default', { month: 'long' })}, ${new Date(formObject.isoDate).getFullYear()}] ${formObject.description}`,
         monthlyAmount: parseFloat(formObject.amount)/parseInt(formObject.amortizedLength),
         applicableMonths: ['NONE'],
         purchaseIndex: formObject.purchaseIndex == undefined ?  undefined : parseInt(formObject.purchaseIndex)       
@@ -70,7 +70,9 @@ type PendingTransactionsTabState = {
     formDescription: string,
     formThreadId: string,
     formISODate: string,
-    formPurchaseIndex: number
+    formPurchaseIndex: number,
+    amortized: boolean,
+    amortizedLength: string
 }
 
 enum PurchaseCategory {

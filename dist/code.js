@@ -213,7 +213,9 @@ function setScriptProp() {}
                 amount: parseFloat(formObject.amount),
                 category: formObject.category ? PurchaseCategory[formObject.category] : undefined,
                 isoDate: formObject.isoDate,
-                description: formObject.description,
+                description: "[Amortized ".concat(new Date(formObject.isoDate).toLocaleString("default", {
+                    month: "long"
+                }), ", ").concat(new Date(formObject.isoDate).getFullYear(), "] ").concat(formObject.description),
                 monthlyAmount: parseFloat(formObject.amount) / parseInt(formObject.amortizedLength),
                 applicableMonths: [ "NONE" ],
                 purchaseIndex: formObject.purchaseIndex == undefined ? undefined : parseInt(formObject.purchaseIndex)

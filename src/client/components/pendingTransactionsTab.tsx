@@ -2,6 +2,7 @@ import React from "react";
 import { ChildComponentType } from "./root";
 import GmailConfirmModal from "./gmailConfirmModal";
 import { PendingTransactionsTabState, Purchase, FormObjToPurchase, PurchaseCategory } from "../../shared/types";
+import AmortizedFormInput from "./amortizedFormInput"
 
 export default class PendingTransactionsTab extends React.Component<ChildComponentType> {
 	
@@ -17,7 +18,9 @@ export default class PendingTransactionsTab extends React.Component<ChildCompone
 		formDescription: "",
 		formThreadId: "",
 		formISODate: new Date().toLocaleString(),
-		formPurchaseIndex: -1 
+		formPurchaseIndex: -1,
+		amortized: false,
+		amortizedLength: "1"
 	}
 
 	public resetForm = () => {
@@ -26,7 +29,9 @@ export default class PendingTransactionsTab extends React.Component<ChildCompone
 			formDescription: "",
 			formThreadId: "",
 			formISODate: new Date().toLocaleString(),
-			formPurchaseIndex: -1 
+			formPurchaseIndex: -1,
+			amortized: false,
+			amortizedLength: "1"
 		})
 	}
 
@@ -44,6 +49,16 @@ export default class PendingTransactionsTab extends React.Component<ChildCompone
 		this.setState({
 			formDescription: description
 		});
+	}
+	public setAmortizedLength = (numOfMonths: string) => {
+		this.setState({
+			amortizedLength: numOfMonths
+		})
+	}
+	public setAmortized = (amortized: boolean) => {
+		this.setState({
+			amortized: amortized
+		})
 	}
 
 	public setModalVis = (newVis: boolean, runSubmit: boolean) => {
@@ -162,6 +177,11 @@ export default class PendingTransactionsTab extends React.Component<ChildCompone
 						<label>Description: </label>
 						<input value={this.state.formDescription} onChange={(e) => this.setDescription(e.target.value)} type="text" name="description" required/>
 					</div>
+					
+					<div className="flex flex-col m-5 items-center place-items-center">
+						<AmortizedFormInput setAmortizedLength={this.setAmortizedLength} amortizedLength={this.state.amortizedLength} setAmortized={this.setAmortized} amortized={this.state.amortized} />
+					</div>
+
 					<input value={this.state.formThreadId} type="text" className="hidden" id="threadId" name="threadId" />
 					<input value={this.state.formISODate} type="text" className="hidden" id="isoDate" name="isoDate" />
 					<input type="number" value={this.state.formPurchaseIndex} className="hidden" id="purchaseIndex" name="purchaseIndex" />
@@ -189,7 +209,7 @@ export default class PendingTransactionsTab extends React.Component<ChildCompone
 						}
 					</div>
 				</div>
-				<GmailConfirmModal visability={ this.state.modalVisability } setVisability={ this.setModalVis } setDescription={this.setDescription} currentDescription={this.state.formDescription} setAmount={this.setAmount} currentAmount={this.state.formAmount} setCategory={this.setCategory} currentCategory={this.state.formCategory}/>
+				<GmailConfirmModal visability={ this.state.modalVisability } setVisability={ this.setModalVis } setDescription={this.setDescription} currentDescription={this.state.formDescription} setAmount={this.setAmount} currentAmount={this.state.formAmount} setCategory={this.setCategory} currentCategory={this.state.formCategory} amortized={this.state.amortized} setAmortized={this.setAmortized} amortizedLength={this.state.amortizedLength} setAmortizedLength={this.setAmortizedLength}/>
 			</div>
 		);
 	};

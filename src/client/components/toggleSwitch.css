@@ -1,0 +1,12 @@
+.togglePin {
+    transition: all .25s ease-in-out;
+    position: relative;
+ }
+ 
+ .togglePin-toggled {
+    transform: translate(1.3rem)
+ }
+ 
+ .togglePin-untoggled {
+    transform: translate(0rem);
+ }

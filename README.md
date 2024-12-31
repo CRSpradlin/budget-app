@@ -20,7 +20,7 @@ Allow Google App Script API. If you have not done so, navigate to [https://scrip
 Enable the App Script API
 ![usersettings_appscript_api_on.png](./docs/media/usersettings_appscript_api_on.png)
 
-Next, run `bun run clasp create <project name>` in the cloned down repository. 
+Next, run `bun run create -- <project name>` in the cloned down repository. 
 ![type_clasp_create.png](./docs/media/type_clasp_create.png)
 Select `webapp` for the project type when prompted.
 ![run_clasp_create.png](./docs/media/run_clasp_create.png)

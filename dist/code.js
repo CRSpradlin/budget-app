@@ -48,7 +48,17 @@ function setScriptProp() {}
     // ESM COMPAT FLAG
         __webpack_require__.r(__webpack_exports__);
     // CONCATENATED MODULE: ./src/shared/types.ts
-    var PurchaseCategory;
+    var PurchaseCategory, calculateAmortizedMonthList = function(amortizedPurchase, amortizedLength) {
+        var monthList = [], runningDate = new Date(amortizedPurchase.isoDate);
+        runningDate.setDate(1);
+        for (var i = 0; i < amortizedLength; i++) {
+            var monthName = runningDate.toLocaleString("default", {
+                month: "long"
+            }), fullYear = runningDate.getFullYear();
+            monthList.push("".concat(monthName, ", ").concat(fullYear)), runningDate.setMonth(runningDate.getMonth() + 1);
+        }
+        amortizedPurchase.applicableMonths = monthList;
+    };
     !function(PurchaseCategory) {
         PurchaseCategory.Rent = "Rent", PurchaseCategory.Utilities = "Utilities", PurchaseCategory.Grocery = "Grocery", 
         PurchaseCategory.Dining = "Dining", PurchaseCategory.Dog = "Dog", PurchaseCategory.Car = "Car", 
@@ -61,21 +71,62 @@ function setScriptProp() {}
         var props = GetProps();
         GmailApp.getThreadById(threadId).addLabel(GmailApp.getUserLabelByName(props.EMAIL_READ_LABEL)), 
         GmailApp.getThreadById(threadId).removeLabel(GmailApp.getUserLabelByName(props.EMAIL_UNREAD_LABEL));
-    }, AddPurchaseToSheet = function(newPurchase) {
-        var monthRecordSheet = function(purchase) {
-            var props = GetProps(), mainSheet = SpreadsheetApp.openById(props.MAIN_SHEET_ID), purchaseDate = new Date(purchase.isoDate), sheetName = "".concat(purchaseDate.toLocaleString("default", {
+    }, getNextEmptyRow = function(sheet) {
+        for (var emptyRowIndex = 1, _i = 0, rangeValueArray_1 = sheet.getRange(1, 1, sheet.getMaxRows(), sheet.getMaxColumns()).getValues(); _i < rangeValueArray_1.length; _i++) {
+            if ("" == rangeValueArray_1[_i][0]) return emptyRowIndex;
+            emptyRowIndex++;
+        }
+        throw Error("Could not find an empty row for ".concat(sheet.getName()));
+    }, getSheetForPurchase = function(purchase) {
+        var props = GetProps(), mainSheet = SpreadsheetApp.openById(props.MAIN_SHEET_ID), sheetName = function(purchase) {
+            var purchaseDate = new Date(purchase.isoDate);
+            return "".concat(purchaseDate.toLocaleString("default", {
                 month: "long"
-            }), ", ").concat(purchaseDate.getFullYear()), monthRecordSheet = mainSheet.getSheetByName(sheetName);
-            return monthRecordSheet || ((monthRecordSheet = mainSheet.insertSheet(sheetName, 1)).getRange(1, 1, 1, 7).setValues([ [ "Amount", "Category", "Date", "Description", "Gmail I.D.", "", "Total for Month" ] ]), 
-            monthRecordSheet.getRange(2, 7).setFormula("=SUM(A:A)")), monthRecordSheet;
-        }(newPurchase);
-        monthRecordSheet.getRange(function(sheet) {
-            for (var emptyRowIndex = 1, _i = 0, rangeValueArray_1 = sheet.getRange(1, 1, sheet.getMaxRows(), sheet.getMaxColumns()).getValues(); _i < rangeValueArray_1.length; _i++) {
-                if ("" == rangeValueArray_1[_i][0]) return emptyRowIndex;
-                emptyRowIndex++;
+            }), ", ").concat(purchaseDate.getFullYear());
+        }(purchase), monthRecordSheet = mainSheet.getSheetByName(sheetName);
+        return monthRecordSheet || ((monthRecordSheet = mainSheet.insertSheet(sheetName, 1)).getRange(1, 1, 1, 7).setValues([ [ "Amount", "Category", "Date", "Description", "Gmail I.D.", "", "Total for Month" ] ]), 
+        monthRecordSheet.getRange(2, 7).setFormula("=SUM(A:A)"), includeAmortizedPurchasesForSheet(sheetName)), 
+        monthRecordSheet;
+    }, includeAmortizedPurchasesForSheet = function(sheetName) {
+        for (var _i = 0, amortizedPurchases_1 = getAmortizedPurchases(); _i < amortizedPurchases_1.length; _i++) {
+            var aPurchase = amortizedPurchases_1[_i];
+            if (aPurchase.applicableMonths.includes(sheetName)) {
+                var purchase = convertAmortizePurchaseToPurchase(aPurchase);
+                purchase.isoDate = new Date(sheetName).toISOString(), AddPurchaseToSheet(purchase);
             }
-            throw Error("Could not find an empty row for ".concat(sheet.getName()));
-        }(monthRecordSheet), 1, 1, 5).setValues([ [ newPurchase.amount, newPurchase.category ? newPurchase.category : "Uncategorized", newPurchase.isoDate, newPurchase.description, newPurchase.threadId ? newPurchase.threadId : "N/A" ] ]), 
+        }
+    }, getAmortizedSheet = function() {
+        var props = GetProps(), mainSheet = SpreadsheetApp.openById(props.MAIN_SHEET_ID), amortizedSheet = mainSheet.getSheetByName("Amortized Purchases");
+        return amortizedSheet || (amortizedSheet = mainSheet.insertSheet("Amortized Purchases", mainSheet.getNumSheets())).getRange(1, 1, 1, 7).setValues([ [ "Total Amount", "Category", "Date", "Description", "Gmail I.D.", "Monthly Amount", "Applied Months" ] ]), 
+        amortizedSheet;
+    }, getAmortizedPurchases = function() {
+        for (var amortizedSheet = getAmortizedSheet(), amortizedPurchases = [], _i = 0, amortizedSheetEntries_1 = amortizedSheet.getRange(2, 1, amortizedSheet.getMaxRows(), 7).getValues(); _i < amortizedSheetEntries_1.length; _i++) {
+            var amortizedEntry = amortizedSheetEntries_1[_i];
+            if ("" == amortizedEntry[0]) break;
+            var amount = parseFloat(amortizedEntry[0]), category = PurchaseCategory[amortizedEntry[1]];
+            amortizedPurchases.push({
+                amount,
+                category,
+                isoDate: amortizedEntry[2],
+                description: amortizedEntry[3],
+                threadId: amortizedEntry[4],
+                monthlyAmount: amortizedEntry[5],
+                applicableMonths: JSON.parse(amortizedEntry[6])
+            });
+        }
+        return amortizedPurchases;
+    }, convertAmortizePurchaseToPurchase = function(amortizedPurchase) {
+        return {
+            amount: amortizedPurchase.monthlyAmount,
+            category: amortizedPurchase.category,
+            isoDate: amortizedPurchase.isoDate,
+            description: amortizedPurchase.description,
+            threadId: amortizedPurchase.threadId,
+            purchaseIndex: amortizedPurchase.purchaseIndex
+        };
+    }, AddPurchaseToSheet = function(newPurchase) {
+        var monthRecordSheet = getSheetForPurchase(newPurchase);
+        monthRecordSheet.getRange(getNextEmptyRow(monthRecordSheet), 1, 1, 5).setValues([ [ newPurchase.amount, newPurchase.category ? newPurchase.category : "Uncategorized", newPurchase.isoDate, newPurchase.description, newPurchase.threadId ? newPurchase.threadId : "N/A" ] ]), 
         function(newPurchase) {
             var scriptProps = PropertiesService.getScriptProperties(), categoryMapping = JSON.parse(scriptProps.getProperty("TRANSACTION_MAP") || "{}");
             categoryMapping[newPurchase.description.replace(/\$([0-9,.]+)/, "").replace(/ \(Add. Tip: \$([0-9,.]+)\)/, "")] = newPurchase.category, 
@@ -155,7 +206,26 @@ function setScriptProp() {}
         }
         return runningTotal;
     }, __webpack_require__.g.SubmitNewPurchase = function(formObject) {
-        var purchase = function(formObject) {
+        var purchase;
+        return 1 == JSON.parse(formObject.amortized) && parseInt(formObject.amortizedLength) > 1 ? (purchase = function(formObject) {
+            var amortizedPurchase = {
+                threadId: formObject.threadId ? formObject.threadId : undefined,
+                amount: parseFloat(formObject.amount),
+                category: formObject.category ? PurchaseCategory[formObject.category] : undefined,
+                isoDate: formObject.isoDate,
+                description: formObject.description,
+                monthlyAmount: parseFloat(formObject.amount) / parseInt(formObject.amortizedLength),
+                applicableMonths: [ "NONE" ],
+                purchaseIndex: formObject.purchaseIndex == undefined ? undefined : parseInt(formObject.purchaseIndex)
+            };
+            return calculateAmortizedMonthList(amortizedPurchase, parseInt(formObject.amortizedLength)), 
+            amortizedPurchase;
+        }(formObject), function(amortizedPurchase) {
+            var amortizedSheet = getAmortizedSheet();
+            amortizedSheet.getRange(getNextEmptyRow(amortizedSheet), 1, 1, 7).setValues([ [ amortizedPurchase.amount, amortizedPurchase.category, amortizedPurchase.isoDate, amortizedPurchase.description, amortizedPurchase.threadId, amortizedPurchase.monthlyAmount, JSON.stringify(amortizedPurchase.applicableMonths) ] ]);
+            var currentMonthPurchaseEntry = convertAmortizePurchaseToPurchase(amortizedPurchase);
+            AddPurchaseToSheet(currentMonthPurchaseEntry);
+        }(purchase)) : (purchase = function(formObject) {
             return {
                 threadId: formObject.threadId ? formObject.threadId : undefined,
                 amount: parseFloat(formObject.amount),
@@ -164,8 +234,7 @@ function setScriptProp() {}
                 description: formObject.description,
                 purchaseIndex: formObject.purchaseIndex == undefined ? undefined : parseInt(formObject.purchaseIndex)
             };
-        }(formObject);
-        return AddPurchaseToSheet(purchase), purchase.threadId && MarkThreadAsRead(purchase.threadId), 
+        }(formObject), AddPurchaseToSheet(purchase)), purchase.threadId && MarkThreadAsRead(purchase.threadId), 
         purchase;
     }, __webpack_require__.g.MarkPurchaseAsRead = function(purchase) {
         return purchase.threadId && MarkThreadAsRead(purchase.threadId), purchase;

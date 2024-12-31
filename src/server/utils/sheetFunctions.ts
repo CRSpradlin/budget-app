@@ -1,5 +1,7 @@
 import { GetProps, SetNewPurchaseCategoryUsage } from "./propFunctions";
-import { Purchase, PurchaseCategory } from "../../shared/types";
+import { Purchase, AmortizedPurchase, PurchaseCategory } from "../../shared/types";
+
+const AMORTIZE_SHEET_NAME = 'Amortized Purchases';
 
 const getNextEmptyRow = (sheet: GoogleAppsScript.Spreadsheet.Sheet) => {
     const rangeValueArray = sheet.getRange(1, 1, sheet.getMaxRows(), sheet.getMaxColumns()).getValues();
@@ -12,22 +14,116 @@ const getNextEmptyRow = (sheet: GoogleAppsScript.Spreadsheet.Sheet) => {
     throw Error(`Could not find an empty row for ${sheet.getName()}`);
 }
 
+const getSheetNameForPurchase = (purchase: Purchase) => {
+    const purchaseDate = new Date(purchase.isoDate);
+    const sheetName = `${purchaseDate.toLocaleString('default', { month: 'long' })}, ${purchaseDate.getFullYear()}`;
+
+    return sheetName;
+}
+
 const getSheetForPurchase = (purchase: Purchase) => {
     const props = GetProps();
     const mainSheet = SpreadsheetApp.openById(props['MAIN_SHEET_ID']);
 
-    const purchaseDate = new Date(purchase.isoDate);
-    const sheetName = `${purchaseDate.toLocaleString('default', { month: 'long' })}, ${purchaseDate.getFullYear()}`;
+    const sheetName = getSheetNameForPurchase(purchase);
 
     let monthRecordSheet = mainSheet.getSheetByName(sheetName);
     if (!monthRecordSheet) {
         monthRecordSheet = mainSheet.insertSheet(sheetName, 1);
         monthRecordSheet.getRange(1, 1, 1, 7).setValues([['Amount', 'Category', 'Date', 'Description', 'Gmail I.D.', '', 'Total for Month']]);
         monthRecordSheet.getRange(2, 7).setFormula('=SUM(A:A)');
+
+        includeAmortizedPurchasesForSheet(sheetName);
+        // clearAmortizedPurchases(); //TODO: Is there a need to clear Amortized Purchases?
     } 
 
     return monthRecordSheet;
 }
+
+const includeAmortizedPurchasesForSheet = (sheetName) => {
+    const amortizedPurchases = getAmortizedPurchases();
+
+    for (const aPurchase of amortizedPurchases) {
+        if (aPurchase.applicableMonths.includes(sheetName)) {
+            const purchase = convertAmortizePurchaseToPurchase(aPurchase);
+            purchase.isoDate = new Date(sheetName).toISOString();
+            AddPurchaseToSheet(purchase);
+        }
+    }
+}
+
+const getAmortizedSheet = () => {
+    const props = GetProps();
+    const mainSheet = SpreadsheetApp.openById(props['MAIN_SHEET_ID']);
+   
+    let amortizedSheet = mainSheet.getSheetByName(AMORTIZE_SHEET_NAME);
+    if (!amortizedSheet) {
+        amortizedSheet = mainSheet.insertSheet(AMORTIZE_SHEET_NAME, mainSheet.getNumSheets());
+        amortizedSheet.getRange(1, 1, 1, 7).setValues([['Total Amount', 'Category', 'Date', 'Description', 'Gmail I.D.', 'Monthly Amount', 'Applied Months']]);     
+    }
+
+    return amortizedSheet;
+}
+
+const getAmortizedPurchases = () => {
+    const amortizedSheet = getAmortizedSheet();
+
+    const amortizedSheetEntries = amortizedSheet.getRange(2, 1, amortizedSheet.getMaxRows(), 7).getValues();
+    const amortizedPurchases: AmortizedPurchase[] = [];
+
+    for (const amortizedEntry of amortizedSheetEntries) {
+        if(amortizedEntry[0] == "") break;
+
+        const amount = parseFloat(amortizedEntry[0]);
+        const category = PurchaseCategory[amortizedEntry[1]];
+
+        amortizedPurchases.push({
+            amount,
+            category,
+            isoDate: amortizedEntry[2],
+            description: amortizedEntry[3],
+            threadId: amortizedEntry[4],
+            monthlyAmount: amortizedEntry[5],
+            applicableMonths: JSON.parse(amortizedEntry[6])
+        })
+    }
+
+    return amortizedPurchases;
+}
+
+const convertAmortizePurchaseToPurchase = (amortizedPurchase: AmortizedPurchase) => {
+    const purchase: Purchase = {
+        amount: amortizedPurchase.monthlyAmount,
+        category: amortizedPurchase.category,
+        isoDate: amortizedPurchase.isoDate,
+        description: amortizedPurchase.description,
+        threadId: amortizedPurchase.threadId,
+        purchaseIndex: amortizedPurchase.purchaseIndex
+    }
+
+    return purchase;
+}
+
+const AddAmortizedPurchase = (amortizedPurchase: AmortizedPurchase) => {
+    const amortizedSheet = getAmortizedSheet();
+
+    amortizedSheet.getRange(getNextEmptyRow(amortizedSheet), 1, 1, 7).setValues([
+        [
+            amortizedPurchase.amount, 
+            amortizedPurchase.category, 
+            amortizedPurchase.isoDate, 
+            amortizedPurchase.description, 
+            amortizedPurchase.threadId, 
+            amortizedPurchase.monthlyAmount, 
+            JSON.stringify(amortizedPurchase.applicableMonths)
+        ]
+    ]);
+
+    const currentMonthPurchaseEntry = convertAmortizePurchaseToPurchase(amortizedPurchase);
+
+    AddPurchaseToSheet(currentMonthPurchaseEntry);
+}
+
 
 const AddPurchaseToSheet = (newPurchase: Purchase) => {
     const monthRecordSheet = getSheetForPurchase(newPurchase);
@@ -81,4 +177,4 @@ const GetMonthPurchases = (monthName: string, fullYear: number) => {
     return { purchases, categories: categoryResults };
 }
 
-export { AddPurchaseToSheet, GetMonthPurchases }
+export { AddPurchaseToSheet, AddAmortizedPurchase, GetMonthPurchases }

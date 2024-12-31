@@ -1,6 +1,6 @@
 import { GetLatestUnreadPurchases, MarkThreadAsRead } from "./utils/emailFunctions";
-import { AddPurchaseToSheet, GetMonthPurchases } from "./utils/sheetFunctions";
-import { Purchase, PurchaseCategory, FormObjToPurchase } from "../shared/types";
+import { AddAmortizedPurchase, AddPurchaseToSheet, GetMonthPurchases } from "./utils/sheetFunctions";
+import { Purchase, PurchaseCategory, FormObjToAmortizedPurchase, FormObjToPurchase, AmortizedPurchase } from "../shared/types";
 import { GetExpectedPurchaseCategory, GetProps } from "./utils/propFunctions";
 
 // @ts-ignore
@@ -59,14 +59,18 @@ global.GetTotal30DaysAgo = () => {
 
 // @ts-ignore
 global.SubmitNewPurchase = (formObject) => {
-
-    const purchase = FormObjToPurchase(formObject)
-    AddPurchaseToSheet(purchase);
+    let purchase;
+    if (JSON.parse(formObject.amortized) == true && parseInt(formObject.amortizedLength) > 1) {
+        purchase = FormObjToAmortizedPurchase(formObject);
+        AddAmortizedPurchase(purchase);
+    } else {
+        purchase = FormObjToPurchase(formObject)
+        AddPurchaseToSheet(purchase);
+    }
 
     if (purchase.threadId) {
         MarkThreadAsRead(purchase.threadId);
     }
-
     return purchase;
 }
 

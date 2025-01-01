@@ -177,4 +177,32 @@ const GetMonthPurchases = (monthName: string, fullYear: number) => {
     return { purchases, categories: categoryResults };
 }
 
-export { AddPurchaseToSheet, AddAmortizedPurchase, GetMonthPurchases }
+const GetTotal30DaysAgo = () => {
+    const currDate = new Date();
+    let newDate = new Date();
+    const currMonth = currDate.getMonth();
+    const expectedMonth = currMonth == 0 ? 11 : currMonth - 1;
+
+    newDate.setMonth(expectedMonth);
+    if (newDate.getMonth() != expectedMonth) {
+        newDate = currDate;
+        newDate.setDate(1);
+        newDate.setDate(0);
+    }
+
+    const monthName = newDate.toLocaleString('default', { month: 'long' });
+    const fullYear = newDate.getFullYear();
+
+    const prevMonthPurchases = GetMonthPurchases(monthName, fullYear);
+
+    let runningTotal = 0;
+    for (let purhcase of prevMonthPurchases.purchases) {
+        if (new Date(purhcase.isoDate) <= newDate){
+            runningTotal += purhcase.amount;
+        }
+    }
+
+    return runningTotal;
+}
+
+export { AddPurchaseToSheet, AddAmortizedPurchase, GetMonthPurchases, GetTotal30DaysAgo }

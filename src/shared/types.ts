@@ -18,6 +18,22 @@ type AmortizedPurchase = {
     purchaseIndex?: number
 }
 
+type MonthlySummaryTabType = {
+    loading: boolean,
+    purchases: Purchase[],
+    categories: {},
+    prevMonthTotal: number,
+    reloadData: () => void 
+}
+
+type PendingTransactionsTabType = {
+    loading: boolean,
+    unreadPurchases: Purchase[],
+    setLoading: (value: boolean) => void,
+    updateUnreadPurchases: (unreadPurchases: Purchase[]) => void,
+    reloadData: () => void
+}
+
 const FormObjToAmortizedPurchase = (formObject: { [key: string]: string }): AmortizedPurchase => {
     const amortizedPurchase: AmortizedPurchase =  {
         threadId: formObject.threadId ? formObject.threadId : undefined,
@@ -62,9 +78,8 @@ const FormObjToPurchase = (formObject: { [key: string]: string }): Purchase => {
     }
 }
 
-type PendingTransactionsTabState = {
+type PendingTransactionsTabStateType = {
     modalVisability: boolean,
-    unreadPurchases: Purchase[],
     formAmount: string,
     formCategory: PurchaseCategory,
     formDescription: string,
@@ -73,6 +88,15 @@ type PendingTransactionsTabState = {
     formPurchaseIndex: number,
     amortized: boolean,
     amortizedLength: string
+}
+
+type RootStateType = {
+    activeTabName: string,
+    loading: boolean,
+    purchases: Purchase[],
+    categories: {},
+    prevMonthTotal: number,
+    unreadPurchases: Purchase[]
 }
 
 enum PurchaseCategory {
@@ -86,4 +110,4 @@ enum PurchaseCategory {
     Uncategorized = 'Uncategorized'
 }
 
-export { Purchase, AmortizedPurchase, FormObjToAmortizedPurchase, FormObjToPurchase, PurchaseCategory, PendingTransactionsTabState }
+export { Purchase, AmortizedPurchase, MonthlySummaryTabType, PendingTransactionsTabType, FormObjToAmortizedPurchase, FormObjToPurchase, PurchaseCategory, PendingTransactionsTabStateType, RootStateType }

@@ -1,7 +1,6 @@
 import { GetLatestUnreadPurchases, MarkThreadAsRead } from "./utils/emailFunctions";
-import { AddAmortizedPurchase, AddPurchaseToSheet, GetMonthPurchases } from "./utils/sheetFunctions";
-import { Purchase, PurchaseCategory, FormObjToAmortizedPurchase, FormObjToPurchase, AmortizedPurchase } from "../shared/types";
-import { GetExpectedPurchaseCategory, GetProps } from "./utils/propFunctions";
+import { AddAmortizedPurchase, AddPurchaseToSheet, GetMonthPurchases, GetTotal30DaysAgo } from "./utils/sheetFunctions";
+import { Purchase, FormObjToAmortizedPurchase, FormObjToPurchase } from "../shared/types";
 
 // @ts-ignore
 global.doGet = (e) => {
@@ -9,12 +8,7 @@ global.doGet = (e) => {
 };
 
 // @ts-ignore
-global.GetLatestUnreadPurchases = () => {
-    return GetLatestUnreadPurchases();
-}
-
-// @ts-ignore
-global.GetCurrentMonthPurchases = () => {
+global.ReloadData = () => {
     const currDate = new Date();
 
     const monthName = currDate.toLocaleString('default', { month: 'long' });
@@ -22,39 +16,11 @@ global.GetCurrentMonthPurchases = () => {
 
     const result = GetMonthPurchases(monthName, fullYear);
 
-    // @ts-ignore
-    const prevMonthTotal = global.GetTotal30DaysAgo();
+    const prevMonthTotal = GetTotal30DaysAgo();
 
-    return JSON.stringify({...result, prevMonthTotal});
-}
+    const unreadPurchases = GetLatestUnreadPurchases();
 
-// @ts-ignore
-global.GetTotal30DaysAgo = () => {
-    const currDate = new Date();
-    let newDate = new Date();
-    const currMonth = currDate.getMonth();
-    const expectedMonth = currMonth == 0 ? 11 : currMonth - 1;
-
-    newDate.setMonth(expectedMonth);
-    if (newDate.getMonth() != expectedMonth) {
-        newDate = currDate;
-        newDate.setDate(1);
-        newDate.setDate(0);
-    }
-
-    const monthName = newDate.toLocaleString('default', { month: 'long' });
-    const fullYear = newDate.getFullYear();
-
-    const prevMonthPurchases = GetMonthPurchases(monthName, fullYear);
-
-    let runningTotal = 0;
-    for (let purhcase of prevMonthPurchases.purchases) {
-        if (new Date(purhcase.isoDate) <= newDate){
-            runningTotal += purhcase.amount;
-        }
-    }
-
-    return runningTotal;
+    return JSON.stringify({...result, prevMonthTotal, unreadPurchases});
 }
 
 // @ts-ignore

@@ -1,25 +1,48 @@
 import React from "react";
 import PendingTransactionsTab from "./pendingTransactionsTab";
 import MonthlySummaryTab from "./monthlySummaryTab";
-
-export type ChildComponentType = {
-	loading: boolean,
-	setLoading: (value: boolean) => void
-}
+import { Purchase, RootStateType } from "../../shared/types";
 
 export class Root extends React.Component {
 
-	state = {
+	state: RootStateType = {
 		activeTabName: 'pendingTransactionsTab',
-		loading: false
+		loading: false,
+		purchases: [],
+		categories: {},
+		prevMonthTotal: -1,
+		unreadPurchases: []
 	}
 
 	constructor(props) {
 		super(props);
 	}
 
-	componentDidMount = () => {
+	public componentDidMount = () => {
 		this.setLoading = this.setLoading.bind(this);
+		this.reloadData();
+	};
+
+	public reloadData = () => {
+		this.setLoading(true);
+		// @ts-ignore
+		google.script.run
+			.withSuccessHandler(this.handleSuccess)
+			.withFailureHandler(this.handleFailure)
+			.ReloadData();
+	}
+
+	public handleSuccess = (resultStr: string) => {
+		const result = JSON.parse(resultStr);
+
+		this.setState({
+			purchases: result.purchases,
+			categories: result.categories,
+			prevMonthTotal: result.prevMonthTotal,
+			unreadPurchases: result.unreadPurchases
+		});
+
+		this.setLoading(false);
 	}
 
 	setLoading = (value: boolean) => {
@@ -30,6 +53,18 @@ export class Root extends React.Component {
 		this.setState({
 			activeTabName: tabName
 		});
+	}
+
+	updateUnreadPurchases = (unreadPurchases: Purchase[]) => {
+		this.setState({
+			unreadPurchases
+		});
+	}
+
+	public handleFailure = (error: Error) => {
+		this.setLoading(false);
+
+		alert('Error Occured: ' + error.message);
 	}
 
 	public render() {
@@ -54,8 +89,8 @@ export class Root extends React.Component {
 					</ul>
 				</div>
 				<div className="h-full flex flex-col text-center">
-					{ this.state.activeTabName === 'pendingTransactionsTab' ? <PendingTransactionsTab loading={this.state.loading} setLoading={this.setLoading} />  : null }
-					{ this.state.activeTabName === 'monthlySummaryTab' ? <MonthlySummaryTab loading={this.state.loading} setLoading={this.setLoading} /> : null }
+					{ this.state.activeTabName === 'pendingTransactionsTab' ? <PendingTransactionsTab reloadData={this.reloadData} loading={this.state.loading} setLoading={this.setLoading} unreadPurchases={this.state.unreadPurchases} updateUnreadPurchases={this.updateUnreadPurchases} />  : null }
+					{ this.state.activeTabName === 'monthlySummaryTab' ? <MonthlySummaryTab reloadData={this.reloadData} loading={this.state.loading} purchases={this.state.purchases} categories={this.state.categories} prevMonthTotal={this.state.prevMonthTotal} /> : null }
 				</div>
 			</div>
 		);

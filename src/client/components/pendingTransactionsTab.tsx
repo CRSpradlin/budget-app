@@ -1,18 +1,16 @@
 import React from "react";
-import { ChildComponentType } from "./root";
 import GmailConfirmModal from "./gmailConfirmModal";
-import { PendingTransactionsTabState, Purchase, FormObjToPurchase, PurchaseCategory } from "../../shared/types";
+import { PendingTransactionsTabStateType, Purchase, FormObjToPurchase, PurchaseCategory, PendingTransactionsTabType } from "../../shared/types";
 import AmortizedFormInput from "./amortizedFormInput"
 
-export default class PendingTransactionsTab extends React.Component<ChildComponentType> {
+export default class PendingTransactionsTab extends React.Component<PendingTransactionsTabType> {
 	
 	constructor(props) {
 		super(props);
 	};
 
-	state: PendingTransactionsTabState = {
+	state: PendingTransactionsTabStateType = {
 		modalVisability: false,
-		unreadPurchases: [],
 		formAmount: "",
 		formCategory: PurchaseCategory.Uncategorized,
 		formDescription: "",
@@ -81,32 +79,8 @@ export default class PendingTransactionsTab extends React.Component<ChildCompone
 		}
 	}
 
-	public componentDidMount = () => {
-		this.props.setLoading(true);
-		// @ts-ignore
-		google.script.run
-			.withSuccessHandler(this.setUnreadPurchases)
-			.withFailureHandler(this.handleFailure)
-			.GetLatestUnreadPurchases();
-	};
-
-	private setUnreadPurchases = (unreadPurchases: Purchase[]) => {
-		this.props.setLoading(false);
-		this.setState({
-			unreadPurchases: unreadPurchases
-		})
-	}
-
 	public handleFormSuccess = (purchase: Purchase) => {
-		this.props.setLoading(false);
-
-		if (purchase.purchaseIndex != undefined && purchase.purchaseIndex != -1) {
-			const unreadPurchases = this.state.unreadPurchases;
-			unreadPurchases.splice(purchase.purchaseIndex, 1);
-			this.setState({
-				unreadPurchases
-			})
-		}
+		this.props.reloadData();
 	};
 
 	public handleFailure = (error: Error) => {
@@ -192,8 +166,8 @@ export default class PendingTransactionsTab extends React.Component<ChildCompone
 				<div className="m-2 lg:m-28 border-t">
 					<div className="text-budget-dark text-xl font-bold p-6">Approve Pending Transactions</div>
 					<div className="flex flex-col">
-						{this.state.unreadPurchases.length == 0 ? 'No Current Pending Transactions' : 
-							this.state.unreadPurchases.map((purchase, index) => (
+						{this.props.unreadPurchases.length == 0 ? 'No Current Pending Transactions' : 
+							this.props.unreadPurchases.map((purchase, index) => (
 								<div className="flex flex-row items-center border-t-2 border-indigo-900">
 									<div className="flex flex-col w-5/6 items-start text-left">
 										<span className="text-lg font-bold">Amount: ${purchase.amount}</span>

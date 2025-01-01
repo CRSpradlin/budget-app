@@ -1,10 +1,6 @@
 function doGet(e) {}
 
-function GetLatestUnreadPurchases() {}
-
-function GetCurrentMonthPurchases() {}
-
-function GetTotal30DaysAgo() {}
+function ReloadData() {}
 
 function SubmitNewPurchase(formObject) {}
 
@@ -158,8 +154,21 @@ function setScriptProp() {}
     };
     __webpack_require__.g.doGet = function(e) {
         return HtmlService.createHtmlOutputFromFile("dist/index.html").setSandboxMode(HtmlService.SandboxMode.IFRAME).setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL).addMetaTag("viewport", "width=device-width, initial-scale=1").setTitle("BudgetApp");
-    }, __webpack_require__.g.GetLatestUnreadPurchases = function() {
-        return function() {
+    }, __webpack_require__.g.ReloadData = function() {
+        var currDate = new Date, monthName = currDate.toLocaleString("default", {
+            month: "long"
+        }), fullYear = currDate.getFullYear(), result = GetMonthPurchases(monthName, fullYear), prevMonthTotal = function() {
+            var currDate = new Date, newDate = new Date, currMonth = currDate.getMonth(), expectedMonth = 0 == currMonth ? 11 : currMonth - 1;
+            newDate.setMonth(expectedMonth), newDate.getMonth() != expectedMonth && ((newDate = currDate).setDate(1), 
+            newDate.setDate(0));
+            for (var monthName = newDate.toLocaleString("default", {
+                month: "long"
+            }), fullYear = newDate.getFullYear(), runningTotal = 0, _i = 0, _a = GetMonthPurchases(monthName, fullYear).purchases; _i < _a.length; _i++) {
+                var purhcase = _a[_i];
+                new Date(purhcase.isoDate) <= newDate && (runningTotal += purhcase.amount);
+            }
+            return runningTotal;
+        }(), unreadPurchases = function() {
             var mail, purchaseDescription, scriptProps, categoryMapping, props = GetProps(), result = [], index = 0;
             do {
                 for (var _i = 0, mail_1 = mail = GmailApp.search("label:".concat(props.EMAIL_UNREAD_LABEL), index, 50); _i < mail_1.length; _i++) {
@@ -187,24 +196,10 @@ function setScriptProp() {}
             } while (0 != mail.length);
             return result;
         }();
-    }, __webpack_require__.g.GetCurrentMonthPurchases = function() {
-        var currDate = new Date, monthName = currDate.toLocaleString("default", {
-            month: "long"
-        }), fullYear = currDate.getFullYear(), result = GetMonthPurchases(monthName, fullYear), prevMonthTotal = __webpack_require__.g.GetTotal30DaysAgo();
         return JSON.stringify(__assign(__assign({}, result), {
-            prevMonthTotal
+            prevMonthTotal,
+            unreadPurchases
         }));
-    }, __webpack_require__.g.GetTotal30DaysAgo = function() {
-        var currDate = new Date, newDate = new Date, currMonth = currDate.getMonth(), expectedMonth = 0 == currMonth ? 11 : currMonth - 1;
-        newDate.setMonth(expectedMonth), newDate.getMonth() != expectedMonth && ((newDate = currDate).setDate(1), 
-        newDate.setDate(0));
-        for (var monthName = newDate.toLocaleString("default", {
-            month: "long"
-        }), fullYear = newDate.getFullYear(), runningTotal = 0, _i = 0, _a = GetMonthPurchases(monthName, fullYear).purchases; _i < _a.length; _i++) {
-            var purhcase = _a[_i];
-            new Date(purhcase.isoDate) <= newDate && (runningTotal += purhcase.amount);
-        }
-        return runningTotal;
     }, __webpack_require__.g.SubmitNewPurchase = function(formObject) {
         var purchase;
         return 1 == JSON.parse(formObject.amortized) && parseInt(formObject.amortizedLength) > 1 ? (purchase = function(formObject) {

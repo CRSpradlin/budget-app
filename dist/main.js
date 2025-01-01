@@ -7675,7 +7675,6 @@
                 var _this = _super.call(this, props) || this;
                 return _this.state = {
                     modalVisability: !1,
-                    unreadPurchases: [],
                     formAmount: "",
                     formCategory: PurchaseCategory.Uncategorized,
                     formDescription: "",
@@ -7719,19 +7718,8 @@
                         modalVisability: newVis
                     }), runSubmit && (_this.props.setLoading(!0), google.script.run.withSuccessHandler(_this.handleFormSuccess).withFailureHandler(_this.handleFailure).SubmitNewPurchase(document.getElementById("newPurchaseForm"))), 
                     0 == newVis && _this.resetForm();
-                }, _this.componentDidMount = function() {
-                    _this.props.setLoading(!0), google.script.run.withSuccessHandler(_this.setUnreadPurchases).withFailureHandler(_this.handleFailure).GetLatestUnreadPurchases();
-                }, _this.setUnreadPurchases = function(unreadPurchases) {
-                    _this.props.setLoading(!1), _this.setState({
-                        unreadPurchases
-                    });
                 }, _this.handleFormSuccess = function(purchase) {
-                    if (_this.props.setLoading(!1), purchase.purchaseIndex != undefined && -1 != purchase.purchaseIndex) {
-                        var unreadPurchases = _this.state.unreadPurchases;
-                        unreadPurchases.splice(purchase.purchaseIndex, 1), _this.setState({
-                            unreadPurchases
-                        });
-                    }
+                    _this.props.reloadData();
                 }, _this.handleFailure = function(error) {
                     _this.props.setLoading(!1), alert("Error Occured: " + error.message);
                 }, _this.setFormInputsWithPurchase = function(purchase, index) {
@@ -7834,7 +7822,7 @@
                     className: "text-budget-dark text-xl font-bold p-6"
                 }, "Approve Pending Transactions"), react.createElement("div", {
                     className: "flex flex-col"
-                }, 0 == this.state.unreadPurchases.length ? "No Current Pending Transactions" : this.state.unreadPurchases.map((function(purchase, index) {
+                }, 0 == this.props.unreadPurchases.length ? "No Current Pending Transactions" : this.props.unreadPurchases.map((function(purchase, index) {
                     return react.createElement("div", {
                         className: "flex flex-row items-center border-t-2 border-indigo-900"
                     }, react.createElement("div", {
@@ -7895,23 +7883,7 @@
         }();
         /* harmony default export */ const monthlySummaryTab = function(_super) {
             function MonthlySummaryTab(props) {
-                var _this = _super.call(this, props) || this;
-                return _this.state = {
-                    purchases: [],
-                    categories: {},
-                    prevMonthTotal: -1
-                }, _this.setCategoriesAndPurchases = function(resultStr) {
-                    var result = JSON.parse(resultStr);
-                    _this.setState({
-                        purchases: result.purchases,
-                        categories: result.categories,
-                        prevMonthTotal: result.prevMonthTotal
-                    }), _this.props.setLoading(!1);
-                }, _this.handleFailure = function(error) {
-                    _this.props.setLoading(!1), alert("Error Occured: " + error.message);
-                }, _this.componentDidMount = function() {
-                    _this.props.setLoading(!0), google.script.run.withSuccessHandler(_this.setCategoriesAndPurchases).withFailureHandler(_this.handleFailure).GetCurrentMonthPurchases();
-                }, _this;
+                return _super.call(this, props) || this;
             }
             return monthlySummaryTab_extends(MonthlySummaryTab, _super), MonthlySummaryTab.prototype.render = function() {
                 var _this = this;
@@ -7924,14 +7896,14 @@
                 }, "This Month's Category Totals"), react.createElement("table", {
                     className: "table-fixed text-budget-dark"
                 }, react.createElement("tr", null, react.createElement("th", null, "Category"), react.createElement("th", null, "Dollar Total")), Object.keys(PurchaseCategory).map((function(category, index) {
-                    return react.createElement("tr", null, react.createElement("td", null, category), react.createElement("td", null, _this.props.loading ? "Loading..." : "$" + (_this.state.categories[category] == undefined ? 0 : parseFloat(_this.state.categories[category]).toFixed(2))));
-                })), react.createElement("tr", null, react.createElement("td", null, "Month Grand Total:"), react.createElement("td", null, Object.keys(this.state.categories).length > 0 ? "$" + Object.keys(this.state.categories).reduce((function(prev, curr) {
-                    return (parseFloat(prev) + parseFloat(_this.state.categories[curr])).toFixed(2);
-                }), "0") : "Loading...")), react.createElement("tr", null, react.createElement("td", null, "Total Last Month (at this time):"), react.createElement("td", null, this.state.prevMonthTotal < 0 ? "Loading..." : "$" + this.state.prevMonthTotal.toFixed(2))))), react.createElement("div", {
+                    return react.createElement("tr", null, react.createElement("td", null, category), react.createElement("td", null, _this.props.loading ? "Loading..." : "$" + (_this.props.categories[category] == undefined ? 0 : parseFloat(_this.props.categories[category]).toFixed(2))));
+                })), react.createElement("tr", null, react.createElement("td", null, "Month Grand Total:"), react.createElement("td", null, Object.keys(this.props.categories).length > 0 ? "$" + Object.keys(this.props.categories).reduce((function(prev, curr) {
+                    return (parseFloat(prev) + parseFloat(_this.props.categories[curr])).toFixed(2);
+                }), "0") : "Loading...")), react.createElement("tr", null, react.createElement("td", null, "Total Last Month (at this time):"), react.createElement("td", null, this.props.prevMonthTotal < 0 ? "Loading..." : "$" + this.props.prevMonthTotal.toFixed(2))))), react.createElement("div", {
                     className: "m-2 lg:m-28 border-t"
                 }, react.createElement("div", {
                     className: "text-budget-dark text-xl font-bold p-6"
-                }, "This Month's Purchases"), 0 == this.state.purchases.length ? "No Submitted Transactions Yet" : this.state.purchases.map((function(purchase, index) {
+                }, "This Month's Purchases"), 0 == this.props.purchases.length ? "No Submitted Transactions Yet" : this.props.purchases.map((function(purchase, index) {
                     return react.createElement("div", {
                         className: "flex flex-row items-center justify-center border-t-2 border-indigo-900"
                     }, react.createElement("div", {
@@ -7970,13 +7942,33 @@
                 var _this = _super.call(this, props) || this;
                 return _this.state = {
                     activeTabName: "pendingTransactionsTab",
-                    loading: !1
+                    loading: !1,
+                    purchases: [],
+                    categories: {},
+                    prevMonthTotal: -1,
+                    unreadPurchases: []
                 }, _this.componentDidMount = function() {
-                    _this.setLoading = _this.setLoading.bind(_this);
+                    _this.setLoading = _this.setLoading.bind(_this), _this.reloadData();
+                }, _this.reloadData = function() {
+                    _this.setLoading(!0), google.script.run.withSuccessHandler(_this.handleSuccess).withFailureHandler(_this.handleFailure).ReloadData();
+                }, _this.handleSuccess = function(resultStr) {
+                    var result = JSON.parse(resultStr);
+                    _this.setState({
+                        purchases: result.purchases,
+                        categories: result.categories,
+                        prevMonthTotal: result.prevMonthTotal,
+                        unreadPurchases: result.unreadPurchases
+                    }), _this.setLoading(!1);
                 }, _this.setLoading = function(value) {
                     _this.setState({
                         loading: value
                     });
+                }, _this.updateUnreadPurchases = function(unreadPurchases) {
+                    _this.setState({
+                        unreadPurchases
+                    });
+                }, _this.handleFailure = function(error) {
+                    _this.setLoading(!1), alert("Error Occured: " + error.message);
                 }, _this;
             }
             return root_extends(Root, _super), Root.prototype.setActiveTab = function(tabName) {
@@ -8024,11 +8016,17 @@
                 }, "Monthly Summary")))), react.createElement("div", {
                     className: "h-full flex flex-col text-center"
                 }, "pendingTransactionsTab" === this.state.activeTabName ? react.createElement(pendingTransactionsTab, {
+                    reloadData: this.reloadData,
                     loading: this.state.loading,
-                    setLoading: this.setLoading
+                    setLoading: this.setLoading,
+                    unreadPurchases: this.state.unreadPurchases,
+                    updateUnreadPurchases: this.updateUnreadPurchases
                 }) : null, "monthlySummaryTab" === this.state.activeTabName ? react.createElement(monthlySummaryTab, {
+                    reloadData: this.reloadData,
                     loading: this.state.loading,
-                    setLoading: this.setLoading
+                    purchases: this.state.purchases,
+                    categories: this.state.categories,
+                    prevMonthTotal: this.state.prevMonthTotal
                 }) : null));
             }, Root;
         }(react.Component);

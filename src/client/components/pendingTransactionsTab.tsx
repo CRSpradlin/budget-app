@@ -63,7 +63,7 @@ export default class PendingTransactionsTab extends React.Component<PendingTrans
     })
   }
 
-  public setModalVis = (newVis: boolean, runSubmit: boolean, index: number = -1) => {
+  public setModalVis = (newVis: boolean, runSubmit: boolean) => {
     this.setState({
       modalVisability: newVis
     });
@@ -73,13 +73,13 @@ export default class PendingTransactionsTab extends React.Component<PendingTrans
       this.setState((currState: PendingTransactionsTabStateType) => {
         return {
           ...currState,
-          processingPurchaseIndexes: [...currState.processingPurchaseIndexes, index.toString()]
+          processingPurchaseIndexes: [...currState.processingPurchaseIndexes, this.state.formThreadId]
         }
       });
       // @ts-ignore
       google.script.run
-        .withSuccessHandler((resp: Purchase) => this.handleFormSuccess(resp, index)) //needs its own success func
-        .withFailureHandler((resp: Error) => this.handleFailure(resp, index))
+        .withSuccessHandler((resp: Purchase) => this.handleFormSuccess(resp)) //needs its own success func
+        .withFailureHandler((resp: Error) => this.handleFailure(resp))
         .SubmitNewPurchase(document.getElementById('newPurchaseForm'));
     }
 
@@ -88,23 +88,36 @@ export default class PendingTransactionsTab extends React.Component<PendingTrans
     }
   }
 
-  public handleFormSuccess = (purchase: Purchase, index: number = -1) => {
+  public handleFormSuccess = (purchase: Purchase) => {
+    const newUnreadPurchases = [...this.props.unreadPurchases];
+    newUnreadPurchases.splice(newUnreadPurchases.findIndex(pur => pur.threadId == purchase.threadId), 1);
+    this.props.updateUnreadPurchases(newUnreadPurchases);
+
     this.setState((currState: PendingTransactionsTabStateType) => {
+      const newProcessingPurchaseIndexes = [...currState.processingPurchaseIndexes];
+      newProcessingPurchaseIndexes.splice(currState.processingPurchaseIndexes.indexOf(purchase.threadId ?? "-1"));
+
+      console.log(currState.processingPurchaseIndexes, newProcessingPurchaseIndexes);
+
       return {
         ...currState,
-        processingPurchaseIndexes: currState.processingPurchaseIndexes.splice(currState.processingPurchaseIndexes.indexOf(index.toString()), 1)
+        processingPurchaseIndexes: newProcessingPurchaseIndexes,
       }
     });
-
-    this.props.reloadData();
+    this.props.setLoading(false);
+    //this.props.reloadData();
   };
 
-  public handleFailure = (error: Error, index: number = -1) => {
+  public handleFailure = (error: Error) => {
     this.props.setLoading(false);
     this.setState((currState: PendingTransactionsTabStateType) => {
+
+      const newProcessingPurchaseIndexes = [...currState.processingPurchaseIndexes];
+      newProcessingPurchaseIndexes.splice(currState.processingPurchaseIndexes.indexOf(this.state.formThreadId ?? "-1"));
+      console.log(currState.processingPurchaseIndexes, newProcessingPurchaseIndexes);
       return {
         ...currState,
-        processingPurchaseIndexes: currState.processingPurchaseIndexes.splice(currState.processingPurchaseIndexes.indexOf(index.toString()), 1)
+        processingPurchaseIndexes: newProcessingPurchaseIndexes
       }
     });
     alert('Error Occured: ' + error.message);
@@ -126,41 +139,42 @@ export default class PendingTransactionsTab extends React.Component<PendingTrans
 
   public deletePurchase = (purchase: Purchase, index: number) => {
     this.props.setLoading(true);
+    console.log("deleting purchase:", purchase.description, purchase.threadId)
     this.setState((currState: PendingTransactionsTabStateType) => {
-      console.log(currState.processingPurchaseIndexes, [...currState.processingPurchaseIndexes, index.toString()])
+      console.log(currState.processingPurchaseIndexes, [...currState.processingPurchaseIndexes, purchase.threadId ?? "-1"])
       return {
         ...currState,
-        processingPurchaseIndexes: [...currState.processingPurchaseIndexes, index.toString()]
+        processingPurchaseIndexes: [...currState.processingPurchaseIndexes, purchase.threadId ?? "-1"]
       }
     });
     purchase.purchaseIndex = index;
 
     // @ts-ignore
     google.script.run
-      .withSuccessHandler((resp: Purchase) => this.handleFormSuccess(resp, index))
-      .withFailureHandler((resp: Error) => this.handleFailure(resp, index))
+      .withSuccessHandler((resp: Purchase) => this.handleFormSuccess(resp))
+      .withFailureHandler((resp: Error) => this.handleFailure(resp))
       .MarkPurchaseAsRead(purchase);
   }
 
-  public handleSubmit = async (e, index = -1) => {
+  public handleSubmit = async (e) => {
     if (e) {
       e.preventDefault();
       this.props.setLoading(true);
       this.setState((currState: PendingTransactionsTabStateType) => {
         return {
           ...currState,
-          processingPurchaseIndexes: [...currState.processingPurchaseIndexes, index.toString()]
+          processingPurchaseIndexes: [...currState.processingPurchaseIndexes, "-1"]
         }
       });
       // @ts-ignore
       google.script.run
-        .withSuccessHandler((purchase: Purchase) => this.handleFormSuccess(purchase, index))
-        .withFailureHandler((error) => this.handleFailure(error, index))
+        .withSuccessHandler((purchase: Purchase) => this.handleFormSuccess(purchase))
+        .withFailureHandler((error) => this.handleFailure(error))
         .SubmitNewPurchase(document.getElementById('newPurchaseForm'));
 
       this.resetForm();
     } else {
-      this.setModalVis(true, false, index);
+      this.setModalVis(true, false);
     }
   }
 
@@ -209,8 +223,8 @@ export default class PendingTransactionsTab extends React.Component<PendingTrans
                     <span>Date: {purchase.isoDate}</span>
                   </div>
                   <div className="flex flex-col md:flex-row">
-                    <button onClick={() => this.setFormInputsWithPurchase(purchase, index)} disabled={this.state.processingPurchaseIndexes.includes(index.toString())} className={`w-[6rem] m-2 ${this.state.processingPurchaseIndexes.includes(index.toString()) ? 'bg-budget' : ' bg-budget-dark hover:bg-budget'} px-5 py-2 text-sm rounded-full font-semibold text-white`}>Add</button>
-                    <button onClick={() => this.deletePurchase(purchase, index)} disabled={this.state.processingPurchaseIndexes.includes(index.toString())} className={`w-[6rem] m-2 ${this.state.processingPurchaseIndexes.includes(index.toString()) ? 'bg-budget' : ' bg-budget-dark hover:bg-budget'} px-5 py-2 text-sm rounded-full font-semibold text-white`}>Delete</button>
+                    <button onClick={() => this.setFormInputsWithPurchase(purchase, index)} disabled={this.state.processingPurchaseIndexes.includes(purchase.threadId || "-1")} className={`w-[6rem] m-2 ${this.state.processingPurchaseIndexes.includes(purchase.threadId || "-1") ? 'bg-budget' : ' bg-budget-dark hover:bg-budget'} px-5 py-2 text-sm rounded-full font-semibold text-white`}>Add</button>
+                    <button onClick={() => this.deletePurchase(purchase, index)} disabled={this.state.processingPurchaseIndexes.includes(purchase.threadId || "-1")} className={`w-[6rem] m-2 ${this.state.processingPurchaseIndexes.includes(purchase.threadId || "-1") ? 'bg-budget' : ' bg-budget-dark hover:bg-budget'} px-5 py-2 text-sm rounded-full font-semibold text-white`}>Delete</button>
                   </div>
                 </div>
               ))

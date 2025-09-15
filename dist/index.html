@@ -7828,28 +7828,37 @@
                     _this.setState({
                         amortized
                     });
-                }, _this.setModalVis = function(newVis, runSubmit, index) {
-                    void 0 === index && (index = -1), _this.setState({
+                }, _this.setModalVis = function(newVis, runSubmit) {
+                    _this.setState({
                         modalVisability: newVis
                     }), runSubmit && (_this.props.setLoading(!0), _this.setState((function(currState) {
                         return __assign(__assign({}, currState), {
-                            processingPurchaseIndexes: __spreadArray(__spreadArray([], currState.processingPurchaseIndexes, !0), [ index.toString() ], !1)
+                            processingPurchaseIndexes: __spreadArray(__spreadArray([], currState.processingPurchaseIndexes, !0), [ _this.state.formThreadId ], !1)
                         });
                     })), google.script.run.withSuccessHandler((function(resp) {
-                        return _this.handleFormSuccess(resp, index);
+                        return _this.handleFormSuccess(resp);
                     })).withFailureHandler((function(resp) {
-                        return _this.handleFailure(resp, index);
+                        return _this.handleFailure(resp);
                     })).SubmitNewPurchase(document.getElementById("newPurchaseForm"))), 0 == newVis && _this.resetForm();
-                }, _this.handleFormSuccess = function(purchase, index) {
-                    void 0 === index && (index = -1), _this.setState((function(currState) {
-                        return __assign(__assign({}, currState), {
-                            processingPurchaseIndexes: currState.processingPurchaseIndexes.splice(currState.processingPurchaseIndexes.indexOf(index.toString()), 1)
+                }, _this.handleFormSuccess = function(purchase) {
+                    var newUnreadPurchases = __spreadArray([], _this.props.unreadPurchases, !0);
+                    newUnreadPurchases.splice(newUnreadPurchases.findIndex((function(pur) {
+                        return pur.threadId == purchase.threadId;
+                    })), 1), _this.props.updateUnreadPurchases(newUnreadPurchases), _this.setState((function(currState) {
+                        var _a, newProcessingPurchaseIndexes = __spreadArray([], currState.processingPurchaseIndexes, !0);
+                        return newProcessingPurchaseIndexes.splice(currState.processingPurchaseIndexes.indexOf(null !== (_a = purchase.threadId) && void 0 !== _a ? _a : "-1")), 
+                        console.log(currState.processingPurchaseIndexes, newProcessingPurchaseIndexes), 
+                        __assign(__assign({}, currState), {
+                            processingPurchaseIndexes: newProcessingPurchaseIndexes
                         });
-                    })), _this.props.reloadData();
-                }, _this.handleFailure = function(error, index) {
-                    void 0 === index && (index = -1), _this.props.setLoading(!1), _this.setState((function(currState) {
-                        return __assign(__assign({}, currState), {
-                            processingPurchaseIndexes: currState.processingPurchaseIndexes.splice(currState.processingPurchaseIndexes.indexOf(index.toString()), 1)
+                    })), _this.props.setLoading(!1);
+                }, _this.handleFailure = function(error) {
+                    _this.props.setLoading(!1), _this.setState((function(currState) {
+                        var _a, newProcessingPurchaseIndexes = __spreadArray([], currState.processingPurchaseIndexes, !0);
+                        return newProcessingPurchaseIndexes.splice(currState.processingPurchaseIndexes.indexOf(null !== (_a = _this.state.formThreadId) && void 0 !== _a ? _a : "-1")), 
+                        console.log(currState.processingPurchaseIndexes, newProcessingPurchaseIndexes), 
+                        __assign(__assign({}, currState), {
+                            processingPurchaseIndexes: newProcessingPurchaseIndexes
                         });
                     })), alert("Error Occured: " + error.message);
                 }, _this.setFormInputsWithPurchase = function(purchase, index) {
@@ -7864,29 +7873,31 @@
                         };
                     })), _this.handleSubmit(null);
                 }, _this.deletePurchase = function(purchase, index) {
-                    _this.props.setLoading(!0), _this.setState((function(currState) {
-                        return console.log(currState.processingPurchaseIndexes, __spreadArray(__spreadArray([], currState.processingPurchaseIndexes, !0), [ index.toString() ], !1)), 
+                    _this.props.setLoading(!0), console.log("deleting purchase:", purchase.description, purchase.threadId), 
+                    _this.setState((function(currState) {
+                        var _a, _b;
+                        return console.log(currState.processingPurchaseIndexes, __spreadArray(__spreadArray([], currState.processingPurchaseIndexes, !0), [ null !== (_a = purchase.threadId) && void 0 !== _a ? _a : "-1" ], !1)), 
                         __assign(__assign({}, currState), {
-                            processingPurchaseIndexes: __spreadArray(__spreadArray([], currState.processingPurchaseIndexes, !0), [ index.toString() ], !1)
+                            processingPurchaseIndexes: __spreadArray(__spreadArray([], currState.processingPurchaseIndexes, !0), [ null !== (_b = purchase.threadId) && void 0 !== _b ? _b : "-1" ], !1)
                         });
                     })), purchase.purchaseIndex = index, google.script.run.withSuccessHandler((function(resp) {
-                        return _this.handleFormSuccess(resp, index);
+                        return _this.handleFormSuccess(resp);
                     })).withFailureHandler((function(resp) {
-                        return _this.handleFailure(resp, index);
+                        return _this.handleFailure(resp);
                     })).MarkPurchaseAsRead(purchase);
-                }, _this.handleSubmit = function(e, index) {
-                    return void 0 === index && (index = -1), __awaiter(_this, void 0, void 0, (function() {
+                }, _this.handleSubmit = function(e) {
+                    return __awaiter(_this, void 0, void 0, (function() {
                         var _this = this;
                         return __generator(this, (function(_a) {
                             return e ? (e.preventDefault(), this.props.setLoading(!0), this.setState((function(currState) {
                                 return __assign(__assign({}, currState), {
-                                    processingPurchaseIndexes: __spreadArray(__spreadArray([], currState.processingPurchaseIndexes, !0), [ index.toString() ], !1)
+                                    processingPurchaseIndexes: __spreadArray(__spreadArray([], currState.processingPurchaseIndexes, !0), [ "-1" ], !1)
                                 });
                             })), google.script.run.withSuccessHandler((function(purchase) {
-                                return _this.handleFormSuccess(purchase, index);
+                                return _this.handleFormSuccess(purchase);
                             })).withFailureHandler((function(error) {
-                                return _this.handleFailure(error, index);
-                            })).SubmitNewPurchase(document.getElementById("newPurchaseForm")), this.resetForm()) : this.setModalVis(!0, !1, index), 
+                                return _this.handleFailure(error);
+                            })).SubmitNewPurchase(document.getElementById("newPurchaseForm")), this.resetForm()) : this.setModalVis(!0, !1), 
                             [ 2 ];
                         }));
                     }));
@@ -7989,14 +8000,14 @@
                         onClick: function() {
                             return _this.setFormInputsWithPurchase(purchase, index);
                         },
-                        disabled: _this.state.processingPurchaseIndexes.includes(index.toString()),
-                        className: "w-[6rem] m-2 ".concat(_this.state.processingPurchaseIndexes.includes(index.toString()) ? "bg-budget" : " bg-budget-dark hover:bg-budget", " px-5 py-2 text-sm rounded-full font-semibold text-white")
+                        disabled: _this.state.processingPurchaseIndexes.includes(purchase.threadId || "-1"),
+                        className: "w-[6rem] m-2 ".concat(_this.state.processingPurchaseIndexes.includes(purchase.threadId || "-1") ? "bg-budget" : " bg-budget-dark hover:bg-budget", " px-5 py-2 text-sm rounded-full font-semibold text-white")
                     }, "Add"), react.createElement("button", {
                         onClick: function() {
                             return _this.deletePurchase(purchase, index);
                         },
-                        disabled: _this.state.processingPurchaseIndexes.includes(index.toString()),
-                        className: "w-[6rem] m-2 ".concat(_this.state.processingPurchaseIndexes.includes(index.toString()) ? "bg-budget" : " bg-budget-dark hover:bg-budget", " px-5 py-2 text-sm rounded-full font-semibold text-white")
+                        disabled: _this.state.processingPurchaseIndexes.includes(purchase.threadId || "-1"),
+                        className: "w-[6rem] m-2 ".concat(_this.state.processingPurchaseIndexes.includes(purchase.threadId || "-1") ? "bg-budget" : " bg-budget-dark hover:bg-budget", " px-5 py-2 text-sm rounded-full font-semibold text-white")
                     }, "Delete")));
                 })))), react.createElement(gmailConfirmModal, {
                     visability: this.state.modalVisability,

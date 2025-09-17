@@ -89,12 +89,22 @@ export class Root extends React.Component {
           </ul>
         </div>
         <div className="h-full flex flex-col text-center">
+        { this.state.loading ? 
+        <>
+          <div className="flex justify-center items-center h-full">
+            <div className="loader"></div>
+          </div>
+        </>
+        : 
+        <>
           <div style={{ display: this.state.activeTabName === 'pendingTransactionsTab' ? 'block' : 'none' }}>
-            <PendingTransactionsTab reloadData={this.reloadData} loading={this.state.loading} setLoading={this.setLoading} unreadPurchases={this.state.unreadPurchases} updateUnreadPurchases={this.updateUnreadPurchases} />
+            <PendingTransactionsTab reloadData={this.reloadData} loading={this.state.loading} setLoading={this.setLoading} initialUnreadPurchases={this.state.unreadPurchases} />
           </div>
           <div style={{ display: this.state.activeTabName === 'monthlySummaryTab' ? 'block' : 'none' }} >
             <MonthlySummaryTab reloadData={this.reloadData} loading={this.state.loading} purchases={this.state.purchases} categories={this.state.categories} prevMonthTotal={this.state.prevMonthTotal} />
           </div>
+        </>
+        }
         </div>
       </div>
     );

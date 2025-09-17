@@ -29,9 +29,8 @@ type MonthlySummaryTabType = {
 
 type PendingTransactionsTabType = {
   loading: boolean,
-  unreadPurchases: Purchase[],
+  initialUnreadPurchases: Purchase[],
   setLoading: (value: boolean) => void,
-  updateUnreadPurchases: (unreadPurchases: Purchase[]) => void,
   reloadData: () => void
 }
 
@@ -80,6 +79,7 @@ const FormObjToPurchase = (formObject: { [key: string]: string }): Purchase => {
 }
 
 type PendingTransactionsTabStateType = {
+  unreadPurchases: Purchase[],
   modalVisability: boolean,
   formAmount: string,
   formCategory: PurchaseCategory,

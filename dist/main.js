@@ -7786,6 +7786,7 @@
             function PendingTransactionsTab(props) {
                 var _this = _super.call(this, props) || this;
                 return _this.state = {
+                    unreadPurchases: _this.props.initialUnreadPurchases,
                     modalVisability: !1,
                     formAmount: "",
                     formCategory: PurchaseCategory.Uncategorized,
@@ -7831,7 +7832,7 @@
                 }, _this.setModalVis = function(newVis, runSubmit) {
                     _this.setState({
                         modalVisability: newVis
-                    }), runSubmit && (_this.props.setLoading(!0), _this.setState((function(currState) {
+                    }), runSubmit && (_this.setState((function(currState) {
                         return __assign(__assign({}, currState), {
                             processingPurchaseIndexes: __spreadArray(__spreadArray([], currState.processingPurchaseIndexes, !0), [ _this.state.formThreadId ], !1)
                         });
@@ -7841,19 +7842,21 @@
                         return _this.handleFailure(resp);
                     })).SubmitNewPurchase(document.getElementById("newPurchaseForm"))), 0 == newVis && _this.resetForm();
                 }, _this.handleFormSuccess = function(purchase) {
-                    var newUnreadPurchases = __spreadArray([], _this.props.unreadPurchases, !0);
-                    newUnreadPurchases.splice(newUnreadPurchases.findIndex((function(pur) {
-                        return pur.threadId == purchase.threadId;
-                    })), 1), _this.props.updateUnreadPurchases(newUnreadPurchases), _this.setState((function(currState) {
-                        var _a, newProcessingPurchaseIndexes = __spreadArray([], currState.processingPurchaseIndexes, !0);
-                        return newProcessingPurchaseIndexes.splice(currState.processingPurchaseIndexes.indexOf(null !== (_a = purchase.threadId) && void 0 !== _a ? _a : "-1")), 
+                    _this.setState((function(currState) {
+                        var _a, newUnreadPurchases = __spreadArray([], currState.unreadPurchases, !0);
+                        purchase.threadId && newUnreadPurchases.splice(newUnreadPurchases.findIndex((function(pur) {
+                            return pur.threadId == purchase.threadId;
+                        })), 1);
+                        var newProcessingPurchaseIndexes = __spreadArray([], currState.processingPurchaseIndexes, !0);
+                        return newProcessingPurchaseIndexes.splice(currState.processingPurchaseIndexes.indexOf(null !== (_a = purchase.threadId) && void 0 !== _a ? _a : "-1"), 1), 
                         console.log(currState.processingPurchaseIndexes, newProcessingPurchaseIndexes), 
                         __assign(__assign({}, currState), {
+                            unreadPurchases: newUnreadPurchases,
                             processingPurchaseIndexes: newProcessingPurchaseIndexes
                         });
-                    })), _this.props.setLoading(!1);
+                    }));
                 }, _this.handleFailure = function(error) {
-                    _this.props.setLoading(!1), _this.setState((function(currState) {
+                    _this.setState((function(currState) {
                         var _a, newProcessingPurchaseIndexes = __spreadArray([], currState.processingPurchaseIndexes, !0);
                         return newProcessingPurchaseIndexes.splice(currState.processingPurchaseIndexes.indexOf(null !== (_a = _this.state.formThreadId) && void 0 !== _a ? _a : "-1")), 
                         console.log(currState.processingPurchaseIndexes, newProcessingPurchaseIndexes), 
@@ -7873,8 +7876,7 @@
                         };
                     })), _this.handleSubmit(null);
                 }, _this.deletePurchase = function(purchase, index) {
-                    _this.props.setLoading(!0), console.log("deleting purchase:", purchase.description, purchase.threadId), 
-                    _this.setState((function(currState) {
+                    console.log("deleting purchase:", purchase.description, purchase.threadId), _this.setState((function(currState) {
                         var _a, _b;
                         return console.log(currState.processingPurchaseIndexes, __spreadArray(__spreadArray([], currState.processingPurchaseIndexes, !0), [ null !== (_a = purchase.threadId) && void 0 !== _a ? _a : "-1" ], !1)), 
                         __assign(__assign({}, currState), {
@@ -7889,7 +7891,7 @@
                     return __awaiter(_this, void 0, void 0, (function() {
                         var _this = this;
                         return __generator(this, (function(_a) {
-                            return e ? (e.preventDefault(), this.props.setLoading(!0), this.setState((function(currState) {
+                            return e ? (e.preventDefault(), this.setState((function(currState) {
                                 return __assign(__assign({}, currState), {
                                     processingPurchaseIndexes: __spreadArray(__spreadArray([], currState.processingPurchaseIndexes, !0), [ "-1" ], !1)
                                 });
@@ -7978,16 +7980,16 @@
                 }, react.createElement("input", {
                     id: "submit",
                     type: "submit",
-                    value: this.props.loading ? "Submitting..." : "Submit",
-                    disabled: this.props.loading,
-                    className: "w-[10rem] ".concat(this.props.loading ? "bg-budget" : " bg-budget-dark hover:bg-budget", " px-5 py-2 text-sm rounded-full font-semibold text-white")
+                    value: this.state.processingPurchaseIndexes.includes("-1") ? "Submitting..." : "Submit",
+                    disabled: this.state.processingPurchaseIndexes.includes("-1"),
+                    className: "w-[10rem] ".concat(this.state.processingPurchaseIndexes.includes("-1") ? "bg-budget" : " bg-budget-dark hover:bg-budget", " px-5 py-2 text-sm rounded-full font-semibold text-white")
                 }))), react.createElement("div", {
                     className: "m-2 lg:m-28 border-t"
                 }, react.createElement("div", {
                     className: "text-budget-dark text-xl font-bold p-6"
                 }, "Approve Pending Transactions"), react.createElement("div", {
                     className: "flex flex-col"
-                }, 0 == this.props.unreadPurchases.length ? "No Current Pending Transactions" : this.props.unreadPurchases.map((function(purchase, index) {
+                }, 0 == this.state.unreadPurchases.length ? "No Current Pending Transactions" : this.state.unreadPurchases.map((function(purchase, index) {
                     return react.createElement("div", {
                         className: "flex flex-row items-center border-t-2 border-indigo-900"
                     }, react.createElement("div", {
@@ -8000,14 +8002,14 @@
                         onClick: function() {
                             return _this.setFormInputsWithPurchase(purchase, index);
                         },
-                        disabled: _this.state.processingPurchaseIndexes.includes(purchase.threadId || "-1"),
-                        className: "w-[6rem] m-2 ".concat(_this.state.processingPurchaseIndexes.includes(purchase.threadId || "-1") ? "bg-budget" : " bg-budget-dark hover:bg-budget", " px-5 py-2 text-sm rounded-full font-semibold text-white")
+                        disabled: _this.state.processingPurchaseIndexes.includes(purchase.threadId || ""),
+                        className: "w-[6rem] m-2 ".concat(_this.state.processingPurchaseIndexes.includes(purchase.threadId || "") ? "bg-budget" : " bg-budget-dark hover:bg-budget", " px-5 py-2 text-sm rounded-full font-semibold text-white")
                     }, "Add"), react.createElement("button", {
                         onClick: function() {
                             return _this.deletePurchase(purchase, index);
                         },
-                        disabled: _this.state.processingPurchaseIndexes.includes(purchase.threadId || "-1"),
-                        className: "w-[6rem] m-2 ".concat(_this.state.processingPurchaseIndexes.includes(purchase.threadId || "-1") ? "bg-budget" : " bg-budget-dark hover:bg-budget", " px-5 py-2 text-sm rounded-full font-semibold text-white")
+                        disabled: _this.state.processingPurchaseIndexes.includes(purchase.threadId || ""),
+                        className: "w-[6rem] m-2 ".concat(_this.state.processingPurchaseIndexes.includes(purchase.threadId || "") ? "bg-budget" : " bg-budget-dark hover:bg-budget", " px-5 py-2 text-sm rounded-full font-semibold text-white")
                     }, "Delete")));
                 })))), react.createElement(gmailConfirmModal, {
                     visability: this.state.modalVisability,
@@ -8180,7 +8182,11 @@
                     }
                 }, "Monthly Summary")))), react.createElement("div", {
                     className: "h-full flex flex-col text-center"
+                }, this.state.loading ? react.createElement(react.Fragment, null, react.createElement("div", {
+                    className: "flex justify-center items-center h-full"
                 }, react.createElement("div", {
+                    className: "loader"
+                }))) : react.createElement(react.Fragment, null, react.createElement("div", {
                     style: {
                         display: "pendingTransactionsTab" === this.state.activeTabName ? "block" : "none"
                     }
@@ -8188,8 +8194,7 @@
                     reloadData: this.reloadData,
                     loading: this.state.loading,
                     setLoading: this.setLoading,
-                    unreadPurchases: this.state.unreadPurchases,
-                    updateUnreadPurchases: this.updateUnreadPurchases
+                    initialUnreadPurchases: this.state.unreadPurchases
                 })), react.createElement("div", {
                     style: {
                         display: "monthlySummaryTab" === this.state.activeTabName ? "block" : "none"
@@ -8200,7 +8205,7 @@
                     purchases: this.state.purchases,
                     categories: this.state.categories,
                     prevMonthTotal: this.state.prevMonthTotal
-                }))));
+                })))));
             }, Root;
         }(react.Component);
         // CONCATENATED MODULE: ./src/client/index.tsx

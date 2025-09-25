@@ -173,7 +173,7 @@ function setScriptProp() {}
             do {
                 for (var _i = 0, mail_1 = mail = GmailApp.search("label:".concat(props.EMAIL_UNREAD_LABEL), index, 50); _i < mail_1.length; _i++) {
                     var thread = mail_1[_i], message = thread.getMessages()[0], subject = message.getSubject(), body = message.getPlainBody(), amountMatch = subject.match(/\$([0-9,.]+)/);
-                    null == amountMatch && (amountMatch = body.match(/\$([0-9,.]+)/));
+                    null == amountMatch && (amountMatch = body.match(/\$([0-9,.]+)/)), null != amountMatch && amountMatch[1].includes(",") && (amountMatch[1] = amountMatch[1].replace(",", ""));
                     var amount = null == amountMatch ? 0 : parseFloat(amountMatch[1]), description = subject;
                     if (props.DESCRIPTION_REGEX) {
                         var potentialDescriptions = new RegExp(props.DESCRIPTION_REGEX, "g").exec(body);

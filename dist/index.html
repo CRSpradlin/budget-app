@@ -23,7 +23,7 @@
             /* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(81), _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default =  __webpack_require__.n(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__), _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(645), ___CSS_LOADER_EXPORT___ =  __webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__)()(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default());
             /* harmony import */            
             // Module
-            ___CSS_LOADER_EXPORT___.push([ module.id, '/*\n! tailwindcss v3.3.3 | MIT License | https://tailwindcss.com\n*//*\n1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)\n2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)\n*/\n\n*,\n::before,\n::after {\n  box-sizing: border-box; /* 1 */\n  border-width: 0; /* 2 */\n  border-style: solid; /* 2 */\n  border-color: #e5e7eb; /* 2 */\n}\n\n::before,\n::after {\n  --tw-content: \'\';\n}\n\n/*\n1. Use a consistent sensible line-height in all browsers.\n2. Prevent adjustments of font size after orientation changes in iOS.\n3. Use a more readable tab size.\n4. Use the user\'s configured `sans` font-family by default.\n5. Use the user\'s configured `sans` font-feature-settings by default.\n6. Use the user\'s configured `sans` font-variation-settings by default.\n*/\n\nhtml {\n  line-height: 1.5; /* 1 */\n  -webkit-text-size-adjust: 100%; /* 2 */\n  -moz-tab-size: 4; /* 3 */\n  -o-tab-size: 4;\n     tab-size: 4; /* 3 */\n  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; /* 4 */\n  font-feature-settings: normal; /* 5 */\n  font-variation-settings: normal; /* 6 */\n}\n\n/*\n1. Remove the margin in all browsers.\n2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.\n*/\n\nbody {\n  margin: 0; /* 1 */\n  line-height: inherit; /* 2 */\n}\n\n/*\n1. Add the correct height in Firefox.\n2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)\n3. Ensure horizontal rules are visible by default.\n*/\n\nhr {\n  height: 0; /* 1 */\n  color: inherit; /* 2 */\n  border-top-width: 1px; /* 3 */\n}\n\n/*\nAdd the correct text decoration in Chrome, Edge, and Safari.\n*/\n\nabbr:where([title]) {\n  text-decoration: underline;\n  -webkit-text-decoration: underline dotted;\n          text-decoration: underline dotted;\n}\n\n/*\nRemove the default font size and weight for headings.\n*/\n\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  font-size: inherit;\n  font-weight: inherit;\n}\n\n/*\nReset links to optimize for opt-in styling instead of opt-out.\n*/\n\na {\n  color: inherit;\n  text-decoration: inherit;\n}\n\n/*\nAdd the correct font weight in Edge and Safari.\n*/\n\nb,\nstrong {\n  font-weight: bolder;\n}\n\n/*\n1. Use the user\'s configured `mono` font family by default.\n2. Correct the odd `em` font sizing in all browsers.\n*/\n\ncode,\nkbd,\nsamp,\npre {\n  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; /* 1 */\n  font-size: 1em; /* 2 */\n}\n\n/*\nAdd the correct font size in all browsers.\n*/\n\nsmall {\n  font-size: 80%;\n}\n\n/*\nPrevent `sub` and `sup` elements from affecting the line height in all browsers.\n*/\n\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline;\n}\n\nsub {\n  bottom: -0.25em;\n}\n\nsup {\n  top: -0.5em;\n}\n\n/*\n1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)\n2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)\n3. Remove gaps between table borders by default.\n*/\n\ntable {\n  text-indent: 0; /* 1 */\n  border-color: inherit; /* 2 */\n  border-collapse: collapse; /* 3 */\n}\n\n/*\n1. Change the font styles in all browsers.\n2. Remove the margin in Firefox and Safari.\n3. Remove default padding in all browsers.\n*/\n\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  font-family: inherit; /* 1 */\n  font-feature-settings: inherit; /* 1 */\n  font-variation-settings: inherit; /* 1 */\n  font-size: 100%; /* 1 */\n  font-weight: inherit; /* 1 */\n  line-height: inherit; /* 1 */\n  color: inherit; /* 1 */\n  margin: 0; /* 2 */\n  padding: 0; /* 3 */\n}\n\n/*\nRemove the inheritance of text transform in Edge and Firefox.\n*/\n\nbutton,\nselect {\n  text-transform: none;\n}\n\n/*\n1. Correct the inability to style clickable types in iOS and Safari.\n2. Remove default button styles.\n*/\n\nbutton,\n[type=\'button\'],\n[type=\'reset\'],\n[type=\'submit\'] {\n  -webkit-appearance: button; /* 1 */\n  background-color: transparent; /* 2 */\n  background-image: none; /* 2 */\n}\n\n/*\nUse the modern Firefox focus style for all focusable elements.\n*/\n\n:-moz-focusring {\n  outline: auto;\n}\n\n/*\nRemove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)\n*/\n\n:-moz-ui-invalid {\n  box-shadow: none;\n}\n\n/*\nAdd the correct vertical alignment in Chrome and Firefox.\n*/\n\nprogress {\n  vertical-align: baseline;\n}\n\n/*\nCorrect the cursor style of increment and decrement buttons in Safari.\n*/\n\n::-webkit-inner-spin-button,\n::-webkit-outer-spin-button {\n  height: auto;\n}\n\n/*\n1. Correct the odd appearance in Chrome and Safari.\n2. Correct the outline style in Safari.\n*/\n\n[type=\'search\'] {\n  -webkit-appearance: textfield; /* 1 */\n  outline-offset: -2px; /* 2 */\n}\n\n/*\nRemove the inner padding in Chrome and Safari on macOS.\n*/\n\n::-webkit-search-decoration {\n  -webkit-appearance: none;\n}\n\n/*\n1. Correct the inability to style clickable types in iOS and Safari.\n2. Change font properties to `inherit` in Safari.\n*/\n\n::-webkit-file-upload-button {\n  -webkit-appearance: button; /* 1 */\n  font: inherit; /* 2 */\n}\n\n/*\nAdd the correct display in Chrome and Safari.\n*/\n\nsummary {\n  display: list-item;\n}\n\n/*\nRemoves the default spacing and border for appropriate elements.\n*/\n\nblockquote,\ndl,\ndd,\nh1,\nh2,\nh3,\nh4,\nh5,\nh6,\nhr,\nfigure,\np,\npre {\n  margin: 0;\n}\n\nfieldset {\n  margin: 0;\n  padding: 0;\n}\n\nlegend {\n  padding: 0;\n}\n\nol,\nul,\nmenu {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n\n/*\nReset default styling for dialogs.\n*/\ndialog {\n  padding: 0;\n}\n\n/*\nPrevent resizing textareas horizontally by default.\n*/\n\ntextarea {\n  resize: vertical;\n}\n\n/*\n1. Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)\n2. Set the default placeholder color to the user\'s configured gray 400 color.\n*/\n\ninput::-moz-placeholder, textarea::-moz-placeholder {\n  opacity: 1; /* 1 */\n  color: #9ca3af; /* 2 */\n}\n\ninput::placeholder,\ntextarea::placeholder {\n  opacity: 1; /* 1 */\n  color: #9ca3af; /* 2 */\n}\n\n/*\nSet the default cursor for buttons.\n*/\n\nbutton,\n[role="button"] {\n  cursor: pointer;\n}\n\n/*\nMake sure disabled buttons don\'t get the pointer cursor.\n*/\n:disabled {\n  cursor: default;\n}\n\n/*\n1. Make replaced elements `display: block` by default. (https://github.com/mozdevs/cssremedy/issues/14)\n2. Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)\n   This can trigger a poorly considered lint error in some tools but is included by design.\n*/\n\nimg,\nsvg,\nvideo,\ncanvas,\naudio,\niframe,\nembed,\nobject {\n  display: block; /* 1 */\n  vertical-align: middle; /* 2 */\n}\n\n/*\nConstrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)\n*/\n\nimg,\nvideo {\n  max-width: 100%;\n  height: auto;\n}\n\n/* Make elements with the HTML hidden attribute stay hidden by default */\n[hidden] {\n  display: none;\n}\n\n*, ::before, ::after {\n  --tw-border-spacing-x: 0;\n  --tw-border-spacing-y: 0;\n  --tw-translate-x: 0;\n  --tw-translate-y: 0;\n  --tw-rotate: 0;\n  --tw-skew-x: 0;\n  --tw-skew-y: 0;\n  --tw-scale-x: 1;\n  --tw-scale-y: 1;\n  --tw-pan-x:  ;\n  --tw-pan-y:  ;\n  --tw-pinch-zoom:  ;\n  --tw-scroll-snap-strictness: proximity;\n  --tw-gradient-from-position:  ;\n  --tw-gradient-via-position:  ;\n  --tw-gradient-to-position:  ;\n  --tw-ordinal:  ;\n  --tw-slashed-zero:  ;\n  --tw-numeric-figure:  ;\n  --tw-numeric-spacing:  ;\n  --tw-numeric-fraction:  ;\n  --tw-ring-inset:  ;\n  --tw-ring-offset-width: 0px;\n  --tw-ring-offset-color: #fff;\n  --tw-ring-color: rgba(59, 130, 246, 0.5);\n  --tw-ring-offset-shadow: 0 0 rgba(0,0,0,0);\n  --tw-ring-shadow: 0 0 rgba(0,0,0,0);\n  --tw-shadow: 0 0 rgba(0,0,0,0);\n  --tw-shadow-colored: 0 0 rgba(0,0,0,0);\n  --tw-blur:  ;\n  --tw-brightness:  ;\n  --tw-contrast:  ;\n  --tw-grayscale:  ;\n  --tw-hue-rotate:  ;\n  --tw-invert:  ;\n  --tw-saturate:  ;\n  --tw-sepia:  ;\n  --tw-drop-shadow:  ;\n  --tw-backdrop-blur:  ;\n  --tw-backdrop-brightness:  ;\n  --tw-backdrop-contrast:  ;\n  --tw-backdrop-grayscale:  ;\n  --tw-backdrop-hue-rotate:  ;\n  --tw-backdrop-invert:  ;\n  --tw-backdrop-opacity:  ;\n  --tw-backdrop-saturate:  ;\n  --tw-backdrop-sepia:  ;\n}\n\n::backdrop {\n  --tw-border-spacing-x: 0;\n  --tw-border-spacing-y: 0;\n  --tw-translate-x: 0;\n  --tw-translate-y: 0;\n  --tw-rotate: 0;\n  --tw-skew-x: 0;\n  --tw-skew-y: 0;\n  --tw-scale-x: 1;\n  --tw-scale-y: 1;\n  --tw-pan-x:  ;\n  --tw-pan-y:  ;\n  --tw-pinch-zoom:  ;\n  --tw-scroll-snap-strictness: proximity;\n  --tw-gradient-from-position:  ;\n  --tw-gradient-via-position:  ;\n  --tw-gradient-to-position:  ;\n  --tw-ordinal:  ;\n  --tw-slashed-zero:  ;\n  --tw-numeric-figure:  ;\n  --tw-numeric-spacing:  ;\n  --tw-numeric-fraction:  ;\n  --tw-ring-inset:  ;\n  --tw-ring-offset-width: 0px;\n  --tw-ring-offset-color: #fff;\n  --tw-ring-color: rgba(59, 130, 246, 0.5);\n  --tw-ring-offset-shadow: 0 0 rgba(0,0,0,0);\n  --tw-ring-shadow: 0 0 rgba(0,0,0,0);\n  --tw-shadow: 0 0 rgba(0,0,0,0);\n  --tw-shadow-colored: 0 0 rgba(0,0,0,0);\n  --tw-blur:  ;\n  --tw-brightness:  ;\n  --tw-contrast:  ;\n  --tw-grayscale:  ;\n  --tw-hue-rotate:  ;\n  --tw-invert:  ;\n  --tw-saturate:  ;\n  --tw-sepia:  ;\n  --tw-drop-shadow:  ;\n  --tw-backdrop-blur:  ;\n  --tw-backdrop-brightness:  ;\n  --tw-backdrop-contrast:  ;\n  --tw-backdrop-grayscale:  ;\n  --tw-backdrop-hue-rotate:  ;\n  --tw-backdrop-invert:  ;\n  --tw-backdrop-opacity:  ;\n  --tw-backdrop-saturate:  ;\n  --tw-backdrop-sepia:  ;\n}\n.fixed {\n  position: fixed;\n}\n.relative {\n  position: relative;\n}\n.inset-0 {\n  top: 0px;\n  right: 0px;\n  bottom: 0px;\n  left: 0px;\n}\n.z-50 {\n  z-index: 50;\n}\n.m-10 {\n  margin: 2.5rem;\n}\n.m-2 {\n  margin: 0.5rem;\n}\n.m-5 {\n  margin: 1.25rem;\n}\n.m-auto {\n  margin: auto;\n}\n.mx-auto {\n  margin-left: auto;\n  margin-right: auto;\n}\n.my-6 {\n  margin-top: 1.5rem;\n  margin-bottom: 1.5rem;\n}\n.-mb-px {\n  margin-bottom: -1px;\n}\n.ml-auto {\n  margin-left: auto;\n}\n.mr-1 {\n  margin-right: 0.25rem;\n}\n.mr-2 {\n  margin-right: 0.5rem;\n}\n.mr-3 {\n  margin-right: 0.75rem;\n}\n.mt-3 {\n  margin-top: 0.75rem;\n}\n.block {\n  display: block;\n}\n.inline-block {\n  display: inline-block;\n}\n.flex {\n  display: flex;\n}\n.table {\n  display: table;\n}\n.hidden {\n  display: none;\n}\n.h-20 {\n  height: 5rem;\n}\n.h-6 {\n  height: 1.5rem;\n}\n.h-full {\n  height: 100%;\n}\n.w-1\\/2 {\n  width: 50%;\n}\n.w-12 {\n  width: 3rem;\n}\n.w-5\\/6 {\n  width: 83.333333%;\n}\n.w-6 {\n  width: 1.5rem;\n}\n.w-\\[10rem\\] {\n  width: 10rem;\n}\n.w-\\[6rem\\] {\n  width: 6rem;\n}\n.w-auto {\n  width: auto;\n}\n.w-full {\n  width: 100%;\n}\n.max-w-3xl {\n  max-width: 48rem;\n}\n.table-fixed {\n  table-layout: fixed;\n}\n.flex-row {\n  flex-direction: row;\n}\n.flex-row-reverse {\n  flex-direction: row-reverse;\n}\n.flex-col {\n  flex-direction: column;\n}\n.place-items-center {\n  align-items: center;\n  justify-items: center;\n  place-items: center;\n}\n.content-center {\n  align-content: center;\n}\n.items-start {\n  align-items: flex-start;\n}\n.items-center {\n  align-items: center;\n}\n.justify-center {\n  justify-content: center;\n}\n.justify-between {\n  justify-content: space-between;\n}\n.overflow-x-auto {\n  overflow-x: auto;\n}\n.overflow-y-auto {\n  overflow-y: auto;\n}\n.rounded-full {\n  border-radius: 9999px;\n}\n.rounded-lg {\n  border-radius: 0.5rem;\n}\n.rounded-xl {\n  border-radius: 0.75rem;\n}\n.rounded-t {\n  border-top-left-radius: 0.25rem;\n  border-top-right-radius: 0.25rem;\n}\n.border-0 {\n  border-width: 0px;\n}\n.border-2 {\n  border-width: 2px;\n}\n.border-b {\n  border-bottom-width: 1px;\n}\n.border-l {\n  border-left-width: 1px;\n}\n.border-r {\n  border-right-width: 1px;\n}\n.border-t {\n  border-top-width: 1px;\n}\n.border-t-2 {\n  border-top-width: 2px;\n}\n.border-solid {\n  border-style: solid;\n}\n.border-gray-300 {\n  --tw-border-opacity: 1;\n  border-color: rgba(209, 213, 219, 1);\n  border-color: rgba(209, 213, 219, var(--tw-border-opacity));\n}\n.border-indigo-900 {\n  --tw-border-opacity: 1;\n  border-color: rgba(49, 46, 129, 1);\n  border-color: rgba(49, 46, 129, var(--tw-border-opacity));\n}\n.border-teal-950 {\n  --tw-border-opacity: 1;\n  border-color: rgba(4, 47, 46, 1);\n  border-color: rgba(4, 47, 46, var(--tw-border-opacity));\n}\n.\\!bg-slate-500 {\n  --tw-bg-opacity: 1 !important;\n  background-color: rgba(100, 116, 139, 1) !important;\n  background-color: rgba(100, 116, 139, var(--tw-bg-opacity)) !important;\n}\n.bg-budget {\n  --tw-bg-opacity: 1;\n  background-color: rgba(129, 140, 248, 1);\n  background-color: rgba(129, 140, 248, var(--tw-bg-opacity));\n}\n.bg-budget-dark {\n  --tw-bg-opacity: 1;\n  background-color: rgba(49, 46, 129, 1);\n  background-color: rgba(49, 46, 129, var(--tw-bg-opacity));\n}\n.bg-gray-800 {\n  --tw-bg-opacity: 1;\n  background-color: rgba(31, 41, 55, 1);\n  background-color: rgba(31, 41, 55, var(--tw-bg-opacity));\n}\n.bg-white {\n  --tw-bg-opacity: 1;\n  background-color: rgba(255, 255, 255, 1);\n  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));\n}\n.bg-opacity-50 {\n  --tw-bg-opacity: 0.5;\n}\n.p-10 {\n  padding: 2.5rem;\n}\n.p-2 {\n  padding: 0.5rem;\n}\n.p-5 {\n  padding: 1.25rem;\n}\n.p-6 {\n  padding: 1.5rem;\n}\n.px-4 {\n  padding-left: 1rem;\n  padding-right: 1rem;\n}\n.px-5 {\n  padding-left: 1.25rem;\n  padding-right: 1.25rem;\n}\n.py-2 {\n  padding-top: 0.5rem;\n  padding-bottom: 0.5rem;\n}\n.text-left {\n  text-align: left;\n}\n.text-center {\n  text-align: center;\n}\n.text-2xl {\n  font-size: 1.5rem;\n  line-height: 2rem;\n}\n.text-4xl {\n  font-size: 2.25rem;\n  line-height: 2.5rem;\n}\n.text-lg {\n  font-size: 1.125rem;\n  line-height: 1.75rem;\n}\n.text-sm {\n  font-size: 0.875rem;\n  line-height: 1.25rem;\n}\n.text-xl {\n  font-size: 1.25rem;\n  line-height: 1.75rem;\n}\n.font-bold {\n  font-weight: 700;\n}\n.font-semibold {\n  font-weight: 600;\n}\n.text-budget-dark {\n  --tw-text-opacity: 1;\n  color: rgba(49, 46, 129, 1);\n  color: rgba(49, 46, 129, var(--tw-text-opacity));\n}\n.text-budget-light {\n  --tw-text-opacity: 1;\n  color: rgba(199, 210, 254, 1);\n  color: rgba(199, 210, 254, var(--tw-text-opacity));\n}\n.text-gray-400 {\n  --tw-text-opacity: 1;\n  color: rgba(156, 163, 175, 1);\n  color: rgba(156, 163, 175, var(--tw-text-opacity));\n}\n.text-white {\n  --tw-text-opacity: 1;\n  color: rgba(255, 255, 255, 1);\n  color: rgba(255, 255, 255, var(--tw-text-opacity));\n}\n.no-underline {\n  text-decoration-line: none;\n}\n.opacity-0 {\n  opacity: 0;\n}\n.opacity-100 {\n  opacity: 1;\n}\n.shadow-lg {\n  --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);\n  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);\n  box-shadow: 0 0 rgba(0,0,0,0), 0 0 rgba(0,0,0,0), 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);\n  box-shadow: var(--tw-ring-offset-shadow, 0 0 rgba(0,0,0,0)), var(--tw-ring-shadow, 0 0 rgba(0,0,0,0)), var(--tw-shadow);\n}\n.outline-none {\n  outline: 2px solid transparent;\n  outline-offset: 2px;\n}\n.transition-all {\n  transition-property: all;\n  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n  transition-duration: 150ms;\n}\n.transition-opacity {\n  transition-property: opacity;\n  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n  transition-duration: 150ms;\n}\n.duration-300 {\n  transition-duration: 300ms;\n}\n\nhtml, body, .budget-bg {\n    background-color: rgb(238, 242, 255);\n}\n\n.hover\\:bg-budget:hover {\n  --tw-bg-opacity: 1;\n  background-color: rgba(129, 140, 248, 1);\n  background-color: rgba(129, 140, 248, var(--tw-bg-opacity));\n}\n\n.hover\\:text-budget-light:hover {\n  --tw-text-opacity: 1;\n  color: rgba(199, 210, 254, 1);\n  color: rgba(199, 210, 254, var(--tw-text-opacity));\n}\n\n.focus\\:outline-none:focus {\n  outline: 2px solid transparent;\n  outline-offset: 2px;\n}\n\n@media (min-width: 768px) {\n\n  .md\\:flex-row {\n    flex-direction: row;\n  }\n}\n\n@media (min-width: 1024px) {\n\n  .lg\\:m-28 {\n    margin: 7rem;\n  }\n}\n\n', "" ]);
+            ___CSS_LOADER_EXPORT___.push([ module.id, '/*\n! tailwindcss v3.3.3 | MIT License | https://tailwindcss.com\n*//*\n1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)\n2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)\n*/\n\n*,\n::before,\n::after {\n  box-sizing: border-box; /* 1 */\n  border-width: 0; /* 2 */\n  border-style: solid; /* 2 */\n  border-color: #e5e7eb; /* 2 */\n}\n\n::before,\n::after {\n  --tw-content: \'\';\n}\n\n/*\n1. Use a consistent sensible line-height in all browsers.\n2. Prevent adjustments of font size after orientation changes in iOS.\n3. Use a more readable tab size.\n4. Use the user\'s configured `sans` font-family by default.\n5. Use the user\'s configured `sans` font-feature-settings by default.\n6. Use the user\'s configured `sans` font-variation-settings by default.\n*/\n\nhtml {\n  line-height: 1.5; /* 1 */\n  -webkit-text-size-adjust: 100%; /* 2 */\n  -moz-tab-size: 4; /* 3 */\n  -o-tab-size: 4;\n     tab-size: 4; /* 3 */\n  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; /* 4 */\n  font-feature-settings: normal; /* 5 */\n  font-variation-settings: normal; /* 6 */\n}\n\n/*\n1. Remove the margin in all browsers.\n2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.\n*/\n\nbody {\n  margin: 0; /* 1 */\n  line-height: inherit; /* 2 */\n}\n\n/*\n1. Add the correct height in Firefox.\n2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)\n3. Ensure horizontal rules are visible by default.\n*/\n\nhr {\n  height: 0; /* 1 */\n  color: inherit; /* 2 */\n  border-top-width: 1px; /* 3 */\n}\n\n/*\nAdd the correct text decoration in Chrome, Edge, and Safari.\n*/\n\nabbr:where([title]) {\n  text-decoration: underline;\n  -webkit-text-decoration: underline dotted;\n          text-decoration: underline dotted;\n}\n\n/*\nRemove the default font size and weight for headings.\n*/\n\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  font-size: inherit;\n  font-weight: inherit;\n}\n\n/*\nReset links to optimize for opt-in styling instead of opt-out.\n*/\n\na {\n  color: inherit;\n  text-decoration: inherit;\n}\n\n/*\nAdd the correct font weight in Edge and Safari.\n*/\n\nb,\nstrong {\n  font-weight: bolder;\n}\n\n/*\n1. Use the user\'s configured `mono` font family by default.\n2. Correct the odd `em` font sizing in all browsers.\n*/\n\ncode,\nkbd,\nsamp,\npre {\n  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; /* 1 */\n  font-size: 1em; /* 2 */\n}\n\n/*\nAdd the correct font size in all browsers.\n*/\n\nsmall {\n  font-size: 80%;\n}\n\n/*\nPrevent `sub` and `sup` elements from affecting the line height in all browsers.\n*/\n\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline;\n}\n\nsub {\n  bottom: -0.25em;\n}\n\nsup {\n  top: -0.5em;\n}\n\n/*\n1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)\n2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)\n3. Remove gaps between table borders by default.\n*/\n\ntable {\n  text-indent: 0; /* 1 */\n  border-color: inherit; /* 2 */\n  border-collapse: collapse; /* 3 */\n}\n\n/*\n1. Change the font styles in all browsers.\n2. Remove the margin in Firefox and Safari.\n3. Remove default padding in all browsers.\n*/\n\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  font-family: inherit; /* 1 */\n  font-feature-settings: inherit; /* 1 */\n  font-variation-settings: inherit; /* 1 */\n  font-size: 100%; /* 1 */\n  font-weight: inherit; /* 1 */\n  line-height: inherit; /* 1 */\n  color: inherit; /* 1 */\n  margin: 0; /* 2 */\n  padding: 0; /* 3 */\n}\n\n/*\nRemove the inheritance of text transform in Edge and Firefox.\n*/\n\nbutton,\nselect {\n  text-transform: none;\n}\n\n/*\n1. Correct the inability to style clickable types in iOS and Safari.\n2. Remove default button styles.\n*/\n\nbutton,\n[type=\'button\'],\n[type=\'reset\'],\n[type=\'submit\'] {\n  -webkit-appearance: button; /* 1 */\n  background-color: transparent; /* 2 */\n  background-image: none; /* 2 */\n}\n\n/*\nUse the modern Firefox focus style for all focusable elements.\n*/\n\n:-moz-focusring {\n  outline: auto;\n}\n\n/*\nRemove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)\n*/\n\n:-moz-ui-invalid {\n  box-shadow: none;\n}\n\n/*\nAdd the correct vertical alignment in Chrome and Firefox.\n*/\n\nprogress {\n  vertical-align: baseline;\n}\n\n/*\nCorrect the cursor style of increment and decrement buttons in Safari.\n*/\n\n::-webkit-inner-spin-button,\n::-webkit-outer-spin-button {\n  height: auto;\n}\n\n/*\n1. Correct the odd appearance in Chrome and Safari.\n2. Correct the outline style in Safari.\n*/\n\n[type=\'search\'] {\n  -webkit-appearance: textfield; /* 1 */\n  outline-offset: -2px; /* 2 */\n}\n\n/*\nRemove the inner padding in Chrome and Safari on macOS.\n*/\n\n::-webkit-search-decoration {\n  -webkit-appearance: none;\n}\n\n/*\n1. Correct the inability to style clickable types in iOS and Safari.\n2. Change font properties to `inherit` in Safari.\n*/\n\n::-webkit-file-upload-button {\n  -webkit-appearance: button; /* 1 */\n  font: inherit; /* 2 */\n}\n\n/*\nAdd the correct display in Chrome and Safari.\n*/\n\nsummary {\n  display: list-item;\n}\n\n/*\nRemoves the default spacing and border for appropriate elements.\n*/\n\nblockquote,\ndl,\ndd,\nh1,\nh2,\nh3,\nh4,\nh5,\nh6,\nhr,\nfigure,\np,\npre {\n  margin: 0;\n}\n\nfieldset {\n  margin: 0;\n  padding: 0;\n}\n\nlegend {\n  padding: 0;\n}\n\nol,\nul,\nmenu {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n\n/*\nReset default styling for dialogs.\n*/\ndialog {\n  padding: 0;\n}\n\n/*\nPrevent resizing textareas horizontally by default.\n*/\n\ntextarea {\n  resize: vertical;\n}\n\n/*\n1. Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)\n2. Set the default placeholder color to the user\'s configured gray 400 color.\n*/\n\ninput::-moz-placeholder, textarea::-moz-placeholder {\n  opacity: 1; /* 1 */\n  color: #9ca3af; /* 2 */\n}\n\ninput::placeholder,\ntextarea::placeholder {\n  opacity: 1; /* 1 */\n  color: #9ca3af; /* 2 */\n}\n\n/*\nSet the default cursor for buttons.\n*/\n\nbutton,\n[role="button"] {\n  cursor: pointer;\n}\n\n/*\nMake sure disabled buttons don\'t get the pointer cursor.\n*/\n:disabled {\n  cursor: default;\n}\n\n/*\n1. Make replaced elements `display: block` by default. (https://github.com/mozdevs/cssremedy/issues/14)\n2. Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)\n   This can trigger a poorly considered lint error in some tools but is included by design.\n*/\n\nimg,\nsvg,\nvideo,\ncanvas,\naudio,\niframe,\nembed,\nobject {\n  display: block; /* 1 */\n  vertical-align: middle; /* 2 */\n}\n\n/*\nConstrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)\n*/\n\nimg,\nvideo {\n  max-width: 100%;\n  height: auto;\n}\n\n/* Make elements with the HTML hidden attribute stay hidden by default */\n[hidden] {\n  display: none;\n}\n\n*, ::before, ::after {\n  --tw-border-spacing-x: 0;\n  --tw-border-spacing-y: 0;\n  --tw-translate-x: 0;\n  --tw-translate-y: 0;\n  --tw-rotate: 0;\n  --tw-skew-x: 0;\n  --tw-skew-y: 0;\n  --tw-scale-x: 1;\n  --tw-scale-y: 1;\n  --tw-pan-x:  ;\n  --tw-pan-y:  ;\n  --tw-pinch-zoom:  ;\n  --tw-scroll-snap-strictness: proximity;\n  --tw-gradient-from-position:  ;\n  --tw-gradient-via-position:  ;\n  --tw-gradient-to-position:  ;\n  --tw-ordinal:  ;\n  --tw-slashed-zero:  ;\n  --tw-numeric-figure:  ;\n  --tw-numeric-spacing:  ;\n  --tw-numeric-fraction:  ;\n  --tw-ring-inset:  ;\n  --tw-ring-offset-width: 0px;\n  --tw-ring-offset-color: #fff;\n  --tw-ring-color: rgba(59, 130, 246, 0.5);\n  --tw-ring-offset-shadow: 0 0 rgba(0,0,0,0);\n  --tw-ring-shadow: 0 0 rgba(0,0,0,0);\n  --tw-shadow: 0 0 rgba(0,0,0,0);\n  --tw-shadow-colored: 0 0 rgba(0,0,0,0);\n  --tw-blur:  ;\n  --tw-brightness:  ;\n  --tw-contrast:  ;\n  --tw-grayscale:  ;\n  --tw-hue-rotate:  ;\n  --tw-invert:  ;\n  --tw-saturate:  ;\n  --tw-sepia:  ;\n  --tw-drop-shadow:  ;\n  --tw-backdrop-blur:  ;\n  --tw-backdrop-brightness:  ;\n  --tw-backdrop-contrast:  ;\n  --tw-backdrop-grayscale:  ;\n  --tw-backdrop-hue-rotate:  ;\n  --tw-backdrop-invert:  ;\n  --tw-backdrop-opacity:  ;\n  --tw-backdrop-saturate:  ;\n  --tw-backdrop-sepia:  ;\n}\n\n::backdrop {\n  --tw-border-spacing-x: 0;\n  --tw-border-spacing-y: 0;\n  --tw-translate-x: 0;\n  --tw-translate-y: 0;\n  --tw-rotate: 0;\n  --tw-skew-x: 0;\n  --tw-skew-y: 0;\n  --tw-scale-x: 1;\n  --tw-scale-y: 1;\n  --tw-pan-x:  ;\n  --tw-pan-y:  ;\n  --tw-pinch-zoom:  ;\n  --tw-scroll-snap-strictness: proximity;\n  --tw-gradient-from-position:  ;\n  --tw-gradient-via-position:  ;\n  --tw-gradient-to-position:  ;\n  --tw-ordinal:  ;\n  --tw-slashed-zero:  ;\n  --tw-numeric-figure:  ;\n  --tw-numeric-spacing:  ;\n  --tw-numeric-fraction:  ;\n  --tw-ring-inset:  ;\n  --tw-ring-offset-width: 0px;\n  --tw-ring-offset-color: #fff;\n  --tw-ring-color: rgba(59, 130, 246, 0.5);\n  --tw-ring-offset-shadow: 0 0 rgba(0,0,0,0);\n  --tw-ring-shadow: 0 0 rgba(0,0,0,0);\n  --tw-shadow: 0 0 rgba(0,0,0,0);\n  --tw-shadow-colored: 0 0 rgba(0,0,0,0);\n  --tw-blur:  ;\n  --tw-brightness:  ;\n  --tw-contrast:  ;\n  --tw-grayscale:  ;\n  --tw-hue-rotate:  ;\n  --tw-invert:  ;\n  --tw-saturate:  ;\n  --tw-sepia:  ;\n  --tw-drop-shadow:  ;\n  --tw-backdrop-blur:  ;\n  --tw-backdrop-brightness:  ;\n  --tw-backdrop-contrast:  ;\n  --tw-backdrop-grayscale:  ;\n  --tw-backdrop-hue-rotate:  ;\n  --tw-backdrop-invert:  ;\n  --tw-backdrop-opacity:  ;\n  --tw-backdrop-saturate:  ;\n  --tw-backdrop-sepia:  ;\n}\n.fixed {\n  position: fixed;\n}\n.relative {\n  position: relative;\n}\n.inset-0 {\n  top: 0px;\n  right: 0px;\n  bottom: 0px;\n  left: 0px;\n}\n.z-50 {\n  z-index: 50;\n}\n.m-10 {\n  margin: 2.5rem;\n}\n.m-2 {\n  margin: 0.5rem;\n}\n.m-5 {\n  margin: 1.25rem;\n}\n.m-auto {\n  margin: auto;\n}\n.mx-auto {\n  margin-left: auto;\n  margin-right: auto;\n}\n.my-6 {\n  margin-top: 1.5rem;\n  margin-bottom: 1.5rem;\n}\n.-mb-px {\n  margin-bottom: -1px;\n}\n.ml-auto {\n  margin-left: auto;\n}\n.mr-1 {\n  margin-right: 0.25rem;\n}\n.mr-2 {\n  margin-right: 0.5rem;\n}\n.mr-3 {\n  margin-right: 0.75rem;\n}\n.mt-3 {\n  margin-top: 0.75rem;\n}\n.block {\n  display: block;\n}\n.inline-block {\n  display: inline-block;\n}\n.flex {\n  display: flex;\n}\n.table {\n  display: table;\n}\n.hidden {\n  display: none;\n}\n.h-20 {\n  height: 5rem;\n}\n.h-6 {\n  height: 1.5rem;\n}\n.h-full {\n  height: 100%;\n}\n.w-1\\/2 {\n  width: 50%;\n}\n.w-12 {\n  width: 3rem;\n}\n.w-5\\/6 {\n  width: 83.333333%;\n}\n.w-6 {\n  width: 1.5rem;\n}\n.w-\\[10rem\\] {\n  width: 10rem;\n}\n.w-\\[6rem\\] {\n  width: 6rem;\n}\n.w-auto {\n  width: auto;\n}\n.w-full {\n  width: 100%;\n}\n.max-w-3xl {\n  max-width: 48rem;\n}\n.table-fixed {\n  table-layout: fixed;\n}\n@keyframes spin {\n\n  to {\n    transform: rotate(360deg);\n  }\n}\n.animate-spin {\n  animation: spin 1s linear infinite;\n}\n.flex-row {\n  flex-direction: row;\n}\n.flex-row-reverse {\n  flex-direction: row-reverse;\n}\n.flex-col {\n  flex-direction: column;\n}\n.place-items-center {\n  align-items: center;\n  justify-items: center;\n  place-items: center;\n}\n.content-center {\n  align-content: center;\n}\n.items-start {\n  align-items: flex-start;\n}\n.items-center {\n  align-items: center;\n}\n.justify-center {\n  justify-content: center;\n}\n.justify-between {\n  justify-content: space-between;\n}\n.overflow-x-auto {\n  overflow-x: auto;\n}\n.overflow-y-auto {\n  overflow-y: auto;\n}\n.rounded-full {\n  border-radius: 9999px;\n}\n.rounded-lg {\n  border-radius: 0.5rem;\n}\n.rounded-xl {\n  border-radius: 0.75rem;\n}\n.rounded-t {\n  border-top-left-radius: 0.25rem;\n  border-top-right-radius: 0.25rem;\n}\n.border-0 {\n  border-width: 0px;\n}\n.border-2 {\n  border-width: 2px;\n}\n.border-b {\n  border-bottom-width: 1px;\n}\n.border-l {\n  border-left-width: 1px;\n}\n.border-r {\n  border-right-width: 1px;\n}\n.border-t {\n  border-top-width: 1px;\n}\n.border-t-2 {\n  border-top-width: 2px;\n}\n.border-solid {\n  border-style: solid;\n}\n.border-gray-300 {\n  --tw-border-opacity: 1;\n  border-color: rgba(209, 213, 219, 1);\n  border-color: rgba(209, 213, 219, var(--tw-border-opacity));\n}\n.border-indigo-900 {\n  --tw-border-opacity: 1;\n  border-color: rgba(49, 46, 129, 1);\n  border-color: rgba(49, 46, 129, var(--tw-border-opacity));\n}\n.border-teal-950 {\n  --tw-border-opacity: 1;\n  border-color: rgba(4, 47, 46, 1);\n  border-color: rgba(4, 47, 46, var(--tw-border-opacity));\n}\n.\\!bg-slate-500 {\n  --tw-bg-opacity: 1 !important;\n  background-color: rgba(100, 116, 139, 1) !important;\n  background-color: rgba(100, 116, 139, var(--tw-bg-opacity)) !important;\n}\n.bg-budget {\n  --tw-bg-opacity: 1;\n  background-color: rgba(129, 140, 248, 1);\n  background-color: rgba(129, 140, 248, var(--tw-bg-opacity));\n}\n.bg-budget-dark {\n  --tw-bg-opacity: 1;\n  background-color: rgba(49, 46, 129, 1);\n  background-color: rgba(49, 46, 129, var(--tw-bg-opacity));\n}\n.bg-gray-800 {\n  --tw-bg-opacity: 1;\n  background-color: rgba(31, 41, 55, 1);\n  background-color: rgba(31, 41, 55, var(--tw-bg-opacity));\n}\n.bg-white {\n  --tw-bg-opacity: 1;\n  background-color: rgba(255, 255, 255, 1);\n  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));\n}\n.bg-opacity-50 {\n  --tw-bg-opacity: 0.5;\n}\n.p-10 {\n  padding: 2.5rem;\n}\n.p-2 {\n  padding: 0.5rem;\n}\n.p-5 {\n  padding: 1.25rem;\n}\n.p-6 {\n  padding: 1.5rem;\n}\n.px-4 {\n  padding-left: 1rem;\n  padding-right: 1rem;\n}\n.px-5 {\n  padding-left: 1.25rem;\n  padding-right: 1.25rem;\n}\n.py-2 {\n  padding-top: 0.5rem;\n  padding-bottom: 0.5rem;\n}\n.text-left {\n  text-align: left;\n}\n.text-center {\n  text-align: center;\n}\n.text-2xl {\n  font-size: 1.5rem;\n  line-height: 2rem;\n}\n.text-4xl {\n  font-size: 2.25rem;\n  line-height: 2.5rem;\n}\n.text-lg {\n  font-size: 1.125rem;\n  line-height: 1.75rem;\n}\n.text-sm {\n  font-size: 0.875rem;\n  line-height: 1.25rem;\n}\n.text-xl {\n  font-size: 1.25rem;\n  line-height: 1.75rem;\n}\n.font-bold {\n  font-weight: 700;\n}\n.font-semibold {\n  font-weight: 600;\n}\n.text-budget-dark {\n  --tw-text-opacity: 1;\n  color: rgba(49, 46, 129, 1);\n  color: rgba(49, 46, 129, var(--tw-text-opacity));\n}\n.text-budget-light {\n  --tw-text-opacity: 1;\n  color: rgba(199, 210, 254, 1);\n  color: rgba(199, 210, 254, var(--tw-text-opacity));\n}\n.text-gray-400 {\n  --tw-text-opacity: 1;\n  color: rgba(156, 163, 175, 1);\n  color: rgba(156, 163, 175, var(--tw-text-opacity));\n}\n.text-white {\n  --tw-text-opacity: 1;\n  color: rgba(255, 255, 255, 1);\n  color: rgba(255, 255, 255, var(--tw-text-opacity));\n}\n.no-underline {\n  text-decoration-line: none;\n}\n.opacity-0 {\n  opacity: 0;\n}\n.opacity-100 {\n  opacity: 1;\n}\n.shadow-lg {\n  --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);\n  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);\n  box-shadow: 0 0 rgba(0,0,0,0), 0 0 rgba(0,0,0,0), 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);\n  box-shadow: var(--tw-ring-offset-shadow, 0 0 rgba(0,0,0,0)), var(--tw-ring-shadow, 0 0 rgba(0,0,0,0)), var(--tw-shadow);\n}\n.outline-none {\n  outline: 2px solid transparent;\n  outline-offset: 2px;\n}\n.transition-all {\n  transition-property: all;\n  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n  transition-duration: 150ms;\n}\n.transition-opacity {\n  transition-property: opacity;\n  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n  transition-duration: 150ms;\n}\n.duration-300 {\n  transition-duration: 300ms;\n}\n\nhtml, body, .budget-bg {\n    background-color: rgb(238, 242, 255);\n}\n\n.hover\\:bg-budget:hover {\n  --tw-bg-opacity: 1;\n  background-color: rgba(129, 140, 248, 1);\n  background-color: rgba(129, 140, 248, var(--tw-bg-opacity));\n}\n\n.hover\\:text-budget-light:hover {\n  --tw-text-opacity: 1;\n  color: rgba(199, 210, 254, 1);\n  color: rgba(199, 210, 254, var(--tw-text-opacity));\n}\n\n.focus\\:outline-none:focus {\n  outline: 2px solid transparent;\n  outline-offset: 2px;\n}\n\n@media (min-width: 768px) {\n\n  .md\\:flex-row {\n    flex-direction: row;\n  }\n}\n\n@media (min-width: 1024px) {\n\n  .lg\\:m-28 {\n    margin: 7rem;\n  }\n}\n\n', "" ]);
             // Exports
             /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ___CSS_LOADER_EXPORT___;
             /***/        },
@@ -6825,9 +6825,9 @@
             throw Error.captureStackTrace && Error.captureStackTrace(t, match_u), t;
         }
         // CONCATENATED MODULE: ./node_modules/@headlessui/react/dist/utils/render.js
-        var e, a, S = ((a = S || {})[a.None = 0] = "None", a[a.RenderStrategy = 1] = "RenderStrategy", 
-        a[a.Static = 2] = "Static", a), render_j = ((e = render_j || {})[e.Unmount = 0] = "Unmount", 
-        e[e.Hidden = 1] = "Hidden", e);
+        var S = (a => (a[a.None = 0] = "None", a[a.RenderStrategy = 1] = "RenderStrategy", 
+        a[a.Static = 2] = "Static", a))(S || {}), render_j = (e => (e[e.Unmount = 0] = "Unmount", 
+        e[e.Hidden = 1] = "Hidden", e))(render_j || {});
         function X({ourProps: r, theirProps: t, slot: e, defaultTag: a, features: s, visible: n = !0, name: f}) {
             let o = N(t, r);
             if (n) return c(o, e, a, f);
@@ -8028,8 +8028,2624 @@
             }, PendingTransactionsTab;
         }(react.Component);
         /* harmony default export */ const pendingTransactionsTab = PendingTransactionsTab;
-        // CONCATENATED MODULE: ./src/client/components/monthlySummaryTab.tsx
-        var monthlySummaryTab_extends = undefined && undefined.__extends || function() {
+        // CONCATENATED MODULE: ./node_modules/@fortawesome/fontawesome-svg-core/index.mjs
+        /*!
+ * Font Awesome Free 7.0.1 by @fontawesome - https://fontawesome.com
+ * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+ * Copyright 2025 Fonticons, Inc.
+ */
+        function _arrayLikeToArray(r, a) {
+            (null == a || a > r.length) && (a = r.length);
+            for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e];
+            return n;
+        }
+        function _defineProperties(e, r) {
+            for (var t = 0; t < r.length; t++) {
+                var o = r[t];
+                o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), 
+                Object.defineProperty(e, _toPropertyKey(o.key), o);
+            }
+        }
+        function _createForOfIteratorHelper(r, e) {
+            var t = "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"];
+            if (!t) {
+                if (Array.isArray(r) || (t = _unsupportedIterableToArray(r)) || e && r && "number" == typeof r.length) {
+                    t && (r = t);
+                    var n = 0, F = function() {};
+                    return {
+                        s: F,
+                        n: function() {
+                            return n >= r.length ? {
+                                done: !0
+                            } : {
+                                done: !1,
+                                value: r[n++]
+                            };
+                        },
+                        e: function(r) {
+                            throw r;
+                        },
+                        f: F
+                    };
+                }
+                throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+            }
+            var o, a = !0, u = !1;
+            return {
+                s: function() {
+                    t = t.call(r);
+                },
+                n: function() {
+                    var r = t.next();
+                    return a = r.done, r;
+                },
+                e: function(r) {
+                    u = !0, o = r;
+                },
+                f: function() {
+                    try {
+                        a || null == t["return"] || t["return"]();
+                    } finally {
+                        if (u) throw o;
+                    }
+                }
+            };
+        }
+        function _defineProperty(e, r, t) {
+            return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, {
+                value: t,
+                enumerable: !0,
+                configurable: !0,
+                writable: !0
+            }) : e[r] = t, e;
+        }
+        function ownKeys(e, r) {
+            var t = Object.keys(e);
+            if (Object.getOwnPropertySymbols) {
+                var o = Object.getOwnPropertySymbols(e);
+                r && (o = o.filter((function(r) {
+                    return Object.getOwnPropertyDescriptor(e, r).enumerable;
+                }))), t.push.apply(t, o);
+            }
+            return t;
+        }
+        function _objectSpread2(e) {
+            for (var r = 1; r < arguments.length; r++) {
+                var t = null != arguments[r] ? arguments[r] : {};
+                r % 2 ? ownKeys(Object(t), !0).forEach((function(r) {
+                    _defineProperty(e, r, t[r]);
+                })) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach((function(r) {
+                    Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r));
+                }));
+            }
+            return e;
+        }
+        function _slicedToArray(r, e) {
+            return function _arrayWithHoles(r) {
+                if (Array.isArray(r)) return r;
+            }(r) || function _iterableToArrayLimit(r, l) {
+                var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"];
+                if (null != t) {
+                    var e, n, i, u, a = [], f = !0, o = !1;
+                    try {
+                        if (i = (t = t.call(r)).next, 0 === l) {
+                            if (Object(t) !== t) return;
+                            f = !1;
+                        } else for (;!(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0) ;
+                    } catch (r) {
+                        o = !0, n = r;
+                    } finally {
+                        try {
+                            if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return;
+                        } finally {
+                            if (o) throw n;
+                        }
+                    }
+                    return a;
+                }
+            }(r, e) || _unsupportedIterableToArray(r, e) || function _nonIterableRest() {
+                throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+            }();
+        }
+        function _toConsumableArray(r) {
+            return function _arrayWithoutHoles(r) {
+                if (Array.isArray(r)) return _arrayLikeToArray(r);
+            }(r) || function _iterableToArray(r) {
+                if ("undefined" != typeof Symbol && null != r[Symbol.iterator] || null != r["@@iterator"]) return Array.from(r);
+            }(r) || _unsupportedIterableToArray(r) || function _nonIterableSpread() {
+                throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+            }();
+        }
+        function _toPropertyKey(t) {
+            var i = function _toPrimitive(t, r) {
+                if ("object" != typeof t || !t) return t;
+                var e = t[Symbol.toPrimitive];
+                if (void 0 !== e) {
+                    var i = e.call(t, r || "default");
+                    if ("object" != typeof i) return i;
+                    throw new TypeError("@@toPrimitive must return a primitive value.");
+                }
+                return ("string" === r ? String : Number)(t);
+            }(t, "string");
+            return "symbol" == typeof i ? i : i + "";
+        }
+        function _typeof(o) {
+            return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o) {
+                return typeof o;
+            } : function(o) {
+                return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o;
+            }, _typeof(o);
+        }
+        function _unsupportedIterableToArray(r, a) {
+            if (r) {
+                if ("string" == typeof r) return _arrayLikeToArray(r, a);
+                var t = {}.toString.call(r).slice(8, -1);
+                return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0;
+            }
+        }
+        var noop = function noop() {}, _WINDOW = {}, _DOCUMENT = {}, _MUTATION_OBSERVER = null, _PERFORMANCE = {
+            mark: noop,
+            measure: noop
+        };
+        try {
+            "undefined" != typeof window && (_WINDOW = window), "undefined" != typeof document && (_DOCUMENT = document), 
+            "undefined" != typeof MutationObserver && (_MUTATION_OBSERVER = MutationObserver), 
+            "undefined" != typeof performance && (_PERFORMANCE = performance);
+        } catch (e) {}
+ // eslint-disable-line no-empty
+                var _so, _fl, _ref$userAgent = (_WINDOW.navigator || {}).userAgent, userAgent = void 0 === _ref$userAgent ? "" : _ref$userAgent, WINDOW = _WINDOW, DOCUMENT = _DOCUMENT, MUTATION_OBSERVER = _MUTATION_OBSERVER, PERFORMANCE = _PERFORMANCE, IS_DOM = (WINDOW.document, 
+        !!DOCUMENT.documentElement && !!DOCUMENT.head && "function" == typeof DOCUMENT.addEventListener && "function" == typeof DOCUMENT.createElement), IS_IE = ~userAgent.indexOf("MSIE") || ~userAgent.indexOf("Trident/"), z = {
+            classic: {
+                fa: "solid",
+                fas: "solid",
+                "fa-solid": "solid",
+                far: "regular",
+                "fa-regular": "regular",
+                fal: "light",
+                "fa-light": "light",
+                fat: "thin",
+                "fa-thin": "thin",
+                fab: "brands",
+                "fa-brands": "brands"
+            },
+            duotone: {
+                fa: "solid",
+                fad: "solid",
+                "fa-solid": "solid",
+                "fa-duotone": "solid",
+                fadr: "regular",
+                "fa-regular": "regular",
+                fadl: "light",
+                "fa-light": "light",
+                fadt: "thin",
+                "fa-thin": "thin"
+            },
+            sharp: {
+                fa: "solid",
+                fass: "solid",
+                "fa-solid": "solid",
+                fasr: "regular",
+                "fa-regular": "regular",
+                fasl: "light",
+                "fa-light": "light",
+                fast: "thin",
+                "fa-thin": "thin"
+            },
+            "sharp-duotone": {
+                fa: "solid",
+                fasds: "solid",
+                "fa-solid": "solid",
+                fasdr: "regular",
+                "fa-regular": "regular",
+                fasdl: "light",
+                "fa-light": "light",
+                fasdt: "thin",
+                "fa-thin": "thin"
+            },
+            slab: {
+                "fa-regular": "regular",
+                faslr: "regular"
+            },
+            "slab-press": {
+                "fa-regular": "regular",
+                faslpr: "regular"
+            },
+            thumbprint: {
+                "fa-light": "light",
+                fatl: "light"
+            },
+            whiteboard: {
+                "fa-semibold": "semibold",
+                fawsb: "semibold"
+            },
+            notdog: {
+                "fa-solid": "solid",
+                fans: "solid"
+            },
+            "notdog-duo": {
+                "fa-solid": "solid",
+                fands: "solid"
+            },
+            etch: {
+                "fa-solid": "solid",
+                faes: "solid"
+            },
+            jelly: {
+                "fa-regular": "regular",
+                fajr: "regular"
+            },
+            "jelly-fill": {
+                "fa-regular": "regular",
+                fajfr: "regular"
+            },
+            "jelly-duo": {
+                "fa-regular": "regular",
+                fajdr: "regular"
+            },
+            chisel: {
+                "fa-regular": "regular",
+                facr: "regular"
+            }
+        }, G = [ "fa-classic", "fa-duotone", "fa-sharp", "fa-sharp-duotone", "fa-thumbprint", "fa-whiteboard", "fa-notdog", "fa-notdog-duo", "fa-chisel", "fa-etch", "fa-jelly", "fa-jelly-fill", "fa-jelly-duo", "fa-slab", "fa-slab-press" ], a = "classic", fontawesome_svg_core_o = "duotone", t = "sharp-duotone", h = "jelly", l = "notdog-duo", p = "slab-press", e = "thumbprint", oo = [ a, fontawesome_svg_core_o, "sharp", t, "chisel", "etch", h, "jelly-duo", "jelly-fill", "notdog", l, "slab", p, e, "whiteboard" ], Co = (_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_so = {}, a, "Classic"), fontawesome_svg_core_o, "Duotone"), "sharp", "Sharp"), t, "Sharp Duotone"), "chisel", "Chisel"), "etch", "Etch"), h, "Jelly"), "jelly-duo", "Jelly Duo"), "jelly-fill", "Jelly Fill"), "notdog", "Notdog"), 
+        _defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_so, l, "Notdog Duo"), "slab", "Slab"), p, "Slab Press"), e, "Thumbprint"), "whiteboard", "Whiteboard"), 
+        new Map([ [ "classic", {
+            defaultShortPrefixId: "fas",
+            defaultStyleId: "solid",
+            styleIds: [ "solid", "regular", "light", "thin", "brands" ],
+            futureStyleIds: [],
+            defaultFontWeight: 900
+        } ], [ "duotone", {
+            defaultShortPrefixId: "fad",
+            defaultStyleId: "solid",
+            styleIds: [ "solid", "regular", "light", "thin" ],
+            futureStyleIds: [],
+            defaultFontWeight: 900
+        } ], [ "sharp", {
+            defaultShortPrefixId: "fass",
+            defaultStyleId: "solid",
+            styleIds: [ "solid", "regular", "light", "thin" ],
+            futureStyleIds: [],
+            defaultFontWeight: 900
+        } ], [ "sharp-duotone", {
+            defaultShortPrefixId: "fasds",
+            defaultStyleId: "solid",
+            styleIds: [ "solid", "regular", "light", "thin" ],
+            futureStyleIds: [],
+            defaultFontWeight: 900
+        } ], [ "chisel", {
+            defaultShortPrefixId: "facr",
+            defaultStyleId: "regular",
+            styleIds: [ "regular" ],
+            futureStyleIds: [],
+            defaultFontWeight: 400
+        } ], [ "etch", {
+            defaultShortPrefixId: "faes",
+            defaultStyleId: "solid",
+            styleIds: [ "solid" ],
+            futureStyleIds: [],
+            defaultFontWeight: 900
+        } ], [ "jelly", {
+            defaultShortPrefixId: "fajr",
+            defaultStyleId: "regular",
+            styleIds: [ "regular" ],
+            futureStyleIds: [],
+            defaultFontWeight: 400
+        } ], [ "jelly-duo", {
+            defaultShortPrefixId: "fajdr",
+            defaultStyleId: "regular",
+            styleIds: [ "regular" ],
+            futureStyleIds: [],
+            defaultFontWeight: 400
+        } ], [ "jelly-fill", {
+            defaultShortPrefixId: "fajfr",
+            defaultStyleId: "regular",
+            styleIds: [ "regular" ],
+            futureStyleIds: [],
+            defaultFontWeight: 400
+        } ], [ "notdog", {
+            defaultShortPrefixId: "fans",
+            defaultStyleId: "solid",
+            styleIds: [ "solid" ],
+            futureStyleIds: [],
+            defaultFontWeight: 900
+        } ], [ "notdog-duo", {
+            defaultShortPrefixId: "fands",
+            defaultStyleId: "solid",
+            styleIds: [ "solid" ],
+            futureStyleIds: [],
+            defaultFontWeight: 900
+        } ], [ "slab", {
+            defaultShortPrefixId: "faslr",
+            defaultStyleId: "regular",
+            styleIds: [ "regular" ],
+            futureStyleIds: [],
+            defaultFontWeight: 400
+        } ], [ "slab-press", {
+            defaultShortPrefixId: "faslpr",
+            defaultStyleId: "regular",
+            styleIds: [ "regular" ],
+            futureStyleIds: [],
+            defaultFontWeight: 400
+        } ], [ "thumbprint", {
+            defaultShortPrefixId: "fatl",
+            defaultStyleId: "light",
+            styleIds: [ "light" ],
+            futureStyleIds: [],
+            defaultFontWeight: 300
+        } ], [ "whiteboard", {
+            defaultShortPrefixId: "fawsb",
+            defaultStyleId: "semibold",
+            styleIds: [ "semibold" ],
+            futureStyleIds: [],
+            defaultFontWeight: 600
+        } ] ])), zo = [ "fak", "fa-kit", "fakd", "fa-kit-duotone" ], Oo_kit = {
+            fak: "kit",
+            "fa-kit": "kit"
+        }, Oo_kit_duotone = {
+            fakd: "kit-duotone",
+            "fa-kit-duotone": "kit-duotone"
+        }, dt_kit = (_defineProperty(_defineProperty({}, "kit", "Kit"), "kit-duotone", "Kit Duotone"), 
+        {
+            kit: "fak"
+        }), dt_kit_duotone = {
+            "kit-duotone": "fakd"
+        }, l$1_GROUP = "duotone-group", l$1_SWAP_OPACITY = "swap-opacity", l$1_PRIMARY = "primary", l$1_SECONDARY = "secondary", Go$1 = (_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_fl = {}, "classic", "Classic"), "duotone", "Duotone"), "sharp", "Sharp"), "sharp-duotone", "Sharp Duotone"), "chisel", "Chisel"), "etch", "Etch"), "jelly", "Jelly"), "jelly-duo", "Jelly Duo"), "jelly-fill", "Jelly Fill"), "notdog", "Notdog"), 
+        _defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_fl, "notdog-duo", "Notdog Duo"), "slab", "Slab"), "slab-press", "Slab Press"), "thumbprint", "Thumbprint"), "whiteboard", "Whiteboard"), 
+        _defineProperty(_defineProperty({}, "kit", "Kit"), "kit-duotone", "Kit Duotone"), 
+        {
+            classic: {
+                fab: "fa-brands",
+                fad: "fa-duotone",
+                fal: "fa-light",
+                far: "fa-regular",
+                fas: "fa-solid",
+                fat: "fa-thin"
+            },
+            duotone: {
+                fadr: "fa-regular",
+                fadl: "fa-light",
+                fadt: "fa-thin"
+            },
+            sharp: {
+                fass: "fa-solid",
+                fasr: "fa-regular",
+                fasl: "fa-light",
+                fast: "fa-thin"
+            },
+            "sharp-duotone": {
+                fasds: "fa-solid",
+                fasdr: "fa-regular",
+                fasdl: "fa-light",
+                fasdt: "fa-thin"
+            },
+            slab: {
+                faslr: "fa-regular"
+            },
+            "slab-press": {
+                faslpr: "fa-regular"
+            },
+            whiteboard: {
+                fawsb: "fa-semibold"
+            },
+            thumbprint: {
+                fatl: "fa-light"
+            },
+            notdog: {
+                fans: "fa-solid"
+            },
+            "notdog-duo": {
+                fands: "fa-solid"
+            },
+            etch: {
+                faes: "fa-solid"
+            },
+            jelly: {
+                fajr: "fa-regular"
+            },
+            "jelly-fill": {
+                fajfr: "fa-regular"
+            },
+            "jelly-duo": {
+                fajdr: "fa-regular"
+            },
+            chisel: {
+                facr: "fa-regular"
+            }
+        }), $o$1 = [ "fa", "fas", "far", "fal", "fat", "fad", "fadr", "fadl", "fadt", "fab", "fass", "fasr", "fasl", "fast", "fasds", "fasdr", "fasdl", "fasdt", "faslr", "faslpr", "fawsb", "fatl", "fans", "fands", "faes", "fajr", "fajfr", "fajdr", "facr" ].concat([ "fa-classic", "fa-duotone", "fa-sharp", "fa-sharp-duotone", "fa-thumbprint", "fa-whiteboard", "fa-notdog", "fa-notdog-duo", "fa-chisel", "fa-etch", "fa-jelly", "fa-jelly-fill", "fa-jelly-duo", "fa-slab", "fa-slab-press" ], [ "fa-solid", "fa-regular", "fa-light", "fa-thin", "fa-duotone", "fa-brands", "fa-semibold" ]), K$1 = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ], M$1 = K$1.concat([ 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 ]), Ho$1 = [].concat(_toConsumableArray(Object.keys({
+            classic: [ "fas", "far", "fal", "fat", "fad" ],
+            duotone: [ "fadr", "fadl", "fadt" ],
+            sharp: [ "fass", "fasr", "fasl", "fast" ],
+            "sharp-duotone": [ "fasds", "fasdr", "fasdl", "fasdt" ],
+            slab: [ "faslr" ],
+            "slab-press": [ "faslpr" ],
+            whiteboard: [ "fawsb" ],
+            thumbprint: [ "fatl" ],
+            notdog: [ "fans" ],
+            "notdog-duo": [ "fands" ],
+            etch: [ "faes" ],
+            jelly: [ "fajr" ],
+            "jelly-fill": [ "fajfr" ],
+            "jelly-duo": [ "fajdr" ],
+            chisel: [ "facr" ]
+        })), [ "solid", "regular", "light", "thin", "duotone", "brands", "semibold" ], [ "aw", "fw", "pull-left", "pull-right" ], [ "2xs", "xs", "sm", "lg", "xl", "2xl", "beat", "border", "fade", "beat-fade", "bounce", "flip-both", "flip-horizontal", "flip-vertical", "flip", "inverse", "layers", "layers-bottom-left", "layers-bottom-right", "layers-counter", "layers-text", "layers-top-left", "layers-top-right", "li", "pull-end", "pull-start", "pulse", "rotate-180", "rotate-270", "rotate-90", "rotate-by", "shake", "spin-pulse", "spin-reverse", "spin", "stack-1x", "stack-2x", "stack", "ul", "width-auto", "width-fixed", l$1_GROUP, l$1_SWAP_OPACITY, l$1_PRIMARY, l$1_SECONDARY ]).concat(K$1.map((function(o) {
+            return "".concat(o, "x");
+        }))).concat(M$1.map((function(o) {
+            return "w-".concat(o);
+        }))), UNITS_IN_GRID = 16, DEFAULT_CSS_PREFIX = "fa", DEFAULT_REPLACEMENT_CLASS = "svg-inline--fa", DATA_FA_I2SVG = "data-fa-i2svg", DATA_FA_PSEUDO_ELEMENT = "data-fa-pseudo-element", DATA_FA_PSEUDO_ELEMENT_PENDING = "data-fa-pseudo-element-pending", DATA_PREFIX = "data-prefix", DATA_ICON = "data-icon", MUTATION_APPROACH_ASYNC = "async", TAGNAMES_TO_SKIP_FOR_PSEUDOELEMENTS = [ "HTML", "HEAD", "STYLE", "SCRIPT" ], PSEUDO_ELEMENTS = [ "::before", "::after", ":before", ":after" ], PRODUCTION = function() {
+            try {
+                return !0;
+            } catch (e$$1) {
+                return !1;
+            }
+        }();
+        function familyProxy(obj) {
+            // Defaults to the classic family if family is not available
+            return new Proxy(obj, {
+                get: function get(target, prop) {
+                    return prop in target ? target[prop] : target[a];
+                }
+            });
+        }
+        var _PREFIX_TO_STYLE = _objectSpread2({}, z);
+        // We changed FACSSClassesToStyleId in the icons repo to be canonical and as such, "classic" family does not have any
+        // duotone styles.  But we do still need duotone in _PREFIX_TO_STYLE below, so we are manually adding
+        // {'fa-duotone': 'duotone'}
+                _PREFIX_TO_STYLE[a] = _objectSpread2(_objectSpread2(_objectSpread2(_objectSpread2({}, {
+            "fa-duotone": "duotone"
+        }), z[a]), Oo_kit), Oo_kit_duotone);
+        var PREFIX_TO_STYLE = familyProxy(_PREFIX_TO_STYLE), _STYLE_TO_PREFIX = _objectSpread2({}, {
+            chisel: {
+                regular: "facr"
+            },
+            classic: {
+                brands: "fab",
+                light: "fal",
+                regular: "far",
+                solid: "fas",
+                thin: "fat"
+            },
+            duotone: {
+                light: "fadl",
+                regular: "fadr",
+                solid: "fad",
+                thin: "fadt"
+            },
+            etch: {
+                solid: "faes"
+            },
+            jelly: {
+                regular: "fajr"
+            },
+            "jelly-duo": {
+                regular: "fajdr"
+            },
+            "jelly-fill": {
+                regular: "fajfr"
+            },
+            notdog: {
+                solid: "fans"
+            },
+            "notdog-duo": {
+                solid: "fands"
+            },
+            sharp: {
+                light: "fasl",
+                regular: "fasr",
+                solid: "fass",
+                thin: "fast"
+            },
+            "sharp-duotone": {
+                light: "fasdl",
+                regular: "fasdr",
+                solid: "fasds",
+                thin: "fasdt"
+            },
+            slab: {
+                regular: "faslr"
+            },
+            "slab-press": {
+                regular: "faslpr"
+            },
+            thumbprint: {
+                light: "fatl"
+            },
+            whiteboard: {
+                semibold: "fawsb"
+            }
+        });
+        // We changed FAStyleIdToShortPrefixId in the icons repo to be canonical and as such, "classic" family does not have any
+        // duotone styles.  But we do still need duotone in _STYLE_TO_PREFIX below, so we are manually adding {duotone: 'fad'}
+        _STYLE_TO_PREFIX[a] = _objectSpread2(_objectSpread2(_objectSpread2(_objectSpread2({}, {
+            duotone: "fad"
+        }), _STYLE_TO_PREFIX[a]), dt_kit), dt_kit_duotone);
+        var STYLE_TO_PREFIX = familyProxy(_STYLE_TO_PREFIX), _PREFIX_TO_LONG_STYLE = _objectSpread2({}, Go$1);
+        _PREFIX_TO_LONG_STYLE[a] = _objectSpread2(_objectSpread2({}, _PREFIX_TO_LONG_STYLE[a]), {
+            fak: "fa-kit"
+        });
+        var PREFIX_TO_LONG_STYLE = familyProxy(_PREFIX_TO_LONG_STYLE), _LONG_STYLE_TO_PREFIX = _objectSpread2({}, {
+            classic: {
+                "fa-brands": "fab",
+                "fa-duotone": "fad",
+                "fa-light": "fal",
+                "fa-regular": "far",
+                "fa-solid": "fas",
+                "fa-thin": "fat"
+            },
+            duotone: {
+                "fa-regular": "fadr",
+                "fa-light": "fadl",
+                "fa-thin": "fadt"
+            },
+            sharp: {
+                "fa-solid": "fass",
+                "fa-regular": "fasr",
+                "fa-light": "fasl",
+                "fa-thin": "fast"
+            },
+            "sharp-duotone": {
+                "fa-solid": "fasds",
+                "fa-regular": "fasdr",
+                "fa-light": "fasdl",
+                "fa-thin": "fasdt"
+            },
+            slab: {
+                "fa-regular": "faslr"
+            },
+            "slab-press": {
+                "fa-regular": "faslpr"
+            },
+            whiteboard: {
+                "fa-semibold": "fawsb"
+            },
+            thumbprint: {
+                "fa-light": "fatl"
+            },
+            notdog: {
+                "fa-solid": "fans"
+            },
+            "notdog-duo": {
+                "fa-solid": "fands"
+            },
+            etch: {
+                "fa-solid": "faes"
+            },
+            jelly: {
+                "fa-regular": "fajr"
+            },
+            "jelly-fill": {
+                "fa-regular": "fajfr"
+            },
+            "jelly-duo": {
+                "fa-regular": "fajdr"
+            },
+            chisel: {
+                "fa-regular": "facr"
+            }
+        });
+        _LONG_STYLE_TO_PREFIX[a] = _objectSpread2(_objectSpread2({}, _LONG_STYLE_TO_PREFIX[a]), {
+            "fa-kit": "fak"
+        });
+        familyProxy(_LONG_STYLE_TO_PREFIX);
+        var ICON_SELECTION_SYNTAX_PATTERN = /fa(k|kd|s|r|l|t|d|dr|dl|dt|b|slr|slpr|wsb|tl|ns|nds|es|jr|jfr|jdr|cr|ss|sr|sl|st|sds|sdr|sdl|sdt)?[\-\ ]/, LAYERS_TEXT_CLASSNAME = "fa-layers-text", FONT_FAMILY_PATTERN = /Font ?Awesome ?([567 ]*)(Solid|Regular|Light|Thin|Duotone|Brands|Free|Pro|Sharp Duotone|Sharp|Kit|Notdog Duo|Notdog|Chisel|Etch|Thumbprint|Jelly Fill|Jelly Duo|Jelly|Slab Press|Slab|Whiteboard)?.*/i, ATTRIBUTES_WATCHED_FOR_MUTATION = (familyProxy(_objectSpread2({}, {
+            classic: {
+                900: "fas",
+                400: "far",
+                normal: "far",
+                300: "fal",
+                100: "fat"
+            },
+            duotone: {
+                900: "fad",
+                400: "fadr",
+                300: "fadl",
+                100: "fadt"
+            },
+            sharp: {
+                900: "fass",
+                400: "fasr",
+                300: "fasl",
+                100: "fast"
+            },
+            "sharp-duotone": {
+                900: "fasds",
+                400: "fasdr",
+                300: "fasdl",
+                100: "fasdt"
+            },
+            slab: {
+                400: "faslr"
+            },
+            "slab-press": {
+                400: "faslpr"
+            },
+            whiteboard: {
+                600: "fawsb"
+            },
+            thumbprint: {
+                300: "fatl"
+            },
+            notdog: {
+                900: "fans"
+            },
+            "notdog-duo": {
+                900: "fands"
+            },
+            etch: {
+                900: "faes"
+            },
+            chisel: {
+                400: "facr"
+            },
+            jelly: {
+                400: "fajr"
+            },
+            "jelly-fill": {
+                400: "fajfr"
+            },
+            "jelly-duo": {
+                400: "fajdr"
+            }
+        })), [ "class", "data-prefix", "data-icon", "data-fa-transform", "data-fa-mask" ]), DUOTONE_CLASSES = {
+            GROUP: "duotone-group",
+            SWAP_OPACITY: "swap-opacity",
+            PRIMARY: "primary",
+            SECONDARY: "secondary"
+        }, RESERVED_CLASSES = [].concat(_toConsumableArray([ "kit" ]), _toConsumableArray(Ho$1)), initial = WINDOW.FontAwesomeConfig || {};
+        if (DOCUMENT && "function" == typeof DOCUMENT.querySelector) {
+            [ [ "data-family-prefix", "familyPrefix" ], [ "data-css-prefix", "cssPrefix" ], [ "data-family-default", "familyDefault" ], [ "data-style-default", "styleDefault" ], [ "data-replacement-class", "replacementClass" ], [ "data-auto-replace-svg", "autoReplaceSvg" ], [ "data-auto-add-css", "autoAddCss" ], [ "data-search-pseudo-elements", "searchPseudoElements" ], [ "data-search-pseudo-elements-warnings", "searchPseudoElementsWarnings" ], [ "data-search-pseudo-elements-full-scan", "searchPseudoElementsFullScan" ], [ "data-observe-mutations", "observeMutations" ], [ "data-mutate-approach", "mutateApproach" ], [ "data-keep-original-source", "keepOriginalSource" ], [ "data-measure-performance", "measurePerformance" ], [ "data-show-missing-icons", "showMissingIcons" ] ].forEach((function(_ref) {
+                var _ref2 = _slicedToArray(_ref, 2), attr = _ref2[0], key = _ref2[1], val = function coerce(val) {
+                    // Getting an empty string will occur if the attribute is set on the HTML tag but without a value
+                    // We'll assume that this is an indication that it should be toggled to true
+                    return "" === val || "false" !== val && ("true" === val || val);
+                }(function getAttrConfig(attr) {
+                    var element = DOCUMENT.querySelector("script[" + attr + "]");
+                    if (element) return element.getAttribute(attr);
+                }(attr));
+                val !== undefined && null !== val && (initial[key] = val);
+            }));
+        }
+        var _default = {
+            styleDefault: "solid",
+            familyDefault: a,
+            cssPrefix: DEFAULT_CSS_PREFIX,
+            replacementClass: DEFAULT_REPLACEMENT_CLASS,
+            autoReplaceSvg: !0,
+            autoAddCss: !0,
+            searchPseudoElements: !1,
+            searchPseudoElementsWarnings: !0,
+            searchPseudoElementsFullScan: !1,
+            observeMutations: !0,
+            mutateApproach: "async",
+            keepOriginalSource: !0,
+            measurePerformance: !1,
+            showMissingIcons: !0
+        };
+        // familyPrefix is deprecated but we must still support it if present
+                initial.familyPrefix && (initial.cssPrefix = initial.familyPrefix);
+        var _config = _objectSpread2(_objectSpread2({}, _default), initial);
+        _config.autoReplaceSvg || (_config.observeMutations = !1);
+        var config = {};
+        Object.keys(_default).forEach((function(key) {
+            Object.defineProperty(config, key, {
+                enumerable: !0,
+                set: function set(val) {
+                    _config[key] = val, _onChangeCb.forEach((function(cb) {
+                        return cb(config);
+                    }));
+                },
+                get: function get() {
+                    return _config[key];
+                }
+            });
+        })), 
+        // familyPrefix is deprecated as of 6.2.0 and should be removed in 7.0.0
+        Object.defineProperty(config, "familyPrefix", {
+            enumerable: !0,
+            set: function set(val) {
+                _config.cssPrefix = val, _onChangeCb.forEach((function(cb) {
+                    return cb(config);
+                }));
+            },
+            get: function get() {
+                return _config.cssPrefix;
+            }
+        }), WINDOW.FontAwesomeConfig = config;
+        var _onChangeCb = [];
+        var d$2 = UNITS_IN_GRID, meaninglessTransform = {
+            size: 16,
+            x: 0,
+            y: 0,
+            rotate: 0,
+            flipX: !1,
+            flipY: !1
+        };
+        function nextUniqueId() {
+            for (var size = 12, id = ""; size-- > 0; ) id += "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"[62 * Math.random() | 0];
+            return id;
+        }
+        function toArray(obj) {
+            for (var array = [], i = (obj || []).length >>> 0; i--; ) array[i] = obj[i];
+            return array;
+        }
+        function classArray(node) {
+            return node.classList ? toArray(node.classList) : (node.getAttribute("class") || "").split(" ").filter((function(i) {
+                return i;
+            }));
+        }
+        function htmlEscape(str) {
+            return "".concat(str).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/'/g, "&#39;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+        }
+        function joinStyles(styles) {
+            return Object.keys(styles || {}).reduce((function(acc, styleName) {
+                return acc + "".concat(styleName, ": ").concat(styles[styleName].trim(), ";");
+            }), "");
+        }
+        function transformIsMeaningful(transform) {
+            return transform.size !== meaninglessTransform.size || transform.x !== meaninglessTransform.x || transform.y !== meaninglessTransform.y || transform.rotate !== meaninglessTransform.rotate || transform.flipX || transform.flipY;
+        }
+        var baseStyles = ':root, :host {\n  --fa-font-solid: normal 900 1em/1 "Font Awesome 7 Free";\n  --fa-font-regular: normal 400 1em/1 "Font Awesome 7 Free";\n  --fa-font-light: normal 300 1em/1 "Font Awesome 7 Pro";\n  --fa-font-thin: normal 100 1em/1 "Font Awesome 7 Pro";\n  --fa-font-duotone: normal 900 1em/1 "Font Awesome 7 Duotone";\n  --fa-font-duotone-regular: normal 400 1em/1 "Font Awesome 7 Duotone";\n  --fa-font-duotone-light: normal 300 1em/1 "Font Awesome 7 Duotone";\n  --fa-font-duotone-thin: normal 100 1em/1 "Font Awesome 7 Duotone";\n  --fa-font-brands: normal 400 1em/1 "Font Awesome 7 Brands";\n  --fa-font-sharp-solid: normal 900 1em/1 "Font Awesome 7 Sharp";\n  --fa-font-sharp-regular: normal 400 1em/1 "Font Awesome 7 Sharp";\n  --fa-font-sharp-light: normal 300 1em/1 "Font Awesome 7 Sharp";\n  --fa-font-sharp-thin: normal 100 1em/1 "Font Awesome 7 Sharp";\n  --fa-font-sharp-duotone-solid: normal 900 1em/1 "Font Awesome 7 Sharp Duotone";\n  --fa-font-sharp-duotone-regular: normal 400 1em/1 "Font Awesome 7 Sharp Duotone";\n  --fa-font-sharp-duotone-light: normal 300 1em/1 "Font Awesome 7 Sharp Duotone";\n  --fa-font-sharp-duotone-thin: normal 100 1em/1 "Font Awesome 7 Sharp Duotone";\n  --fa-font-slab-regular: normal 400 1em/1 "Font Awesome 7 Slab";\n  --fa-font-slab-press-regular: normal 400 1em/1 "Font Awesome 7 Slab Press";\n  --fa-font-whiteboard-semibold: normal 600 1em/1 "Font Awesome 7 Whiteboard";\n  --fa-font-thumbprint-light: normal 300 1em/1 "Font Awesome 7 Thumbprint";\n  --fa-font-notdog-solid: normal 900 1em/1 "Font Awesome 7 Notdog";\n  --fa-font-notdog-duo-solid: normal 900 1em/1 "Font Awesome 7 Notdog Duo";\n  --fa-font-etch-solid: normal 900 1em/1 "Font Awesome 7 Etch";\n  --fa-font-jelly-regular: normal 400 1em/1 "Font Awesome 7 Jelly";\n  --fa-font-jelly-fill-regular: normal 400 1em/1 "Font Awesome 7 Jelly Fill";\n  --fa-font-jelly-duo-regular: normal 400 1em/1 "Font Awesome 7 Jelly Duo";\n  --fa-font-chisel-regular: normal 400 1em/1 "Font Awesome 7 Chisel";\n}\n\n.svg-inline--fa {\n  box-sizing: content-box;\n  display: var(--fa-display, inline-block);\n  height: 1em;\n  overflow: visible;\n  vertical-align: -0.125em;\n  width: var(--fa-width, 1.25em);\n}\n.svg-inline--fa.fa-2xs {\n  vertical-align: 0.1em;\n}\n.svg-inline--fa.fa-xs {\n  vertical-align: 0em;\n}\n.svg-inline--fa.fa-sm {\n  vertical-align: -0.0714285714em;\n}\n.svg-inline--fa.fa-lg {\n  vertical-align: -0.2em;\n}\n.svg-inline--fa.fa-xl {\n  vertical-align: -0.25em;\n}\n.svg-inline--fa.fa-2xl {\n  vertical-align: -0.3125em;\n}\n.svg-inline--fa.fa-pull-left,\n.svg-inline--fa .fa-pull-start {\n  float: inline-start;\n  margin-inline-end: var(--fa-pull-margin, 0.3em);\n}\n.svg-inline--fa.fa-pull-right,\n.svg-inline--fa .fa-pull-end {\n  float: inline-end;\n  margin-inline-start: var(--fa-pull-margin, 0.3em);\n}\n.svg-inline--fa.fa-li {\n  width: var(--fa-li-width, 2em);\n  inset-inline-start: calc(-1 * var(--fa-li-width, 2em));\n  inset-block-start: 0.25em; /* syncing vertical alignment with Web Font rendering */\n}\n\n.fa-layers-counter, .fa-layers-text {\n  display: inline-block;\n  position: absolute;\n  text-align: center;\n}\n\n.fa-layers {\n  display: inline-block;\n  height: 1em;\n  position: relative;\n  text-align: center;\n  vertical-align: -0.125em;\n  width: var(--fa-width, 1.25em);\n}\n.fa-layers .svg-inline--fa {\n  inset: 0;\n  margin: auto;\n  position: absolute;\n  transform-origin: center center;\n}\n\n.fa-layers-text {\n  left: 50%;\n  top: 50%;\n  transform: translate(-50%, -50%);\n  transform-origin: center center;\n}\n\n.fa-layers-counter {\n  background-color: var(--fa-counter-background-color, #ff253a);\n  border-radius: var(--fa-counter-border-radius, 1em);\n  box-sizing: border-box;\n  color: var(--fa-inverse, #fff);\n  line-height: var(--fa-counter-line-height, 1);\n  max-width: var(--fa-counter-max-width, 5em);\n  min-width: var(--fa-counter-min-width, 1.5em);\n  overflow: hidden;\n  padding: var(--fa-counter-padding, 0.25em 0.5em);\n  right: var(--fa-right, 0);\n  text-overflow: ellipsis;\n  top: var(--fa-top, 0);\n  transform: scale(var(--fa-counter-scale, 0.25));\n  transform-origin: top right;\n}\n\n.fa-layers-bottom-right {\n  bottom: var(--fa-bottom, 0);\n  right: var(--fa-right, 0);\n  top: auto;\n  transform: scale(var(--fa-layers-scale, 0.25));\n  transform-origin: bottom right;\n}\n\n.fa-layers-bottom-left {\n  bottom: var(--fa-bottom, 0);\n  left: var(--fa-left, 0);\n  right: auto;\n  top: auto;\n  transform: scale(var(--fa-layers-scale, 0.25));\n  transform-origin: bottom left;\n}\n\n.fa-layers-top-right {\n  top: var(--fa-top, 0);\n  right: var(--fa-right, 0);\n  transform: scale(var(--fa-layers-scale, 0.25));\n  transform-origin: top right;\n}\n\n.fa-layers-top-left {\n  left: var(--fa-left, 0);\n  right: auto;\n  top: var(--fa-top, 0);\n  transform: scale(var(--fa-layers-scale, 0.25));\n  transform-origin: top left;\n}\n\n.fa-1x {\n  font-size: 1em;\n}\n\n.fa-2x {\n  font-size: 2em;\n}\n\n.fa-3x {\n  font-size: 3em;\n}\n\n.fa-4x {\n  font-size: 4em;\n}\n\n.fa-5x {\n  font-size: 5em;\n}\n\n.fa-6x {\n  font-size: 6em;\n}\n\n.fa-7x {\n  font-size: 7em;\n}\n\n.fa-8x {\n  font-size: 8em;\n}\n\n.fa-9x {\n  font-size: 9em;\n}\n\n.fa-10x {\n  font-size: 10em;\n}\n\n.fa-2xs {\n  font-size: calc(10 / 16 * 1em); /* converts a 10px size into an em-based value that\'s relative to the scale\'s 16px base */\n  line-height: calc(1 / 10 * 1em); /* sets the line-height of the icon back to that of it\'s parent */\n  vertical-align: calc((6 / 10 - 0.375) * 1em); /* vertically centers the icon taking into account the surrounding text\'s descender */\n}\n\n.fa-xs {\n  font-size: calc(12 / 16 * 1em); /* converts a 12px size into an em-based value that\'s relative to the scale\'s 16px base */\n  line-height: calc(1 / 12 * 1em); /* sets the line-height of the icon back to that of it\'s parent */\n  vertical-align: calc((6 / 12 - 0.375) * 1em); /* vertically centers the icon taking into account the surrounding text\'s descender */\n}\n\n.fa-sm {\n  font-size: calc(14 / 16 * 1em); /* converts a 14px size into an em-based value that\'s relative to the scale\'s 16px base */\n  line-height: calc(1 / 14 * 1em); /* sets the line-height of the icon back to that of it\'s parent */\n  vertical-align: calc((6 / 14 - 0.375) * 1em); /* vertically centers the icon taking into account the surrounding text\'s descender */\n}\n\n.fa-lg {\n  font-size: calc(20 / 16 * 1em); /* converts a 20px size into an em-based value that\'s relative to the scale\'s 16px base */\n  line-height: calc(1 / 20 * 1em); /* sets the line-height of the icon back to that of it\'s parent */\n  vertical-align: calc((6 / 20 - 0.375) * 1em); /* vertically centers the icon taking into account the surrounding text\'s descender */\n}\n\n.fa-xl {\n  font-size: calc(24 / 16 * 1em); /* converts a 24px size into an em-based value that\'s relative to the scale\'s 16px base */\n  line-height: calc(1 / 24 * 1em); /* sets the line-height of the icon back to that of it\'s parent */\n  vertical-align: calc((6 / 24 - 0.375) * 1em); /* vertically centers the icon taking into account the surrounding text\'s descender */\n}\n\n.fa-2xl {\n  font-size: calc(32 / 16 * 1em); /* converts a 32px size into an em-based value that\'s relative to the scale\'s 16px base */\n  line-height: calc(1 / 32 * 1em); /* sets the line-height of the icon back to that of it\'s parent */\n  vertical-align: calc((6 / 32 - 0.375) * 1em); /* vertically centers the icon taking into account the surrounding text\'s descender */\n}\n\n.fa-width-auto {\n  --fa-width: auto;\n}\n\n.fa-fw,\n.fa-width-fixed {\n  --fa-width: 1.25em;\n}\n\n.fa-ul {\n  list-style-type: none;\n  margin-inline-start: var(--fa-li-margin, 2.5em);\n  padding-inline-start: 0;\n}\n.fa-ul > li {\n  position: relative;\n}\n\n.fa-li {\n  inset-inline-start: calc(-1 * var(--fa-li-width, 2em));\n  position: absolute;\n  text-align: center;\n  width: var(--fa-li-width, 2em);\n  line-height: inherit;\n}\n\n/* Heads Up: Bordered Icons will not be supported in the future!\n  - This feature will be deprecated in the next major release of Font Awesome (v8)!\n  - You may continue to use it in this version *v7), but it will not be supported in Font Awesome v8.\n*/\n/* Notes:\n* --@{v.$css-prefix}-border-width = 1/16 by default (to render as ~1px based on a 16px default font-size)\n* --@{v.$css-prefix}-border-padding =\n  ** 3/16 for vertical padding (to give ~2px of vertical whitespace around an icon considering it\'s vertical alignment)\n  ** 4/16 for horizontal padding (to give ~4px of horizontal whitespace around an icon)\n*/\n.fa-border {\n  border-color: var(--fa-border-color, #eee);\n  border-radius: var(--fa-border-radius, 0.1em);\n  border-style: var(--fa-border-style, solid);\n  border-width: var(--fa-border-width, 0.0625em);\n  box-sizing: var(--fa-border-box-sizing, content-box);\n  padding: var(--fa-border-padding, 0.1875em 0.25em);\n}\n\n.fa-pull-left,\n.fa-pull-start {\n  float: inline-start;\n  margin-inline-end: var(--fa-pull-margin, 0.3em);\n}\n\n.fa-pull-right,\n.fa-pull-end {\n  float: inline-end;\n  margin-inline-start: var(--fa-pull-margin, 0.3em);\n}\n\n.fa-beat {\n  animation-name: fa-beat;\n  animation-delay: var(--fa-animation-delay, 0s);\n  animation-direction: var(--fa-animation-direction, normal);\n  animation-duration: var(--fa-animation-duration, 1s);\n  animation-iteration-count: var(--fa-animation-iteration-count, infinite);\n  animation-timing-function: var(--fa-animation-timing, ease-in-out);\n}\n\n.fa-bounce {\n  animation-name: fa-bounce;\n  animation-delay: var(--fa-animation-delay, 0s);\n  animation-direction: var(--fa-animation-direction, normal);\n  animation-duration: var(--fa-animation-duration, 1s);\n  animation-iteration-count: var(--fa-animation-iteration-count, infinite);\n  animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.28, 0.84, 0.42, 1));\n}\n\n.fa-fade {\n  animation-name: fa-fade;\n  animation-delay: var(--fa-animation-delay, 0s);\n  animation-direction: var(--fa-animation-direction, normal);\n  animation-duration: var(--fa-animation-duration, 1s);\n  animation-iteration-count: var(--fa-animation-iteration-count, infinite);\n  animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));\n}\n\n.fa-beat-fade {\n  animation-name: fa-beat-fade;\n  animation-delay: var(--fa-animation-delay, 0s);\n  animation-direction: var(--fa-animation-direction, normal);\n  animation-duration: var(--fa-animation-duration, 1s);\n  animation-iteration-count: var(--fa-animation-iteration-count, infinite);\n  animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));\n}\n\n.fa-flip {\n  animation-name: fa-flip;\n  animation-delay: var(--fa-animation-delay, 0s);\n  animation-direction: var(--fa-animation-direction, normal);\n  animation-duration: var(--fa-animation-duration, 1s);\n  animation-iteration-count: var(--fa-animation-iteration-count, infinite);\n  animation-timing-function: var(--fa-animation-timing, ease-in-out);\n}\n\n.fa-shake {\n  animation-name: fa-shake;\n  animation-delay: var(--fa-animation-delay, 0s);\n  animation-direction: var(--fa-animation-direction, normal);\n  animation-duration: var(--fa-animation-duration, 1s);\n  animation-iteration-count: var(--fa-animation-iteration-count, infinite);\n  animation-timing-function: var(--fa-animation-timing, linear);\n}\n\n.fa-spin {\n  animation-name: fa-spin;\n  animation-delay: var(--fa-animation-delay, 0s);\n  animation-direction: var(--fa-animation-direction, normal);\n  animation-duration: var(--fa-animation-duration, 2s);\n  animation-iteration-count: var(--fa-animation-iteration-count, infinite);\n  animation-timing-function: var(--fa-animation-timing, linear);\n}\n\n.fa-spin-reverse {\n  --fa-animation-direction: reverse;\n}\n\n.fa-pulse,\n.fa-spin-pulse {\n  animation-name: fa-spin;\n  animation-direction: var(--fa-animation-direction, normal);\n  animation-duration: var(--fa-animation-duration, 1s);\n  animation-iteration-count: var(--fa-animation-iteration-count, infinite);\n  animation-timing-function: var(--fa-animation-timing, steps(8));\n}\n\n@media (prefers-reduced-motion: reduce) {\n  .fa-beat,\n  .fa-bounce,\n  .fa-fade,\n  .fa-beat-fade,\n  .fa-flip,\n  .fa-pulse,\n  .fa-shake,\n  .fa-spin,\n  .fa-spin-pulse {\n    animation: none !important;\n    transition: none !important;\n  }\n}\n@keyframes fa-beat {\n  0%, 90% {\n    transform: scale(1);\n  }\n  45% {\n    transform: scale(var(--fa-beat-scale, 1.25));\n  }\n}\n@keyframes fa-bounce {\n  0% {\n    transform: scale(1, 1) translateY(0);\n  }\n  10% {\n    transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);\n  }\n  30% {\n    transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));\n  }\n  50% {\n    transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);\n  }\n  57% {\n    transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));\n  }\n  64% {\n    transform: scale(1, 1) translateY(0);\n  }\n  100% {\n    transform: scale(1, 1) translateY(0);\n  }\n}\n@keyframes fa-fade {\n  50% {\n    opacity: var(--fa-fade-opacity, 0.4);\n  }\n}\n@keyframes fa-beat-fade {\n  0%, 100% {\n    opacity: var(--fa-beat-fade-opacity, 0.4);\n    transform: scale(1);\n  }\n  50% {\n    opacity: 1;\n    transform: scale(var(--fa-beat-fade-scale, 1.125));\n  }\n}\n@keyframes fa-flip {\n  50% {\n    transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));\n  }\n}\n@keyframes fa-shake {\n  0% {\n    transform: rotate(-15deg);\n  }\n  4% {\n    transform: rotate(15deg);\n  }\n  8%, 24% {\n    transform: rotate(-18deg);\n  }\n  12%, 28% {\n    transform: rotate(18deg);\n  }\n  16% {\n    transform: rotate(-22deg);\n  }\n  20% {\n    transform: rotate(22deg);\n  }\n  32% {\n    transform: rotate(-12deg);\n  }\n  36% {\n    transform: rotate(12deg);\n  }\n  40%, 100% {\n    transform: rotate(0deg);\n  }\n}\n@keyframes fa-spin {\n  0% {\n    transform: rotate(0deg);\n  }\n  100% {\n    transform: rotate(360deg);\n  }\n}\n.fa-rotate-90 {\n  transform: rotate(90deg);\n}\n\n.fa-rotate-180 {\n  transform: rotate(180deg);\n}\n\n.fa-rotate-270 {\n  transform: rotate(270deg);\n}\n\n.fa-flip-horizontal {\n  transform: scale(-1, 1);\n}\n\n.fa-flip-vertical {\n  transform: scale(1, -1);\n}\n\n.fa-flip-both,\n.fa-flip-horizontal.fa-flip-vertical {\n  transform: scale(-1, -1);\n}\n\n.fa-rotate-by {\n  transform: rotate(var(--fa-rotate-angle, 0));\n}\n\n.svg-inline--fa .fa-primary {\n  fill: var(--fa-primary-color, currentColor);\n  opacity: var(--fa-primary-opacity, 1);\n}\n\n.svg-inline--fa .fa-secondary {\n  fill: var(--fa-secondary-color, currentColor);\n  opacity: var(--fa-secondary-opacity, 0.4);\n}\n\n.svg-inline--fa.fa-swap-opacity .fa-primary {\n  opacity: var(--fa-secondary-opacity, 0.4);\n}\n\n.svg-inline--fa.fa-swap-opacity .fa-secondary {\n  opacity: var(--fa-primary-opacity, 1);\n}\n\n.svg-inline--fa mask .fa-primary,\n.svg-inline--fa mask .fa-secondary {\n  fill: black;\n}\n\n.svg-inline--fa.fa-inverse {\n  fill: var(--fa-inverse, #fff);\n}\n\n.fa-stack {\n  display: inline-block;\n  height: 2em;\n  line-height: 2em;\n  position: relative;\n  vertical-align: middle;\n  width: 2.5em;\n}\n\n.fa-inverse {\n  color: var(--fa-inverse, #fff);\n}\n\n.svg-inline--fa.fa-stack-1x {\n  --fa-width: 1.25em;\n  height: 1em;\n  width: var(--fa-width);\n}\n.svg-inline--fa.fa-stack-2x {\n  --fa-width: 2.5em;\n  height: 2em;\n  width: var(--fa-width);\n}\n\n.fa-stack-1x,\n.fa-stack-2x {\n  inset: 0;\n  margin: auto;\n  position: absolute;\n  z-index: var(--fa-stack-z-index, auto);\n}';
+        function css() {
+            var dcp = DEFAULT_CSS_PREFIX, drc = DEFAULT_REPLACEMENT_CLASS, fp = config.cssPrefix, rc = config.replacementClass, s = baseStyles;
+            if (fp !== dcp || rc !== drc) {
+                var dPatt = new RegExp("\\.".concat(dcp, "\\-"), "g"), customPropPatt = new RegExp("\\--".concat(dcp, "\\-"), "g"), rPatt = new RegExp("\\.".concat(drc), "g");
+                s = s.replace(dPatt, ".".concat(fp, "-")).replace(customPropPatt, "--".concat(fp, "-")).replace(rPatt, ".".concat(rc));
+            }
+            return s;
+        }
+        var _cssInserted = !1;
+        function ensureCss() {
+            config.autoAddCss && !_cssInserted && (!function insertCss(css) {
+                if (css && IS_DOM) {
+                    var style = DOCUMENT.createElement("style");
+                    style.setAttribute("type", "text/css"), style.innerHTML = css;
+                    for (var headChildren = DOCUMENT.head.childNodes, beforeChild = null, i = headChildren.length - 1; i > -1; i--) {
+                        var child = headChildren[i], tagName = (child.tagName || "").toUpperCase();
+                        [ "STYLE", "LINK" ].indexOf(tagName) > -1 && (beforeChild = child);
+                    }
+                    return DOCUMENT.head.insertBefore(style, beforeChild), css;
+                }
+            }(css()), _cssInserted = !0);
+        }
+        var InjectCSS = {
+            mixout: function mixout() {
+                return {
+                    dom: {
+                        css,
+                        insertCss: ensureCss
+                    }
+                };
+            },
+            hooks: function hooks() {
+                return {
+                    beforeDOMElementCreation: function beforeDOMElementCreation() {
+                        ensureCss();
+                    },
+                    beforeI2svg: function beforeI2svg() {
+                        ensureCss();
+                    }
+                };
+            }
+        }, w$2 = WINDOW || {};
+        w$2.___FONT_AWESOME___ || (w$2.___FONT_AWESOME___ = {}), w$2.___FONT_AWESOME___.styles || (w$2.___FONT_AWESOME___.styles = {}), 
+        w$2.___FONT_AWESOME___.hooks || (w$2.___FONT_AWESOME___.hooks = {}), w$2.___FONT_AWESOME___.shims || (w$2.___FONT_AWESOME___.shims = []);
+        var namespace = w$2.___FONT_AWESOME___, functions = [], _listener = function listener() {
+            DOCUMENT.removeEventListener("DOMContentLoaded", _listener), loaded = 1, functions.map((function(fn) {
+                return fn();
+            }));
+        }, loaded = !1;
+        function toHtml(abstractNodes) {
+            var tag = abstractNodes.tag, _abstractNodes$attrib = abstractNodes.attributes, attributes = void 0 === _abstractNodes$attrib ? {} : _abstractNodes$attrib, _abstractNodes$childr = abstractNodes.children, children = void 0 === _abstractNodes$childr ? [] : _abstractNodes$childr;
+            return "string" == typeof abstractNodes ? htmlEscape(abstractNodes) : "<".concat(tag, " ").concat(function joinAttributes(attributes) {
+                return Object.keys(attributes || {}).reduce((function(acc, attributeName) {
+                    return acc + "".concat(attributeName, '="').concat(htmlEscape(attributes[attributeName]), '" ');
+                }), "").trim();
+            }(attributes), ">").concat(children.map(toHtml).join(""), "</").concat(tag, ">");
+        }
+        function iconFromMapping(mapping, prefix, iconName) {
+            if (mapping && mapping[prefix] && mapping[prefix][iconName]) return {
+                prefix,
+                iconName,
+                icon: mapping[prefix][iconName]
+            };
+        }
+        /**
+ * Internal helper to bind a function known to have 4 arguments
+ * to a given context.
+ */        IS_DOM && ((loaded = (DOCUMENT.documentElement.doScroll ? /^loaded|^c/ : /^loaded|^i|^c/).test(DOCUMENT.readyState)) || DOCUMENT.addEventListener("DOMContentLoaded", _listener));
+        var reduce = function fastReduceObject(subject, fn, initialValue, thisContext) {
+            var i, key, result, keys = Object.keys(subject), length = keys.length, iterator = thisContext !== undefined ? function bindInternal4(func, thisContext) {
+                return function(a, b, c, d) {
+                    return func.call(thisContext, a, b, c, d);
+                };
+            }(fn, thisContext) : fn;
+            for (initialValue === undefined ? (i = 1, result = subject[keys[0]]) : (i = 0, result = initialValue); i < length; i++) result = iterator(result, subject[key = keys[i]], key, subject);
+            return result;
+        };
+        /**
+ * # Reduce
+ *
+ * A fast object `.reduce()` implementation.
+ *
+ * @param  {Object}   subject      The object to reduce over.
+ * @param  {Function} fn           The reducer function.
+ * @param  {mixed}    initialValue The initial value for the reducer, defaults to subject[0].
+ * @param  {Object}   thisContext  The context for the reducer.
+ * @return {mixed}                 The final result.
+ */        
+        /**
+ * Return hexadecimal string for a unicode character
+ * Returns `null` when more than one character (not bytes!) are passed
+ * For example: 'K' → '7B'
+ */
+        function toHex(unicode) {
+            return 1 !== _toConsumableArray(unicode).length ? null : unicode.codePointAt(0).toString(16);
+        }
+        function normalizeIcons(icons) {
+            return Object.keys(icons).reduce((function(acc, iconName) {
+                var icon = icons[iconName];
+                return !!icon.icon ? acc[icon.iconName] = icon.icon : acc[iconName] = icon, acc;
+            }), {});
+        }
+        function defineIcons(prefix, icons) {
+            var _params$skipHooks = (arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {}).skipHooks, skipHooks = void 0 !== _params$skipHooks && _params$skipHooks, normalized = normalizeIcons(icons);
+            "function" != typeof namespace.hooks.addPack || skipHooks ? namespace.styles[prefix] = _objectSpread2(_objectSpread2({}, namespace.styles[prefix] || {}), normalized) : namespace.hooks.addPack(prefix, normalizeIcons(icons))
+            /**
+   * Font Awesome 4 used the prefix of `fa` for all icons. With the introduction
+   * of new styles we needed to differentiate between them. Prefix `fa` is now an alias
+   * for `fas` so we'll ease the upgrade process for our users by automatically defining
+   * this as well.
+   */ , "fas" === prefix && defineIcons("fa", icons);
+        }
+        var fontawesome_svg_core_styles = namespace.styles, shims = namespace.shims, FAMILY_NAMES = Object.keys(PREFIX_TO_LONG_STYLE), PREFIXES_FOR_FAMILY = FAMILY_NAMES.reduce((function(acc, familyId) {
+            return acc[familyId] = Object.keys(PREFIX_TO_LONG_STYLE[familyId]), acc;
+        }), {}), _defaultUsablePrefix = null, _byUnicode = {}, _byLigature = {}, _byOldName = {}, _byOldUnicode = {}, _byAlias = {};
+        function getIconName(cssPrefix, cls) {
+            var parts = cls.split("-"), prefix = parts[0], iconName = parts.slice(1).join("-");
+            return prefix !== cssPrefix || "" === iconName || function isReserved(name) {
+                return ~RESERVED_CLASSES.indexOf(name);
+            }(iconName) ? null : iconName;
+        }
+        var build = function build() {
+            var lookup = function lookup(reducer) {
+                return reduce(fontawesome_svg_core_styles, (function(o$$1, style, prefix) {
+                    return o$$1[prefix] = reduce(style, reducer, {}), o$$1;
+                }), {});
+            };
+            _byUnicode = lookup((function(acc, icon, iconName) {
+                (icon[3] && (acc[icon[3]] = iconName), icon[2]) && icon[2].filter((function(a$$1) {
+                    return "number" == typeof a$$1;
+                })).forEach((function(alias) {
+                    acc[alias.toString(16)] = iconName;
+                }));
+                return acc;
+            })), _byLigature = lookup((function(acc, icon, iconName) {
+                (acc[iconName] = iconName, icon[2]) && icon[2].filter((function(a$$1) {
+                    return "string" == typeof a$$1;
+                })).forEach((function(alias) {
+                    acc[alias] = iconName;
+                }));
+                return acc;
+            })), _byAlias = lookup((function(acc, icon, iconName) {
+                var aliases = icon[2];
+                return acc[iconName] = iconName, aliases.forEach((function(alias) {
+                    acc[alias] = iconName;
+                })), acc;
+            }));
+            // If we have a Kit, we can't determine if regular is available since we
+            // could be auto-fetching it. We'll have to assume that it is available.
+            var hasRegular = "far" in fontawesome_svg_core_styles || config.autoFetchSvg, shimLookups = reduce(shims, (function(acc, shim) {
+                var maybeNameMaybeUnicode = shim[0], prefix = shim[1], iconName = shim[2];
+                return "far" !== prefix || hasRegular || (prefix = "fas"), "string" == typeof maybeNameMaybeUnicode && (acc.names[maybeNameMaybeUnicode] = {
+                    prefix,
+                    iconName
+                }), "number" == typeof maybeNameMaybeUnicode && (acc.unicodes[maybeNameMaybeUnicode.toString(16)] = {
+                    prefix,
+                    iconName
+                }), acc;
+            }), {
+                names: {},
+                unicodes: {}
+            });
+            _byOldName = shimLookups.names, _byOldUnicode = shimLookups.unicodes, _defaultUsablePrefix = getCanonicalPrefix(config.styleDefault, {
+                family: config.familyDefault
+            });
+        };
+        function byUnicode(prefix, unicode) {
+            return (_byUnicode[prefix] || {})[unicode];
+        }
+        function byAlias(prefix, alias) {
+            return (_byAlias[prefix] || {})[alias];
+        }
+        function byOldName(name) {
+            return _byOldName[name] || {
+                prefix: null,
+                iconName: null
+            };
+        }
+        function getDefaultUsablePrefix() {
+            return _defaultUsablePrefix;
+        }
+        !function onChange(cb) {
+            return _onChangeCb.push(cb), function() {
+                _onChangeCb.splice(_onChangeCb.indexOf(cb), 1);
+            };
+        }((function(c$$1) {
+            _defaultUsablePrefix = getCanonicalPrefix(c$$1.styleDefault, {
+                family: config.familyDefault
+            });
+        })), build();
+        var emptyCanonicalIcon = function emptyCanonicalIcon() {
+            return {
+                prefix: null,
+                iconName: null,
+                rest: []
+            };
+        };
+        function getCanonicalPrefix(styleOrPrefix) {
+            var _params$family = (arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {}).family, family = void 0 === _params$family ? a : _params$family, style = PREFIX_TO_STYLE[family][styleOrPrefix];
+            // handles the exception of passing in only a family of 'duotone' with no style
+            if (family === fontawesome_svg_core_o && !styleOrPrefix) return "fad";
+            var prefix = STYLE_TO_PREFIX[family][styleOrPrefix] || STYLE_TO_PREFIX[family][style], defined = styleOrPrefix in namespace.styles ? styleOrPrefix : null;
+            return prefix || defined || null;
+        }
+        function sortedUniqueValues(arr) {
+            return arr.sort().filter((function(value, index, arr) {
+                return arr.indexOf(value) === index;
+            }));
+        }
+        var _faCombinedClasses = $o$1.concat(zo);
+        function getCanonicalIcon(values) {
+            var _params$skipLookups = (arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {}).skipLookups, skipLookups = void 0 !== _params$skipLookups && _params$skipLookups, givenPrefix = null, faStyleOrFamilyClasses = sortedUniqueValues(values.filter((function(cls) {
+                return _faCombinedClasses.includes(cls);
+            }))), nonStyleOrFamilyClasses = sortedUniqueValues(values.filter((function(cls) {
+                return !_faCombinedClasses.includes(cls);
+            }))), _faStyles$ = _slicedToArray(faStyleOrFamilyClasses.filter((function(cls) {
+                return givenPrefix = cls, !G.includes(cls);
+            })), 1)[0], styleFromValues = void 0 === _faStyles$ ? null : _faStyles$, family = function getFamilyId(values) {
+                var family = a, famProps = FAMILY_NAMES.reduce((function(acc, familyId) {
+                    return acc[familyId] = "".concat(config.cssPrefix, "-").concat(familyId), acc;
+                }), {});
+                return oo.forEach((function(familyId) {
+                    (values.includes(famProps[familyId]) || values.some((function(v$$1) {
+                        return PREFIXES_FOR_FAMILY[familyId].includes(v$$1);
+                    }))) && (family = familyId);
+                })), family;
+            }(faStyleOrFamilyClasses), canonical = _objectSpread2(_objectSpread2({}, function moveNonFaClassesToRest(classNames) {
+                var rest = [], iconName = null;
+                return classNames.forEach((function(cls) {
+                    var result = getIconName(config.cssPrefix, cls);
+                    result ? iconName = result : cls && rest.push(cls);
+                })), {
+                    iconName,
+                    rest
+                };
+            }(nonStyleOrFamilyClasses)), {}, {
+                prefix: getCanonicalPrefix(styleFromValues, {
+                    family
+                })
+            });
+            return _objectSpread2(_objectSpread2(_objectSpread2({}, canonical), function getDefaultCanonicalPrefix(prefixOptions) {
+                var values = prefixOptions.values, family = prefixOptions.family, canonical = prefixOptions.canonical, _prefixOptions$givenP = prefixOptions.givenPrefix, givenPrefix = void 0 === _prefixOptions$givenP ? "" : _prefixOptions$givenP, _prefixOptions$styles = prefixOptions.styles, styles = void 0 === _prefixOptions$styles ? {} : _prefixOptions$styles, _prefixOptions$config = prefixOptions.config, config$$1 = void 0 === _prefixOptions$config ? {} : _prefixOptions$config, isDuotoneFamily = family === fontawesome_svg_core_o, valuesHasDuotone = values.includes("fa-duotone") || values.includes("fad"), defaultFamilyIsDuotone = "duotone" === config$$1.familyDefault, canonicalPrefixIsDuotone = "fad" === canonical.prefix || "fa-duotone" === canonical.prefix;
+                !isDuotoneFamily && (valuesHasDuotone || defaultFamilyIsDuotone || canonicalPrefixIsDuotone) && (canonical.prefix = "fad");
+                (values.includes("fa-brands") || values.includes("fab")) && (canonical.prefix = "fab");
+                if (!canonical.prefix && newCanonicalFamilies.includes(family)) {
+                    if (Object.keys(styles).find((function(key) {
+                        return newCanonicalStyles.includes(key);
+                    })) || config$$1.autoFetchSvg) {
+                        var defaultPrefix = Co.get(family).defaultShortPrefixId;
+                        canonical.prefix = defaultPrefix, canonical.iconName = byAlias(canonical.prefix, canonical.iconName) || canonical.iconName;
+                    }
+                }
+                "fa" !== canonical.prefix && "fa" !== givenPrefix || (
+                // The fa prefix is not canonical. So if it has made it through until this point
+                // we will shift it to the correct prefix.
+                canonical.prefix = getDefaultUsablePrefix() || "fas");
+                return canonical;
+            }({
+                values,
+                family,
+                styles: fontawesome_svg_core_styles,
+                config,
+                canonical,
+                givenPrefix
+            })), function applyShimAndAlias(skipLookups, givenPrefix, canonical) {
+                var prefix = canonical.prefix, iconName = canonical.iconName;
+                if (skipLookups || !prefix || !iconName) return {
+                    prefix,
+                    iconName
+                };
+                var shim = "fa" === givenPrefix ? byOldName(iconName) : {}, aliasIconName = byAlias(prefix, iconName);
+                iconName = shim.iconName || aliasIconName || iconName, prefix = shim.prefix || prefix, 
+                "far" !== prefix || fontawesome_svg_core_styles.far || !fontawesome_svg_core_styles.fas || config.autoFetchSvg || (
+                // Allow a fallback from the regular style to solid if regular is not available
+                // but only if we aren't auto-fetching SVGs
+                prefix = "fas");
+                return {
+                    prefix,
+                    iconName
+                };
+            }(skipLookups, givenPrefix, canonical));
+        }
+        var newCanonicalFamilies = oo.filter((function(familyId) {
+            return familyId !== a || familyId !== fontawesome_svg_core_o;
+        })), newCanonicalStyles = Object.keys(Go$1).filter((function(key) {
+            return key !== a;
+        })).map((function(key) {
+            return Object.keys(Go$1[key]);
+        })).flat();
+        var Library =  function() {
+            return function _createClass(e, r, t) {
+                return r && _defineProperties(e.prototype, r), t && _defineProperties(e, t), Object.defineProperty(e, "prototype", {
+                    writable: !1
+                }), e;
+            }((function Library() {
+                !function _classCallCheck(a, n) {
+                    if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function");
+                }(this, Library), this.definitions = {};
+            }), [ {
+                key: "add",
+                value: function add() {
+                    for (var _this = this, _len = arguments.length, definitions = new Array(_len), _key = 0; _key < _len; _key++) definitions[_key] = arguments[_key];
+                    var additions = definitions.reduce(this._pullDefinitions, {});
+                    Object.keys(additions).forEach((function(key) {
+                        _this.definitions[key] = _objectSpread2(_objectSpread2({}, _this.definitions[key] || {}), additions[key]), 
+                        defineIcons(key, additions[key]);
+                        // To keep support for older Classic styles, also add longer prefixes
+                        var longPrefix = PREFIX_TO_LONG_STYLE[a][key];
+                        longPrefix && defineIcons(longPrefix, additions[key]), build();
+                    }));
+                }
+            }, {
+                key: "reset",
+                value: function reset() {
+                    this.definitions = {};
+                }
+            }, {
+                key: "_pullDefinitions",
+                value: function _pullDefinitions(additions, definition) {
+                    var normalized = definition.prefix && definition.iconName && definition.icon ? {
+                        0: definition
+                    } : definition;
+                    return Object.keys(normalized).map((function(key) {
+                        var _normalized$key = normalized[key], prefix = _normalized$key.prefix, iconName = _normalized$key.iconName, icon = _normalized$key.icon, aliases = icon[2];
+                        additions[prefix] || (additions[prefix] = {}), aliases.length > 0 && aliases.forEach((function(alias) {
+                            "string" == typeof alias && (additions[prefix][alias] = icon);
+                        })), additions[prefix][iconName] = icon;
+                    })), additions;
+                }
+            } ]);
+        }(), _plugins = [], _hooks = {}, providers = {}, defaultProviderKeys = Object.keys(providers);
+        function chainHooks(hook, accumulator) {
+            for (var _len = arguments.length, args = new Array(_len > 2 ? _len - 2 : 0), _key = 2; _key < _len; _key++) args[_key - 2] = arguments[_key];
+            return (_hooks[hook] || []).forEach((function(hookFn) {
+                accumulator = hookFn.apply(null, [ accumulator ].concat(args));
+            })), accumulator;
+        }
+        function callHooks(hook) {
+            for (var _len2 = arguments.length, args = new Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) args[_key2 - 1] = arguments[_key2];
+            return (_hooks[hook] || []).forEach((function(hookFn) {
+                hookFn.apply(null, args);
+            })), undefined;
+        }
+        function callProvided() {
+            var hook = arguments[0], args = Array.prototype.slice.call(arguments, 1);
+            return providers[hook] ? providers[hook].apply(null, args) : undefined;
+        }
+        function findIconDefinition(iconLookup) {
+            "fa" === iconLookup.prefix && (iconLookup.prefix = "fas");
+            var iconName = iconLookup.iconName, prefix = iconLookup.prefix || getDefaultUsablePrefix();
+            if (iconName) return iconName = byAlias(prefix, iconName) || iconName, iconFromMapping(library.definitions, prefix, iconName) || iconFromMapping(namespace.styles, prefix, iconName);
+        }
+        var library = new Library, dom = {
+            i2svg: function i2svg() {
+                var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+                return IS_DOM ? (callHooks("beforeI2svg", params), callProvided("pseudoElements2svg", params), 
+                callProvided("i2svg", params)) : Promise.reject(new Error("Operation requires a DOM of some kind."));
+            },
+            watch: function watch() {
+                var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {}, autoReplaceSvgRoot = params.autoReplaceSvgRoot;
+                !1 === config.autoReplaceSvg && (config.autoReplaceSvg = !0), config.observeMutations = !0, 
+                function domready(fn) {
+                    IS_DOM && (loaded ? setTimeout(fn, 0) : functions.push(fn));
+                }((function() {
+                    autoReplace({
+                        autoReplaceSvgRoot
+                    }), callHooks("watch", params);
+                }));
+            }
+        }, parse = {
+            icon: function icon(_icon) {
+                if (null === _icon) return null;
+                if ("object" === _typeof(_icon) && _icon.prefix && _icon.iconName) return {
+                    prefix: _icon.prefix,
+                    iconName: byAlias(_icon.prefix, _icon.iconName) || _icon.iconName
+                };
+                if (Array.isArray(_icon) && 2 === _icon.length) {
+                    var iconName = 0 === _icon[1].indexOf("fa-") ? _icon[1].slice(3) : _icon[1], prefix = getCanonicalPrefix(_icon[0]);
+                    return {
+                        prefix,
+                        iconName: byAlias(prefix, iconName) || iconName
+                    };
+                }
+                if ("string" == typeof _icon && (_icon.indexOf("".concat(config.cssPrefix, "-")) > -1 || _icon.match(ICON_SELECTION_SYNTAX_PATTERN))) {
+                    var canonicalIcon = getCanonicalIcon(_icon.split(" "), {
+                        skipLookups: !0
+                    });
+                    return {
+                        prefix: canonicalIcon.prefix || getDefaultUsablePrefix(),
+                        iconName: byAlias(canonicalIcon.prefix, canonicalIcon.iconName) || canonicalIcon.iconName
+                    };
+                }
+                if ("string" == typeof _icon) {
+                    var _prefix = getDefaultUsablePrefix();
+                    return {
+                        prefix: _prefix,
+                        iconName: byAlias(_prefix, _icon) || _icon
+                    };
+                }
+            }
+        }, api = {
+            noAuto: function noAuto() {
+                config.autoReplaceSvg = !1, config.observeMutations = !1, callHooks("noAuto");
+            },
+            config,
+            dom,
+            parse,
+            library,
+            findIconDefinition,
+            toHtml
+        }, autoReplace = function autoReplace() {
+            var _params$autoReplaceSv = (arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {}).autoReplaceSvgRoot, autoReplaceSvgRoot = void 0 === _params$autoReplaceSv ? DOCUMENT : _params$autoReplaceSv;
+            (Object.keys(namespace.styles).length > 0 || config.autoFetchSvg) && IS_DOM && config.autoReplaceSvg && api.dom.i2svg({
+                node: autoReplaceSvgRoot
+            });
+        };
+        function domVariants(val, abstractCreator) {
+            return Object.defineProperty(val, "abstract", {
+                get: abstractCreator
+            }), Object.defineProperty(val, "html", {
+                get: function get() {
+                    return val.abstract.map((function(a) {
+                        return toHtml(a);
+                    }));
+                }
+            }), Object.defineProperty(val, "node", {
+                get: function get() {
+                    if (!IS_DOM) return undefined;
+                    var container = DOCUMENT.createElement("div");
+                    return container.innerHTML = val.html, container.children;
+                }
+            }), val;
+        }
+        function makeInlineSvgAbstract(params) {
+            var _params$icons = params.icons, main = _params$icons.main, mask = _params$icons.mask, prefix = params.prefix, iconName = params.iconName, transform = params.transform, symbol = params.symbol, maskId = params.maskId, extra = params.extra, _params$watchable = params.watchable, watchable = void 0 !== _params$watchable && _params$watchable, _ref = mask.found ? mask : main, width = _ref.width, height = _ref.height, attrClass = [ config.replacementClass, iconName ? "".concat(config.cssPrefix, "-").concat(iconName) : "" ].filter((function(c) {
+                return -1 === extra.classes.indexOf(c);
+            })).filter((function(c) {
+                return "" !== c || !!c;
+            })).concat(extra.classes).join(" "), content = {
+                children: [],
+                attributes: _objectSpread2(_objectSpread2({}, extra.attributes), {}, {
+                    "data-prefix": prefix,
+                    "data-icon": iconName,
+                    "class": attrClass,
+                    role: extra.attributes.role || "img",
+                    viewBox: "0 0 ".concat(width, " ").concat(height)
+                })
+            };
+            (
+            // If any of these attributes are present, don't assume the icon is decorative
+            function isLabeled(attributes) {
+                return [ "aria-label", "aria-labelledby", "title", "role" ].some((function(label) {
+                    return label in attributes;
+                }));
+            })(extra.attributes) || extra.attributes["aria-hidden"] || (content.attributes["aria-hidden"] = "true"), 
+            watchable && (content.attributes[DATA_FA_I2SVG] = "");
+            var args = _objectSpread2(_objectSpread2({}, content), {}, {
+                prefix,
+                iconName,
+                main,
+                mask,
+                maskId,
+                transform,
+                symbol,
+                styles: _objectSpread2({}, extra.styles)
+            }), _ref2 = mask.found && main.found ? callProvided("generateAbstractMask", args) || {
+                children: [],
+                attributes: {}
+            } : callProvided("generateAbstractIcon", args) || {
+                children: [],
+                attributes: {}
+            }, children = _ref2.children, attributes = _ref2.attributes;
+            return args.children = children, args.attributes = attributes, symbol ? function asSymbol(_ref) {
+                var prefix = _ref.prefix, iconName = _ref.iconName, children = _ref.children, attributes = _ref.attributes, symbol = _ref.symbol, id = !0 === symbol ? "".concat(prefix, "-").concat(config.cssPrefix, "-").concat(iconName) : symbol;
+                return [ {
+                    tag: "svg",
+                    attributes: {
+                        style: "display: none;"
+                    },
+                    children: [ {
+                        tag: "symbol",
+                        attributes: _objectSpread2(_objectSpread2({}, attributes), {}, {
+                            id
+                        }),
+                        children
+                    } ]
+                } ];
+            }(args) : function asIcon(_ref) {
+                var children = _ref.children, main = _ref.main, mask = _ref.mask, attributes = _ref.attributes, styles = _ref.styles, transform = _ref.transform;
+                if (transformIsMeaningful(transform) && main.found && !mask.found) {
+                    var offset = {
+                        x: main.width / main.height / 2,
+                        y: .5
+                    };
+                    attributes.style = joinStyles(_objectSpread2(_objectSpread2({}, styles), {}, {
+                        "transform-origin": "".concat(offset.x + transform.x / 16, "em ").concat(offset.y + transform.y / 16, "em")
+                    }));
+                }
+                return [ {
+                    tag: "svg",
+                    attributes,
+                    children
+                } ];
+            }(args);
+        }
+        function makeLayersTextAbstract(params) {
+            var content = params.content, width = params.width, height = params.height, transform = params.transform, extra = params.extra, _params$watchable2 = params.watchable, watchable = void 0 !== _params$watchable2 && _params$watchable2, attributes = _objectSpread2(_objectSpread2({}, extra.attributes), {}, {
+                "class": extra.classes.join(" ")
+            });
+            watchable && (attributes[DATA_FA_I2SVG] = "");
+            var styles = _objectSpread2({}, extra.styles);
+            transformIsMeaningful(transform) && (styles.transform = function transformForCss(_ref2) {
+                var transform = _ref2.transform, _ref2$width = _ref2.width, width = void 0 === _ref2$width ? UNITS_IN_GRID : _ref2$width, _ref2$height = _ref2.height, height = void 0 === _ref2$height ? UNITS_IN_GRID : _ref2$height, _ref2$startCentered = _ref2.startCentered, startCentered = void 0 !== _ref2$startCentered && _ref2$startCentered, val = "";
+                return val += startCentered && IS_IE ? "translate(".concat(transform.x / d$2 - width / 2, "em, ").concat(transform.y / d$2 - height / 2, "em) ") : startCentered ? "translate(calc(-50% + ".concat(transform.x / d$2, "em), calc(-50% + ").concat(transform.y / d$2, "em)) ") : "translate(".concat(transform.x / d$2, "em, ").concat(transform.y / d$2, "em) "), 
+                val += "scale(".concat(transform.size / d$2 * (transform.flipX ? -1 : 1), ", ").concat(transform.size / d$2 * (transform.flipY ? -1 : 1), ") "), 
+                val + "rotate(".concat(transform.rotate, "deg) ");
+            }({
+                transform,
+                startCentered: !0,
+                width,
+                height
+            }), styles["-webkit-transform"] = styles.transform);
+            var styleString = joinStyles(styles);
+            styleString.length > 0 && (attributes.style = styleString);
+            var val = [];
+            return val.push({
+                tag: "span",
+                attributes,
+                children: [ content ]
+            }), val;
+        }
+        var styles$1 = namespace.styles;
+        function asFoundIcon(icon) {
+            var width = icon[0], height = icon[1], vectorData = _slicedToArray(icon.slice(4), 1)[0];
+            return {
+                found: !0,
+                width,
+                height,
+                icon: Array.isArray(vectorData) ? {
+                    tag: "g",
+                    attributes: {
+                        "class": "".concat(config.cssPrefix, "-").concat(DUOTONE_CLASSES.GROUP)
+                    },
+                    children: [ {
+                        tag: "path",
+                        attributes: {
+                            "class": "".concat(config.cssPrefix, "-").concat(DUOTONE_CLASSES.SECONDARY),
+                            fill: "currentColor",
+                            d: vectorData[0]
+                        }
+                    }, {
+                        tag: "path",
+                        attributes: {
+                            "class": "".concat(config.cssPrefix, "-").concat(DUOTONE_CLASSES.PRIMARY),
+                            fill: "currentColor",
+                            d: vectorData[1]
+                        }
+                    } ]
+                } : {
+                    tag: "path",
+                    attributes: {
+                        fill: "currentColor",
+                        d: vectorData
+                    }
+                }
+            };
+        }
+        var missingIconResolutionMixin = {
+            found: !1,
+            width: 512,
+            height: 512
+        };
+        function findIcon(iconName, prefix) {
+            var givenPrefix = prefix;
+            return "fa" === prefix && null !== config.styleDefault && (prefix = getDefaultUsablePrefix()), 
+            new Promise((function(resolve, reject) {
+                if ("fa" === givenPrefix) {
+                    var shim = byOldName(iconName) || {};
+                    iconName = shim.iconName || iconName, prefix = shim.prefix || prefix;
+                }
+                if (iconName && prefix && styles$1[prefix] && styles$1[prefix][iconName]) return resolve(asFoundIcon(styles$1[prefix][iconName]));
+                !function maybeNotifyMissing(iconName, prefix) {
+                    PRODUCTION || config.showMissingIcons || !iconName || console.error('Icon with name "'.concat(iconName, '" and prefix "').concat(prefix, '" is missing.'));
+                }(iconName, prefix), resolve(_objectSpread2(_objectSpread2({}, missingIconResolutionMixin), {}, {
+                    icon: config.showMissingIcons && iconName && callProvided("missingIconAbstract") || {}
+                }));
+            }));
+        }
+        var noop$1 = function noop() {}, p$2 = config.measurePerformance && PERFORMANCE && PERFORMANCE.mark && PERFORMANCE.measure ? PERFORMANCE : {
+            mark: noop$1,
+            measure: noop$1
+        }, end = function end(name) {
+            p$2.mark("".concat('FA "7.0.1"', " ").concat(name, " ends")), p$2.measure("".concat('FA "7.0.1"', " ").concat(name), "".concat('FA "7.0.1"', " ").concat(name, " begins"), "".concat('FA "7.0.1"', " ").concat(name, " ends"));
+        }, perf = {
+            begin: function begin(name) {
+                return p$2.mark("".concat('FA "7.0.1"', " ").concat(name, " begins")), function() {
+                    return end(name);
+                };
+            },
+            end
+        }, noop$2 = function noop() {};
+        function isWatched(node) {
+            return "string" == typeof (node.getAttribute ? node.getAttribute(DATA_FA_I2SVG) : null);
+        }
+        function createElementNS(tag) {
+            return DOCUMENT.createElementNS("http://www.w3.org/2000/svg", tag);
+        }
+        function createElement(tag) {
+            return DOCUMENT.createElement(tag);
+        }
+        function convertSVG(abstractObj) {
+            var _params$ceFn = (arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {}).ceFn, ceFn = void 0 === _params$ceFn ? "svg" === abstractObj.tag ? createElementNS : createElement : _params$ceFn;
+            if ("string" == typeof abstractObj) return DOCUMENT.createTextNode(abstractObj);
+            var tag = ceFn(abstractObj.tag);
+            return Object.keys(abstractObj.attributes || []).forEach((function(key) {
+                tag.setAttribute(key, abstractObj.attributes[key]);
+            })), (abstractObj.children || []).forEach((function(child) {
+                tag.appendChild(convertSVG(child, {
+                    ceFn
+                }));
+            })), tag;
+        }
+        var mutators = {
+            replace: function replace(mutation) {
+                var node = mutation[0];
+                if (node.parentNode) if (mutation[1].forEach((function(abstract) {
+                    node.parentNode.insertBefore(convertSVG(abstract), node);
+                })), null === node.getAttribute(DATA_FA_I2SVG) && config.keepOriginalSource) {
+                    var comment = DOCUMENT.createComment(function nodeAsComment(node) {
+                        var comment = " ".concat(node.outerHTML, " ");
+                        /* BEGIN.ATTRIBUTION */                        
+                        /* END.ATTRIBUTION */
+                        return "".concat(comment, "Font Awesome fontawesome.com ");
+                    }(node));
+                    node.parentNode.replaceChild(comment, node);
+                } else node.remove();
+            },
+            nest: function nest(mutation) {
+                var node = mutation[0], abstract = mutation[1];
+                // If we already have a replaced node we do not want to continue nesting within it.
+                // Short-circuit to the standard replacement
+                if (~classArray(node).indexOf(config.replacementClass)) return mutators.replace(mutation);
+                var forSvg = new RegExp("".concat(config.cssPrefix, "-.*"));
+                if (delete abstract[0].attributes.id, abstract[0].attributes["class"]) {
+                    var splitClasses = abstract[0].attributes["class"].split(" ").reduce((function(acc, cls) {
+                        return cls === config.replacementClass || cls.match(forSvg) ? acc.toSvg.push(cls) : acc.toNode.push(cls), 
+                        acc;
+                    }), {
+                        toNode: [],
+                        toSvg: []
+                    });
+                    abstract[0].attributes["class"] = splitClasses.toSvg.join(" "), 0 === splitClasses.toNode.length ? node.removeAttribute("class") : node.setAttribute("class", splitClasses.toNode.join(" "));
+                }
+                var newInnerHTML = abstract.map((function(a) {
+                    return toHtml(a);
+                })).join("\n");
+                node.setAttribute(DATA_FA_I2SVG, ""), node.innerHTML = newInnerHTML;
+            }
+        };
+        function performOperationSync(op) {
+            op();
+        }
+        function perform(mutations, callback) {
+            var callbackFunction = "function" == typeof callback ? callback : noop$2;
+            if (0 === mutations.length) callbackFunction(); else {
+                var frame = performOperationSync;
+                config.mutateApproach === MUTATION_APPROACH_ASYNC && (frame = WINDOW.requestAnimationFrame || performOperationSync), 
+                frame((function() {
+                    var mutator = function getMutator() {
+                        return !0 === config.autoReplaceSvg ? mutators.replace : mutators[config.autoReplaceSvg] || mutators.replace;
+                    }(), mark = perf.begin("mutate");
+                    mutations.map(mutator), mark(), callbackFunction();
+                }));
+            }
+        }
+        var disabled = !1;
+        function disableObservation() {
+            disabled = !0;
+        }
+        function enableObservation() {
+            disabled = !1;
+        }
+        var mo = null;
+        function observe(options) {
+            if (MUTATION_OBSERVER && config.observeMutations) {
+                var _options$treeCallback = options.treeCallback, treeCallback = void 0 === _options$treeCallback ? noop$2 : _options$treeCallback, _options$nodeCallback = options.nodeCallback, nodeCallback = void 0 === _options$nodeCallback ? noop$2 : _options$nodeCallback, _options$pseudoElemen = options.pseudoElementsCallback, pseudoElementsCallback = void 0 === _options$pseudoElemen ? noop$2 : _options$pseudoElemen, _options$observeMutat = options.observeMutationsRoot, observeMutationsRoot = void 0 === _options$observeMutat ? DOCUMENT : _options$observeMutat;
+                mo = new MUTATION_OBSERVER((function(objects) {
+                    if (!disabled) {
+                        var defaultPrefix = getDefaultUsablePrefix();
+                        toArray(objects).forEach((function(mutationRecord) {
+                            if ("childList" === mutationRecord.type && mutationRecord.addedNodes.length > 0 && !isWatched(mutationRecord.addedNodes[0]) && (config.searchPseudoElements && pseudoElementsCallback(mutationRecord.target), 
+                            treeCallback(mutationRecord.target)), "attributes" === mutationRecord.type && mutationRecord.target.parentNode && config.searchPseudoElements && pseudoElementsCallback([ mutationRecord.target ], !0), 
+                            "attributes" === mutationRecord.type && isWatched(mutationRecord.target) && ~ATTRIBUTES_WATCHED_FOR_MUTATION.indexOf(mutationRecord.attributeName)) if ("class" === mutationRecord.attributeName && function hasPrefixAndIcon(node) {
+                                var prefix = node.getAttribute ? node.getAttribute(DATA_PREFIX) : null, icon = node.getAttribute ? node.getAttribute(DATA_ICON) : null;
+                                return prefix && icon;
+                            }(mutationRecord.target)) {
+                                var _getCanonicalIcon = getCanonicalIcon(classArray(mutationRecord.target)), prefix = _getCanonicalIcon.prefix, iconName = _getCanonicalIcon.iconName;
+                                mutationRecord.target.setAttribute(DATA_PREFIX, prefix || defaultPrefix), iconName && mutationRecord.target.setAttribute(DATA_ICON, iconName);
+                            } else (function hasBeenReplaced(node) {
+                                return node && node.classList && node.classList.contains && node.classList.contains(config.replacementClass);
+                            })(mutationRecord.target) && nodeCallback(mutationRecord.target);
+                        }));
+                    }
+                })), IS_DOM && mo.observe(observeMutationsRoot, {
+                    childList: !0,
+                    attributes: !0,
+                    characterData: !0,
+                    subtree: !0
+                });
+            }
+        }
+        function classParser(node) {
+            var existingPrefix = node.getAttribute("data-prefix"), existingIconName = node.getAttribute("data-icon"), innerText = node.innerText !== undefined ? node.innerText.trim() : "", val = getCanonicalIcon(classArray(node));
+            return val.prefix || (val.prefix = getDefaultUsablePrefix()), existingPrefix && existingIconName && (val.prefix = existingPrefix, 
+            val.iconName = existingIconName), val.iconName && val.prefix || (val.prefix && innerText.length > 0 && (val.iconName = function byLigature(prefix, ligature) {
+                return (_byLigature[prefix] || {})[ligature];
+            }(val.prefix, node.innerText) || byUnicode(val.prefix, toHex(node.innerText))), 
+            !val.iconName && config.autoFetchSvg && node.firstChild && node.firstChild.nodeType === Node.TEXT_NODE && (val.iconName = node.firstChild.data)), 
+            val;
+        }
+        function parseMeta(node) {
+            var parser = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {
+                styleParser: !0
+            }, _classParser = classParser(node), iconName = _classParser.iconName, prefix = _classParser.prefix, extraClasses = _classParser.rest, extraAttributes = function attributesParser(node) {
+                return toArray(node.attributes).reduce((function(acc, attr) {
+                    return "class" !== acc.name && "style" !== acc.name && (acc[attr.name] = attr.value), 
+                    acc;
+                }), {});
+            }(node), pluginMeta = chainHooks("parseNodeAttributes", {}, node), extraStyles = parser.styleParser ? function styleParser(node) {
+                var style = node.getAttribute("style"), val = [];
+                return style && (val = style.split(";").reduce((function(acc, style) {
+                    var styles = style.split(":"), prop = styles[0], value = styles.slice(1);
+                    return prop && value.length > 0 && (acc[prop] = value.join(":").trim()), acc;
+                }), {})), val;
+            }(node) : [];
+            return _objectSpread2({
+                iconName,
+                prefix,
+                transform: meaninglessTransform,
+                mask: {
+                    iconName: null,
+                    prefix: null,
+                    rest: []
+                },
+                maskId: null,
+                symbol: !1,
+                extra: {
+                    classes: extraClasses,
+                    styles: extraStyles,
+                    attributes: extraAttributes
+                }
+            }, pluginMeta);
+        }
+        var styles$2 = namespace.styles;
+        function generateMutation(node) {
+            var nodeMeta = "nest" === config.autoReplaceSvg ? parseMeta(node, {
+                styleParser: !1
+            }) : parseMeta(node);
+            return ~nodeMeta.extra.classes.indexOf(LAYERS_TEXT_CLASSNAME) ? callProvided("generateLayersText", node, nodeMeta) : callProvided("generateSvgReplacementMutation", node, nodeMeta);
+        }
+        function onTree(root) {
+            var callback = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+            if (!IS_DOM) return Promise.resolve();
+            var htmlClassList = DOCUMENT.documentElement.classList, hclAdd = function hclAdd(suffix) {
+                return htmlClassList.add("".concat("fontawesome-i2svg", "-").concat(suffix));
+            }, hclRemove = function hclRemove(suffix) {
+                return htmlClassList.remove("".concat("fontawesome-i2svg", "-").concat(suffix));
+            }, prefixes = config.autoFetchSvg ? function getKnownPrefixes() {
+                return [].concat(_toConsumableArray(zo), _toConsumableArray($o$1));
+            }() : G.concat(Object.keys(styles$2));
+            prefixes.includes("fa") || prefixes.push("fa");
+            var prefixesDomQuery = [ ".".concat(LAYERS_TEXT_CLASSNAME, ":not([").concat(DATA_FA_I2SVG, "])") ].concat(prefixes.map((function(p$$1) {
+                return ".".concat(p$$1, ":not([").concat(DATA_FA_I2SVG, "])");
+            }))).join(", ");
+            if (0 === prefixesDomQuery.length) return Promise.resolve();
+            var candidates = [];
+            try {
+                candidates = toArray(root.querySelectorAll(prefixesDomQuery));
+            } catch (e$$1) {
+                // noop
+            }
+            if (!(candidates.length > 0)) return Promise.resolve();
+            hclAdd("pending"), hclRemove("complete");
+            var mark = perf.begin("onTree"), mutations = candidates.reduce((function(acc, node) {
+                try {
+                    var mutation = generateMutation(node);
+                    mutation && acc.push(mutation);
+                } catch (e$$1) {
+                    PRODUCTION || "MissingIcon" === e$$1.name && console.error(e$$1);
+                }
+                return acc;
+            }), []);
+            return new Promise((function(resolve, reject) {
+                Promise.all(mutations).then((function(resolvedMutations) {
+                    perform(resolvedMutations, (function() {
+                        hclAdd("active"), hclAdd("complete"), hclRemove("pending"), "function" == typeof callback && callback(), 
+                        mark(), resolve();
+                    }));
+                }))["catch"]((function(e$$1) {
+                    mark(), reject(e$$1);
+                }));
+            }));
+        }
+        function onNode(node) {
+            var callback = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+            generateMutation(node).then((function(mutation) {
+                mutation && perform([ mutation ], callback);
+            }));
+        }
+        var render = function render(iconDefinition) {
+            var params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {}, _params$transform = params.transform, transform = void 0 === _params$transform ? meaninglessTransform : _params$transform, _params$symbol = params.symbol, symbol = void 0 !== _params$symbol && _params$symbol, _params$mask = params.mask, mask = void 0 === _params$mask ? null : _params$mask, _params$maskId = params.maskId, maskId = void 0 === _params$maskId ? null : _params$maskId, _params$classes = params.classes, classes = void 0 === _params$classes ? [] : _params$classes, _params$attributes = params.attributes, attributes = void 0 === _params$attributes ? {} : _params$attributes, _params$styles = params.styles, styles = void 0 === _params$styles ? {} : _params$styles;
+            if (iconDefinition) {
+                var prefix = iconDefinition.prefix, iconName = iconDefinition.iconName, icon = iconDefinition.icon;
+                return domVariants(_objectSpread2({
+                    type: "icon"
+                }, iconDefinition), (function() {
+                    return callHooks("beforeDOMElementCreation", {
+                        iconDefinition,
+                        params
+                    }), makeInlineSvgAbstract({
+                        icons: {
+                            main: asFoundIcon(icon),
+                            mask: mask ? asFoundIcon(mask.icon) : {
+                                found: !1,
+                                width: null,
+                                height: null,
+                                icon: {}
+                            }
+                        },
+                        prefix,
+                        iconName,
+                        transform: _objectSpread2(_objectSpread2({}, meaninglessTransform), transform),
+                        symbol,
+                        maskId,
+                        extra: {
+                            attributes,
+                            styles,
+                            classes
+                        }
+                    });
+                }));
+            }
+        }, ReplaceElements = {
+            mixout: function mixout() {
+                return {
+                    icon: (next = render, function(maybeIconDefinition) {
+                        var params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {}, iconDefinition = (maybeIconDefinition || {}).icon ? maybeIconDefinition : findIconDefinition(maybeIconDefinition || {}), mask = params.mask;
+                        return mask && (mask = (mask || {}).icon ? mask : findIconDefinition(mask || {})), 
+                        next(iconDefinition, _objectSpread2(_objectSpread2({}, params), {}, {
+                            mask
+                        }));
+                    })
+                };
+                var next;
+            },
+            hooks: function hooks() {
+                return {
+                    mutationObserverCallbacks: function mutationObserverCallbacks(accumulator) {
+                        return accumulator.treeCallback = onTree, accumulator.nodeCallback = onNode, accumulator;
+                    }
+                };
+            },
+            provides: function provides(providers$$1) {
+                providers$$1.i2svg = function(params) {
+                    var _params$node = params.node, node = void 0 === _params$node ? DOCUMENT : _params$node, _params$callback = params.callback;
+                    return onTree(node, void 0 === _params$callback ? function() {} : _params$callback);
+                }, providers$$1.generateSvgReplacementMutation = function(node, nodeMeta) {
+                    var iconName = nodeMeta.iconName, prefix = nodeMeta.prefix, transform = nodeMeta.transform, symbol = nodeMeta.symbol, mask = nodeMeta.mask, maskId = nodeMeta.maskId, extra = nodeMeta.extra;
+                    return new Promise((function(resolve, reject) {
+                        Promise.all([ findIcon(iconName, prefix), mask.iconName ? findIcon(mask.iconName, mask.prefix) : Promise.resolve({
+                            found: !1,
+                            width: 512,
+                            height: 512,
+                            icon: {}
+                        }) ]).then((function(_ref) {
+                            var _ref2 = _slicedToArray(_ref, 2), main = _ref2[0], mask = _ref2[1];
+                            resolve([ node, makeInlineSvgAbstract({
+                                icons: {
+                                    main,
+                                    mask
+                                },
+                                prefix,
+                                iconName,
+                                transform,
+                                symbol,
+                                maskId,
+                                extra,
+                                watchable: !0
+                            }) ]);
+                        }))["catch"](reject);
+                    }));
+                }, providers$$1.generateAbstractIcon = function(_ref3) {
+                    var nextChild, children = _ref3.children, attributes = _ref3.attributes, main = _ref3.main, transform = _ref3.transform, styleString = joinStyles(_ref3.styles);
+                    return styleString.length > 0 && (attributes.style = styleString), transformIsMeaningful(transform) && (nextChild = callProvided("generateAbstractTransformGrouping", {
+                        main,
+                        transform,
+                        containerWidth: main.width,
+                        iconWidth: main.width
+                    })), children.push(nextChild || main.icon), {
+                        children,
+                        attributes
+                    };
+                };
+            }
+        }, Layers = {
+            mixout: function mixout() {
+                return {
+                    layer: function layer(assembler) {
+                        var params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {}, _params$classes = params.classes, classes = void 0 === _params$classes ? [] : _params$classes;
+                        return domVariants({
+                            type: "layer"
+                        }, (function() {
+                            callHooks("beforeDOMElementCreation", {
+                                assembler,
+                                params
+                            });
+                            var children = [];
+                            return assembler((function(args) {
+                                Array.isArray(args) ? args.map((function(a) {
+                                    children = children.concat(a.abstract);
+                                })) : children = children.concat(args.abstract);
+                            })), [ {
+                                tag: "span",
+                                attributes: {
+                                    "class": [ "".concat(config.cssPrefix, "-layers") ].concat(_toConsumableArray(classes)).join(" ")
+                                },
+                                children
+                            } ];
+                        }));
+                    }
+                };
+            }
+        }, LayersCounter = {
+            mixout: function mixout() {
+                return {
+                    counter: function counter(content) {
+                        var params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {}, _params$title = params.title, title = void 0 === _params$title ? null : _params$title, _params$classes = params.classes, classes = void 0 === _params$classes ? [] : _params$classes, _params$attributes = params.attributes, attributes = void 0 === _params$attributes ? {} : _params$attributes, _params$styles = params.styles, styles = void 0 === _params$styles ? {} : _params$styles;
+                        return domVariants({
+                            type: "counter",
+                            content
+                        }, (function() {
+                            return callHooks("beforeDOMElementCreation", {
+                                content,
+                                params
+                            }), function makeLayersCounterAbstract(params) {
+                                var content = params.content, extra = params.extra, attributes = _objectSpread2(_objectSpread2({}, extra.attributes), {}, {
+                                    "class": extra.classes.join(" ")
+                                }), styleString = joinStyles(extra.styles);
+                                styleString.length > 0 && (attributes.style = styleString);
+                                var val = [];
+                                return val.push({
+                                    tag: "span",
+                                    attributes,
+                                    children: [ content ]
+                                }), val;
+                            }({
+                                content: content.toString(),
+                                title,
+                                extra: {
+                                    attributes,
+                                    styles,
+                                    classes: [ "".concat(config.cssPrefix, "-layers-counter") ].concat(_toConsumableArray(classes))
+                                }
+                            });
+                        }));
+                    }
+                };
+            }
+        }, LayersText = {
+            mixout: function mixout() {
+                return {
+                    text: function text(content) {
+                        var params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {}, _params$transform = params.transform, transform = void 0 === _params$transform ? meaninglessTransform : _params$transform, _params$classes = params.classes, classes = void 0 === _params$classes ? [] : _params$classes, _params$attributes = params.attributes, attributes = void 0 === _params$attributes ? {} : _params$attributes, _params$styles = params.styles, styles = void 0 === _params$styles ? {} : _params$styles;
+                        return domVariants({
+                            type: "text",
+                            content
+                        }, (function() {
+                            return callHooks("beforeDOMElementCreation", {
+                                content,
+                                params
+                            }), makeLayersTextAbstract({
+                                content,
+                                transform: _objectSpread2(_objectSpread2({}, meaninglessTransform), transform),
+                                extra: {
+                                    attributes,
+                                    styles,
+                                    classes: [ "".concat(config.cssPrefix, "-layers-text") ].concat(_toConsumableArray(classes))
+                                }
+                            });
+                        }));
+                    }
+                };
+            },
+            provides: function provides(providers$$1) {
+                providers$$1.generateLayersText = function(node, nodeMeta) {
+                    var transform = nodeMeta.transform, extra = nodeMeta.extra, width = null, height = null;
+                    if (IS_IE) {
+                        var computedFontSize = parseInt(getComputedStyle(node).fontSize, 10), boundingClientRect = node.getBoundingClientRect();
+                        width = boundingClientRect.width / computedFontSize, height = boundingClientRect.height / computedFontSize;
+                    }
+                    return Promise.resolve([ node, makeLayersTextAbstract({
+                        content: node.innerHTML,
+                        width,
+                        height,
+                        transform,
+                        extra,
+                        watchable: !0
+                    }) ]);
+                };
+            }
+        }, CLEAN_CONTENT_PATTERN = new RegExp('"', "ug"), SECONDARY_UNICODE_RANGE = [ 1105920, 1112319 ], _FONT_FAMILY_WEIGHT_TO_PREFIX = _objectSpread2(_objectSpread2(_objectSpread2(_objectSpread2({}, {
+            FontAwesome: {
+                normal: "fas",
+                400: "fas"
+            }
+        }), {
+            "Font Awesome 7 Free": {
+                900: "fas",
+                400: "far"
+            },
+            "Font Awesome 7 Pro": {
+                900: "fas",
+                400: "far",
+                normal: "far",
+                300: "fal",
+                100: "fat"
+            },
+            "Font Awesome 7 Brands": {
+                400: "fab",
+                normal: "fab"
+            },
+            "Font Awesome 7 Duotone": {
+                900: "fad",
+                400: "fadr",
+                normal: "fadr",
+                300: "fadl",
+                100: "fadt"
+            },
+            "Font Awesome 7 Sharp": {
+                900: "fass",
+                400: "fasr",
+                normal: "fasr",
+                300: "fasl",
+                100: "fast"
+            },
+            "Font Awesome 7 Sharp Duotone": {
+                900: "fasds",
+                400: "fasdr",
+                normal: "fasdr",
+                300: "fasdl",
+                100: "fasdt"
+            },
+            "Font Awesome 7 Jelly": {
+                400: "fajr",
+                normal: "fajr"
+            },
+            "Font Awesome 7 Jelly Fill": {
+                400: "fajfr",
+                normal: "fajfr"
+            },
+            "Font Awesome 7 Jelly Duo": {
+                400: "fajdr",
+                normal: "fajdr"
+            },
+            "Font Awesome 7 Slab": {
+                400: "faslr",
+                normal: "faslr"
+            },
+            "Font Awesome 7 Slab Press": {
+                400: "faslpr",
+                normal: "faslpr"
+            },
+            "Font Awesome 7 Thumbprint": {
+                300: "fatl",
+                normal: "fatl"
+            },
+            "Font Awesome 7 Notdog": {
+                900: "fans",
+                normal: "fans"
+            },
+            "Font Awesome 7 Notdog Duo": {
+                900: "fands",
+                normal: "fands"
+            },
+            "Font Awesome 7 Etch": {
+                900: "faes",
+                normal: "faes"
+            },
+            "Font Awesome 7 Chisel": {
+                400: "facr",
+                normal: "facr"
+            },
+            "Font Awesome 7 Whiteboard": {
+                600: "fawsb",
+                normal: "fawsb"
+            }
+        }), {
+            "Font Awesome 5 Free": {
+                900: "fas",
+                400: "far"
+            },
+            "Font Awesome 5 Pro": {
+                900: "fas",
+                400: "far",
+                normal: "far",
+                300: "fal"
+            },
+            "Font Awesome 5 Brands": {
+                400: "fab",
+                normal: "fab"
+            },
+            "Font Awesome 5 Duotone": {
+                900: "fad"
+            }
+        }), {
+            "Font Awesome Kit": {
+                400: "fak",
+                normal: "fak"
+            },
+            "Font Awesome Kit Duotone": {
+                400: "fakd",
+                normal: "fakd"
+            }
+        }), FONT_FAMILY_WEIGHT_TO_PREFIX = Object.keys(_FONT_FAMILY_WEIGHT_TO_PREFIX).reduce((function(acc, key) {
+            return acc[key.toLowerCase()] = _FONT_FAMILY_WEIGHT_TO_PREFIX[key], acc;
+        }), {}), FONT_FAMILY_WEIGHT_FALLBACK = Object.keys(FONT_FAMILY_WEIGHT_TO_PREFIX).reduce((function(acc, fontFamily) {
+            var weights = FONT_FAMILY_WEIGHT_TO_PREFIX[fontFamily];
+            return acc[fontFamily] = weights[900] || _toConsumableArray(Object.entries(weights))[0][1], 
+            acc;
+        }), {});
+        function replaceForPosition(node, position) {
+            var pendingAttribute = "".concat(DATA_FA_PSEUDO_ELEMENT_PENDING).concat(position.replace(":", "-"));
+            return new Promise((function(resolve, reject) {
+                if (null !== node.getAttribute(pendingAttribute)) 
+                // This node is already being processed
+                return resolve();
+                var alreadyProcessedPseudoElement = toArray(node.children).filter((function(c$$1) {
+                    return c$$1.getAttribute(DATA_FA_PSEUDO_ELEMENT) === position;
+                }))[0], styles = WINDOW.getComputedStyle(node, position), fontFamily = styles.getPropertyValue("font-family"), fontFamilyMatch = fontFamily.match(FONT_FAMILY_PATTERN), fontWeight = styles.getPropertyValue("font-weight"), content = styles.getPropertyValue("content");
+                if (alreadyProcessedPseudoElement && !fontFamilyMatch) 
+                // If we've already processed it but the current computed style does not result in a font-family,
+                // that probably means that a class name that was previously present to make the icon has been
+                // removed. So we now should delete the icon.
+                return node.removeChild(alreadyProcessedPseudoElement), resolve();
+                if (fontFamilyMatch && "none" !== content && "" !== content) {
+                    var _content = styles.getPropertyValue("content"), prefix = function getPrefix(fontFamily, fontWeight) {
+                        var fontFamilySanitized = fontFamily.replace(/^['"]|['"]$/g, "").toLowerCase(), fontWeightInteger = parseInt(fontWeight), fontWeightSanitized = isNaN(fontWeightInteger) ? "normal" : fontWeightInteger;
+                        return (FONT_FAMILY_WEIGHT_TO_PREFIX[fontFamilySanitized] || {})[fontWeightSanitized] || FONT_FAMILY_WEIGHT_FALLBACK[fontFamilySanitized];
+                    }(fontFamily, fontWeight), hexValue = 
+                    // Return hex value of *first* character in `content`
+                    function hexValueFromContent(content) {
+                        return toHex(_toConsumableArray(content.replace(CLEAN_CONTENT_PATTERN, ""))[0] || "");
+                    }
+                    // Check if it's a secondary Duotone layer, by checking if:
+                    // - Unicode value in `content` is repeated
+                    // - Unicode value in `content` is above 0x10000
+                    // - The "ss01" font feature is enabled on the `content`
+                    (_content), isV4 = fontFamilyMatch[0].startsWith("FontAwesome"), isSecondary = function isSecondaryLayer(styles) {
+                        var hasStylisticSet = styles.getPropertyValue("font-feature-settings").includes("ss01"), cleaned = styles.getPropertyValue("content").replace(CLEAN_CONTENT_PATTERN, ""), codePoint = cleaned.codePointAt(0), isPrependTen = codePoint >= SECONDARY_UNICODE_RANGE[0] && codePoint <= SECONDARY_UNICODE_RANGE[1], isDoubled = 2 === cleaned.length && cleaned[0] === cleaned[1];
+                        return isPrependTen || isDoubled || hasStylisticSet;
+                    }(styles), iconName = byUnicode(prefix, hexValue), iconIdentifier = iconName;
+                    if (isV4) {
+                        var iconName4 = function byOldUnicode(unicode) {
+                            var oldUnicode = _byOldUnicode[unicode], newUnicode = byUnicode("fas", unicode);
+                            return oldUnicode || (newUnicode ? {
+                                prefix: "fas",
+                                iconName: newUnicode
+                            } : null) || {
+                                prefix: null,
+                                iconName: null
+                            };
+                        }(hexValue);
+                        iconName4.iconName && iconName4.prefix && (iconName = iconName4.iconName, prefix = iconName4.prefix);
+                    }
+                    // Only convert the pseudo element in this ::before/::after position into an icon if we haven't
+                    // already done so with the same prefix and iconName
+                                        if (!iconName || isSecondary || alreadyProcessedPseudoElement && alreadyProcessedPseudoElement.getAttribute(DATA_PREFIX) === prefix && alreadyProcessedPseudoElement.getAttribute(DATA_ICON) === iconIdentifier) resolve(); else {
+                        node.setAttribute(pendingAttribute, iconIdentifier), alreadyProcessedPseudoElement && 
+                        // Delete the old one, since we're replacing it with a new one
+                        node.removeChild(alreadyProcessedPseudoElement);
+                        var meta = function blankMeta() {
+                            return {
+                                iconName: null,
+                                prefix: null,
+                                transform: meaninglessTransform,
+                                symbol: !1,
+                                mask: {
+                                    iconName: null,
+                                    prefix: null,
+                                    rest: []
+                                },
+                                maskId: null,
+                                extra: {
+                                    classes: [],
+                                    styles: {},
+                                    attributes: {}
+                                }
+                            };
+                        }(), extra = meta.extra;
+                        extra.attributes[DATA_FA_PSEUDO_ELEMENT] = position, findIcon(iconName, prefix).then((function(main) {
+                            var abstract = makeInlineSvgAbstract(_objectSpread2(_objectSpread2({}, meta), {}, {
+                                icons: {
+                                    main,
+                                    mask: emptyCanonicalIcon()
+                                },
+                                prefix,
+                                iconName: iconIdentifier,
+                                extra,
+                                watchable: !0
+                            })), element = DOCUMENT.createElementNS("http://www.w3.org/2000/svg", "svg");
+                            "::before" === position ? node.insertBefore(element, node.firstChild) : node.appendChild(element), 
+                            element.outerHTML = abstract.map((function(a$$1) {
+                                return toHtml(a$$1);
+                            })).join("\n"), node.removeAttribute(pendingAttribute), resolve();
+                        }))["catch"](reject);
+                    }
+                } else resolve();
+            }));
+        }
+        function replace(node) {
+            return Promise.all([ replaceForPosition(node, "::before"), replaceForPosition(node, "::after") ]);
+        }
+        function processable(node) {
+            return !(node.parentNode === document.head || ~TAGNAMES_TO_SKIP_FOR_PSEUDOELEMENTS.indexOf(node.tagName.toUpperCase()) || node.getAttribute(DATA_FA_PSEUDO_ELEMENT) || node.parentNode && "svg" === node.parentNode.tagName);
+        }
+        var hasPseudoElement = function hasPseudoElement(selector) {
+            return !!selector && PSEUDO_ELEMENTS.some((function(pseudoSelector) {
+                return selector.includes(pseudoSelector);
+            }));
+        }, parseCSSRuleForPseudos = function parseCSSRuleForPseudos(selectorText) {
+            if (!selectorText) return [];
+            var selectorSet = new Set, selectors = selectorText.split(/,(?![^()]*\))/).map((function(s$$1) {
+                return s$$1.trim();
+            }));
+            selectors = selectors.flatMap((function(selector) {
+                return selector.includes("(") ? selector : selector.split(",").map((function(s$$1) {
+                    return s$$1.trim();
+                }));
+            }));
+            var _step, _iterator = _createForOfIteratorHelper(selectors);
+            try {
+                for (_iterator.s(); !(_step = _iterator.n()).done; ) {
+                    var selector = _step.value;
+                    if (hasPseudoElement(selector)) {
+                        // Remove pseudo-elements from the selector
+                        var selectorWithoutPseudo = PSEUDO_ELEMENTS.reduce((function(acc, pseudoSelector) {
+                            return acc.replace(pseudoSelector, "");
+                        }), selector);
+                        "" !== selectorWithoutPseudo && "*" !== selectorWithoutPseudo && selectorSet.add(selectorWithoutPseudo);
+                    }
+                }
+            } catch (err) {
+                _iterator.e(err);
+            } finally {
+                _iterator.f();
+            }
+            return selectorSet;
+        };
+        // Return selectors from all available stylesheets that have
+        // pseudo-elements defined.
+                function searchPseudoElements(root) {
+            var useAsNodeList = arguments.length > 1 && arguments[1] !== undefined && arguments[1];
+            if (IS_DOM) {
+                var nodeList;
+                if (useAsNodeList) nodeList = root; else if (config.searchPseudoElementsFullScan) nodeList = root.querySelectorAll("*"); else {
+                    // Get elements that have pseudo elements defined in the CSS
+                    var _step2, selectorSet = new Set, _iterator2 = _createForOfIteratorHelper(document.styleSheets);
+                    try {
+                        for (_iterator2.s(); !(_step2 = _iterator2.n()).done; ) {
+                            var stylesheet = _step2.value;
+                            try {
+                                var _step3, _iterator3 = _createForOfIteratorHelper(stylesheet.cssRules);
+                                try {
+                                    for (_iterator3.s(); !(_step3 = _iterator3.n()).done; ) {
+                                        var _step4, rule = _step3.value, _iterator4 = _createForOfIteratorHelper(parseCSSRuleForPseudos(rule.selectorText));
+                                        try {
+                                            for (_iterator4.s(); !(_step4 = _iterator4.n()).done; ) {
+                                                var selector = _step4.value;
+                                                selectorSet.add(selector);
+                                            }
+                                        } catch (err) {
+                                            _iterator4.e(err);
+                                        } finally {
+                                            _iterator4.f();
+                                        }
+                                    }
+                                } catch (err) {
+                                    _iterator3.e(err);
+                                } finally {
+                                    _iterator3.f();
+                                }
+                            } catch (e$$1) {
+                                config.searchPseudoElementsWarnings && console.warn("Font Awesome: cannot parse stylesheet: ".concat(stylesheet.href, " (").concat(e$$1.message, ')\nIf it declares any Font Awesome CSS pseudo-elements, they will not be rendered as SVG icons. Add crossorigin="anonymous" to the <link>, enable searchPseudoElementsFullScan for slower but more thorough DOM parsing, or suppress this warning by setting searchPseudoElementsWarnings to false.'));
+                            }
+                        }
+                    } catch (err) {
+                        _iterator2.e(err);
+                    } finally {
+                        _iterator2.f();
+                    }
+                    if (!selectorSet.size) return;
+                    var cleanSelectors = Array.from(selectorSet).join(", ");
+                    try {
+                        nodeList = root.querySelectorAll(cleanSelectors);
+                    } catch (_unused) {}
+ // eslint-disable-line no-empty
+                                }
+                return new Promise((function(resolve, reject) {
+                    var operations = toArray(nodeList).filter(processable).map(replace), end = perf.begin("searchPseudoElements");
+                    disableObservation(), Promise.all(operations).then((function() {
+                        end(), enableObservation(), resolve();
+                    }))["catch"]((function() {
+                        end(), enableObservation(), reject();
+                    }));
+                }));
+            }
+        }
+        var PseudoElements = {
+            hooks: function hooks() {
+                return {
+                    mutationObserverCallbacks: function mutationObserverCallbacks(accumulator) {
+                        return accumulator.pseudoElementsCallback = searchPseudoElements, accumulator;
+                    }
+                };
+            },
+            provides: function provides(providers) {
+                providers.pseudoElements2svg = function(params) {
+                    var _params$node = params.node, node = void 0 === _params$node ? DOCUMENT : _params$node;
+                    config.searchPseudoElements && searchPseudoElements(node);
+                };
+            }
+        }, _unwatched = !1, parseTransformString = function parseTransformString(transformString) {
+            return transformString.toLowerCase().split(" ").reduce((function(acc, n) {
+                var parts = n.toLowerCase().split("-"), first = parts[0], rest = parts.slice(1).join("-");
+                if (first && "h" === rest) return acc.flipX = !0, acc;
+                if (first && "v" === rest) return acc.flipY = !0, acc;
+                if (rest = parseFloat(rest), isNaN(rest)) return acc;
+                switch (first) {
+                  case "grow":
+                    acc.size = acc.size + rest;
+                    break;
+
+                  case "shrink":
+                    acc.size = acc.size - rest;
+                    break;
+
+                  case "left":
+                    acc.x = acc.x - rest;
+                    break;
+
+                  case "right":
+                    acc.x = acc.x + rest;
+                    break;
+
+                  case "up":
+                    acc.y = acc.y - rest;
+                    break;
+
+                  case "down":
+                    acc.y = acc.y + rest;
+                    break;
+
+                  case "rotate":
+                    acc.rotate = acc.rotate + rest;
+                }
+                return acc;
+            }), {
+                size: 16,
+                x: 0,
+                y: 0,
+                flipX: !1,
+                flipY: !1,
+                rotate: 0
+            });
+        }, PowerTransforms = {
+            mixout: function mixout() {
+                return {
+                    parse: {
+                        transform: function transform(transformString) {
+                            return parseTransformString(transformString);
+                        }
+                    }
+                };
+            },
+            hooks: function hooks() {
+                return {
+                    parseNodeAttributes: function parseNodeAttributes(accumulator, node) {
+                        var transformString = node.getAttribute("data-fa-transform");
+                        return transformString && (accumulator.transform = parseTransformString(transformString)), 
+                        accumulator;
+                    }
+                };
+            },
+            provides: function provides(providers) {
+                providers.generateAbstractTransformGrouping = function(_ref) {
+                    var main = _ref.main, transform = _ref.transform, containerWidth = _ref.containerWidth, iconWidth = _ref.iconWidth, outer = {
+                        transform: "translate(".concat(containerWidth / 2, " 256)")
+                    }, innerTranslate = "translate(".concat(32 * transform.x, ", ").concat(32 * transform.y, ") "), innerScale = "scale(".concat(transform.size / 16 * (transform.flipX ? -1 : 1), ", ").concat(transform.size / 16 * (transform.flipY ? -1 : 1), ") "), innerRotate = "rotate(".concat(transform.rotate, " 0 0)"), operations = {
+                        outer,
+                        inner: {
+                            transform: "".concat(innerTranslate, " ").concat(innerScale, " ").concat(innerRotate)
+                        },
+                        path: {
+                            transform: "translate(".concat(iconWidth / 2 * -1, " -256)")
+                        }
+                    };
+                    return {
+                        tag: "g",
+                        attributes: _objectSpread2({}, operations.outer),
+                        children: [ {
+                            tag: "g",
+                            attributes: _objectSpread2({}, operations.inner),
+                            children: [ {
+                                tag: main.icon.tag,
+                                children: main.icon.children,
+                                attributes: _objectSpread2(_objectSpread2({}, main.icon.attributes), operations.path)
+                            } ]
+                        } ]
+                    };
+                };
+            }
+        }, ALL_SPACE = {
+            x: 0,
+            y: 0,
+            width: "100%",
+            height: "100%"
+        };
+        function fillBlack(abstract) {
+            var force = !(arguments.length > 1 && arguments[1] !== undefined) || arguments[1];
+            return abstract.attributes && (abstract.attributes.fill || force) && (abstract.attributes.fill = "black"), 
+            abstract;
+        }
+        var Masks = {
+            hooks: function hooks() {
+                return {
+                    parseNodeAttributes: function parseNodeAttributes(accumulator, node) {
+                        var maskData = node.getAttribute("data-fa-mask"), mask = maskData ? getCanonicalIcon(maskData.split(" ").map((function(i) {
+                            return i.trim();
+                        }))) : emptyCanonicalIcon();
+                        return mask.prefix || (mask.prefix = getDefaultUsablePrefix()), accumulator.mask = mask, 
+                        accumulator.maskId = node.getAttribute("data-fa-mask-id"), accumulator;
+                    }
+                };
+            },
+            provides: function provides(providers) {
+                providers.generateAbstractMask = function(_ref) {
+                    var abstract, children = _ref.children, attributes = _ref.attributes, main = _ref.main, mask = _ref.mask, explicitMaskId = _ref.maskId, transform = _ref.transform, mainWidth = main.width, mainPath = main.icon, maskWidth = mask.width, maskPath = mask.icon, trans = function transformForSvg(_ref) {
+                        var transform = _ref.transform, containerWidth = _ref.containerWidth, iconWidth = _ref.iconWidth, outer = {
+                            transform: "translate(".concat(containerWidth / 2, " 256)")
+                        }, innerTranslate = "translate(".concat(32 * transform.x, ", ").concat(32 * transform.y, ") "), innerScale = "scale(".concat(transform.size / 16 * (transform.flipX ? -1 : 1), ", ").concat(transform.size / 16 * (transform.flipY ? -1 : 1), ") "), innerRotate = "rotate(".concat(transform.rotate, " 0 0)");
+                        return {
+                            outer,
+                            inner: {
+                                transform: "".concat(innerTranslate, " ").concat(innerScale, " ").concat(innerRotate)
+                            },
+                            path: {
+                                transform: "translate(".concat(iconWidth / 2 * -1, " -256)")
+                            }
+                        };
+                    }({
+                        transform,
+                        containerWidth: maskWidth,
+                        iconWidth: mainWidth
+                    }), maskRect = {
+                        tag: "rect",
+                        attributes: _objectSpread2(_objectSpread2({}, ALL_SPACE), {}, {
+                            fill: "white"
+                        })
+                    }, maskInnerGroupChildrenMixin = mainPath.children ? {
+                        children: mainPath.children.map(fillBlack)
+                    } : {}, maskInnerGroup = {
+                        tag: "g",
+                        attributes: _objectSpread2({}, trans.inner),
+                        children: [ fillBlack(_objectSpread2({
+                            tag: mainPath.tag,
+                            attributes: _objectSpread2(_objectSpread2({}, mainPath.attributes), trans.path)
+                        }, maskInnerGroupChildrenMixin)) ]
+                    }, maskOuterGroup = {
+                        tag: "g",
+                        attributes: _objectSpread2({}, trans.outer),
+                        children: [ maskInnerGroup ]
+                    }, maskId = "mask-".concat(explicitMaskId || nextUniqueId()), clipId = "clip-".concat(explicitMaskId || nextUniqueId()), maskTag = {
+                        tag: "mask",
+                        attributes: _objectSpread2(_objectSpread2({}, ALL_SPACE), {}, {
+                            id: maskId,
+                            maskUnits: "userSpaceOnUse",
+                            maskContentUnits: "userSpaceOnUse"
+                        }),
+                        children: [ maskRect, maskOuterGroup ]
+                    }, defs = {
+                        tag: "defs",
+                        children: [ {
+                            tag: "clipPath",
+                            attributes: {
+                                id: clipId
+                            },
+                            children: (abstract = maskPath, "g" === abstract.tag ? abstract.children : [ abstract ])
+                        }, maskTag ]
+                    };
+                    return children.push(defs, {
+                        tag: "rect",
+                        attributes: _objectSpread2({
+                            fill: "currentColor",
+                            "clip-path": "url(#".concat(clipId, ")"),
+                            mask: "url(#".concat(maskId, ")")
+                        }, ALL_SPACE)
+                    }), {
+                        children,
+                        attributes
+                    };
+                };
+            }
+        }, MissingIconIndicator = {
+            provides: function provides(providers) {
+                var reduceMotion = !1;
+                WINDOW.matchMedia && (reduceMotion = WINDOW.matchMedia("(prefers-reduced-motion: reduce)").matches), 
+                providers.missingIconAbstract = function() {
+                    var gChildren = [], FILL = {
+                        fill: "currentColor"
+                    }, ANIMATION_BASE = {
+                        attributeType: "XML",
+                        repeatCount: "indefinite",
+                        dur: "2s"
+                    };
+                    // Ring
+                    gChildren.push({
+                        tag: "path",
+                        attributes: _objectSpread2(_objectSpread2({}, FILL), {}, {
+                            d: "M156.5,447.7l-12.6,29.5c-18.7-9.5-35.9-21.2-51.5-34.9l22.7-22.7C127.6,430.5,141.5,440,156.5,447.7z M40.6,272H8.5 c1.4,21.2,5.4,41.7,11.7,61.1L50,321.2C45.1,305.5,41.8,289,40.6,272z M40.6,240c1.4-18.8,5.2-37,11.1-54.1l-29.5-12.6 C14.7,194.3,10,216.7,8.5,240H40.6z M64.3,156.5c7.8-14.9,17.2-28.8,28.1-41.5L69.7,92.3c-13.7,15.6-25.5,32.8-34.9,51.5 L64.3,156.5z M397,419.6c-13.9,12-29.4,22.3-46.1,30.4l11.9,29.8c20.7-9.9,39.8-22.6,56.9-37.6L397,419.6z M115,92.4 c13.9-12,29.4-22.3,46.1-30.4l-11.9-29.8c-20.7,9.9-39.8,22.6-56.8,37.6L115,92.4z M447.7,355.5c-7.8,14.9-17.2,28.8-28.1,41.5 l22.7,22.7c13.7-15.6,25.5-32.9,34.9-51.5L447.7,355.5z M471.4,272c-1.4,18.8-5.2,37-11.1,54.1l29.5,12.6 c7.5-21.1,12.2-43.5,13.6-66.8H471.4z M321.2,462c-15.7,5-32.2,8.2-49.2,9.4v32.1c21.2-1.4,41.7-5.4,61.1-11.7L321.2,462z M240,471.4c-18.8-1.4-37-5.2-54.1-11.1l-12.6,29.5c21.1,7.5,43.5,12.2,66.8,13.6V471.4z M462,190.8c5,15.7,8.2,32.2,9.4,49.2h32.1 c-1.4-21.2-5.4-41.7-11.7-61.1L462,190.8z M92.4,397c-12-13.9-22.3-29.4-30.4-46.1l-29.8,11.9c9.9,20.7,22.6,39.8,37.6,56.9 L92.4,397z M272,40.6c18.8,1.4,36.9,5.2,54.1,11.1l12.6-29.5C317.7,14.7,295.3,10,272,8.5V40.6z M190.8,50 c15.7-5,32.2-8.2,49.2-9.4V8.5c-21.2,1.4-41.7,5.4-61.1,11.7L190.8,50z M442.3,92.3L419.6,115c12,13.9,22.3,29.4,30.5,46.1 l29.8-11.9C470,128.5,457.3,109.4,442.3,92.3z M397,92.4l22.7-22.7c-15.6-13.7-32.8-25.5-51.5-34.9l-12.6,29.5 C370.4,72.1,384.4,81.5,397,92.4z"
+                        })
+                    });
+                    var OPACITY_ANIMATE = _objectSpread2(_objectSpread2({}, ANIMATION_BASE), {}, {
+                        attributeName: "opacity"
+                    }), dot = {
+                        tag: "circle",
+                        attributes: _objectSpread2(_objectSpread2({}, FILL), {}, {
+                            cx: "256",
+                            cy: "364",
+                            r: "28"
+                        }),
+                        children: []
+                    };
+                    return reduceMotion || dot.children.push({
+                        tag: "animate",
+                        attributes: _objectSpread2(_objectSpread2({}, ANIMATION_BASE), {}, {
+                            attributeName: "r",
+                            values: "28;14;28;28;14;28;"
+                        })
+                    }, {
+                        tag: "animate",
+                        attributes: _objectSpread2(_objectSpread2({}, OPACITY_ANIMATE), {}, {
+                            values: "1;0;1;1;0;1;"
+                        })
+                    }), gChildren.push(dot), gChildren.push({
+                        tag: "path",
+                        attributes: _objectSpread2(_objectSpread2({}, FILL), {}, {
+                            opacity: "1",
+                            d: "M263.7,312h-16c-6.6,0-12-5.4-12-12c0-71,77.4-63.9,77.4-107.8c0-20-17.8-40.2-57.4-40.2c-29.1,0-44.3,9.6-59.2,28.7 c-3.9,5-11.1,6-16.2,2.4l-13.1-9.2c-5.6-3.9-6.9-11.8-2.6-17.2c21.2-27.2,46.4-44.7,91.2-44.7c52.3,0,97.4,29.8,97.4,80.2 c0,67.6-77.4,63.5-77.4,107.8C275.7,306.6,270.3,312,263.7,312z"
+                        }),
+                        children: reduceMotion ? [] : [ {
+                            tag: "animate",
+                            attributes: _objectSpread2(_objectSpread2({}, OPACITY_ANIMATE), {}, {
+                                values: "1;0;0;0;0;1;"
+                            })
+                        } ]
+                    }), reduceMotion || 
+                    // Exclamation
+                    gChildren.push({
+                        tag: "path",
+                        attributes: _objectSpread2(_objectSpread2({}, FILL), {}, {
+                            opacity: "0",
+                            d: "M232.5,134.5l7,168c0.3,6.4,5.6,11.5,12,11.5h9c6.4,0,11.7-5.1,12-11.5l7-168c0.3-6.8-5.2-12.5-12-12.5h-23 C237.7,122,232.2,127.7,232.5,134.5z"
+                        }),
+                        children: [ {
+                            tag: "animate",
+                            attributes: _objectSpread2(_objectSpread2({}, OPACITY_ANIMATE), {}, {
+                                values: "0;0;1;1;0;0;"
+                            })
+                        } ]
+                    }), {
+                        tag: "g",
+                        attributes: {
+                            "class": "missing"
+                        },
+                        children: gChildren
+                    };
+                };
+            }
+        };
+        !function registerPlugins(nextPlugins, _ref) {
+            var obj = _ref.mixoutsTo;
+            return _plugins = nextPlugins, _hooks = {}, Object.keys(providers).forEach((function(k) {
+                -1 === defaultProviderKeys.indexOf(k) && delete providers[k];
+            })), _plugins.forEach((function(plugin) {
+                var mixout = plugin.mixout ? plugin.mixout() : {};
+                if (Object.keys(mixout).forEach((function(tk) {
+                    "function" == typeof mixout[tk] && (obj[tk] = mixout[tk]), "object" === _typeof(mixout[tk]) && Object.keys(mixout[tk]).forEach((function(sk) {
+                        obj[tk] || (obj[tk] = {}), obj[tk][sk] = mixout[tk][sk];
+                    }));
+                })), plugin.hooks) {
+                    var hooks = plugin.hooks();
+                    Object.keys(hooks).forEach((function(hook) {
+                        _hooks[hook] || (_hooks[hook] = []), _hooks[hook].push(hooks[hook]);
+                    }));
+                }
+                plugin.provides && plugin.provides(providers);
+            })), obj;
+        }([ InjectCSS, ReplaceElements, Layers, LayersCounter, LayersText, PseudoElements, {
+            mixout: function mixout() {
+                return {
+                    dom: {
+                        unwatch: function unwatch() {
+                            disableObservation(), _unwatched = !0;
+                        }
+                    }
+                };
+            },
+            hooks: function hooks() {
+                return {
+                    bootstrap: function bootstrap() {
+                        observe(chainHooks("mutationObserverCallbacks", {}));
+                    },
+                    noAuto: function noAuto() {
+                        !function disconnect() {
+                            mo && mo.disconnect();
+                        }();
+                    },
+                    watch: function watch(params) {
+                        var observeMutationsRoot = params.observeMutationsRoot;
+                        _unwatched ? enableObservation() : observe(chainHooks("mutationObserverCallbacks", {
+                            observeMutationsRoot
+                        }));
+                    }
+                };
+            }
+        }, PowerTransforms, Masks, MissingIconIndicator, {
+            hooks: function hooks() {
+                return {
+                    parseNodeAttributes: function parseNodeAttributes(accumulator, node) {
+                        var symbolData = node.getAttribute("data-fa-symbol"), symbol = null !== symbolData && ("" === symbolData || symbolData);
+                        return accumulator.symbol = symbol, accumulator;
+                    }
+                };
+            }
+        } ], {
+            mixoutsTo: api
+        });
+        var config$1 = api.config, parse$1 = api.parse, icon = api.icon;
+        function camelize(string) {
+            // CONCATENATED MODULE: ./node_modules/@fortawesome/react-fontawesome/dist/index.js
+            // src/components/FontAwesomeIcon.tsx
+            // src/utils/camelize.ts
+            return function _isNumerical(object) {
+                return (object -= 0) == object;
+            }(string) ? string : (string = string.replaceAll(/[_-]+(.)?/g, ((_, chr) => chr ? chr.toUpperCase() : ""))).charAt(0).toLowerCase() + string.slice(1);
+        }
+        // src/converter.ts
+                var styleCache =  new Map, STYLE_CACHE_LIMIT = 1e3;
+        function styleToObject(style) {
+            if (styleCache.has(style)) return styleCache.get(style);
+            const result = {};
+            let start = 0;
+            const len = style.length;
+            for (;start < len; ) {
+                const semicolonIndex = style.indexOf(";", start), end = -1 === semicolonIndex ? len : semicolonIndex, pair = style.slice(start, end).trim();
+                if (pair) {
+                    const colonIndex = pair.indexOf(":");
+                    if (colonIndex > 0) {
+                        const rawProp = pair.slice(0, colonIndex).trim(), value = pair.slice(colonIndex + 1).trim();
+                        if (rawProp && value) {
+                            const prop = camelize(rawProp);
+                            result[prop.startsWith("webkit") ? (val = prop, val.charAt(0).toUpperCase() + val.slice(1)) : prop] = value;
+                        }
+                    }
+                }
+                start = end + 1;
+            }
+            var val;
+            if (styleCache.size === STYLE_CACHE_LIMIT) {
+                const oldestKey = styleCache.keys().next().value;
+                oldestKey && styleCache["delete"](oldestKey);
+            }
+            return styleCache.set(style, result), result;
+        }
+        var useAccessibilityId = (id, hasAccessibleProps) => {
+            const generatedId = (0, react.useId)();
+            return id || (hasAccessibleProps ? generatedId : void 0);
+        };
+        // src/logger.ts
+                "undefined" != typeof process && process.env.FA_VERSION;
+        var SVG_CORE_VERSION = 
+        // @ts-expect-error TS2872 - Expression is always truthy - This is true when v7 of SVGCore is used, but not when v6 is used.
+        // This is the point of this check - if the property exists on config, we have v7, otherwise we have v6.
+        // TS is checking this against the dev dependencies which uses v7, so it reports a false error here.
+        "searchPseudoElementsFullScan" in config$1 ? "7.0.0" : "6.0.0", IS_VERSION_7_OR_LATER = Number.parseInt(SVG_CORE_VERSION) >= 7, ANIMATION_CLASSES_beat = "fa-beat", ANIMATION_CLASSES_fade = "fa-fade", ANIMATION_CLASSES_beatFade = "fa-beat-fade", ANIMATION_CLASSES_bounce = "fa-bounce", ANIMATION_CLASSES_shake = "fa-shake", ANIMATION_CLASSES_spin = "fa-spin", ANIMATION_CLASSES_spinPulse = "fa-spin-pulse", ANIMATION_CLASSES_spinReverse = "fa-spin-reverse", ANIMATION_CLASSES_pulse = "fa-pulse", PULL_CLASSES = {
+            left: "fa-pull-left",
+            right: "fa-pull-right"
+        }, ROTATE_CLASSES = {
+            90: "fa-rotate-90",
+            180: "fa-rotate-180",
+            270: "fa-rotate-270"
+        }, SIZE_CLASSES = {
+            "2xs": "fa-2xs",
+            xs: "fa-xs",
+            sm: "fa-sm",
+            lg: "fa-lg",
+            xl: "fa-xl",
+            "2xl": "fa-2xl",
+            "1x": "fa-1x",
+            "2x": "fa-2x",
+            "3x": "fa-3x",
+            "4x": "fa-4x",
+            "5x": "fa-5x",
+            "6x": "fa-6x",
+            "7x": "fa-7x",
+            "8x": "fa-8x",
+            "9x": "fa-9x",
+            "10x": "fa-10x"
+        }, STYLE_CLASSES_border = "fa-border", STYLE_CLASSES_fixedWidth = "fa-fw", STYLE_CLASSES_flip = "fa-flip", STYLE_CLASSES_flipHorizontal = "fa-flip-horizontal", STYLE_CLASSES_flipVertical = "fa-flip-vertical", STYLE_CLASSES_inverse = "fa-inverse", STYLE_CLASSES_rotateBy = "fa-rotate-by", STYLE_CLASSES_swapOpacity = "fa-swap-opacity", STYLE_CLASSES_widthAuto = "fa-width-auto";
+        function normalizeIconArgs(icon) {
+            if (icon) return (icon => "object" == typeof icon && "icon" in icon && !!icon.icon)(icon) ? icon : parse$1.icon(icon);
+        }
+        // src/utils/typed-object-keys.ts
+                // src/components/FontAwesomeIcon.tsx
+        var logger = new class {
+            constructor(scope = "react-fontawesome") {
+                this.enabled = !1;
+                let IS_DEV = !1;
+                try {
+                    IS_DEV = "undefined" != typeof process && !1;
+                } catch {}
+                this.scope = scope, this.enabled = IS_DEV;
+            }
+            /**
+   * Logs messages to the console if not in production.
+   * @param args - The message and/or data to log.
+   */            log(...args) {
+                this.enabled && console.log(`[${this.scope}]`, ...args);
+            }
+            /**
+   * Logs warnings to the console if not in production.
+   * @param args - The warning message and/or data to log.
+   */            warn(...args) {
+                this.enabled && console.warn(`[${this.scope}]`, ...args);
+            }
+            /**
+   * Logs errors to the console if not in production.
+   * @param args - The error message and/or data to log.
+   */            error(...args) {
+                this.enabled && console.error(`[${this.scope}]`, ...args);
+            }
+        }("FontAwesomeIcon"), DEFAULT_PROPS = {
+            border: !1,
+            className: "",
+            mask: void 0,
+            maskId: void 0,
+            fixedWidth: !1,
+            inverse: !1,
+            flip: !1,
+            icon: void 0,
+            listItem: !1,
+            pull: void 0,
+            pulse: !1,
+            rotation: void 0,
+            rotateBy: !1,
+            size: void 0,
+            spin: !1,
+            spinPulse: !1,
+            spinReverse: !1,
+            beat: !1,
+            fade: !1,
+            beatFade: !1,
+            bounce: !1,
+            shake: !1,
+            symbol: !1,
+            title: "",
+            titleId: void 0,
+            transform: void 0,
+            swapOpacity: !1,
+            widthAuto: !1
+        }, DEFAULT_PROP_KEYS = new Set(Object.keys(DEFAULT_PROPS)), FontAwesomeIcon = react.forwardRef(((props, ref) => {
+            const allProps = {
+                ...DEFAULT_PROPS,
+                ...props
+            }, {icon: iconArgs, mask: maskArgs, symbol, title, titleId: titleIdFromProps, maskId: maskIdFromProps, transform} = allProps, maskId = useAccessibilityId(maskIdFromProps, Boolean(maskArgs)), titleId = useAccessibilityId(titleIdFromProps, Boolean(title)), iconLookup = normalizeIconArgs(iconArgs);
+            if (!iconLookup) return logger.error("Icon lookup is undefined", iconArgs), null;
+            const classList = 
+            // src/utils/get-class-list-from-props.ts
+            function getClassListFromProps(props) {
+                const {beat, fade, beatFade, bounce, shake, spin, spinPulse, spinReverse, pulse, fixedWidth, inverse, border, flip, size, rotation, pull, swapOpacity, rotateBy, widthAuto, className} = props, result = [];
+                return className && result.push(...className.split(" ")), beat && result.push(ANIMATION_CLASSES_beat), 
+                fade && result.push(ANIMATION_CLASSES_fade), beatFade && result.push(ANIMATION_CLASSES_beatFade), 
+                bounce && result.push(ANIMATION_CLASSES_bounce), shake && result.push(ANIMATION_CLASSES_shake), 
+                spin && result.push(ANIMATION_CLASSES_spin), spinReverse && result.push(ANIMATION_CLASSES_spinReverse), 
+                spinPulse && result.push(ANIMATION_CLASSES_spinPulse), pulse && result.push(ANIMATION_CLASSES_pulse), 
+                fixedWidth && result.push(STYLE_CLASSES_fixedWidth), inverse && result.push(STYLE_CLASSES_inverse), 
+                border && result.push(STYLE_CLASSES_border), !0 === flip && result.push(STYLE_CLASSES_flip), 
+                "horizontal" !== flip && "both" !== flip || result.push(STYLE_CLASSES_flipHorizontal), 
+                "vertical" !== flip && "both" !== flip || result.push(STYLE_CLASSES_flipVertical), 
+                null != size && result.push(SIZE_CLASSES[size]), null != rotation && 0 !== rotation && result.push(ROTATE_CLASSES[rotation]), 
+                null != pull && result.push(PULL_CLASSES[pull]), swapOpacity && result.push(STYLE_CLASSES_swapOpacity), 
+                IS_VERSION_7_OR_LATER ? (rotateBy && result.push(STYLE_CLASSES_rotateBy), widthAuto && result.push(STYLE_CLASSES_widthAuto), 
+                result) : result;
+            }(allProps), transformProps = "string" == typeof transform ? parse$1.transform(transform) : transform, normalizedMaskArgs = normalizeIconArgs(maskArgs), renderedIcon = icon(iconLookup, {
+                ...classList.length > 0 && {
+                    classes: classList
+                },
+                ...transformProps && {
+                    transform: transformProps
+                },
+                ...normalizedMaskArgs && {
+                    mask: normalizedMaskArgs
+                },
+                symbol,
+                title,
+                titleId,
+                maskId
+            });
+            if (!renderedIcon) return logger.error("Could not find icon", iconLookup), null;
+            const {abstract} = renderedIcon, extraProps = {
+                ref
+            };
+            for (const key of function typedObjectKeys(obj) {
+                return Object.keys(obj);
+            }(allProps)) DEFAULT_PROP_KEYS.has(key) || (extraProps[key] = allProps[key]);
+            return convertCurry(abstract[0], extraProps);
+        }));
+        FontAwesomeIcon.displayName = "FontAwesomeIcon";
+        var convertCurry = function convert(createElement, element, extraProps = {}) {
+            if ("string" == typeof element) return element;
+            const children = (element.children || []).map((child => convert(createElement, child))), elementAttributes = element.attributes || {}, attrs = {};
+            for (const [key, val] of Object.entries(elementAttributes)) switch (!0) {
+              case "class" === key:
+                attrs.className = val, delete elementAttributes["class"];
+                break;
+
+              case "style" === key:
+                attrs.style = styleToObject(String(val));
+                break;
+
+              case key.startsWith("aria-"):
+              case key.startsWith("data-"):
+                attrs[key.toLowerCase()] = val;
+                break;
+
+              default:
+                attrs[camelize(key)] = val;
+            }
+            const {style: existingStyle, "aria-label": ariaLabel, ...remaining} = extraProps;
+            return existingStyle && (attrs.style = attrs.style ? {
+                ...attrs.style,
+                ...existingStyle
+            } : existingStyle), ariaLabel && (attrs["aria-label"] = ariaLabel, attrs["aria-hidden"] = "false"), 
+            createElement(element.tag, {
+                ...remaining,
+                ...attrs
+            }, ...children);
+        }.bind(null, react.createElement), faArrowsRotate = {
+            prefix: "fas",
+            iconName: "arrows-rotate",
+            icon: [ 512, 512, [ 128472, "refresh", "sync" ], "f021", "M65.9 228.5c13.3-93 93.4-164.5 190.1-164.5 53 0 101 21.5 135.8 56.2 .2 .2 .4 .4 .6 .6l7.6 7.2-47.9 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l128 0c17.7 0 32-14.3 32-32l0-128c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 53.4-11.3-10.7C390.5 28.6 326.5 0 256 0 127 0 20.3 95.4 2.6 219.5 .1 237 12.2 253.2 29.7 255.7s33.7-9.7 36.2-27.1zm443.5 64c2.5-17.5-9.7-33.7-27.1-36.2s-33.7 9.7-36.2 27.1c-13.3 93-93.4 164.5-190.1 164.5-53 0-101-21.5-135.8-56.2-.2-.2-.4-.4-.6-.6l-7.6-7.2 47.9 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L32 320c-8.5 0-16.7 3.4-22.7 9.5S-.1 343.7 0 352.3l1 127c.1 17.7 14.6 31.9 32.3 31.7S65.2 496.4 65 478.7l-.4-51.5 10.7 10.1c46.3 46.1 110.2 74.7 180.7 74.7 129 0 235.7-95.4 253.4-219.5z" ]
+        }, monthlySummaryTab_extends = undefined && undefined.__extends || function() {
             var extendStatics = function(d, b) {
                 return extendStatics = Object.setPrototypeOf || {
                     __proto__: []
@@ -8060,7 +10676,13 @@
                     className: "flex flex-col items-center"
                 }, react.createElement("span", {
                     className: "text-budget-dark font-bold text-xl p-6"
-                }, "This Month's Category Totals"), react.createElement("table", {
+                }, react.createElement("div", null, "This Month's Category Totals"), react.createElement("button", {
+                    onClick: function() {
+                        return _this.props.reloadData();
+                    }
+                }, react.createElement(FontAwesomeIcon, {
+                    icon: faArrowsRotate
+                }))), react.createElement("table", {
                     className: "table-fixed text-budget-dark"
                 }, react.createElement("tr", null, react.createElement("th", null, "Category"), react.createElement("th", null, "Dollar Total")), Object.keys(PurchaseCategory).map((function(category, index) {
                     return react.createElement("tr", null, react.createElement("td", null, category), react.createElement("td", null, _this.props.loading ? "Loading..." : "$" + (_this.props.categories[category] == undefined ? 0 : parseFloat(_this.props.categories[category]).toFixed(2))));
@@ -8184,8 +10806,10 @@
                     className: "h-full flex flex-col text-center"
                 }, this.state.loading ? react.createElement(react.Fragment, null, react.createElement("div", {
                     className: "flex justify-center items-center h-full"
-                }, react.createElement("div", {
-                    className: "loader"
+                }, react.createElement(FontAwesomeIcon, {
+                    icon: faArrowsRotate,
+                    size: "2xl",
+                    className: "animate-spin"
                 }))) : react.createElement(react.Fragment, null, react.createElement("div", {
                     style: {
                         display: "pendingTransactionsTab" === this.state.activeTabName ? "block" : "none"

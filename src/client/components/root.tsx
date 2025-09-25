@@ -2,6 +2,8 @@ import React from "react";
 import PendingTransactionsTab from "./pendingTransactionsTab";
 import MonthlySummaryTab from "./monthlySummaryTab";
 import { Purchase, RootStateType } from "../../shared/types";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowsRotate } from '@fortawesome/free-solid-svg-icons';
 
 export class Root extends React.Component {
 
@@ -14,7 +16,7 @@ export class Root extends React.Component {
     unreadPurchases: []
   }
 
-  constructor(props) {
+  constructor(props: {} | Readonly<{}>) {
     super(props);
   }
 
@@ -89,22 +91,22 @@ export class Root extends React.Component {
           </ul>
         </div>
         <div className="h-full flex flex-col text-center">
-        { this.state.loading ? 
-        <>
-          <div className="flex justify-center items-center h-full">
-            <div className="loader"></div>
-          </div>
-        </>
-        : 
-        <>
-          <div style={{ display: this.state.activeTabName === 'pendingTransactionsTab' ? 'block' : 'none' }}>
-            <PendingTransactionsTab reloadData={this.reloadData} loading={this.state.loading} setLoading={this.setLoading} initialUnreadPurchases={this.state.unreadPurchases} />
-          </div>
-          <div style={{ display: this.state.activeTabName === 'monthlySummaryTab' ? 'block' : 'none' }} >
-            <MonthlySummaryTab reloadData={this.reloadData} loading={this.state.loading} purchases={this.state.purchases} categories={this.state.categories} prevMonthTotal={this.state.prevMonthTotal} />
-          </div>
-        </>
-        }
+          {this.state.loading ?
+            <>
+              <div className="flex justify-center items-center h-full">
+                <FontAwesomeIcon icon={faArrowsRotate} size="2xl" className="animate-spin" />
+              </div>
+            </>
+            :
+            <>
+              <div style={{ display: this.state.activeTabName === 'pendingTransactionsTab' ? 'block' : 'none' }}>
+                <PendingTransactionsTab reloadData={this.reloadData} loading={this.state.loading} setLoading={this.setLoading} initialUnreadPurchases={this.state.unreadPurchases} />
+              </div>
+              <div style={{ display: this.state.activeTabName === 'monthlySummaryTab' ? 'block' : 'none' }} >
+                <MonthlySummaryTab reloadData={this.reloadData} loading={this.state.loading} purchases={this.state.purchases} categories={this.state.categories} prevMonthTotal={this.state.prevMonthTotal} />
+              </div>
+            </>
+          }
         </div>
       </div>
     );

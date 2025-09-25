@@ -1,5 +1,7 @@
 import React from "react";
 import { Purchase, PurchaseCategory, MonthlySummaryTabType } from "../../shared/types";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowsRotate } from '@fortawesome/free-solid-svg-icons';
 
 export default class MonthlySummaryTab extends React.Component<MonthlySummaryTabType> {
 
@@ -11,7 +13,12 @@ export default class MonthlySummaryTab extends React.Component<MonthlySummaryTab
     return (
       <div className="content-center">
         <div className="flex flex-col items-center">
-          <span className="text-budget-dark font-bold text-xl p-6">This Month's Category Totals</span>
+          <span className="text-budget-dark font-bold text-xl p-6">
+            <div>This Month's Category Totals</div>
+            <button onClick={() => this.props.reloadData()}>
+              <FontAwesomeIcon icon={faArrowsRotate} />
+            </button>
+          </span>
           <table className="table-fixed text-budget-dark">
             <tr>
               <th>Category</th>

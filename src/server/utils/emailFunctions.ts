@@ -20,6 +20,9 @@ const GetLatestUnreadPurchases = (): Purchase[] => {
       if (amountMatch == null) {
         amountMatch = body.match(/\$([0-9,.]+)/);
       }
+      if (amountMatch != null && amountMatch[1].includes(",")) {
+        amountMatch[1] = amountMatch[1].replace(",", "");
+      }
       const amount = amountMatch == null ? 0.0 : parseFloat(amountMatch[1]);
 
       let description = subject;
